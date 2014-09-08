@@ -1,0 +1,22 @@
+.symbol, a.symbol:before {
+    font-family: $icon-font;
+    -webkit-text-rendering: optimizeLegibility;
+    -moz-text-rendering: optimizeLegibility;
+    -ms-text-rendering: optimizeLegibility;
+    -o-text-rendering: optimizeLegibility;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -ms-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+.social-share {
+    font-size: 3em;
+    a {
+        color: $white;
+        margin-right: .1em;
+        border: none;
+    }
+}

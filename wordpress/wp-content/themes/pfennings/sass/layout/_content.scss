@@ -1,0 +1,53 @@
+section[role=main] {
+    @include outer-container;
+    @include media($bp-large) {
+        padding: 50px 0 50px 0;
+    }
+
+    article {
+        @include media($bp-large) {
+            @include span-columns(7);
+            @include shift(2.5);
+        }
+    }
+}
+
+/* background setup */
+.background {
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-position: 50% 50% \9  !important;
+}
+
+/* fullscreen setup */
+html, body {
+    /* give this to all tags from html to .fullscreen */
+    height: 100%;
+}
+
+.fullscreen,
+.content-a {
+    width: 100%;
+    min-height: 100%;
+    color: $white;
+}
+
+.not-fullscreen,
+.not-fullscreen .content-a,
+.fullscreen.not-overflow,
+.fullscreen.not-overflow .content-a {
+    height: 100%;
+    overflow: hidden;
+}
+
+/* content centering styles */
+.content-a {
+    display: table;
+}
+
+.content-b {
+    display: table-cell;
+    position: relative;
+    vertical-align: middle;
+    text-align: center;
+}

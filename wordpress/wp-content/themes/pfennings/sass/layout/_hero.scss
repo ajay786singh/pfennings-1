@@ -1,0 +1,23 @@
+section[role=slider] {
+    background-color: $yellow;
+    height: 100vh;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000;
+    header {
+        @include outer-container;
+        @include clearfix;
+        hgroup {
+            padding-top: 16vh;
+            h1 {
+                text-shadow: -5px 5px 0px #fff;
+            }
+        }
+    }
+    figure {
+        width: 50px;
+        height: auto;
+        margin: auto;
+        padding: 2em 0 2em 0;
+    }
+}

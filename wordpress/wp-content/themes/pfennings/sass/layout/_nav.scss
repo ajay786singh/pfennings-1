@@ -1,0 +1,35 @@
+.wrap {
+    position: relative;
+}
+
+.menu-link {
+    float: right;
+    font-family: $sans-serif;
+    font-size: 1.4em;
+    text-transform: uppercase;
+    padding: .35em 1.5em 0 0;
+    color: $white;
+}
+
+nav {
+    position: fixed;
+    right: -15.625em;
+    /*left or right and the width of your navigation panel*/
+    width: 15.625em;
+    /*should match the above value*/
+    background-color: $dark-gray;
+    ul {
+        list-style-type: none;
+        margin: 2em 0 0  0;
+        li {
+            font-size: 1.3em;
+            margin: 0;
+            a {
+                color: $white;
+                &:hover {
+                    color: #ccc;
+                }
+            }
+        }
+    }
+}

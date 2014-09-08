@@ -42,7 +42,11 @@
         <div class="logo">
             <a href="<?php bloginfo('url'); ?>">Pfenning's Organic Farm</a>
         </div>
-        <a href="#menu" class="menu-link">menu &#9776;</a>
+        <div class="top-nav">
+        <ul >
+        <li><button>order now</button></li>
+        <li><a href="#menu" class="menu-link">menu &#9776;</a></li>
+    </ul>
 
         <nav id="menu" class="panel" role="navigation">
             <?php wp_nav_menu(array('theme_location'=>'header-menu'));?>

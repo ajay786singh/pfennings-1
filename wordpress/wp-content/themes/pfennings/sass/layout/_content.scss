@@ -50,4 +50,7 @@ html, body {
     position: relative;
     vertical-align: middle;
     text-align: center;
+    @include media($bp-large) {
+        padding: 0 30% 0 30%;
+    }
 }

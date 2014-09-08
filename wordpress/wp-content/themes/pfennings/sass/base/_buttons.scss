@@ -1,5 +1,6 @@
 button {
     @extend %button;
+    padding: .4em .5em;
     @include appearance(none);
     border: none;
     cursor: pointer;

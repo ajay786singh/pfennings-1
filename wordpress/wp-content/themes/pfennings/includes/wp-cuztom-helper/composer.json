@@ -4,9 +4,12 @@
     "authors": [
         {
             "name": "Gizburdt",
-            "email": "gizburdt@gmail.com"
+            "email": "lol@gizburdt.com"
         }
     ],
     "require": {
+    },
+    "autoload": {
+        "files": ["cuztom.php"]
     }
 }

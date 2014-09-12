@@ -3,7 +3,7 @@
 $args = array(
 	'has_archive' => true,
 	'menu_icon' => 'dashicons-smiley', //http://melchoyce.github.io/dashicons/
-	'supports'	=> array( 'title', 'editor', 'thumbnail' )
+	'supports'	=> array( 'title' )
  	);
 
 $team = register_cuztom_post_type( 'Team', $args);
@@ -18,6 +18,12 @@ $team->add_meta_box(
 					'name'          => 'name',
 					'label'         => 'Name',
 					'description'   => 'First and Last name',
+					'type'          => 'text',          
+				),
+				array(
+					'name'          => 'title',
+					'label'         => 'Title',
+					'description'   => '',
 					'type'          => 'text',          
 				),
 				array(

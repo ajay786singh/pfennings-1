@@ -20,6 +20,7 @@
 
             // Get custom meta values    
             $name   = $teammate['_name'];
+            $title  = $teammate['_title'];
             $veggie = $teammate['_veggie'];
             $email  = $teammate['_email'];
             $phone  = $teammate['_phone'];
@@ -29,6 +30,9 @@
         <p>
             <?php if ($name): 
                echo $name . '<br>';
+            endif ?>
+            <?php if ($veggie):
+                echo $title . '<br>';
             endif ?>
             <?php if ($veggie):
                 echo $veggie . '<br>';

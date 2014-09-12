@@ -31,7 +31,7 @@
             <?php if ($name): 
                echo $name . '<br>';
             endif ?>
-            <?php if ($veggie):
+            <?php if ($title):
                 echo $title . '<br>';
             endif ?>
             <?php if ($veggie):

@@ -30,7 +30,6 @@
         <!-- For loop cycle through Array -->
         <?php if($currentPartners) {
             foreach($currentPartners as $partner) {
-            //print_r($partner);
 
             // Get custom meta values    
             $currentName        = $partner['_name'];
@@ -39,30 +38,28 @@
             $currentProduce     = $partner['_produce'];
             $currentLink        = $partner['_link'];
             $currentImage       = $partner['_image'];
-
         ?>
 
         <p>
             <?php if ($currentName): 
                echo $currentName . '<br>';
             endif ?>
-            <?php if ($currentFarm):?>
-                <?php echo $currentFarm; ?><br>
-            <?php endif ?>
-            <?php if ($currentLocation):?>
-                <?php echo $currentLocation; ?><br>
-            <?php endif ?>
-            <?php if ($currentProduce):?>
-                <?php echo $currentProduce; ?><br>
-            <?php endif ?>
-            <?php if ($currentLink):?>
-                <?php echo '<a href="http://' . $currentLink . '" target="_blank">' . $currentLink . '</a>'; ?><br>
-            <?php endif ?>
-            <?php if ($currentImage):?>
-                <?php echo wp_get_attachment_image($currentImage); ?>
-            <?php endif ?>
+            <?php if ($currentFarm):
+                echo $currentFarm . '<br>';
+            endif ?>
+            <?php if ($currentLocation):
+                echo $currentLocation . '<br>';
+            endif ?>
+            <?php if ($currentProduce):
+                echo $currentProduce . '<br>';
+            endif ?>
+            <?php if ($currentLink):
+                echo '<a href="http://' . $currentLink . '" target="_blank">' . $currentLink . '</a><br>';
+            endif ?>
+            <?php if ($currentImage):
+                echo wp_get_attachment_image($currentImage);
+            endif ?>
         </p>
-
         <?php
                 }
             }
@@ -74,6 +71,7 @@
 <?php 
     endwhile; 
     endif;
+    wp_reset_query();
 ?>
 
 <?php get_footer(); ?>

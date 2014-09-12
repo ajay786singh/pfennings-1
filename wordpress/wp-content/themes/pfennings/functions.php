@@ -4,11 +4,13 @@
 include('includes/wp-cuztom-helper/cuztom.php');
 
 //Include post custom posts type. Dependent on /wp-cuztom-helper classes.
+include('includes/wp-cuztom-posts/custom-post-connect.php');
 include('includes/wp-cuztom-posts/custom-post-partners.php');
 
 
+
 //Load custom functions
-require_once('includes/functions/add-classes-to-body.php');
+//require_once('includes/functions/add-classes-to-body.php');
 require_once('includes/functions/admin-tinymce.php');
 //require_once('includes/functions/custom-login-logo.php');
 require_once('includes/functions/enqueue-style.php');

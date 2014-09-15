@@ -19,7 +19,18 @@
             <meta property="og:type" content="website" />
             <meta property="og:image" content="<?php bloginfo('template_url' ); ?>/images/logo.png">
     <?php } endwhile; endif; ?>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <?php wp_reset_query(); ?>
+
+    <script>
+  (function(d) {
+    var config = {
+      kitId: 'lrw1dbe',
+      scriptTimeout: 3000
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
     
     <?php wp_head(); ?>
 </head>

@@ -9,8 +9,13 @@
 ?>
 
 <section role="main">
-    <article>
-        <h1><?php the_title(); ?></h1>
+    <aside style="border: 1px solid pink;">
+        <?php gravity_form(1, true, true, false, '', true, 12); ?>
+    </aside>
+
+
+    <div class="team"> 
+        <!--<h1><?php the_title(); ?></h1>-->
         <?php the_content(); ?>
 
         <!-- For loop cycle through Array -->
@@ -26,33 +31,35 @@
             $phone  = $teammate['_phone'];
             $image  = $teammate['_image'];
         ?>
-
-        <p>
+        
+        <div class="list">
+            <p>
+             <?php if ($image):
+                echo wp_get_attachment_image($image) . '<br>';
+            endif ?>
             <?php if ($name): 
-               echo $name . '<br>';
+               echo '<b>' . $name . '</b><br>';
             endif ?>
             <?php if ($title):
                 echo $title . '<br>';
             endif ?>
             <?php if ($veggie):
-                echo $veggie . '<br>';
+                echo '<i class="fa fa-heart"></i> ' . $veggie . '<br>';
             endif ?>
             <?php if ($email):
-                echo $email . '<br>';
+                echo '<i class="fa fa-envelope"></i> <a href="mailto:' . $email . '">' . $email . '</a><br>';
             endif ?>
             <?php if ($phone):
-                echo $phone . '<br>';
+                echo '<i class="fa fa-phone"></i> ' . $phone . '<br>';
             endif ?>
-            <?php if ($image):
-                echo wp_get_attachment_image($image);
-            endif ?>
-        </p>
+           </p>
+        </div>
+      
         <?php
                 }
             }
         ?>
-
-   </article>
+   </div>
 </section>
 
 <?php 

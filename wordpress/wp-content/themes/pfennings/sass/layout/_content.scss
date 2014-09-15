@@ -12,6 +12,29 @@ section[role=main] {
     }
 }
 
+aside {
+    @include media($bp-large) {
+        @include span-columns(4);
+    }
+}
+
+.team {
+    p {
+        font-size: $base-font-size;
+    }
+    @include media($bp-large) {
+        @include span-columns(7);
+        @include shift(1);
+        .list {
+            @include span-columns(3 of 7);
+            @include omega(2n);
+            &:nth-child(2n) {
+                @include shift(1);
+            }
+        }
+    }
+}
+
 /* background setup */
 .background {
     background-repeat: no-repeat;

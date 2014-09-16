@@ -77,3 +77,47 @@ html, body {
         padding: 0 25% 0 25%;
     }
 }
+
+.down-arrow {
+    position: absolute;
+    border: 2px solid #ffffff;
+    bottom: 75px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    padding-top: 10px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -ms-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+}
+
+.down-arrow {
+    color: #222;
+    background: #ffffff;
+}
+
+.down-arrow a {
+    color: #222;
+}
+
+.down-arrow:hover {
+    background: none;
+    border: 2px solid #ffffff;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -ms-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+}
+
+.down-arrow:hover a {
+    color: #ffffff !important;
+}

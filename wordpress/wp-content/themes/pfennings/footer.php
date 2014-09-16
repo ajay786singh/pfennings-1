@@ -27,7 +27,8 @@
                 Pfenning's Organic Farm<br>
                 1209 Waterloo Street<br>
                 Baden, ON<br>
-                N3A 1T1
+                N3A 1T1<br>
+                <i class="fa fa-map-marker"></i> <a href="https://goo.gl/maps/RnHjJ" target="_blank">Map</a>
             </p>
 
             <p>

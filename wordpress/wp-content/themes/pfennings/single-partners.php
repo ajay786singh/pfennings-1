@@ -10,11 +10,22 @@
     $currentPartners    = get_post_meta($post->ID,'_current_partners',true);
 ?>
 
-<section role="main">
-    <article>
-        <h1><?php the_title(); ?></h1>
-        <?php the_content(); ?>
+<div class="fullscreen background" style="background-image:url('<?php bloginfo('template_url' ); ?>/images/bg-partners.jpg');" data-img-width="1400" data-img-height="800">
+    <div class="content-a">
+        <div class="content-b">
+            <h1><?php the_title(); ?></h1>
+        </div>
+    </div>
+</div>
 
+<div class="down-arrow">
+    <a id="down-link" href="#content" class="target"><i class="fa fa-chevron-down"></i></a>
+</div>
+
+<section role="main">
+    <?php the_content(); ?>
+
+    <aside>
         <?php if ($ordering):?>
             <h4>Interested in ordering?</h4>
             <p><?php echo $ordering; ?></p>
@@ -26,7 +37,9 @@
             <p><?php echo $partnering; ?></p> 
             <button>Learn more</button>
         <?php endif ?>
+    </aside>
 
+    <div class="team">
         <!-- For loop cycle through Array -->
         <?php if($currentPartners) {
             foreach($currentPartners as $partner) {
@@ -40,7 +53,14 @@
             $currentImage       = $partner['_image'];
         ?>
 
-        <p>
+        <div class="list">
+            <p>
+            <?php if ($currentImage) {
+                echo wp_get_attachment_image($currentImage) . '<br>';
+                } else {
+                echo '<img src="http://placehold.it/300x150"><br>';
+                }
+            ?>
             <?php if ($currentName): 
                echo $currentName . '<br>';
             endif ?>
@@ -56,16 +76,14 @@
             <?php if ($currentLink):
                 echo '<a href="http://' . $currentLink . '" target="_blank">' . $currentLink . '</a><br>';
             endif ?>
-            <?php if ($currentImage):
-                echo wp_get_attachment_image($currentImage);
-            endif ?>
-        </p>
+            </p>
+        </div>
         <?php
                 }
             }
         ?>
 
-   </article>
+   </div>
 </section>
 
 <?php 

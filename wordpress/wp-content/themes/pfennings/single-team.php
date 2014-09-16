@@ -11,7 +11,7 @@
 <div class="fullscreen background" style="background-image:url('<?php bloginfo('template_url' ); ?>/images/bg-connect.jpg');" data-img-width="1400" data-img-height="800">
     <div class="content-a">
         <div class="content-b">
-            <h1>Pfennings Farm</h1>
+            <h1>Pfenning's Farm</h1>
             <a href="https://goo.gl/maps/RnHjJ" target="_blank" class="button"><button><i class="fa fa-map-marker"></i>&nbsp;&nbsp;Directions to our Farm</button></a>
         </div>
     </div>
@@ -26,9 +26,7 @@
         <?php gravity_form(1, true, true, false, '', true, 12); ?>
     </aside>
 
-
     <div class="team">
-        <!--<h1><?php the_title(); ?></h1>-->
         <?php the_content(); ?>
 
         <!-- For loop cycle through Array -->
@@ -46,9 +44,12 @@
         
         <div class="list">
             <p>
-             <?php if ($image):
+             <?php if ($image) {
                 echo wp_get_attachment_image($image) . '<br>';
-            endif ?>
+                } else {
+                echo '<img src="http://placehold.it/300x150"><br>';
+                }
+            ?>
             <?php if ($name): 
                echo '<b>' . $name . '</b><br>';
             endif ?>

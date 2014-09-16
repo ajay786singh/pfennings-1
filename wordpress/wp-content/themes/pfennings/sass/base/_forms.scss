@@ -102,3 +102,39 @@ select {
     max-width: 100%;
     width: auto;
 }
+
+.gform_wrapper {
+    ul {
+        padding: 0;
+        margin: 0;
+        li {
+            list-style: none;
+            margin: 1em 0 0 0;
+        }
+    }
+    label {
+        font-size: 1em;
+        font-weight: normal;
+        font-family: $sans-serif;
+    }
+    input[type="text"] {
+        padding: .2em .2em;
+    }
+    input[type="checkbox"] {
+        float: left;
+        display: inline-block;
+        margin-top: 12px;
+    }
+    input {
+        @include placeholder {
+            color: $light-gray;
+            font-size: .9em;
+        }
+    }
+    #label_3_1 {
+        font-size: .8em;
+    }
+    input[type="submit"] {
+        @extend button;
+    }
+}

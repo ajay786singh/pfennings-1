@@ -105,6 +105,14 @@ jQuery(window).resize(backgroundResize);
 jQuery(window).focus(backgroundResize);
 backgroundResize();
 
+jQuery(document).ready(function() {
+    jQuery('#input_1_1').attr('placeholder','Favourite store');
+    jQuery('#input_1_2').attr('placeholder','Location');
+    jQuery('#input_1_4').attr('placeholder','Produce');
+    jQuery('#input_1_5').attr('placeholder','Name');
+    jQuery('#input_1_6').attr('placeholder','Email');
+});
+
 </script>
 
 </body>

@@ -18,24 +18,22 @@
 </div>
 
 <div class="down-arrow">
-        <a id="down-link" href="#some-recent-work" class="target"><i class="fa fa-chevron-down"></i></a>
-    </div>
-
+    <a id="down-link" href="#content" class="target"><i class="fa fa-chevron-down"></i></a>
+</div>
 
 <section role="main">
-    <aside style="border: 1px solid pink;">
+    <aside>
         <?php gravity_form(1, true, true, false, '', true, 12); ?>
     </aside>
 
 
-    <div class="team"> 
+    <div class="team">
         <!--<h1><?php the_title(); ?></h1>-->
         <?php the_content(); ?>
 
         <!-- For loop cycle through Array -->
         <?php if($team) {
             foreach($team as $teammate) {
-               //print_r($teammate);
 
             // Get custom meta values    
             $name   = $teammate['_name'];

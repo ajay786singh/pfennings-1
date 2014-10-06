@@ -31,6 +31,16 @@
     h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
   })(document);
 </script>
+
+<script type="text/javascript">
+  var ShopifyStoreConfig = {shop:"pfennings-organic-vegetables-inc.myshopify.com", collections:[28537207,28536907,28537219]};
+  (function() {
+    var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; 
+    s.src = "//widgets.shopifyapps.com/assets/shopifystore.js";
+    var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+  })();  
+</script>
+<noscript>Please enable javascript, or <a href="http://pfennings-organic-vegetables-inc.myshopify.com">click here</a> to visit my <a href="http://www.shopify.com/tour/ecommerce-website">ecommerce web site</a> powered by Shopify.</noscript>
     
     <?php wp_head(); ?>
 </head>
@@ -43,10 +53,9 @@
         </div>
         <div class="top-nav">
         <ul>
-        <li><button>order now</button></li>
-        <li><a href="#menu" class="menu-link">menu &#9776;</a></li>
-    </ul>
-
+            <li><a class="button" href='#shopify-store'><button>View my Store</button></a></li>
+            <li><a href="#menu" class="menu-link">menu &#9776;</a></li>
+        </ul>
         <nav id="menu" class="panel" role="navigation">
             <?php wp_nav_menu(array('theme_location'=>'header-menu'));?>
         </nav>

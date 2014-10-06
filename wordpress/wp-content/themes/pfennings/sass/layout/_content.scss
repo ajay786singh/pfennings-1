@@ -1,7 +1,7 @@
 section[role=main] {
     @include outer-container;
     @include media($bp-large) {
-        padding: 50px 0 50px 0;
+        @include pad(default);
     }
 
     article {

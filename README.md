@@ -17,4 +17,7 @@
 1. Navigate to ```pfennings/wordpress/wp-content/themes/pfennings```
 2. Install Bower packages by running ```bower install```
 3. Install Gulp by running ```npm install gulp```. You may have to run ```sudo npm install gulp``` depending on how your system is setup
-4. 
+4. Load all devDependencies by running ```sudo npm install gulp-uglifyjs gulp-plumber gulp-ruby-sass gulp-imagemin imagemin-pngquant gulp-cached gulp-livereload gulp-notify gulp-jshint gulp-bower```
+5. Run ```gulp``` to create ```dist``` folder and files and some other neat stuff
+6. Run ```gulp watch``` to watch 
+

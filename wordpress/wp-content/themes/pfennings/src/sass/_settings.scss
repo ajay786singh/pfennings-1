@@ -8,10 +8,10 @@ Version: 1.0
 */
 
 // Library
-@import "../bower/normalize-scss/normalize";
-@import "../bower/bourbon/dist/bourbon";
+@import "../components/normalize-scss/normalize";
+@import "../components/bourbon/app/assets/stylesheets/bourbon";
 @import "base/base";
-@import "../bower/neat/app/assets/stylesheets/neat";
+@import "../components/neat/app/assets/stylesheets/neat";
 
 // Typography
 @import "base/typography";

@@ -19,7 +19,6 @@
             <meta property="og:type" content="website" />
             <meta property="og:image" content="<?php bloginfo('template_url' ); ?>/images/logo.png">
     <?php } endwhile; endif; ?>
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <?php wp_reset_query(); ?>
 
     <script>

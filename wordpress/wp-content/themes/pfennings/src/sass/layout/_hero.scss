@@ -1,23 +1,25 @@
 section[role=slider] {
-    background-color: $yellow;
+    @include display(flex);
+    @include align-items(center);
+    @include justify-content(center);
+    background: -webkit-radial-gradient(top center, ellipse cover, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%), url("../images/bg-hero.jpg") no-repeat;
+    background-size: cover;
+    background-position: center center;
     height: 100vh;
-    text-align: center;
-    text-transform: uppercase;
-    color: #000;
-    header {
-        @include outer-container;
-        @include clearfix;
-        hgroup {
-            padding-top: 16vh;
-            h1 {
-                text-shadow: -5px 5px 0px #fff;
+    hgroup {
+        color: $white;
+        text-align: center;
+        padding: 0 1em;
+        a {
+            color: $white;
+            border-bottom: 1px solid $white;
+            &:hover {
+                opacity: 0.6;
             }
         }
-    }
-    figure {
-        width: 50px;
-        height: auto;
-        margin: auto;
-        padding: 2em 0 2em 0;
+        //@include media($bp-large) {
+        //    padding-left: 4em;
+        //    padding-right: 4em;
+        //}
     }
 }

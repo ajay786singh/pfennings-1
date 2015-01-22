@@ -24,12 +24,12 @@ var outputDir = 'dist';
 var scriptList = [
 	'src/components/modernizer/modernizr.js',
 	'src/components/jquery/dist/jquery.js', 
-	'src/components/fitvids/jquery.fitvids.js',
+	//'src/components/fitvids/jquery.fitvids.js',
 	'src/components/jquery-viewport-checker/src/jquery.viewportchecker.js',
-	'src/components/mixitup2/src/jquery.mixitup.js',
+	//'src/components/mixitup2/src/jquery.mixitup.js',
 	'src/components/viewport-units-buggyfill/viewport-units-buggyfill.js',
 	'src/js/custom/bigSlide.js',
-	'src/js/custom/mixitup-call.js'
+	//'src/js/custom/mixitup-call.js'
 ];
 
 var fontIcons = [

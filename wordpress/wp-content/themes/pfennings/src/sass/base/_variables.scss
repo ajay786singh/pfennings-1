@@ -3,65 +3,48 @@
 http://drinchev.github.io/monosocialiconsfont/
 */
 
-@font-face {
-    font-family: 'Mono Social Icons Font';
-    src: url("../fonts/MonoSocialIconsFont-1.10.eot");
-    src: url("../fonts/MonoSocialIconsFont-1.10.eot?#iefix") format("embedded-opentype"), url("../fonts/MonoSocialIconsFont-1.10.woff") format("woff"), url("../fonts/MonoSocialIconsFont-1.10.ttf") format("truetype"), url("../fonts/MonoSocialIconsFont-1.10.svg#MonoSocialIconsFont") format("svg");
-    src: url("../fonts/MonoSocialIconsFont-1.10.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-}
-
-
+// Icon Fonts
 $icon-font: "Mono Social Icons Font";
-$sans-serif: "freight-sans-pro", sans-serif;
-$serif: "jubilat", sans-serif;
-$base-font-family: $serif;
-$header-font-family: $sans-serif;
 
-// Sizes
+// Fonts
+$sans-serif: "grafolita-script",sans-serif;
+$serif: "museo-slab",serif;
+
+// Base Fonts
+$base-font-family: $serif;
+$header-font-family: $serif;
+
+// Base Sizes
 $base-font-size: 1em;
 $base-line-height: $base-font-size * 1.5;
 $unitless-line-height: $base-line-height / ($base-line-height * 0 + 1);
+
+// Modular Scale
+$modular-scale-ratio: $major-third;
+$modular-scale-base: 1em;
 
 // Strip units from line-height: https://developer.mozilla.org/en-US/docs/Web/CSS/line-height#Prefer_unitless_numbers_for_line-height_values
 $header-line-height: $base-font-size * 1.25;
 $base-border-radius: em(3);
 
 // Colors
-$blue: #477dca;
-$dark-gray: #333333;
-$medium-gray: #999999;
-$light-gray: #f2f2f2;
-$light-red: #fbe3e4;
-$light-yellow: #fff6bf;
-$light-green: #e6efc2;
-$white: white;
-$purple: #484e66;
-$pink: #eb3778;
-$bg-footer: #8fcf5c;
-$green: #8fcf5c;
-$dark-green: #4aaf4f;
-$orange: #f5a338;
-$yellow: #ffdd22;
-
-//need to fix
-$black: rgba(0, 0, 0, 1);
-$white: rgba(255, 255, 255, 1);
-$light-gray: rgba(204, 204, 204, 1);
-$body_font: rgba(61, 61, 61, 1);
-$body_bg: rgba(246, 245, 242, 1);
-$header_link: rgba(0, 0, 0, 1);
-$header_link_hover: rgba(102, 102, 102, 1);
-
-footer {
-    background: #222222;
-}
+$orange:		rgba(224,112,30, 1);
+$white: 		rgba(255, 255, 255, 1);
+$black: 		rgba(0, 0, 0, 1);
+$yellow: 		rgba(255, 221, 34, 1);
+$blue: 			rgba(71, 125, 202, 1);
+$dark-gray: 	rgba(51, 51, 51, 1);
+$light-gray:	rgba(242, 242, 242, 1);
+$light-yellow: 	rgba(255, 246, 191, 1);
+$light-red: 	rgba(251, 227, 228, 1);
+$light-green: 	rgba(230, 239, 194, 1);
 
 // Background Color
-$base-background-color: white;
+$base-background-color: $white;
+$footer-background-color: $orange;
 
 // Font Colors
+$footer-text-color: $white;
 $base-font-color: $dark-gray;
 $base-accent-color: $blue;
 

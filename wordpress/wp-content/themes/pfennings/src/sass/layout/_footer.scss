@@ -1,31 +1,26 @@
 footer {
-    color: $white;
-    background: $dark-gray;
+    color: $footer-text-color;
+    background: $footer-background-color;
     .footer-inner {
         @include outer-container;
-        padding: 0 2em 0 2em;
+        padding: 0 2em 2em 2em;
         .content {
             @include span-columns(5);
-            @include media($bp-large) {
-                @include span-columns(3);
-                &:nth-of-type(2) {
-                    @include shift(1);
-                    @include span-columns(4);
-                }
-                &:nth-of-type(3) {
-                    @include span-columns(3);
-                    @include shift(1);
-                }
-            }
+            //@include media($bp-large) {
+            //    @include span-columns(3);
+            //    &:nth-of-type(2) {
+            //        @include shift(1);
+            //        @include span-columns(4);
+            //    }
+            //    &:nth-of-type(3) {
+            //        @include span-columns(3);
+            //        @include shift(1);
+            //    }
+            //}
         }
-        ul {
-            padding-top: 1em;
-            list-style-type: none;
-            margin-left: 0px;
-            padding-left: 0px;
-            li {
-                margin: 0 auto 0.5em;
-            }
+        .copyright {
+            text-align: center;
+
         }
     }
 }

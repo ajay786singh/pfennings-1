@@ -8,3 +8,18 @@ button {
     vertical-align: middle;
     white-space: nowrap;
 }
+
+.button-map {
+	@extend %button-touch;
+	
+}
+
+.button-phone {
+	@extend %button-touch;
+	background-color: #06AD60;
+}
+
+.button-email {
+	@extend %button-touch;
+	
+}

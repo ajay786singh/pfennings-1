@@ -28,11 +28,25 @@ h5 {
     @include margin(null null 1em null);
 }
 
-h6 { font-size: modular-scale(1); }
+h6 { 
+    font-size: modular-scale(1); 
+}
+
 
 .headline {
     font-family: $sans-serif;
-    width: 90%;
+    color: $white;
+        a {
+            color: $white;
+            border-bottom: 1px solid $white;
+            &:hover {
+                opacity: 0.6;
+            }
+        }
+    @include media($bp-mid) {
+        font-size: modular-scale(5);
+        font-weight: 400;
+    }
 }
 
 p, ul, ol {

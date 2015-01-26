@@ -6,17 +6,17 @@ footer {
         padding: 0 2em 2em 2em;
         .content {
             @include span-columns(5);
-            //@include media($bp-large) {
-            //    @include span-columns(3);
-            //    &:nth-of-type(2) {
-            //        @include shift(1);
-            //        @include span-columns(4);
-            //    }
-            //    &:nth-of-type(3) {
-            //        @include span-columns(3);
-            //        @include shift(1);
-            //    }
-            //}
+            @include media($bp-mid) {
+                @include span-columns(3);
+                &:nth-of-type(2) {
+                    @include shift(1);
+                    @include span-columns(4);
+                }
+                &:nth-of-type(3) {
+                    @include span-columns(3);
+                    @include shift(1);
+                }
+            }
         }
         .copyright {
             text-align: center;

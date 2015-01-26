@@ -10,6 +10,8 @@ $max-width: em(1280);
 //Major: Content centric breakpoints
 $bp-large: new-breakpoint(min-width 50em 12);
 
+$bp-mid: new-breakpoint(min-width 64em 12);
+
 // Visual Grid view
 $visual-grid: true;
 $visual-grid-color: #cccccc;

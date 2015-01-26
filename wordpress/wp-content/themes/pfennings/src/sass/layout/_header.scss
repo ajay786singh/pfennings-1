@@ -1,16 +1,36 @@
 section[role=banner] {
-    position: absolute;
+    position: fixed;
     width: 100%;
     z-index: 999;
+    background-color: $header-background-color;
     header {
-        height: 30px;
         .logo {
             float: left;
             height: auto;
-            max-width: 140px;
-            padding: 1em 0 0 1em;
+            max-width: 70px;
+            padding: .5em 0 .5em .5em;
             &:hover {
                 opacity: 0.8;
+            }
+        }
+    }
+}
+
+@include media($bp-mid) {
+    section[role=banner] {
+        position: absolute;
+        width: 100%;
+        z-index: 999;
+        background-color: transparent;
+        header {
+            .logo {
+                float: left;
+                height: auto;
+                max-width: 160px;
+                padding: 1em 0 0 1.5em;
+                &:hover {
+                    opacity: 0.8;
+                }
             }
         }
     }

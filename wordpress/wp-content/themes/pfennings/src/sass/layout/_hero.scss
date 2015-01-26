@@ -2,24 +2,16 @@ section[role=slider] {
     @include display(flex);
     @include align-items(center);
     @include justify-content(center);
-    background: -webkit-radial-gradient(top center, ellipse cover, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%), url("../images/bg-hero.jpg") no-repeat;
+    //background: -webkit-radial-gradient(top center, ellipse cover, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%), url("../images/bg-hero.jpg") no-repeat;
+    background: url("../images/bg-hero.jpg") no-repeat;
     background-size: cover;
     background-position: center center;
     height: 100vh;
+    header {
+        @include outer-container;
+    }
     hgroup {
-        color: $white;
-        text-align: center;
-        padding: 0 1em;
-        a {
-            color: $white;
-            border-bottom: 1px solid $white;
-            &:hover {
-                opacity: 0.6;
-            }
-        }
-        //@include media($bp-large) {
-        //    padding-left: 4em;
-        //    padding-right: 4em;
-        //}
+        @include shift(2);
+        @include span-columns(8 of 12);
     }
 }

@@ -19,7 +19,7 @@
              <p>
                 <a class="button-map" href="https://goo.gl/maps/RnHjJ" target="_blank"><i class="fa fa-map-marker"></i> Map</a>
                 <a class="button-phone" href="tel://+15196623468"><i class="fa fa-phone-square"></i> +1 (519) 662-3468</a>
-                <a class="button-phone" href=tel"//877-662-3468"><i class="fa fa-phone-square"></i> Toll free: 877-662-3468</a>
+                <a class="button-phone" href=tel"//8776623468"><i class="fa fa-phone-square"></i> Toll free: 877-662-3468</a>
                 <a class="button-email" href="mailto: veggies@pfenningsfarms.ca"><i class="fa fa-envelope"></i> veggies@pfenningsfarms.ca</a>
         </div>  
 
@@ -46,12 +46,12 @@
                 <span class='symbol'><a href="mailto: veggies@pfenningsfarms.ca">circleemail</a></span>
                 <span class='symbol'><a href="https://twitter.com/PfOrganicFarms">circletwitterbird</a></span></a>
             </div>
-        </div>
-        <div class="copyright">
+        </div> 
+    </div>
+    <div class="footer-inner">
+       <div class="copyright">
             <small>Handcrafted with <i class="fa fa-heart" style="color: #ffffff;"></i> by <a href="http://hypenotic.com">Hypenotic</a> Inc.</small>
         </div>
-            
-    <!-- End .footer-inner -->      
     </div>
 </footer>
 

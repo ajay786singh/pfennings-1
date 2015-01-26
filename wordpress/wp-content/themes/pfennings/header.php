@@ -53,6 +53,9 @@
             
         </div>
         <a href="#menu" class="menu-link">menu</a>
+        <nav id="menu" class="panel" role="navigation">
+        <?php wp_nav_menu(array('theme_location'=>'header-menu'));?>
+        </nav>
     </header>
 </section>
 <!--

@@ -10,13 +10,13 @@
     $currentPartners    = get_post_meta($post->ID,'_current_partners',true);
 ?>
 
-<div class="fullscreen background" style="background-image:url('<?php bloginfo('template_url' ); ?>/images/bg-partners.jpg');" data-img-width="1400" data-img-height="800">
-    <div class="content-a">
-        <div class="content-b">
-            <h1><?php the_title(); ?></h1>
-        </div>
-    </div>
-</div>
+<section role="slider">
+    <header>
+        <hgroup>
+            <h6 class="headline">Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.</h6>
+        </hgroup>
+    </header>
+</section>
 
 <div class="down-arrow">
     <a id="down-link" href="#content" class="target"><i class="fa fa-chevron-down"></i></a>

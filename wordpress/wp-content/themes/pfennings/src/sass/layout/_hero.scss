@@ -11,7 +11,8 @@ section[role=slider] {
         @include outer-container;
     }
     hgroup {
-        @include shift(2);
-        @include span-columns(8 of 12);
+        @include shift(1);
+        @include span-columns(10 of 12);
     }
 }
+

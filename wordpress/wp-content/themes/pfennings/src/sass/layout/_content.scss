@@ -1,5 +1,6 @@
 section[role=main] {
     @include outer-container;
+    @include pad(0 2em 0 2em);
     @include media($bp-large) {
         @include pad(default);
     }
@@ -35,49 +36,6 @@ aside {
     }
 }
 
-/* background setup */
-.background {
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-position: 50% 50% \9  !important;
-}
-
-/* fullscreen setup */
-html, body {
-    /* give this to all tags from html to .fullscreen */
-    height: 100%;
-}
-
-.fullscreen,
-.content-a {
-    width: 100%;
-    min-height: 100%;
-    color: $white;
-}
-
-.not-fullscreen,
-.not-fullscreen .content-a,
-.fullscreen.not-overflow,
-.fullscreen.not-overflow .content-a {
-    height: 100%;
-    overflow: hidden;
-}
-
-/* content centering styles */
-.content-a {
-    display: table;
-}
-
-.content-b {
-    display: table-cell;
-    position: relative;
-    vertical-align: middle;
-    text-align: center;
-    @include media($bp-large) {
-        padding: 0 25% 0 25%;
-    }
-}
-
 .down-arrow {
     position: absolute;
     border: 2px solid #ffffff;
@@ -90,14 +48,7 @@ html, body {
     right: 0;
     padding-top: 10px;
     border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    -webkit-transition-duration: 0.3s;
-    -moz-transition-duration: 0.3s;
-    -ms-transition-duration: 0.3s;
-    -o-transition-duration: 0.3s;
+    @include transition-duration(0.3s);
 }
 
 .down-arrow {
@@ -112,12 +63,9 @@ html, body {
 .down-arrow:hover {
     background: none;
     border: 2px solid #ffffff;
-    -webkit-transition-duration: 0.3s;
-    -moz-transition-duration: 0.3s;
-    -ms-transition-duration: 0.3s;
-    -o-transition-duration: 0.3s;
+    @include transition-duration(0.3s);
 }
 
 .down-arrow:hover a {
-    color: #ffffff !important;
+    color: #ffffff;
 }

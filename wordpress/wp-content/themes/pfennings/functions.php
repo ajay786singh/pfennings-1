@@ -6,6 +6,7 @@ include('includes/wp-cuztom-helper/cuztom.php');
 //Include post custom posts type. Dependent on /wp-cuztom-helper classes.
 include('includes/wp-cuztom-posts/custom-post-team.php');
 include('includes/wp-cuztom-posts/custom-post-partners.php');
+include('includes/wp-cuztom-posts/custom-generic.php');
 
 
 

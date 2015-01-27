@@ -9,6 +9,27 @@ $args = array(
 $team = register_cuztom_post_type( 'Team', $args);
 
 $team->add_meta_box(
+	'banner',
+    'Featured banner', 
+    array(
+        array(
+            'name'          => 'image',
+            'label'         => 'Banner Image',
+            'description'   => 'Dimensions 1200px x 800px',
+            'type'          => 'image',
+        ),
+        array(
+            'name'          => 'heading',
+            'label'         => 'Banner Text',
+            'description'   => 'Enter text',
+            'type'          => 'wysiwyg',
+            
+        )
+    )
+);
+
+
+$team->add_meta_box(
 	'teammate',
 	'Team',	
 	array(

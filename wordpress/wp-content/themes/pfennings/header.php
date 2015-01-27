@@ -30,7 +30,7 @@
     h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
     })(document);
 </script>
-
+<!--
 <script type="text/javascript">
   var ShopifyStoreConfig = {shop:"pfennings-organic-vegetables-inc.myshopify.com", collections:[28537207,28536907,28537219]};
   (function() {
@@ -40,29 +40,47 @@
   })();  
 </script>
 <noscript>Please enable javascript, or <a href="http://pfennings-organic-vegetables-inc.myshopify.com">click here</a> to visit my <a href="http://www.shopify.com/tour/ecommerce-website">ecommerce web site</a> powered by Shopify.</noscript>
-    
+-->
     <?php wp_head(); ?>
 </head>
 
-<body class="wrap push">
-
+<body>
 <section role="banner">
     <header>
         <div class="logo">
             <a href="<?php bloginfo('url');?>"><img src="<?php bloginfo('template_url' ); ?>/dist/images/logo-white.png"></a>
-            
         </div>
-        <a href="#menu" class="menu-link">menu</a>
-        <nav id="menu" class="panel" role="navigation">
-        <?php wp_nav_menu(array('theme_location'=>'header-menu'));?>
+        <button id="mm-menu-toggle" class="mm-menu-toggle">Toggle Menu</button>
+        <nav id="mm-menu" class="mm-menu">
+            <div class="mm-menu__header">
+                <h2 class="mm-menu__title">Pfennings</h2>
+            </div>
+            <?php wp_nav_menu(array('theme_location'=>'header-menu'));?>     
         </nav>
     </header>
 </section>
+<div id="wrapper" class="wrapper">
+
+
 <!--
 <section role="banner">
     <header>
         <div class="logo">
-            <a href="<?php bloginfo('url'); ?>">Pfenning's Organic Farm</a>
+            <a href="<?php //bloginfo('url');?>"><img src="<?php //bloginfo('template_url' ); ?>/dist/images/logo-white.png"></a>
+            
+        </div>
+        <a href="#menu" class="menu-link">menu</a>
+        <nav id="menu" class="panel" role="navigation">
+        <?php //wp_nav_menu(array('theme_location'=>'header-menu'));?>
+        </nav>
+    </header>
+</section>
+-->
+<!--
+<section role="banner">
+    <header>
+        <div class="logo">
+            <a href="<?php //bloginfo('url'); ?>">Pfenning's Organic Farm</a>
         </div>
         <div class="top-nav">
         <ul>
@@ -70,7 +88,7 @@
             <li><a href="#menu" class="menu-link">menu &#9776;</a></li>
         </ul>
         <nav id="menu" class="panel" role="navigation">
-            <?php wp_nav_menu(array('theme_location'=>'header-menu'));?>
+            <?php //wp_nav_menu(array('theme_location'=>'header-menu'));?>
         </nav>
     </header>
 </section>

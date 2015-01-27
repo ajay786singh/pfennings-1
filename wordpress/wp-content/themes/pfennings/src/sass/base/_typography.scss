@@ -35,6 +35,7 @@ h6 {
 
 .headline {
     font-family: $sans-serif;
+    font-weight: 400;
     color: $white;
         a {
             color: $white;
@@ -45,7 +46,7 @@ h6 {
         }
     @include media($bp-mid) {
         font-size: modular-scale(5);
-        font-weight: 400;
+        //font-weight: 400;
     }
 }
 
@@ -65,14 +66,16 @@ li {
 }
 
 a {
-    @include transition(color 0.1s linear);
+    @include transition(opacity 0.1s linear);
+  
     color: $base-link-color;
+    opacity: 1;
     text-decoration: none;
     &:hover {
-        color: $hover-link-color;
+        opacity: 0.6;
     }
     &:active, &:focus {
-        color: $hover-link-color;
+        opacity: 0.6;
         outline: none;
     }
 }

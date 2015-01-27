@@ -1,13 +1,6 @@
 <footer>
     <div class="footer-inner">
-        
         <!-- Column 1 -->
-        <!--
-        <div class="content">
-            <h5>Logo</h5>
-        </div>
-        -->
-        <!-- Column 2 -->
         <div class="content">
             <h5>Get in Touch</h5>
             <p>
@@ -15,21 +8,20 @@
                 1209 Waterloo Street<br>
                 Baden, ON. N3A 1T1<br>
                 <i class="fa fa-fax"></i> +1 (519) 662-4083<br>
-            </p>
-             <p>
+                <a class="button-phone" href="tel://+15196623468"><i class="fa fa-phone-square"></i> +1 (519) 662-3468</a><br>
+                <a class="button-phone" href=tel"//8776623468"><i class="fa fa-phone-square"></i> Toll free: 877-662-3468</a><br>
+                <a class="button-email" href="mailto: veggies@pfenningsfarms.ca"><i class="fa fa-envelope"></i> veggies@pfenningsfarms.ca</a><br>
                 <a class="button-map" href="https://goo.gl/maps/RnHjJ" target="_blank"><i class="fa fa-map-marker"></i> Map</a>
-                <a class="button-phone" href="tel://+15196623468"><i class="fa fa-phone-square"></i> +1 (519) 662-3468</a>
-                <a class="button-phone" href=tel"//8776623468"><i class="fa fa-phone-square"></i> Toll free: 877-662-3468</a>
-                <a class="button-email" href="mailto: veggies@pfenningsfarms.ca"><i class="fa fa-envelope"></i> veggies@pfenningsfarms.ca</a>
+            </p>
         </div>  
 
-        <!-- Column 3 -->
+        <!-- Column 2 -->
         <div class="content"> 
             <h5>Resources</h5>
             <p>Blog description goes here. Blog description goes here. Blog description goes here.</p>
         </div>
 
-        <!-- Column 4 -->
+        <!-- Column 3 -->
          <div class="content">
             <h5>Newsletter</h5>
             <form action="http://hypenotic.us1.list-manage.com/subscribe/post?u=24fdcfc8d7addaf3c603f28a9&amp;id=06041ce3ca" method="post">
@@ -50,18 +42,20 @@
     </div>
     <div class="footer-inner">
        <div class="copyright">
-            <small>Handcrafted with <i class="fa fa-heart" style="color: #ffffff;"></i> by <a href="http://hypenotic.com">Hypenotic</a> Inc.</small>
+            <small>Made with love by <a href="http://hypenotic.com">Hypenotic</a></small>
         </div>
     </div>
 </footer>
 
+</div><!--/wrapper-->
+
 <?php wp_footer();?>
 
 <script>
-    jQuery(document).ready(function() {
-        jQuery('.menu-link').bigSlide();
-    });
+    var menu = new Menu;
+</script>
 
+<script>
     jQuery(document).ready(function() {
         jQuery('#input_1_1').attr('placeholder','Favourite store');
         jQuery('#input_1_2').attr('placeholder','Location');

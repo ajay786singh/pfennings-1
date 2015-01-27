@@ -15,8 +15,7 @@ var gulp 		= require('gulp'),
 	cache 		= require('gulp-cached'),
 	livereload 	= require('gulp-livereload'),
 	notify 		= require('gulp-notify'),
-	jshint 		= require('gulp-jshint'),
-	bower 		= require('gulp-bower');
+	jshint 		= require('gulp-jshint');
 
 // Create custom variables to make life easier
 var outputDir = 'dist';
@@ -24,12 +23,9 @@ var outputDir = 'dist';
 var scriptList = [
 	'src/components/modernizer/modernizr.js',
 	'src/components/jquery/dist/jquery.js', 
-	//'src/components/fitvids/jquery.fitvids.js',
 	'src/components/jquery-viewport-checker/src/jquery.viewportchecker.js',
-	//'src/components/mixitup2/src/jquery.mixitup.js',
 	'src/components/viewport-units-buggyfill/viewport-units-buggyfill.js',
-	'src/js/custom/bigSlide.js',
-	//'src/js/custom/mixitup-call.js'
+	'src/js/custom/mm.js'
 ];
 
 var fontIcons = [
@@ -83,11 +79,6 @@ gulp.task('icons', function() { 
         .pipe(gulp.dest(outputDir + '/fonts')); 
 });
 
-// Create bower update and install task
-gulp.task('bower', function() {
-  	return bower();
-});
-
 // Create watch task
 gulp.task('watch', function() {
 	gulp.watch('src/js/**/*.js', ['js']);
@@ -98,4 +89,4 @@ gulp.task('watch', function() {
 });
 
 // Create default task so you can gulp whenever you don't want to watch
-gulp.task('default', ['js', 'sass', 'imagemin', 'icons', 'bower', 'watch']);
+gulp.task('default', ['js', 'sass', 'imagemin', 'icons']);

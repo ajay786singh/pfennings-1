@@ -10,7 +10,11 @@ button {
 }
 
 .button-map {
-	@extend %button-touch;
+    //@include media($bp-mid) {
+    @extend %button-touch;
+
+    //}
+	
 	
 }
 

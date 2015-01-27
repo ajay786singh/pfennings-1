@@ -52,44 +52,8 @@
         </div>
         <button id="mm-menu-toggle" class="mm-menu-toggle">Toggle Menu</button>
         <nav id="mm-menu" class="mm-menu">
-            <div class="mm-menu__header">
-                <h2 class="mm-menu__title">Pfennings</h2>
-            </div>
             <?php wp_nav_menu(array('theme_location'=>'header-menu'));?>     
         </nav>
     </header>
 </section>
 <div id="wrapper" class="wrapper">
-
-
-<!--
-<section role="banner">
-    <header>
-        <div class="logo">
-            <a href="<?php //bloginfo('url');?>"><img src="<?php //bloginfo('template_url' ); ?>/dist/images/logo-white.png"></a>
-            
-        </div>
-        <a href="#menu" class="menu-link">menu</a>
-        <nav id="menu" class="panel" role="navigation">
-        <?php //wp_nav_menu(array('theme_location'=>'header-menu'));?>
-        </nav>
-    </header>
-</section>
--->
-<!--
-<section role="banner">
-    <header>
-        <div class="logo">
-            <a href="<?php //bloginfo('url'); ?>">Pfenning's Organic Farm</a>
-        </div>
-        <div class="top-nav">
-        <ul>
-            <li><a class="button" href='#shopify-store'><button>View my Store</button></a></li>
-            <li><a href="#menu" class="menu-link">menu &#9776;</a></li>
-        </ul>
-        <nav id="menu" class="panel" role="navigation">
-            <?php //wp_nav_menu(array('theme_location'=>'header-menu'));?>
-        </nav>
-    </header>
-</section>
--->

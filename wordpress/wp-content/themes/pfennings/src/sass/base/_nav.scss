@@ -23,19 +23,20 @@ $color--primary-dark: #7B1FA2;
 $color--primary: #9C27B0;
 $color--primary-light: #E1BEE7;
 
-$toggle-button-color: #727272; //$purple; // also for icons
-$color--text-secondary: #727272;
+$toggle-button-color: $white; //$purple; // also for icons
+$color--text-secondary: $white;
 $color--divider: #B6B6B6;
 
 $color--accent: #CDDC39;
+$menu-background: rgba(224,112,30, 1);
 
 // =============================================================================
 //  FONTS
 // =============================================================================
 
-$font-family--primary: "Roboto", sans-serif;
+$font-family--primary: $serif;
 
-$font-size--small: 16px;
+$font-size--small: 18px;
 $font-size--medium: 22px;
 $font-size--large: 36px;
 
@@ -120,16 +121,17 @@ button.mm-menu-toggle {
     top: 0; 
     right: 0;
     z-index: 21000;
-    background-color: #fff;
+    background-color: $menu-background;
     width: 100%;
     height: 100%;
     overflow-y: auto;
     box-shadow: 0;
     transform: translateX(100%);
     transition: transform 0.5s, box-shadow 0.5s;
+    font-family: $font-family--primary;
     ul {
         list-style: none;
-        margin: 20px 0 0;
+        margin: 70px 0 0;
         padding: 0;
         li {
             display: block;
@@ -152,7 +154,7 @@ button.mm-menu-toggle {
                 position: relative;
                 overflow: hidden;
                 margin: 4px 0;
-                padding: 12px;
+                padding: 0px;
                 color: $color--text-secondary;
                 font-size: $font-size--small;
                 text-decoration: none;
@@ -173,24 +175,6 @@ button.mm-menu-toggle {
   }
 }
 
-/* header */
-
-.mm-menu__header {
-  position: relative;
-  width: 100%;
-  height: 130px;
-  background-color: $color--accent;
-}
-
-.mm-menu__title {
-  position: absolute;
-  bottom: 12px; left: 12px;
-  margin: 0;
-  padding: 0;
-  color: #fff;
-  font-size: $font-size--medium;
-}
-
 /* the touch effect, for when a link is touched */
 
 .mm-menu__link--touch-effect {
@@ -199,7 +183,7 @@ button.mm-menu-toggle {
   z-index: 1;
   width: 0; height: 0;
   border-radius: 100%;
-  background-color: $color--divider;
+  //background-color: $color--divider;
   transform: scale(0);
   transform-origin: 50% 50%;
 }

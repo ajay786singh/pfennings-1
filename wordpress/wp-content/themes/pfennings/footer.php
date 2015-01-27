@@ -9,7 +9,7 @@
                 Baden, ON. N3A 1T1<br>
                 <i class="fa fa-fax"></i> +1 (519) 662-4083<br>
                 <a class="button-phone" href="tel://+15196623468"><i class="fa fa-phone-square"></i> +1 (519) 662-3468</a><br>
-                <a class="button-phone" href=tel"//8776623468"><i class="fa fa-phone-square"></i> Toll free: 877-662-3468</a><br>
+                <a class="button-phone" href="tel://8776623468"><i class="fa fa-phone-square"></i> Toll free: 877-662-3468</a><br>
                 <a class="button-email" href="mailto: veggies@pfenningsfarms.ca"><i class="fa fa-envelope"></i> veggies@pfenningsfarms.ca</a><br>
                 <a class="button-map" href="https://goo.gl/maps/RnHjJ" target="_blank"><i class="fa fa-map-marker"></i> Map</a>
             </p>

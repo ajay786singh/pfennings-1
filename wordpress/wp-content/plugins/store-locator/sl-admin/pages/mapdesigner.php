@@ -6,7 +6,7 @@ include_once(SL_INCLUDES_PATH."/top-nav.php");
 <?php 
 
 if (empty($_POST)) {sl_move_upload_directories();}
-if (!empty($_POST)) {
+if (!empty($_POST['sl_map_type'])) { //shouldn't just be "$_POST"; use an index that should always have a value - 12/9/14
 	//$sl_vars=sl_data('sl_vars');
 	$_POST['height']=preg_replace("@[^0-9]@", "", $_POST['height']);
 	$_POST['width']=preg_replace("@[^0-9]@", "", $_POST['width']);
@@ -44,6 +44,7 @@ if (!empty($_POST)) {
 	$sl_vars['google_map_domain']=$sl_map_region_arr[1];
 	$sl_vars['map_region']=$sl_map_region_arr[2];
 	$sl_vars['api_key']=$_POST['sl_api_key'];
+	$sl_vars['scripts_load']=$_POST['sl_scripts_load'];
 	sl_data('sl_vars', 'update', $sl_vars);
 	
 
@@ -61,6 +62,7 @@ foreach ($tld as $key=>$value) {
 $your_location_select.="</optgroup></select><!--/td></tr-->";
 $map_lang_select="<!--tr><td--><select name='sl_map_language' style='font-size:11px'><optgroup label='".__("Select Map Language", SL_TEXT_DOMAIN)."'><!--/td><td-->";
 
+ksort($map_lang);
 foreach ($map_lang as $key=>$value) {
 	$selected=($sl_vars['map_language']==$value)? " selected='selected'" : "";
 	$map_lang_select.= "<option value='$value' $selected>".ucwords(strtolower($key))."</option>\n";
@@ -140,6 +142,9 @@ $checked5=($sl_vars['map_overview_control']==1)? " checked " : "";
 $checked6=($sl_vars['geolocate']==1)? " checked " : "";
 $checked7=($sl_vars['load_results_with_locations_default']==1)? " checked " : "";
 
+if ($sl_vars['scripts_load']=='all'){$checked_all=" checked='checked' "; $checked_selective="";} 
+else {$checked_all=""; $checked_selective=" checked='checked' ";}
+
 $map_type["".__("Normal", SL_TEXT_DOMAIN).""]="google.maps.MapTypeId.ROADMAP";
 $map_type["".__("Normal + Terrain (Physical)", SL_TEXT_DOMAIN).""]="google.maps.MapTypeId.TERRAIN";
 $map_type["".__("Satellite", SL_TEXT_DOMAIN).""]="google.maps.MapTypeId.SATELLITE";
@@ -159,6 +164,10 @@ print "
 <td><select name='sl_map_type'>\n".$map_type_options."</select></td></tr>
 <tr><td>".__("Locations in Results", SL_TEXT_DOMAIN).":</td>
 <td><input name='sl_num_initial_displayed' value='$sl_vars[num_initial_displayed]'><!--br><span style='font-size:80%'>(".__("Recommended Max", SL_TEXT_DOMAIN).": 200)</span--></td></tr>
+<tr><td>".__("JS & CSS Loading", SL_TEXT_DOMAIN)."&nbsp;(<a href='#info_js_css_load' rel='sl_pop'>?</a>):</td>
+<td><input name='sl_scripts_load' value='selective' type='radio' $checked_selective>Selective&nbsp;Loading&nbsp;&nbsp;<input name='sl_scripts_load' value='all' type='radio' $checked_all>All&nbsp;Pages
+<div style='display:none;' id='info_js_css_load'>".__("<h2 style='margin-top:0px'>JavaScript & Cascading Style Sheets Loading</h2><b>Selective Loading:</b><br>Attempts to detect where Store Locator JS & CSS scripts are needed and only loads them on those necessary pages. <br><br><b>All Pages:</b><br>Loads JS & CSS scripts on every page of your website.<br><br><div class='sl_code code'><b>Note:</b>&nbsp;\"Selective Loading\" will work for 99% of sites, however, if you experience map loading issues or missing CSS styling on your Store Locator or addon-generated pages, choose the \"All Pages\" option.</div>", SL_TEXT_DOMAIN).".</div>
+</td></tr>
 <tr><td><input name='sl_use_city_search' value='1' type='checkbox' $checked>&nbsp;".__("Search By City", SL_TEXT_DOMAIN)."</td>
 <td><input name='sl_map_overview_control' value='1' type='checkbox' $checked5>&nbsp;".__("Show Map Inset Box", SL_TEXT_DOMAIN)."</td></tr>
 <tr><td><input name='sl_geolocate' value='1' type='checkbox' $checked6>&nbsp;".__("Auto-Locate User", SL_TEXT_DOMAIN)."</td>

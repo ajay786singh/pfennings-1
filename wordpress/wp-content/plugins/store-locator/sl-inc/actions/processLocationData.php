@@ -38,7 +38,10 @@
 			$old_address=$wpdb->get_results("SELECT * FROM ".SL_TABLE." WHERE sl_id='".esc_sql($_GET['edit'])."'", ARRAY_A); 
 		}
 		//die("UPDATE ".SL_TABLE." SET $field_value_str WHERE sl_id='%d'");
-		$wpdb->query($wpdb->prepare("UPDATE ".SL_TABLE." SET $field_value_str WHERE sl_id='%d'", $_GET['edit'])); 
+		
+		//$wpdb->query($wpdb->prepare("UPDATE ".SL_TABLE." SET $field_value_str WHERE sl_id='%d'", $_GET['edit'])); 
+		$wpdb->query($wpdb->prepare("UPDATE ".SL_TABLE." SET ".str_replace("%", "%%", $field_value_str)." WHERE sl_id='%d'", $_GET['edit']));  //Thank you WP user @kostofffan; fixes 'empty query' bug when user is trying to update location with a '%' sign in it
+		
 		if(!empty($_POST['sl_tags'])){sl_process_tags($_POST['sl_tags'], "insert", $_GET['edit']);}
 		
 		if ((empty($_POST['sl_longitude']) || $_POST['sl_longitude']==$old_address[0]['sl_longitude']) && (empty($_POST['sl_latitude']) || $_POST['sl_latitude']==$old_address[0]['sl_latitude'])) {
@@ -46,7 +49,7 @@
 				sl_do_geocoding($the_address,$_GET['edit']);
 			}
 		}
-		//print "<script>location.replace('".str_replace("&edit=$_GET[edit]", "", $_SERVER['REQUEST_URI'])."');</script>";
+		print "<script>location.replace('".str_replace("&edit=$_GET[edit]", "", $_SERVER['REQUEST_URI'])."');</script>";
 	}
 	
 	if (!empty($_POST['act']) && !empty($_POST['sl_id']) && $_POST['act']=="delete") {

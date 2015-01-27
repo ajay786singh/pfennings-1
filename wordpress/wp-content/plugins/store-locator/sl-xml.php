@@ -19,6 +19,10 @@ $db_selected = mysql_select_db($database, $connection);
 mysql_query("SET NAMES utf8");
 if (!$db_selected) { die ('Can\'t use db : ' . mysql_error());}
 
+//Removing any vars never intended for $_GET
+$sl_ap_xml = array("sl_custom_fields", "sl_xml_columns");
+foreach ($sl_ap_xml as $value){ if (!empty($_GET[$value])){ unset($_GET[$value]); } }
+
 $sl_custom_fields = (!empty($sl_xml_columns))? ", ".implode(", ", $sl_xml_columns) : "" ;
 
 if (!empty($_GET)) { extract($_GET); unset($_GET['mode']); unset($_GET['lat']); unset($_GET["lng"]); unset($_GET["radius"]); unset($_GET["edit"]);}
@@ -71,6 +75,7 @@ echo "<markers>\n";
 while ($row = @mysql_fetch_assoc($result)){
   $addr2=(trim($row['sl_address2'])!="")? " ".parseToXML($row['sl_address2']) : "" ;
   $row['sl_distance']=(!empty($row['sl_distance']))? $row['sl_distance'] : "" ;
+  $row['sl_url']=(!url_test($row['sl_url']) && trim($row['sl_url'])!="")? "http://".$row['sl_url'] : $row['sl_url'] ;
   // ADD TO XML DOCUMENT NODE
   echo '<marker ';
   echo 'name="' . parseToXML($row['sl_store']) . '" ';

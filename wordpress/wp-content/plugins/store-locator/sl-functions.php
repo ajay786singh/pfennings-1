@@ -5,10 +5,10 @@ function sl_move_upload_directories() {
 	
 	$sl_uploads_arr=wp_upload_dir();
 	if (!is_dir($sl_uploads_arr['baseurl'])) {
-		mkdir($sl_uploads_arr['baseurl'], 0755);
+		mkdir($sl_uploads_arr['baseurl'], 0755, true);
 	}
 	if (!is_dir(SL_UPLOADS_PATH)) {
-		mkdir(SL_UPLOADS_PATH, 0755);
+		mkdir(SL_UPLOADS_PATH, 0755, true);
 	}
 	if (is_dir(SL_ADDONS_PATH_ORIGINAL) && !is_dir(SL_ADDONS_PATH)) {
 		sl_copyr(SL_ADDONS_PATH_ORIGINAL, SL_ADDONS_PATH);
@@ -27,13 +27,13 @@ function sl_move_upload_directories() {
 		chmod(SL_IMAGES_PATH, 0755);
 	}
 	if (!is_dir(SL_CUSTOM_ICONS_PATH)) {
-		mkdir(SL_CUSTOM_ICONS_PATH, 0755);
+		mkdir(SL_CUSTOM_ICONS_PATH, 0755, true);
 	}
 	if (!is_dir(SL_CUSTOM_CSS_PATH)) {
-		mkdir(SL_CUSTOM_CSS_PATH, 0755);
+		mkdir(SL_CUSTOM_CSS_PATH, 0755, true);
 	}
 	if (!is_dir(SL_CACHE_PATH)) {
-	      mkdir(SL_CACHE_PATH, 0755);
+	      mkdir(SL_CACHE_PATH, 0755, true);
 	}
 	sl_ht(SL_CACHE_PATH, 'ht');
 	sl_ht(SL_ADDONS_PATH);
@@ -97,7 +97,7 @@ global $sl_radius_label, $sl_website_label, $sl_directions_label, $sl_num_initia
 global $sl_distance_unit, $sl_map_overview_control, $sl_admin_locations_per_page, $sl_instruction_message;
 global $sl_map_character_encoding, $sl_start, $sl_map_language, $sl_map_region, $sl_sensor, $sl_geolocate;
 global $sl_map_type, $sl_remove_credits, $sl_api_key, $sl_location_not_found_message, $sl_no_results_found_message; 
-global $sl_load_results_with_locations_default, $sl_vars, $sl_city_dropdown_label;
+global $sl_load_results_with_locations_default, $sl_vars, $sl_city_dropdown_label, $sl_scripts_load;
 
 $sl_vars=sl_data('sl_vars'); //important, otherwise may reset vars to default (?) - 11/13/13
 //$sl_google_map_domain=sl_data('sl_google_map_domain');
@@ -151,7 +151,7 @@ $sl_load_locations_default=$sl_vars['load_locations_default'];
 if (strlen(trim($sl_vars['load_results_with_locations_default'])) == 0) {	$sl_vars['load_results_with_locations_default']="1";	}
 $sl_load_results_with_locations_default=$sl_vars['load_results_with_locations_default'];
 
-if (strlen(trim($sl_vars['num_initial_displayed'])) == 0) {	$sl_vars['num_initial_displayed']="100";	}
+if (strlen(trim($sl_vars['num_initial_displayed'])) == 0) {	$sl_vars['num_initial_displayed']="500";	}
 $sl_num_initial_displayed=$sl_vars['num_initial_displayed'];
 
 if (strlen(trim($sl_vars['website_label'])) == 0) {	$sl_vars['website_label']="Website";	}
@@ -223,6 +223,9 @@ $sl_radii=$sl_vars['radii'];
 
 if ($sl_vars['api_key'] === NULL) {	$sl_vars['api_key']="";	}
 $sl_api_key=$sl_vars['api_key'];
+
+if (empty($sl_vars['scripts_load']) || strlen(trim($sl_vars['scripts_load'])) == 0) {	$sl_vars['scripts_load']="selective";	}
+$sl_scripts_load=$sl_vars['scripts_load'];
 	
 	sl_data('sl_vars', 'add', $sl_vars);
 }
@@ -266,7 +269,7 @@ function sl_install_tables() {
 			sl_latitude varchar(255) NULL,
 			sl_longitude varchar(255) NULL,
 			sl_tags mediumtext NULL,
-			sl_description varchar(255) NULL,
+			sl_description mediumtext NULL,
 			sl_url varchar(255) NULL,
 			sl_hours varchar(255) NULL,
 			sl_phone varchar(255) NULL,
@@ -317,27 +320,30 @@ function sl_install_tables() {
 }
 /*-------------------------------*/
 function sl_head_scripts() {
-	global $sl_dir, $sl_base, $sl_uploads_base, $sl_path, $sl_uploads_path, $wpdb, $sl_version, $pagename, $sl_map_language, $post, $sl_vars, $sl_version; 		
+	global $sl_dir, $sl_base, $sl_uploads_base, $sl_path, $sl_uploads_path, $wpdb, $pagename, $sl_map_language, $post, $sl_vars; 		
 	
-	print "\n<!-- ========= WordPress Store Locator (v$sl_version) | http://www.viadat.com/store-locator/ ========== -->\n";
+	print "\n<!-- ========= WordPress Store Locator (v".SL_VERSION.") | http://www.viadat.com/store-locator/ ========== -->\n";
 	//print "<!-- ========= Learn More & Download Here: http://www.viadat.com/store-locator ========== -->\n";
-		
-	//Check if currently on page with shortcode
-	if(empty($_GET['p'])){ $_GET['p']=""; } if(empty($_GET['page_id'])){ $_GET['page_id']=""; }
-	$on_sl_page=$wpdb->get_results("SELECT post_name, post_content FROM ".SL_DB_PREFIX."posts WHERE LOWER(post_content) LIKE '%[store-locator%' AND (post_name='$pagename' OR ID='".esc_sql($_GET['p'])."' OR ID='".esc_sql($_GET['page_id'])."')", ARRAY_A);		
-	//Checking if code used in posts	
-	$sl_code_is_used_in_posts=$wpdb->get_results("SELECT post_name, ID FROM ".SL_DB_PREFIX."posts WHERE LOWER(post_content) LIKE '%[store-locator%' AND post_type='post'", ARRAY_A);
-	//If shortcode used in posts, put post IDs into array of numbers
-	if ($sl_code_is_used_in_posts) {
-		$sl_post_ids=$sl_code_is_used_in_posts;
-		foreach ($sl_post_ids as $val) { $post_ids_array[]=$val['ID'];}
-	} else {		
-		$post_ids_array=array(pow(10,15)); //post number that'll never be reached
-	}
-	//print_r($post_ids_array);
 	
-	//If on page with store locator shortcode, on an archive, search, or 404 page while shortcode has been used in a post, on the front page, or a specific post with shortcode, display code, otherwise, don't
-	if ($on_sl_page || is_search() || ((is_archive() || is_404()) && $sl_code_is_used_in_posts) || is_front_page() || is_single($post_ids_array) || !is_singular(array('page', 'attachment', 'post')) || function_exists('show_sl_scripts') || is_page_template()) {
+	$on_sl_page=""; $sl_code_is_used_in_posts=""; $post_ids_array="";
+	if (empty($sl_vars['scripts_load']) || $sl_vars['scripts_load'] != 'all') {
+		//Check if currently on page with shortcode
+		if (empty($_GET['p'])){ $_GET['p']=""; } if (empty($_GET['page_id'])){ $_GET['page_id']=""; }
+		$on_sl_page=$wpdb->get_results("SELECT post_name, post_content FROM ".SL_DB_PREFIX."posts WHERE LOWER(post_content) LIKE '%[store-locator%' AND (post_name='$pagename' OR ID='".esc_sql($_GET['p'])."' OR ID='".esc_sql($_GET['page_id'])."')", ARRAY_A);		
+		//Checking if code used in posts	
+		$sl_code_is_used_in_posts=$wpdb->get_results("SELECT post_name, ID FROM ".SL_DB_PREFIX."posts WHERE LOWER(post_content) LIKE '%[store-locator%' AND post_type='post'", ARRAY_A);
+		//If shortcode used in posts, put post IDs into array of numbers
+		if ($sl_code_is_used_in_posts) {
+			$sl_post_ids=$sl_code_is_used_in_posts;
+			foreach ($sl_post_ids as $val) { $post_ids_array[]=$val['ID'];}
+		} else {		
+			$post_ids_array=array(pow(10,15)); //post number that'll never be reached
+		}
+		//print_r($post_ids_array);
+	}
+	
+	//If loading on all pages is selected (via MapDesigner), on page with store locator shortcode, on an archive, search, or 404 page while shortcode has been used in a post, on the front page, or a specific post with shortcode, is a custom post type of some kind, or is a using a page template, display code, otherwise, don't
+	if ( (!empty($sl_vars['scripts_load']) && $sl_vars['scripts_load'] == 'all') || $on_sl_page || is_search() || ((is_archive() || is_404()) && $sl_code_is_used_in_posts) || is_front_page() || is_single($post_ids_array) || !is_singular(array('page', 'attachment', 'post')) || function_exists('show_sl_scripts') || is_page_template()) {
 		$GLOBALS['is_on_sl_page'] = 1;
 		$google_map_domain=($sl_vars['google_map_domain']!="")? $sl_vars['google_map_domain'] : "maps.google.com";
 		
@@ -348,8 +354,8 @@ function sl_head_scripts() {
 		$key=(!empty($sl_vars['api_key']))? "&amp;key=".$sl_vars['api_key'] : "" ;
 		print "<script src='https://maps.googleapis.com/maps/api/js?v=3{$sens}{$lang_loc}{$region_loc}{$key}' type='text/javascript'></script>\n";
 		//print "<script src='//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>\n";
-		print "<script src='".SL_JS_BASE."/functions.js?v=$sl_version' type='text/javascript'></script>\n";
-		if (empty($_POST) && 1==2) {
+		print "<script src='".SL_JS_BASE."/functions.js?v=".SL_VERSION."' type='text/javascript'></script>\n";
+		if (empty($_POST) && 1==2) { //skip, for now always (1==2), dynamic file always causes trouble for some
 			$nm=(!empty($post->post_name))? $post->post_name : $pagename ;
 			$p=(!empty($post->ID))? $post->ID : esc_sql($_GET['p']) ;
 			//$pg=(!empty($post->page_ID))? $post->post_ID : esc_sql($_GET['page_id']) ;
@@ -358,24 +364,24 @@ function sl_head_scripts() {
 			//sl_dyn_js($on_sl_page[0]['post_content']);
 			sl_dyn_js();
 		}
-		print "<script src='".SL_JS_BASE."/store-locator.js?v=$sl_version' type='text/javascript'></script>\n";
+		print "<script src='".SL_JS_BASE."/store-locator.js?v=".SL_VERSION."' type='text/javascript'></script>\n";
 		//if store-locator.css exists in custom-css/ folder in uploads/ dir it takes precedence over, store-locator.css in store-locator plugin directory to allow for css customizations to be preserved after updates
 		$has_custom_css=(file_exists(SL_CUSTOM_CSS_PATH."/store-locator.css"))? SL_CUSTOM_CSS_BASE : SL_CSS_BASE; 
-		print "<link  href='".$has_custom_css."/store-locator.css' type='text/css' rel='stylesheet'/>\n";
+		print "<link  href='".$has_custom_css."/store-locator.css?v=".SL_VERSION."' type='text/css' rel='stylesheet'/>\n";
 		$theme=$sl_vars['theme'];
-		if ($theme!="") {print "<link  href='".SL_THEMES_BASE."/$theme/style.css' rel='stylesheet' type='text/css'/>\n";}
+		if ($theme!="") {print "<link  href='".SL_THEMES_BASE."/$theme/style.css?v=".SL_VERSION."' rel='stylesheet' type='text/css'/>\n";}
 		if (function_exists("do_sl_hook")){do_sl_hook('sl_addon_head_styles');}
 		//print "<style></style>";
 		sl_move_upload_directories();
 	} else {
+		print "<!-- No store locator on this page, so no unnecessary scripts for better site performance. -->\n";
+	}
+	print "<!-- ========= End WordPress Store Locator (";
 		$sl_page_ids=$wpdb->get_results("SELECT ID FROM ".SL_DB_PREFIX."posts WHERE LOWER(post_content) LIKE '%[store-locator%' AND post_status='publish'", ARRAY_A);
-		print "<!-- No store locator on this page, so no unnecessary scripts for better site performance. (";
-		if ($sl_page_ids) {
+		if (!empty($sl_page_ids)) {
 			foreach ($sl_page_ids as $value) { print "$value[ID],";}
 		}
-		print ")-->\n";
-	}
-	print "<!-- ========= End WordPress Store Locator ========== -->\n\n";
+		print ") ========== -->\n\n";
 }
 function sl_footer_scripts(){
 	if (!did_action('wp_head')){ sl_head_scripts();} //if wp_head missing
@@ -385,7 +391,7 @@ add_action('wp_print_footer_scripts', 'sl_footer_scripts');
 function sl_jq() {wp_enqueue_script( 'jquery');}
 add_action('wp_enqueue_scripts', 'sl_jq');
 
-function sl_jq_missing_wp_head($content){
+/*function sl_jq_missing_wp_head($content){
       $sl_jq_scripts = "";
       if (!did_action('wp_head')) {
 	global $wp_scripts;
@@ -397,7 +403,9 @@ function sl_jq_missing_wp_head($content){
       }
       return $sl_jq_scripts.$content;
    }
-add_action('the_content', 'sl_jq_missing_wp_head', 1000000); /*large to make sure not overwritten, even if higher priority hook overwrites content*/
+add_action('the_content', 'sl_jq_missing_wp_head', 1000000); */
+/*large to make sure not overwritten, even if higher priority hook overwrites content*/
+/*commented out - 11/7/14 - causing errors with some themes' jQuery / image porfolios (Jupiter); not critical function*/
 /*-----------------------------------*/
 function sl_add_options_page() {
 	global $sl_dir, $sl_base, $sl_uploads_base, $text_domain, $sl_top_nav_links;
@@ -487,8 +495,8 @@ add_action('admin_enqueue_scripts', 'sl_remove_conflicting_scripts');
 
 function sl_add_admin_stylesheet() {
   global $sl_base;
-  print "<link rel='stylesheet' type='text/css' href='".SL_CSS_BASE."/admin.css'>\n";
-  print "<link rel='stylesheet' href='".SL_CSS_BASE."/sl-pop.css' type='text/css' media='screen' charset='utf-8' />\n";
+  print "<link rel='stylesheet' type='text/css' href='".SL_CSS_BASE."/admin.css?v=".SL_VERSION."'>\n";
+  print "<link rel='stylesheet' href='".SL_CSS_BASE."/sl-pop.css?v=".SL_VERSION."' type='text/css' media='screen' charset='utf-8' />\n";
 }
 /*---------------------------------*/
 function sl_set_query_defaults() {
@@ -542,34 +550,65 @@ if (!function_exists('addon_activation_message')) {
 }
 /*-----------------------------------------------------------*/
 function url_test($url){
-	if(strtolower(substr($url,0,7))=="http://")	{
-		return TRUE; }
-	else{
-		return FALSE; }
+	if (preg_match("@^https?://@i", $url)) {
+		return TRUE; 
+	} else {
+		return FALSE; 
+	}
 }
 /*---------------------------------------------------------------*/
-function sl_neat_title($ttl,$seperator="_") {
-	$ttl=preg_replace("/@+/", "$seperator", preg_replace("/[^[:alnum:]]/", "@", trim(preg_replace("/[^[:alnum:]]/", " ", str_replace("'", "", sl_truncate(trim(strtolower(html_entity_decode(str_replace("&#39;","'",$ttl)))), 100))))));
+function sl_neat_title($ttl,$separator="_") {
+	/*$ttl=preg_replace("/@+/", "$separator", preg_replace("/[^[:alnum:]]/", "@", trim(preg_replace("/[^[:alnum:]]/", " ", str_replace("'", "", sl_truncate(trim(strtolower(html_entity_decode(str_replace("&#39;","'",$ttl)))), 100))))));
+	return $ttl;*/
+	
+	//Now also converts foreign chars to un-accented equiv character - 11/7/14;
+
+	$normalizeChars = array(
+    'Š'=>'S', 'š'=>'s', 'Ð'=>'Dj','Ž'=>'Z', 'ž'=>'z', 'À'=>'A', 'Á'=>'A', 'Â'=>'A', 'Ã'=>'A', 'Ä'=>'A',
+    'Å'=>'A', 'Æ'=>'A', 'Ç'=>'C', 'È'=>'E', 'É'=>'E', 'Ê'=>'E', 'Ë'=>'E', 'Ì'=>'I', 'Í'=>'I', 'Î'=>'I',
+    'Ï'=>'I', 'Ñ'=>'N', 'Ò'=>'O', 'Ó'=>'O', 'Ô'=>'O', 'Õ'=>'O', 'Ö'=>'O', 'Ø'=>'O', 'Ù'=>'U', 'Ú'=>'U',
+    'Û'=>'U', 'Ü'=>'U', 'Ý'=>'Y', 'Þ'=>'B', 'ß'=>'Ss','à'=>'a', 'á'=>'a', 'â'=>'a', 'ã'=>'a', 'ä'=>'a',
+    'å'=>'a', 'æ'=>'a', 'ç'=>'c', 'è'=>'e', 'é'=>'e', 'ê'=>'e', 'ë'=>'e', 'ì'=>'i', 'í'=>'i', 'î'=>'i',
+    'ï'=>'i', 'ð'=>'o', 'ñ'=>'n', 'ò'=>'o', 'ó'=>'o', 'ô'=>'o', 'õ'=>'o', 'ö'=>'o', 'ø'=>'o', 'ù'=>'u',
+    'ú'=>'u', 'û'=>'u', 'ü'=>'u', 'ý'=>'y', 'ý'=>'y', 'þ'=>'b', 'ÿ'=>'y', 'ƒ'=>'f', 
+    'ă'=>'a', 'î'=>'i', 'â'=>'a', 'ș'=>'s', 'ț'=>'t', 'Ă'=>'A', 'Î'=>'I', 'Â'=>'A', 'Ș'=>'S', 'Ț'=>'T');
+	$ttl = strtr($ttl, $normalizeChars);
+	$ttl = html_entity_decode( str_replace("&#39;","'",$ttl) );
+	
+	$ttl = preg_replace("/@+/", "$separator", 
+			preg_replace("/[^[:alnum:]]/", "@", 
+				trim(
+					preg_replace("/[^[:alnum:]]/", " ", 
+						str_replace("'", "", 
+							sl_truncate(
+								trim(
+									strtolower($ttl)
+								), 
+							100)
+						)
+					)
+				)
+			)
+		);
 	return $ttl;
 }
 /*-------------------------------*/
 function sl_truncate($var,$length=50,$mode="return", $type=1) {
 	
 	if (strlen($var)>$length) {
-		if ($type==1) {
+		if ($type==1) { //avoids cutting words in half
 			$var=substr($var,0,$length);
 			$var=preg_replace("@[[:space:]]{1}.{1,10}$@s", "", $var); //making sure it doesn't cut word in half
 			$var=$var."...";
 		}
-		elseif ($type==2) {
+		elseif ($type==2) { //provides display "more" & "less" link
 			$r_num=mt_rand();
 			$r_num2=$r_num."_2";
 			$var1=substr($var,0,$length);
 			$var2=substr($var,$length, strlen($var)-$length);
 			$var="<span id='$r_num'>$var1</span><span id='$r_num2' style='display:none'>".$var1.$var2."</span><a href='#' onclick=\"show('$r_num');show('$r_num2');this.innerHTML=(this.innerHTML.indexOf('more')!=-1)?'(...less)':'(more...)';return false;\">(more...)</a>";
 		}
-		elseif ($type==3) {
-			//exact length truncation
+		elseif ($type==3) { //exact length truncation
 			$var=substr($var,0,$length);
 			$var=$var."...";
 		}
@@ -954,11 +993,11 @@ $txt=str_replace(" ===", "</h2>", $txt);
 $txt=str_replace("== ", "<table class='widefat' ><thead>$th_start", $txt);
 $txt=str_replace(" ==", "</th></thead></table><!--a style='float:right' href='#readme_toc'>Table of Contents</a-->", $txt);
 $txt=str_replace("= ", "$h3_start", $txt);
-$txt=str_replace(" =", "</h3><a style='float:right; position:relative; top:-1.5em; font-size:10px' href='#readme_toc'>table of contents</a>", $txt);
+$txt=str_replace(" =", "</h3><a style='float:right; position:relative; top:-1.5em; font-size:10px' href='#readme_toc'>".__("table of contents", SL_TEXT_DOMAIN)."</a>", $txt);
 $txt=preg_replace("@Tags:[ ]?[^\r\n]+\r\n@", "", $txt);
 
 //TOC pt. 2
-$txt=str_replace("</h2>", "</h2><a name='readme_toc'></a><div style='float:right;  width:500px; border-radius:1em; border:solid silver 1px; padding:7px; padding-top:0px; margin:10px; margin-right:0px;'><h3>Table of Contents</h2>$toc_cont</div>", $txt);
+$txt=str_replace("</h2>", "</h2><a name='readme_toc'></a><div style='float:right;  width:500px; border-radius:1em; border:solid silver 1px; padding:7px; padding-top:0px; margin:10px; margin-right:0px;'><h3>".__("Table of Contents", SL_TEXT_DOMAIN)."</h2>$toc_cont</div>", $txt);
 $txt=preg_replace_callback("@$h2_start<u>([^<.]*)</u></h1>@s", create_function('$matches', 
 	'return "<h2 style=\'font-family:Georgia; margin-bottom:0.05em;\'><a name=\'".comma($matches[1])."\'></a>$matches[1]</u></h1>";'), $txt);
 $txt=preg_replace_callback("@$th_start([^<.]*)</th>@s", create_function('$matches',
@@ -1064,17 +1103,18 @@ elseif ($mode=="print")
 
 }
 /*-----------------------------------------------*/
-add_action('admin_bar_menu', 'sl_add_toolbar_items', 183);
-function sl_add_toolbar_items($admin_bar){
-	$admin_bar->add_menu( array(
+add_action('admin_bar_menu', 'sl_admin_toolbar', 183);
+function sl_admin_toolbar($admin_bar){
+	
+	$sl_admin_toolbar_array[] = array(
 		'id'    => 'sl-menu',
 		'title' => __('Store Locator', SL_TEXT_DOMAIN),
 		'href'  => preg_replace('@wp-admin\/[^\.]+\.php|index\.php@', 'wp-admin/admin.php', SL_INFORMATION_PAGE),	
 		'meta'  => array(
 			'title' => 'LotsOfLocales&trade; - WordPress Store Locator',			
 		),
-	));
-	$admin_bar->add_menu( array(
+	);
+	$sl_admin_toolbar_array[] = array(
 		'id'    => 'sl-menu-news-upgrades',
 		'parent' => 'sl-menu',
 		'title' => __('News & Upgrades', SL_TEXT_DOMAIN),
@@ -1084,8 +1124,8 @@ function sl_add_toolbar_items($admin_bar){
 			'target' => '_self',
 			'class' => 'sl_menu_class'
 		),
-	));
-	$admin_bar->add_menu( array(
+	);
+	$sl_admin_toolbar_array[] = array(
 		'id'    => 'sl-menu-locations',
 		'parent' => 'sl-menu',
 		'title' => __('Locations', SL_TEXT_DOMAIN),
@@ -1095,8 +1135,8 @@ function sl_add_toolbar_items($admin_bar){
 			'target' => '_self',
 			'class' => 'sl_menu_class'
 		),
-	));
-	$admin_bar->add_menu( array(
+	);
+	$sl_admin_toolbar_array[] = array(
 		'id'    => 'sl-menu-mapdesigner',
 		'parent' => 'sl-menu',
 		'title' => __('Settings', SL_TEXT_DOMAIN),
@@ -1106,8 +1146,135 @@ function sl_add_toolbar_items($admin_bar){
 			'target' => '_self',
 			'class' => 'sl_menu_class'
 		),
-	));
+	);
+	
+	if (function_exists('do_sl_hook')){ do_sl_hook('sl_admin_toolbar_filter', '', array(&$sl_admin_toolbar_array)); }
+	
+	foreach ($sl_admin_toolbar_array as $toolbar_page) {
+		$admin_bar -> add_menu($toolbar_page);
+	}
+	
 } 
+/*---------------------------------------------------------------*/
+function sl_permissions_check() {
+	global $sl_vars;
+
+	if (!empty($_POST['sl_folder_permission'])) {
+		@array_map("chmod", $_POST['sl_folder_permission'], array_fill(0, count($_POST['sl_folder_permission']), 0755) );
+	}
+	if (!empty($_POST['sl_file_permission'])) {
+		//var_dump($_POST['sl_file_permission']); die();
+		@array_map("chmod", $_POST['sl_file_permission'], array_fill(0, count($_POST['sl_file_permission']), 0644) );
+	}
+
+	//checks permissions of files & folders
+	$f_to_check = array(SL_UPLOADS_PATH);
+	
+	foreach ($f_to_check as $slf) {
+		$dir_iterator = new RecursiveDirectoryIterator($slf);
+		$iterator = new RecursiveIteratorIterator($dir_iterator, RecursiveIteratorIterator::SELF_FIRST);
+		$files = new RegexIterator($iterator, "/\.(php|gif|jpe?g|png|css|js|csv|xml|json|txt)/");
+		// could use CHILD_FIRST if you so wish
+		//foreach ($files as $file) {
+    		//	$all_sl_files[]=$file;
+		//}
+	}
+	clearstatcache();
+	$needs=0;
+	
+	foreach($iterator as $value) {
+		if (is_dir($value) && 0755 !== (fileperms($value) & 0777)) {
+			$needs_update["folder"][] = "$value - <b>".decoct(fileperms($value) & 0777)."</b>";
+			$needs++;
+		}
+	}
+	foreach($files as $value) {
+		if (!is_dir($value) && 0644 !== (fileperms($value) & 0777)) {
+			$needs_update["file"][] = "$value - <b>".decoct(fileperms($value) & 0777)."</b>";
+			$needs++;
+		}
+	}
+	
+	$button_note = __("Note: Clicking this button should update permissions, however, if it doesn\'t, you may need to update permissions by using an FTP program.  Click &quot;OK&quot; or &quot;Confirm&quot; to continue ...", SL_TEXT_DOMAIN);
+	
+	if ($needs > 0){
+		$output = "";
+		print "<br><div class='sl_admin_warning' style='width:97%'><b>".__("Important Note", SL_TEXT_DOMAIN).":</b><br>".__("Some of your folders / files may need updating to the proper permissions (folders: 755 / files: 644), otherwise, all functionality may not work as intended.  View folders / files below", SL_TEXT_DOMAIN)." - <a href='#' onclick='show(\"file_perm_table\"); return false;'>".__("display / hide list of folders & files", SL_TEXT_DOMAIN)."</a>:<br>
+		<div style='float:right'>(<a href='".$_SERVER['REQUEST_URI']."&file_perm_msg=1'>".__("Hide This Notice Permanently", SL_TEXT_DOMAIN)."</a>)</div><br><br><table cellpadding='7px' id='file_perm_table' style='display:none;'><tr>";
+	}
+	if (!empty($needs_update["folder"])) {
+		$output .= "<td style='vertical-align: top; width:50%'><form method='post' onsubmit=\"return confirm('".$button_note."');\"><strong>".__("Folders", SL_TEXT_DOMAIN).":</strong><br><input type='submit' class='button-primary' value=\"".__("Update Checked Folders' Permissions", SL_TEXT_DOMAIN)."\"><br><br>";
+		foreach ($needs_update["folder"] as $value) {
+			$output .= "\n<input name='sl_folder_permission[]' checked='checked' type='checkbox' value='".substr($value, 0, -13)."'>&nbsp;/".str_replace(ABSPATH, '', $value)."<br>"; // "-13", removes 13 chars: " - <b> 777 </b>" at end of value
+		}
+		$output .= "</form></td>";	
+	}
+	if (!empty($needs_update["file"])) {
+		$output .= "<td style='vertical-align: top; style: 50%;'><form method='post' onsubmit=\"return confirm('".$button_note."');\"><strong>".__("Files", SL_TEXT_DOMAIN).":</strong><br><input type='submit' class='button-primary' value=\"".__("Update Checked Files' Permissions", SL_TEXT_DOMAIN)."\"><br><br>";
+		foreach ($needs_update["file"] as $value) {
+			$output .= "\n<input name='sl_file_permission[]' checked='checked' type='checkbox' value='".substr($value, 0, -13)."'>&nbsp;/".str_replace(ABSPATH, '', $value)."<br>";
+		}
+		$output .= "</form></td>";	
+	}
+	if ($needs > 0){
+		//print sl_truncate($output, 500, "return", 2);
+		print $output."</tr></table></div>";
+		$sl_vars['perms_need_update'] = 1;
+	}
+	
+	if ($needs == 0) {
+		$sl_vars['perms_need_update'] = 0;
+	}
+	
+}
+/*---------------------------------------------------------------*/
+function sl_remote_data($val_arr) {
+	$pagetype = (!empty($val_arr['pagetype']))? $val_arr['pagetype'] : "none" ;
+	$dir = (!empty($val_arr['dir']))? $val_arr['dir'] : "none" ;
+	$key = (!empty($val_arr['key']))? "__".$val_arr['key'] : "" ;
+	$start = (!empty($val_arr['start']))? $val_arr['start'] : 0 ;
+	
+	$val_url = "/show-data/". $pagetype ."/". $dir ."$key" ."/". $start;
+	$target = "http://www.viadat.com" . $val_url;
+  	//exit($target);
+	$remote_access_fail = false;
+	$useragent = 'LotsOfLocales Store Locator Plugin';
+	if (extension_loaded("curl") && function_exists("curl_init")) {
+    			ob_start();
+    			$ch = curl_init();
+    			curl_setopt($ch, CURLOPT_USERAGENT, $useragent);
+    			curl_setopt($ch, CURLOPT_URL,$target);
+    			curl_exec($ch);
+		    	$returned_value = ob_get_contents();
+			//exit($returned_value);
+   			ob_end_clean();
+		} else {
+	  		$request = '';
+	  		$http_request  = "GET ". $val_url ." HTTP/1.0\r\n";
+			$http_request .= "Host: viadat.com\r\n";
+			$http_request .= "Content-Type: application/x-www-form-urlencoded; charset=" . SL_BLOG_CHARSET . "\r\n";
+			$http_request .= "Content-Length: " . strlen($request) . "\r\n";
+			$http_request .= "User-Agent: $useragent\r\n";
+			$http_request .= "\r\n";
+			$http_request .= $request;
+			$response = '';
+			if (false != ( $fs = @fsockopen('viadat.com', 80, $errno, $errstr, 10) ) ) {
+				fwrite($fs, $http_request);
+				while ( !feof($fs) )
+					$response .= fgets($fs, 1160); // One TCP-IP packet
+				fclose($fs);
+			}
+			$returned_value = trim($response);
+	}
+	//die($val_url);
+	//var_dump(json_decode($returned_value, true));
+	if (!empty($returned_value)) {
+		$the_data = json_decode($returned_value, true);
+		return $the_data;
+	} else {
+		return false;
+	}
+}
 /*-----------------------------------------------*/
 ### Loading SL Variables ###
 $sl_vars=sl_data('sl_vars');
@@ -1139,8 +1306,8 @@ if (defined('SL_ADDONS_PLATFORM_FILE') && file_exists(SL_ADDONS_PLATFORM_FILE)) 
 	sl_initialize_variables(); // needed
 	include_once(SL_ADDONS_PLATFORM_FILE);
 }
+######
 
-### Overridable Functions ###
 /*-----------------------------------*/
 if (!function_exists("sl_do_geocoding")){
  function sl_do_geocoding($address,$sl_id="") {
@@ -1148,7 +1315,7 @@ if (!function_exists("sl_do_geocoding")){
 	global $wpdb, $text_domain, $sl_vars;
 
 	// Initialize delay in geocode speed
-	$delay = 200000; $ccTLD=$sl_vars['map_region']; $sensor=$sl_vars['sensor'];
+	$delay = 100000; $ccTLD=$sl_vars['map_region']; $sensor=$sl_vars['sensor'];
 	$base_url = "https://maps.googleapis.com/maps/api/geocode/json?";
 
 	if ($sensor!="" && !empty($sensor) && ($sensor === "true" || $sensor === "false" )) {$base_url .= "sensor=".$sensor;} else {$base_url .= "sensor=false";}
@@ -1185,7 +1352,7 @@ if (!function_exists("sl_do_geocoding")){
 	//End of new code
 
 	$resp = json_decode($resp_json, true); //var_dump($resp);
-    $status = $resp['status'];
+    $status = $resp['status']; //$status = "";
     $lat = (!empty($resp['results'][0]['geometry']['location']['lat']))? $resp['results'][0]['geometry']['location']['lat'] : "" ;
     $lng = (!empty($resp['results'][0]['geometry']['location']['lng']))? $resp['results'][0]['geometry']['location']['lng'] : "" ;
 	//die("<br>compare: ".strcmp($status, "OK")."<br>status: $status<br>");
@@ -1200,9 +1367,9 @@ if (!function_exists("sl_do_geocoding")){
 		} else {
 			$query = sprintf("UPDATE ".SL_TABLE." SET sl_latitude = '%s', sl_longitude = '%s' WHERE sl_id = '%s' LIMIT 1;", esc_sql($lat), esc_sql($lng), esc_sql($sl_id)); 
 		}
-		$update_result = mysql_query($query);
-		if (!$update_result) {
-			die("Invalid query: " . mysql_error());
+		$update_result = $wpdb->query($query);
+		if ($update_result === FALSE) {
+			die("Invalid query: " . $wpdb->last_error);
 		}
     } else if (strcmp($status, "OVER_QUERY_LIMIT") == 0) {
 		// sent geocodes too fast
@@ -1211,7 +1378,11 @@ if (!function_exists("sl_do_geocoding")){
 		// failure to geocode
 		$geocode_pending = false;
 		echo __("Address " . $address . " <font color=red>failed to geocode</font>. ", SL_TEXT_DOMAIN);
-		echo __("Received status " . $status , SL_TEXT_DOMAIN)."\n<br>";
+		//if (!empty($status)) {
+			echo __("Received status " . $status , SL_TEXT_DOMAIN)."\n<br>";
+		/*} else {
+			echo __("No status received from Google", SL_TEXT_DOMAIN)."\n<br>"; 
+		}*/
     }
     usleep($delay);
   } else {

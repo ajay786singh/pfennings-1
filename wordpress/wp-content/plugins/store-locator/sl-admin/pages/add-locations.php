@@ -41,7 +41,8 @@ if (!empty($_POST['remote']) && trim($_POST['query'])!="" || !empty($_POST['fini
 
 //Importing CSV file of addresses
 $newfile="temp-file.csv"; 
-$root=plugin_dir_path(__FILE__); //dirname(plugin_basename(__FILE__)); die($root);
+//$root=plugin_dir_path(__FILE__); //dirname(plugin_basename(__FILE__)); die($root);
+$root=SL_ADDONS_PATH;
 $target_path="$root/";
 //print_r($_FILES);
 if (!empty($_FILES['csv_import']['tmp_name']) && move_uploaded_file($_FILES['csv_import']['tmp_name'], "$root/$newfile") && file_exists(SL_ADDONS_PATH."/csv-xml-importer-exporter/csvImport.php")) {

@@ -6,7 +6,7 @@
 <!-- Get custom meta values -->
 <?php 
     $team               = get_post_meta($post->ID,'_teammate',true);
-    $bannerHeadline     = get_post_meta($post->ID,'_banner_heading',true);
+    $bannerHeadline     = wpautop(get_post_meta($post->ID,'_banner_heading',true));
     $bannerImageId      = get_post_meta($post->ID, '_banner_image', true);
     $bannerImageUrl     = wp_get_attachment_image_src($bannerImageId,'banner', true);
 ?>

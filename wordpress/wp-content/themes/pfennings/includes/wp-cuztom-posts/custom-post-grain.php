@@ -3,6 +3,7 @@
 $args = array(
     'has_archive' => true,
     //'menu_position' => 5,
+    'hierarchical' => true,
     'menu_icon' => 'dashicons-groups', //http://melchoyce.github.io/dashicons/
     'supports'  => array( 'title', )
     );

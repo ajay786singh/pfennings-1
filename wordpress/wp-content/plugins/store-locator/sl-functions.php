@@ -747,7 +747,11 @@ function sl_data($setting_name, $i_u_d_s="select", $setting_value="") {
 		$q = $wpdb->prepare("SELECT sl_setting_value FROM ".SL_SETTING_TABLE." WHERE sl_setting_name = %s", $setting_name);
 		$r = $wpdb->get_var($q);
 		$r = (@unserialize($r) !== false || $r === 'b:0;')? unserialize($r) : $r;  //checking if stored in serialized form
-		return $r;
+		if (function_exists("apply_filters")) {
+			return apply_filters( 'option_' . $setting_name, $r);  //Compability for WPML or any plugin that uses option_* hooks
+		} else {
+			return $r;
+		}
 	}
 }
 /*----------------------------------------------------------------*/

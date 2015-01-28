@@ -37,10 +37,16 @@ $grain->add_meta_box(
         'bundle',    
             array( 
                 array(
+                    'name'          => 'title',
+                    'label'         => 'Title',
+                    'description'   => 'Title of service',
+                    'type'          => 'text',          
+                ),
+                array(
                     'name'          => 'content',
                     'label'         => 'Services description',
                     'description'   => 'Services description',
-                    'type'          => 'wysiwyg',          
+                    'type'          => 'textarea',          
                 ),
                 array(
                     'name'          => 'image',

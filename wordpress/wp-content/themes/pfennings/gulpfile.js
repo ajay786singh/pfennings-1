@@ -34,7 +34,7 @@ var fontIcons = [
 ];
 
 var sassOptions = {
-	style: 'compressed'
+	style: 'nested'
 };
 
 // Create image minification task
@@ -68,7 +68,8 @@ gulp.task('sass', function() {
 	return gulp.src('src/sass/style.scss')
 		.pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
 		.pipe(sass(sassOptions))
-		.pipe(gulp.dest(outputDir + '/css'))
+		//.pipe(gulp.dest(outputDir + '/css'))
+		.pipe(gulp.dest(''))
 		.pipe(livereload())
 		.pipe(notify("sass task finished"));
 }); 

@@ -30,9 +30,6 @@
 </div>
 
 <section role="main">
-    <aside>
-        <?php gravity_form(1, true, true, false, '', true, 12); ?>
-    </aside>
 
     <div class="team">
         <?php the_content(); ?>

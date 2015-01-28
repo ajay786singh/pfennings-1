@@ -14,7 +14,7 @@ include('includes/wp-cuztom-posts/custom-post-grain.php');
 
 //Load custom functions
 //require_once('includes/functions/add-classes-to-body.php');
-require_once('includes/functions/admin-tinymce.php');
+//require_once('includes/functions/admin-tinymce.php');
 //require_once('includes/functions/custom-login-logo.php');
 require_once('includes/functions/enqueue-style.php');
 require_once('includes/functions/enqueue-script.php');

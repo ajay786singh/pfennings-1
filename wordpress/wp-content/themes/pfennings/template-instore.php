@@ -12,7 +12,7 @@ get_header(); ?>
     $bannerImageUrl     = wp_get_attachment_image_src($bannerImageId,'banner', true);
 ?>
 
-<section role="slider" style="background-image: url(<?php echo $bannerImageUrl[0]; ?>); background-repeat: no-repeat; background-color: rgba(0, 0, 0, 0.5); background-size: cover; background-position: center center;">
+<section role="slider" class="instore-banner">
     <header>
         <hgroup>
 			<h6 class="headline"> <?php echo the_title(); ?></h6>

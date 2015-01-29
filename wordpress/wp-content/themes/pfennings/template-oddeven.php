@@ -35,10 +35,13 @@ get_header(); ?>
 <section role="main">
     <?php the_content(); ?>
 
-   
- 
+<?php 
+    endwhile; 
+    endif;
+?>
 
 
+<?php if(have_posts()):while(have_posts()):the_post();?>
 <?php 
 $thispage=$post->ID;
 $childpages = query_posts('post_per_page=100&orderby=menu_order&order=asc&post_type=page&post_parent='.$thispage);

@@ -50,7 +50,7 @@ $menu-gradient-stop-1: $menu-toggle-height/2 - $menu-toggle-layer-thickness/2;
 $menu-gradient-stop-2: $menu-gradient-stop-1 + $menu-toggle-layer-thickness;
 
 button.mm-menu-toggle {
-    position: fixed;
+    position: absolute;
     top: 24px; 
     right: 4.67%;
     z-index: 21001;

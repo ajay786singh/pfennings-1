@@ -45,7 +45,7 @@ li {
 
 a {
     @include transition(opacity 0.1s linear);
-    color: $white;
+    color: $blue;
     opacity: 1;
     text-decoration: underline;
     &:hover {
@@ -93,6 +93,10 @@ small {
 
 .footer-inner p, ul, ol {
     font-size: $base-font-size
+}
+
+.footer-inner a {
+    color: $white;
 }
 
 .footer-inner ul, ol, .list {

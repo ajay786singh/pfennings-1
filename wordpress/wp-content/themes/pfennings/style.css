@@ -456,7 +456,7 @@ a {
   -webkit-transition: opacity 0.1s linear;
   -moz-transition: opacity 0.1s linear;
   transition: opacity 0.1s linear;
-  color: white;
+  color: #477dca;
   opacity: 1;
   text-decoration: underline; }
   a:hover {
@@ -495,6 +495,9 @@ small {
 
 .footer-inner p, ul, ol {
   font-size: 1em; }
+
+.footer-inner a {
+  color: white; }
 
 .footer-inner ul, ol, .list {
   list-style: none; }
@@ -563,7 +566,7 @@ small {
  * a.k.a. hamburger icon. See the "resets" section for global button resets.
  */
 button.mm-menu-toggle, .gform_wrapper input.mm-menu-toggle[type="submit"] {
-  position: fixed;
+  position: absolute;
   top: 24px;
   right: 4.67%;
   z-index: 21001;
@@ -858,7 +861,7 @@ select {
 .gform_wrapper label {
   font-size: 1em;
   font-weight: normal;
-  font-family: "grafolita-script", sans-serif; }
+  font-family: "museo-slab", serif; }
 .gform_wrapper input[type="text"] {
   padding: .2em .2em; }
 .gform_wrapper input[type="checkbox"] {

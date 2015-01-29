@@ -36,19 +36,19 @@ get_header(); ?>
     <?php the_content(); ?>
 
 <?php 
-    endwhile; 
-    endif;
+    endwhile; endif;
 ?>
 
 
-<?php if(have_posts()):while(have_posts()):the_post();?>
-<?php 
+<?php if(have_posts()):while(have_posts()):the_post();
+
     $thispage = $post->ID;
     $childpages = query_posts('post_per_page=100&orderby=menu_order&order=asc&post_type=page&post_parent='.$thispage);
     
     if($childpages) { 
     foreach ($childpages as $post) :
-        setup_postdata($post); ?>
+        setup_postdata($post); 
+?>
  
     <h2><?php the_title(); ?></h2>
     <?php the_content();?>
@@ -62,8 +62,7 @@ get_header(); ?>
 </section>
 
 <?php 
-    endwhile; 
-    endif;
+    endwhile; endif;
 ?>
 
 <?php get_footer(); ?>

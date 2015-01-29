@@ -492,34 +492,6 @@ p, ul, ol {
 li {
   margin: 0 0 .5em 2.5em; }
 
-.footer-inner p, ul, ol {
-  font-size: 1em; }
-
-.footer-inner ul, ol {
-  margin: 1.5em 0 0 0; }
-  .footer-inner ul li, ol li {
-    margin: 0 0 0 -20px; }
-
-.list {
-  list-style: none;
-  padding: 0;
-  margin: 2.5em 0 0 0; }
-  .list li {
-    margin: 0; }
-
-.headline {
-  font-family: "grafolita-script", sans-serif;
-  font-weight: 400;
-  color: white; }
-  @media screen and (min-width: 64em) {
-    .headline {
-      font-size: 3.05176em; } }
-  .headline a {
-    color: white;
-    border-bottom: 1px solid white; }
-    .headline a:hover {
-      opacity: 0.6; }
-
 a {
   -webkit-transition: opacity 0.1s linear;
   -moz-transition: opacity 0.1s linear;
@@ -557,6 +529,37 @@ cite {
   cite:before {
     content: '\2014 \00A0'; }
 
+small {
+  font-family: "museo-slab", serif;
+  font-size: .9em; }
+
+.footer-inner p, ul, ol {
+  font-size: 1em; }
+
+.footer-inner ul, ol, .list {
+  list-style: none; }
+  .footer-inner ul li, ol li, .list li {
+    margin: 0 0 0 -40px; }
+
+.footer-inner ul, ol {
+  margin: 1.5em 0 0 0; }
+
+.list {
+  margin: 2.5em 0 0 0; }
+
+.headline {
+  font-family: "grafolita-script", sans-serif;
+  font-weight: 400;
+  color: white; }
+  @media screen and (min-width: 64em) {
+    .headline {
+      font-size: 3.05176em; } }
+  .headline a {
+    color: white;
+    border-bottom: 1px solid white; }
+    .headline a:hover {
+      opacity: 0.6; }
+
 .error {
   background: #fbe3e4;
   color: #96151b;
@@ -581,10 +584,6 @@ cite {
 .success {
   display: none;
   text-align: center; }
-
-small {
-  font-family: "museo-slab", serif;
-  font-size: .9em; }
 
 .wf-loading {
   visibility: hidden; }

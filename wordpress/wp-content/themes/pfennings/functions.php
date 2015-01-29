@@ -7,10 +7,6 @@ include('includes/wp-cuztom-helper/cuztom.php');
 include('includes/wp-cuztom-posts/custom-post-team.php');
 include('includes/wp-cuztom-posts/custom-post-partners.php');
 include('includes/wp-cuztom-posts/custom-generic.php');
-include('includes/wp-cuztom-posts/custom-post-services.php');
-include('includes/wp-cuztom-posts/custom-post-grain.php');
-
-
 
 //Load custom functions
 //require_once('includes/functions/add-classes-to-body.php');

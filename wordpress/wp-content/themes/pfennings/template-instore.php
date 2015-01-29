@@ -31,8 +31,13 @@ get_header(); ?>
         <!-- For loop cycle through Array -->
         <?php 
 		global $wpdb;
-		$results=$wpdb->get_results("select * from wp_store_locator");
-		print_r($query);
+		$search_zip=$_REQUEST['zipcode'];
+		$query="select * from wp_store_locator";
+		if($search_zip !="") {
+			$query.=" where sl_zip LIKE '%" . $search_zip . "%'";
+		}
+		$results=$wpdb->get_results($query);
+		
 		if($results) {
             foreach($results as $result) {
 			
@@ -81,7 +86,9 @@ get_header(); ?>
       
         <?php
 				}
-            }
+            } else {
+				echo "No Store Found.";
+			}
         ?>
    </div>
    <?php get_template_part( 'template', 'request-us' ); ?>

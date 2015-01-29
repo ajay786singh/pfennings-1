@@ -1043,6 +1043,17 @@ aside {
   .block-grid-3:nth-child(3n) {
     margin-right: 0; }
 
+.store-search {
+  position: relative;
+  overflow: hidden; }
+  .store-search input[type="text"] {
+    width: 65%;
+    float: left; }
+  .store-search input[type="submit"] {
+    width: 20%;
+    float: left;
+    margin-left: 5%; }
+
 section[role=banner] {
   position: fixed;
   width: 100%;

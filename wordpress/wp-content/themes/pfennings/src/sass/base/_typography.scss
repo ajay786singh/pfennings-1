@@ -1,4 +1,4 @@
-@include font-face(Mono Social Icons Font, '../fonts/MonoSocialIconsFont-1.10', normal, normal);
+@include font-face(Mono Social Icons Font, 'dist/fonts/MonoSocialIconsFont-1.10', normal, normal);
 
 body {
     -webkit-font-smoothing: antialiased;
@@ -32,6 +32,37 @@ h6 {
     font-size: modular-scale(1); 
 }
 
+p, ul, ol {
+    list-style-type: disc;
+    font-size: $base-font-size * 1.25;
+    line-height: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+li {
+    margin: 0 0 .5em 2.5em;
+}
+
+.footer-inner p, ul, ol {
+    font-size: $base-font-size
+}
+
+.footer-inner ul, ol {
+    margin: 1.5em 0 0 0;
+    li {
+        margin: 0 0 0 -20px;
+    }
+}
+
+.list {
+    list-style:none;
+    padding: 0;
+    margin: 2.5em 0 0 0;
+    li {
+        margin: 0;
+    }
+}
+
 .headline {
     font-family: $sans-serif;
     font-weight: 400;
@@ -48,34 +79,14 @@ h6 {
     } 
 }
 
-p, ul, ol {
-    list-style-type: disc;
-    font-size: $base-font-size * 1.25;
-    line-height: 1.5em;
-    margin-bottom: 1.5em;
-}
-
-li {
-    margin: 0 0 .5em 2.5em;
-}
-
-.list {
-    list-style:none;
-    padding: 0;
-    margin: 2.5em 0 0 0;
-    li {
-        margin: 0;
-    }
-}
-
 a {
     @include transition(opacity 0.1s linear);
-  
-    color: $base-link-color;
+    color: $white;
     opacity: 1;
-    text-decoration: none;
+    text-decoration: underline;
     &:hover {
         opacity: 0.6;
+        text-decoration: none;
     }
     &:active, &:focus {
         opacity: 0.6;
@@ -126,7 +137,7 @@ cite {
 }
 
 small {
-    font-family: $sans-serif;
+    font-family: $serif;
     font-size: .9em;
 }
 

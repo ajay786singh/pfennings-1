@@ -397,50 +397,6 @@ button, .gform_wrapper input[type="submit"] {
     background-color: #2c5999;
     color: white; }
 
-.button-map, .button-phone, .button-email {
-  -webkit-font-smoothing: antialiased;
-  background-color: #477dca;
-  border-radius: 0.1875em;
-  color: white;
-  display: inline-block;
-  font-size: 1em;
-  font-weight: bold;
-  line-height: 1;
-  width: 100%;
-  margin: 5px 0 5px 0;
-  padding: .8em 0 .7em 0;
-  text-align: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  -o-appearance: none;
-  appearance: none;
-  border: none;
-  cursor: pointer;
-  user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
-  text-decoration: none; }
-  .button-map:hover, .button-phone:hover, .button-email:hover {
-    background-color: #333333;
-    color: white; }
-
-button, .gform_wrapper input[type="submit"] {
-  padding: .4em .5em;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  -o-appearance: none;
-  appearance: none;
-  border: none;
-  cursor: pointer;
-  user-select: none;
-  vertical-align: middle;
-  white-space: nowrap; }
-
-.button-phone {
-  background-color: #06AD60; }
-
 html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -483,12 +439,19 @@ body:before {
       background-image: -ms-linear-gradient(left, transparent 0, #cccccc 0, #cccccc 6.17215%, transparent 6.17215%, transparent 8.5298%, #cccccc 8.5298%, #cccccc 14.70196%, transparent 14.70196%, transparent 17.05961%, #cccccc 17.05961%, #cccccc 23.23176%, transparent 23.23176%, transparent 25.58941%, #cccccc 25.58941%, #cccccc 31.76157%, transparent 31.76157%, transparent 34.11922%, #cccccc 34.11922%, #cccccc 40.29137%, transparent 40.29137%, transparent 42.64902%, #cccccc 42.64902%, #cccccc 48.82117%, transparent 48.82117%, transparent 51.17883%, #cccccc 51.17883%, #cccccc 57.35098%, transparent 57.35098%, transparent 59.70863%, #cccccc 59.70863%, #cccccc 65.88078%, transparent 65.88078%, transparent 68.23843%, #cccccc 68.23843%, #cccccc 74.41059%, transparent 74.41059%, transparent 76.76824%, #cccccc 76.76824%, #cccccc 82.94039%, transparent 82.94039%, transparent 85.29804%, #cccccc 85.29804%, #cccccc 91.4702%, transparent 91.4702%, transparent 93.82785%, #cccccc 93.82785%, #cccccc 100.0%, transparent 100.0%);
       background-image: -o-linear-gradient(left, transparent 0, #cccccc 0, #cccccc 6.17215%, transparent 6.17215%, transparent 8.5298%, #cccccc 8.5298%, #cccccc 14.70196%, transparent 14.70196%, transparent 17.05961%, #cccccc 17.05961%, #cccccc 23.23176%, transparent 23.23176%, transparent 25.58941%, #cccccc 25.58941%, #cccccc 31.76157%, transparent 31.76157%, transparent 34.11922%, #cccccc 34.11922%, #cccccc 40.29137%, transparent 40.29137%, transparent 42.64902%, #cccccc 42.64902%, #cccccc 48.82117%, transparent 48.82117%, transparent 51.17883%, #cccccc 51.17883%, #cccccc 57.35098%, transparent 57.35098%, transparent 59.70863%, #cccccc 59.70863%, #cccccc 65.88078%, transparent 65.88078%, transparent 68.23843%, #cccccc 68.23843%, #cccccc 74.41059%, transparent 74.41059%, transparent 76.76824%, #cccccc 76.76824%, #cccccc 82.94039%, transparent 82.94039%, transparent 85.29804%, #cccccc 85.29804%, #cccccc 91.4702%, transparent 91.4702%, transparent 93.82785%, #cccccc 93.82785%, #cccccc 100.0%, transparent 100.0%);
       background-image: linear-gradient(to left, transparent 0, #cccccc 0, #cccccc 6.17215%, transparent 6.17215%, transparent 8.5298%, #cccccc 8.5298%, #cccccc 14.70196%, transparent 14.70196%, transparent 17.05961%, #cccccc 17.05961%, #cccccc 23.23176%, transparent 23.23176%, transparent 25.58941%, #cccccc 25.58941%, #cccccc 31.76157%, transparent 31.76157%, transparent 34.11922%, #cccccc 34.11922%, #cccccc 40.29137%, transparent 40.29137%, transparent 42.64902%, #cccccc 42.64902%, #cccccc 48.82117%, transparent 48.82117%, transparent 51.17883%, #cccccc 51.17883%, #cccccc 57.35098%, transparent 57.35098%, transparent 59.70863%, #cccccc 59.70863%, #cccccc 65.88078%, transparent 65.88078%, transparent 68.23843%, #cccccc 68.23843%, #cccccc 74.41059%, transparent 74.41059%, transparent 76.76824%, #cccccc 76.76824%, #cccccc 82.94039%, transparent 82.94039%, transparent 85.29804%, #cccccc 85.29804%, #cccccc 91.4702%, transparent 91.4702%, transparent 93.82785%, #cccccc 93.82785%, #cccccc 100.0%, transparent 100.0%); } }
+  @media screen and (max-width: 64em) {
+    body:before {
+      background-image: -webkit-linear-gradient(left, transparent 0, #cccccc 0, #cccccc 15.3188%, transparent 15.3188%, transparent 21.1703%, #cccccc 21.1703%, #cccccc 36.4891%, transparent 36.4891%, transparent 42.3406%, #cccccc 42.3406%, #cccccc 57.6594%, transparent 57.6594%, transparent 63.5109%, #cccccc 63.5109%, #cccccc 78.8297%, transparent 78.8297%, transparent 84.6812%, #cccccc 84.6812%, #cccccc 100%, transparent 100%);
+      background-image: -moz-linear-gradient(left, transparent 0, #cccccc 0, #cccccc 15.3188%, transparent 15.3188%, transparent 21.1703%, #cccccc 21.1703%, #cccccc 36.4891%, transparent 36.4891%, transparent 42.3406%, #cccccc 42.3406%, #cccccc 57.6594%, transparent 57.6594%, transparent 63.5109%, #cccccc 63.5109%, #cccccc 78.8297%, transparent 78.8297%, transparent 84.6812%, #cccccc 84.6812%, #cccccc 100%, transparent 100%);
+      background-image: -ms-linear-gradient(left, transparent 0, #cccccc 0, #cccccc 15.3188%, transparent 15.3188%, transparent 21.1703%, #cccccc 21.1703%, #cccccc 36.4891%, transparent 36.4891%, transparent 42.3406%, #cccccc 42.3406%, #cccccc 57.6594%, transparent 57.6594%, transparent 63.5109%, #cccccc 63.5109%, #cccccc 78.8297%, transparent 78.8297%, transparent 84.6812%, #cccccc 84.6812%, #cccccc 100%, transparent 100%);
+      background-image: -o-linear-gradient(left, transparent 0, #cccccc 0, #cccccc 15.3188%, transparent 15.3188%, transparent 21.1703%, #cccccc 21.1703%, #cccccc 36.4891%, transparent 36.4891%, transparent 42.3406%, #cccccc 42.3406%, #cccccc 57.6594%, transparent 57.6594%, transparent 63.5109%, #cccccc 63.5109%, #cccccc 78.8297%, transparent 78.8297%, transparent 84.6812%, #cccccc 84.6812%, #cccccc 100%, transparent 100%);
+      background-image: linear-gradient(to left, transparent 0, #cccccc 0, #cccccc 15.3188%, transparent 15.3188%, transparent 21.1703%, #cccccc 21.1703%, #cccccc 36.4891%, transparent 36.4891%, transparent 42.3406%, #cccccc 42.3406%, #cccccc 57.6594%, transparent 57.6594%, transparent 63.5109%, #cccccc 63.5109%, #cccccc 78.8297%, transparent 78.8297%, transparent 84.6812%, #cccccc 84.6812%, #cccccc 100%, transparent 100%); } }
 
 @font-face {
   font-family: Mono Social Icons Font;
   font-style: normal;
   font-weight: normal;
-  src: url("../fonts/MonoSocialIconsFont-1.10.eot?#iefix") format("embedded-opentype"), url("../fonts/MonoSocialIconsFont-1.10.woff2") format("woff2"), url("../fonts/MonoSocialIconsFont-1.10.woff") format("woff"), url("../fonts/MonoSocialIconsFont-1.10.ttf") format("truetype"), url("../fonts/MonoSocialIconsFont-1.10.svg#Mono Social Icons Font") format("svg"); }
+  src: url("dist/fonts/MonoSocialIconsFont-1.10.eot?#iefix") format("embedded-opentype"), url("dist/fonts/MonoSocialIconsFont-1.10.woff2") format("woff2"), url("dist/fonts/MonoSocialIconsFont-1.10.woff") format("woff"), url("dist/fonts/MonoSocialIconsFont-1.10.ttf") format("truetype"), url("dist/fonts/MonoSocialIconsFont-1.10.svg#Mono Social Icons Font") format("svg"); }
 body {
   -webkit-font-smoothing: antialiased;
   background-color: white;
@@ -520,6 +483,30 @@ h5 {
 h6 {
   font-size: 1.25em; }
 
+p, ul, ol {
+  list-style-type: disc;
+  font-size: 1.25em;
+  line-height: 1.5em;
+  margin-bottom: 1.5em; }
+
+li {
+  margin: 0 0 .5em 2.5em; }
+
+.footer-inner p, ul, ol {
+  font-size: 1em; }
+
+.footer-inner ul, ol {
+  margin: 1.5em 0 0 0; }
+  .footer-inner ul li, ol li {
+    margin: 0 0 0 -20px; }
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 2.5em 0 0 0; }
+  .list li {
+    margin: 0; }
+
 .headline {
   font-family: "grafolita-script", sans-serif;
   font-weight: 400;
@@ -533,31 +520,16 @@ h6 {
     .headline a:hover {
       opacity: 0.6; }
 
-p, ul, ol {
-  list-style-type: disc;
-  font-size: 1.25em;
-  line-height: 1.5em;
-  margin-bottom: 1.5em; }
-
-li {
-  margin: 0 0 .5em 2.5em; }
-
-.list {
-  list-style: none;
-  padding: 0;
-  margin: 2.5em 0 0 0; }
-  .list li {
-    margin: 0; }
-
 a {
   -webkit-transition: opacity 0.1s linear;
   -moz-transition: opacity 0.1s linear;
   transition: opacity 0.1s linear;
-  color: #477dca;
+  color: white;
   opacity: 1;
-  text-decoration: none; }
+  text-decoration: underline; }
   a:hover {
-    opacity: 0.6; }
+    opacity: 0.6;
+    text-decoration: none; }
   a:active, a:focus {
     opacity: 0.6;
     outline: none; }
@@ -611,7 +583,7 @@ cite {
   text-align: center; }
 
 small {
-  font-family: "grafolita-script", sans-serif;
+  font-family: "museo-slab", serif;
   font-size: .9em; }
 
 .wf-loading {
@@ -948,6 +920,54 @@ select {
 .gform_wrapper #label_3_1 {
   font-size: .8em; }
 
+button, .gform_wrapper input[type="submit"] {
+  padding: .4em .5em;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap; }
+
+.button-map, .button-phone, .button-email {
+  text-decoration: none; }
+  @media screen and (max-width: 64em) {
+    .button-map, .button-phone, .button-email {
+      -webkit-font-smoothing: antialiased;
+      background-color: #477dca;
+      border-radius: 0.1875em;
+      color: white;
+      display: inline-block;
+      font-size: 1em;
+      font-weight: bold;
+      line-height: 1;
+      width: 100%;
+      margin: 5px 0 5px 0;
+      padding: .8em 0 .7em 0;
+      text-align: center;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+      -o-appearance: none;
+      appearance: none;
+      border: none;
+      cursor: pointer;
+      user-select: none;
+      vertical-align: middle;
+      white-space: nowrap;
+      text-decoration: none; }
+      .button-map:hover, .button-phone:hover, .button-email:hover {
+        background-color: #333333;
+        color: white; } }
+
+@media screen and (max-width: 64em) {
+  .button-phone {
+    background-color: #06AD60; } }
+
 section[role=main] {
   max-width: 80em;
   margin-left: auto;
@@ -1173,6 +1193,7 @@ section[role=slider] {
   .social-share a {
     color: white;
     margin-right: .1em;
-    border: none; }
+    border: none;
+    text-decoration: none; }
 
 /*# sourceMappingURL=style.css.map */

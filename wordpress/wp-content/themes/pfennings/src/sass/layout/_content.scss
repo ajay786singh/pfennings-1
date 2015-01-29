@@ -14,6 +14,7 @@ section[role=main] {
 }
 
 aside {
+	float:left;
     @include media($bp-large) {
         @include span-columns(4);
     }
@@ -68,4 +69,16 @@ aside {
 
 .down-arrow:hover a {
     color: #ffffff;
+}
+.block-grid-3 {
+    @include row;
+    @include omega;
+    @include span-columns(5);
+    @include media($bp-large) {
+        @include span-columns(4 of 12);
+    }
+
+    &:nth-child(3n) {
+        margin-right: 0;
+    }
 }

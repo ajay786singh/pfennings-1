@@ -630,9 +630,14 @@ button.mm-menu-toggle, .gform_wrapper input.mm-menu-toggle[type="submit"] {
   height: 100%;
   overflow-y: auto;
   box-shadow: 0;
-  transform: translateX(100%);
   transition: transform 0.5s, box-shadow 0.5s;
-  font-family: "museo-slab", serif; }
+  font-family: "museo-slab", serif;
+  width: 300px;
+  -webkit-transform: translateX(300px);
+  -moz-transform: translateX(300px);
+  -ms-transform: translateX(300px);
+  -o-transform: translateX(300px);
+  transform: translateX(300px); }
   .mm-menu ul {
     list-style: none;
     margin: 70px 0 0;
@@ -702,10 +707,6 @@ button.mm-menu-toggle, .gform_wrapper input.mm-menu-toggle[type="submit"] {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     transform: translateX(0); }
 
-@media all and (min-width: 300px) {
-  .mm-menu {
-    width: 300px;
-    transform: translateX(300px); } }
 /* the touch effect, for when a link is touched */
 .mm-menu__link--touch-effect {
   display: block;
@@ -949,14 +950,16 @@ section[role=main] {
       section[role=main] article:last-child {
         margin-right: 0; } }
 
-@media screen and (min-width: 50em) {
-  aside {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 31.76157%; }
-    aside:last-child {
-      margin-right: 0; } }
+aside {
+  float: left; }
+  @media screen and (min-width: 50em) {
+    aside {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 31.76157%; }
+      aside:last-child {
+        margin-right: 0; } }
 
 .team p {
   font-size: 1em; }
@@ -1015,6 +1018,30 @@ section[role=main] {
 
 .down-arrow:hover a {
   color: #ffffff; }
+
+.block-grid-3 {
+  display: block;
+  margin-right: 0;
+  float: left;
+  display: block;
+  margin-right: 5.85151%;
+  width: 100%; }
+  .block-grid-3::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .block-grid-3:last-child {
+    margin-right: 0; }
+  @media screen and (min-width: 50em) {
+    .block-grid-3 {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 31.76157%; }
+      .block-grid-3:last-child {
+        margin-right: 0; } }
+  .block-grid-3:nth-child(3n) {
+    margin-right: 0; }
 
 section[role=banner] {
   position: fixed;
@@ -1124,7 +1151,16 @@ section[role=slider] {
       content: "";
       display: table; }
   section[role=slider] hgroup {
-    padding: 4em 2em 2em; }
+    padding: 4em 2em 2em;
+    position: relative;
+    z-index: 2; }
+  section[role=slider]:before {
+    background-color: rgba(0, 0, 0, 0.5);
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%; }
 
 .symbol, a.symbol:before {
   font-family: "Mono Social Icons Font";

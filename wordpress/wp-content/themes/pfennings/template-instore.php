@@ -4,16 +4,89 @@ Template Name: In Stores
 */
 get_header(); ?>
 
+<!-- Get custom meta values -->
+<?php 
+    $team               = get_post_meta($post->ID,'_teammate',true);
+    $bannerHeadline     = wpautop(get_post_meta($post->ID,'_banner_heading',true));
+    $bannerImageId      = get_post_meta($post->ID, '_banner_image', true);
+    $bannerImageUrl     = wp_get_attachment_image_src($bannerImageId,'banner', true);
+?>
+
+<section role="slider" style="background-image: url(<?php echo $bannerImageUrl[0]; ?>); background-repeat: no-repeat; background-color: rgba(0, 0, 0, 0.5); background-size: cover; background-position: center center;">
+    <header>
+        <hgroup>
+			<h6 class="headline"> <?php echo the_title(); ?></h6>
+			<?php if ($bannerHeadline) { ?>
+				<?php echo $bannerHeadline; ?>
+			<?php  } ?> 
+        </hgroup>
+    </header>
+</section>
 
 <section role="main">
 
-<?php if (function_exists('sl_template')) {print sl_template('[STORE-LOCATOR]');} ?> 
-	
-    <article>
-        <h1><?php the_title(); ?></h1>
-        <?php the_content(); ?>  
-   </article>
+    <div class="team">
+        <h4>HOME DELIVERY</h4>
+
+        <!-- For loop cycle through Array -->
+        <?php 
+		global $wpdb;
+		$results=$wpdb->get_results("select * from wp_store_locator");
+		print_r($query);
+		if($results) {
+            foreach($results as $result) {
+			
+            // Get custom meta values    
+            $name   = $result->sl_store;
+			$address   = $result->sl_address;
+			$address2   = $result->sl_address2;
+			$city   = $result->sl_city;
+            $state   = $result->sl_state;
+			$country   = $result->sl_country;
+			$address3=implode(", ", array_filter(array($city,$state,$country)));
+			$zip   = $result->sl_zip;
+			$phone   = $result->sl_phone;
+			$image   = $result->sl_image;
+			$email   = $result->sl_email;
+            
+		?>
+        
+        <div class="block-grid-3">
+            <p>
+				<?php if ($image) {
+					echo wp_get_attachment_image($image) . '<br>';
+					} 
+				?>
+				<?php if ($name): 
+				   echo '<b>' . $name . '</b><br>';
+				endif ?>
+				<?php if ($address):
+					echo $address . '<br>';
+				endif ?>
+				<?php if ($address2):
+					echo $address2 . '<br>';
+				endif ?>
+				<?php if ($address3):
+					echo $address3 . '<br>';
+				endif ?>
+				
+				<?php if ($phone):
+					echo $phone . '<br>';
+				endif ?>
+				<?php if ($email):
+					echo $email . '<br>';
+				endif ?>
+           </p>
+        </div>
+      
+        <?php
+				}
+            }
+        ?>
+   </div>
+   <?php get_template_part( 'template', 'request-us' ); ?>
 </section>
+
 
 <?php get_footer(); ?>
 

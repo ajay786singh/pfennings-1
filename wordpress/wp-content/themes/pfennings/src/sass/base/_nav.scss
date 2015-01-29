@@ -126,9 +126,11 @@ button.mm-menu-toggle {
     height: 100%;
     overflow-y: auto;
     box-shadow: 0;
-    transform: translateX(100%);
+    //transform: translateX(100%);
     transition: transform 0.5s, box-shadow 0.5s;
     font-family: $font-family--primary;
+    width: 300px;
+    @include transform(translateX(300px));
     ul {
         list-style: none;
         margin: 70px 0 0;
@@ -166,13 +168,6 @@ button.mm-menu-toggle {
         box-shadow: 0 2px 8px rgba(0,0,0,0.2);
         transform: translateX(0);
     }
-}
-
-@media all and ( min-width: 300px ) {
-  .mm-menu {
-    width: 300px;
-    transform: translateX(300px);
-  }
 }
 
 /* the touch effect, for when a link is touched */

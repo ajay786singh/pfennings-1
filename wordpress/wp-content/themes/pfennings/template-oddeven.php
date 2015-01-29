@@ -35,51 +35,23 @@ get_header(); ?>
 <section role="main">
     <?php the_content(); ?>
 
-    <div class="team">
-        <!-- For loop cycle through Array -->
-        <?php if($currentPartners) {
-            foreach($currentPartners as $partner) {
+   
+ 
 
-            // Get custom meta values    
-            $currentName        = $partner['_name'];
-            $currentFarm        = $partner['_farm'];
-            $currentLocation    = $partner['_location'];
-            $currentProduce     = $partner['_produce'];
-            $currentLink        = $partner['_link'];
-            $currentImage       = $partner['_image'];
-        ?>
 
-        <ul class="list">
-            <li>
-                <?php if ($currentImage) {
-                    echo wp_get_attachment_image($currentImage) . '<br>';
-                    } else {
-                    echo '<img src="http://placehold.it/300x150"><br>';
-                    }
-                ?>
-                <?php if ($currentName): 
-                   echo $currentName . '<br>';
-                endif ?>
-                <?php if ($currentFarm):
-                    echo $currentFarm . '<br>';
-                endif ?>
-                <?php if ($currentLocation):
-                    echo $currentLocation . '<br>';
-                endif ?>
-                <?php if ($currentProduce):
-                    echo $currentProduce . '<br>';
-                endif ?>
-                <?php if ($currentLink):
-                    echo '<a href="http://' . $currentLink . '" target="_blank">' . $currentLink . '</a><br>';
-                endif ?>
-            </li>
-        </ul>
-        <?php
-                }
-            }
-        ?>
+<?php 
+$thispage=$post->ID;
+$childpages = query_posts('post_per_page=100&orderby=menu_order&order=asc&post_type=page&post_parent='.$thispage);
+ if($childpages){ /* display the children content */
+ foreach ($childpages as $post) :
+ setup_postdata($post); ?>
+ <h2><?php the_title(); ?></h2>
+ <?php the_content();?>
+ <hr />
+ <?php
+ endforeach;
+ } ?>
 
-   </div>
 </section>
 
 <?php 

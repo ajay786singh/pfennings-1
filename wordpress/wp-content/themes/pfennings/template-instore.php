@@ -25,7 +25,7 @@ get_header(); ?>
 
 <section role="main">
 
-    <div class="team">
+    <div class="team" id="store-results">
         <h4>HOME DELIVERY</h4>
 
         <!-- For loop cycle through Array -->
@@ -34,6 +34,7 @@ get_header(); ?>
 		$search_zip=$_REQUEST['zipcode'];
 		$query="select * from wp_store_locator";
 		if($search_zip !="") {
+			
 			$query.=" where sl_zip LIKE '%" . $search_zip . "%'";
 		}
 		$results=$wpdb->get_results($query);
@@ -56,7 +57,7 @@ get_header(); ?>
             
 		?>
         
-        <div class="block-grid-3">
+        <div class="block-grid-2">
             <p>
 				<?php if ($image) {
 					echo wp_get_attachment_image($image) . '<br>';
@@ -91,7 +92,7 @@ get_header(); ?>
         <?php
 				}
             } else {
-				echo "Sorry, there was no store within 25km found for ".$search_zip;
+				echo "<p class='green-box'>Sorry, there was no store within 25km found for <b>".$search_zip."</b>.</p>";
 			}
         ?>
    </div>

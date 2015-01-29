@@ -78,16 +78,20 @@ get_header(); ?>
 				<?php if ($phone):
 					echo $phone . '<br>';
 				endif ?>
+				<?php if ($zip):
+					echo $zip . '<br>';
+				endif ?>
 				<?php if ($email):
 					echo $email . '<br>';
 				endif ?>
+				
            </p>
         </div>
       
         <?php
 				}
             } else {
-				echo "No Store Found.";
+				echo "Sorry, there was no store within 25km found for ".$search_zip;
 			}
         ?>
    </div>

@@ -24,7 +24,6 @@ get_header(); ?>
 </section>
 
 <section role="main">
-
     <div class="team" id="store-results">
         <h4>HOME DELIVERY</h4>
 
@@ -92,7 +91,8 @@ get_header(); ?>
         <?php
 				}
             } else {
-				echo "<p class='green-box'>Sorry, there was no store within 25km found for <b>".$search_zip."</b>.</p>";
+				echo "<p class='green-box'>Sorry, there was no store within 25km found for <b>".$search_zip."</b>.<br>";
+				echo "<a href='".get_permalink()."#store-results'>Get All Stores</a></p>";
 			?>
 			<h6>Other results: </h6>
 			<?php 

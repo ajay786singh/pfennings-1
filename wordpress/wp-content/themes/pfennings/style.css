@@ -1164,13 +1164,7 @@ section[role=slider] {
       content: "";
       display: table; }
   section[role=slider] hgroup {
-    margin-left: 8.5298%;
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 82.94039%; }
-    section[role=slider] hgroup:last-child {
-      margin-right: 0; }
+    padding: 4em 2em 2em; }
 
 .symbol, a.symbol:before {
   font-family: "Mono Social Icons Font";

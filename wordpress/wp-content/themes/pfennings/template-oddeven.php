@@ -43,17 +43,21 @@ get_header(); ?>
 
 <?php if(have_posts()):while(have_posts()):the_post();?>
 <?php 
-$thispage=$post->ID;
-$childpages = query_posts('post_per_page=100&orderby=menu_order&order=asc&post_type=page&post_parent='.$thispage);
- if($childpages){ /* display the children content */
- foreach ($childpages as $post) :
- setup_postdata($post); ?>
- <h2><?php the_title(); ?></h2>
- <?php the_content();?>
- <hr />
- <?php
- endforeach;
- } ?>
+    $thispage = $post->ID;
+    $childpages = query_posts('post_per_page=100&orderby=menu_order&order=asc&post_type=page&post_parent='.$thispage);
+    
+    if($childpages) { 
+    foreach ($childpages as $post) :
+        setup_postdata($post); ?>
+ 
+    <h2><?php the_title(); ?></h2>
+    <?php the_content();?>
+    <?php echo get_the_post_thumbnail($post->ID, array(400,300)); ?> 
+    <hr />
+ 
+     <?php
+        endforeach;
+     } ?>
 
 </section>
 

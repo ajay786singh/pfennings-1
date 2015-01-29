@@ -82,3 +82,17 @@ aside {
         margin-right: 0;
     }
 }
+
+.store-search {
+	position: relative;
+	overflow: hidden;
+	input[type="text"] {
+		width:65%;
+		float:left;
+	}
+	input[type="submit"] {
+		width:20%;
+		float:left;
+		margin-left:5%;
+	}
+}

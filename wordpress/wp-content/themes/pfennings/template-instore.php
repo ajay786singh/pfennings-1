@@ -12,7 +12,7 @@ get_header(); ?>
     $bannerImageUrl     = wp_get_attachment_image_src($bannerImageId,'banner', true);
 ?>
 
-<section role="slider" style="background-image: url(<?php echo $bannerImageUrl[0]; ?>); background-repeat: no-repeat; background-color: rgba(0, 0, 0, 0.5); background-size: cover; background-position: center center;">
+<section role="slider" class="instore-banner">
     <header>
         <hgroup>
 			<h6 class="headline"> <?php echo the_title(); ?></h6>
@@ -31,8 +31,13 @@ get_header(); ?>
         <!-- For loop cycle through Array -->
         <?php 
 		global $wpdb;
-		$results=$wpdb->get_results("select * from wp_store_locator");
-		print_r($query);
+		$search_zip=$_REQUEST['zipcode'];
+		$query="select * from wp_store_locator";
+		if($search_zip !="") {
+			$query.=" where sl_zip LIKE '%" . $search_zip . "%'";
+		}
+		$results=$wpdb->get_results($query);
+		
 		if($results) {
             foreach($results as $result) {
 			
@@ -73,15 +78,21 @@ get_header(); ?>
 				<?php if ($phone):
 					echo $phone . '<br>';
 				endif ?>
+				<?php if ($zip):
+					echo $zip . '<br>';
+				endif ?>
 				<?php if ($email):
 					echo $email . '<br>';
 				endif ?>
+				
            </p>
         </div>
       
         <?php
 				}
-            }
+            } else {
+				echo "Sorry, there was no store within 25km found for ".$search_zip;
+			}
         ?>
    </div>
    <?php get_template_part( 'template', 'request-us' ); ?>

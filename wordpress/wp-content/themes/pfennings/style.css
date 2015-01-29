@@ -1043,6 +1043,17 @@ aside {
   .block-grid-3:nth-child(3n) {
     margin-right: 0; }
 
+.store-search {
+  position: relative;
+  overflow: hidden; }
+  .store-search input[type="text"] {
+    width: 65%;
+    float: left; }
+  .store-search input[type="submit"] {
+    width: 20%;
+    float: left;
+    margin-left: 5%; }
+
 section[role=banner] {
   position: fixed;
   width: 100%;
@@ -1142,6 +1153,8 @@ section[role=slider] {
   justify-content: center;
   -ms-flex-pack: center;
   height: 100vh; }
+  section[role=slider].instore-banner {
+    background: -webkit-radial-gradient(top center, ellipse cover, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%), url("dist/images/bg-map.jpg") no-repeat; }
   section[role=slider] header {
     max-width: 80em;
     margin-left: auto;
@@ -1154,13 +1167,6 @@ section[role=slider] {
     padding: 4em 2em 2em;
     position: relative;
     z-index: 2; }
-  section[role=slider]:before {
-    background-color: rgba(0, 0, 0, 0.5);
-    content: "";
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-    height: 100%; }
 
 .symbol, a.symbol:before {
   font-family: "Mono Social Icons Font";

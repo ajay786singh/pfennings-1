@@ -38,11 +38,9 @@ get_header(); ?>
 ?>
 
 <section role="main">
-    <article>
-
+	<div class="post-container">
     <!-- loop starts -->
-    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-
+    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	
     	<!-- Get post values -->
     	<?php
     		$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'thumbnail' );
@@ -63,11 +61,13 @@ get_header(); ?>
 				<small><?php the_author_posts_link(); ?>, <?php echo get_the_date(); ?> in <?php echo get_the_category_list(' / '); ?></small>  
 				<p><?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?></p>
 			</div>
-        </article>
+		</div>	
     <?php endwhile; endif; ?>
 		
 		<?php pagination(); ?>
+		
 	</div>
 	<?php get_sidebar();?>
+	
 </section>
 <?php get_footer(); ?>

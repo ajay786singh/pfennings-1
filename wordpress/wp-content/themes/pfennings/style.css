@@ -1203,6 +1203,15 @@ aside {
       width: 31.76157%; }
       aside:last-child {
         margin-right: 0; } }
+  aside ul {
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none; }
+    aside ul li {
+      margin-left: 0;
+      padding-left: 0; }
+      aside ul li a {
+        color: black; }
 
 @media screen and (min-width: 50em) {
   .team {
@@ -1228,10 +1237,24 @@ aside {
         margin-left: 14.87299%; } }
 
 @media screen and (min-width: 50em) {
+  .post-container {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 57.35098%;
+    padding-right: 50px;
+    border-right: 1px solid #cbcbcb;
+    margin-left: 8.5298%; }
+    .post-container:last-child {
+      margin-right: 0; } }
+
+@media screen and (min-width: 50em) {
   .post {
-    border-bottom: 1px solid grey; }
+    border-bottom: 1px solid #cbcbcb; }
     .post:last-child {
       border-bottom: none; }
+    .post small {
+      color: black; }
     .post .post-image {
       float: left; }
     .post .post-content {

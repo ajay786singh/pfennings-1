@@ -23,3 +23,42 @@
         text-decoration: none;
     }
 }
+
+
+.post-social-share {
+	ul {
+		list-style:none;
+		margin:0;
+		padding:0;
+		overflow:hidden;
+		li {
+			margin-left:0;
+			float:left;
+			display:block;
+			margin-right:10px;
+			&:last-child {
+				margin-right:0px;
+			}
+			a {
+				display:block;
+				width:68px;
+				height:19px;
+				text-indent:-9999px;
+				background:url(dist/images/social-share.png) no-repeat;
+				&#twitter-share {
+					background-position:-76px 0;
+				}
+				&#pinit-share {
+					background-position:-150px 0;
+				}
+				&#gplus-share {
+					width:49px;
+					background-position:-224px 0;
+				}
+				&#fancy-share {
+					background-position:-279px 0;
+				}
+			}
+		}
+	}
+}

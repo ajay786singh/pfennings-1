@@ -30,9 +30,18 @@
 
 <section role="main">
     <div class="post-container">
-    <?php if(!$bannerImageId): ?>
-        <h1><?php the_title(); ?></h1>
-    <?php endif;?>
+		<p>By: <?php the_author_posts_link(); ?><br>
+		<?php echo get_the_date('F, d'); ?><br><?php echo get_the_date('Y'); ?></p>
+		<div class="post-social-share">
+			<ul>
+				<li><a href="" id="fb-share">FB-Share</a></li>
+				<li><a href="" id="twitter-share">Twitter</a></li>
+				<li><a href="" id="pinit-share">pinit-Share</a></li>
+				<li><a href="" id="gplus-share">gplus-Share</a></li>
+				<li><a href="" id="fancy-share">fancy-Share</a></li>
+			</ul>
+			
+		</div>
         <?php the_content(); ?>  
    </div>
    <?php get_sidebar();?>

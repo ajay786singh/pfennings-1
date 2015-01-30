@@ -2,7 +2,7 @@ footer {
     background: $footer-background-color;
     .footer-inner {
         @include outer-container;
-        padding: 0 2em 2em 2em;
+        padding: 2em;
         .content {
             @include span-columns(5);
             @include media($bp-mid) {
@@ -12,14 +12,11 @@ footer {
                     @include span-columns(4);
                 }
                 &:nth-of-type(3) {
-                    @include span-columns(3);
                     @include shift(1);
+                    @include span-columns(3);
+                    
                 }
             }
-        }
-        .copyright {
-            text-align: center;
-
         }
     }
 }

@@ -115,11 +115,16 @@ select {
         }
     }
     label {
-        font-size: 1em;
+        font-size: .9em;
         font-weight: normal;
         font-family: $serif;
     }
-    input[type="text"] {
+    input {
+        @include placeholder {
+            font-size: .9em;
+        }
+    }
+    input[type="text"], input[type="email"]  {
         padding: .2em .2em;
     }
     input[type="checkbox"] {
@@ -127,16 +132,30 @@ select {
         display: inline-block;
         margin-top: 12px;
     }
-    input {
-        @include placeholder {
-            color: $light-gray;
-            font-size: .9em;
-        }
-    }
-    #label_3_1 {
-        font-size: .8em;
-    }
+    
     input[type="submit"] {
         @extend button;
     }
+}
+
+.store-search {
+    position: relative;
+    overflow: hidden;
+    input[type="text"] {
+        width:65%;
+        float:left;
+    }
+    input[type="submit"] {
+        width:20%;
+        float:left;
+        margin-left:5%;
+    }
+}
+
+.green-box {
+    background-color: #06AD60;
+    padding:50px 20px;
+    color:$white;
+    margin: 0;
+    width: 90%;
 }

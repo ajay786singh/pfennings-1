@@ -12,8 +12,6 @@ section[role=slider] {
     }
     hgroup {
         @include pad(4em 2em null 2em);
-		position:relative;
-		z-index:2;
     }
 }
 

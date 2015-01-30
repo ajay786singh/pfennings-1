@@ -25,36 +25,40 @@ get_header(); ?>
     </header>
 </section>
 
+<div class="down-arrow">
+    <a id="down-link" href="#content" class="target"><i class="fa fa-chevron-down"></i></a>
+</div>
+
 <section role="main">
     <div class="team" id="store-results">
         <h4>HOME DELIVERY</h4>
 
         <!-- For loop cycle through Array -->
         <?php 
-		global $wpdb;
-		$search_zip=$_REQUEST['zipcode'];
-		$query="select * from wp_store_locator";
-		if($search_zip !="") {
-		
-			$query.=" where sl_zip LIKE '%" . $search_zip . "%'";
-		}
-		$results=$wpdb->get_results($query);
-		
-		if($results) {
-            foreach($results as $result) {
+			global $wpdb;
+			$search_zip = $_REQUEST['zipcode'];
+			$query = "select * from wp_store_locator";
+			if($search_zip !="") {
 			
-            // Get custom meta values    
-            $name   = $result->sl_store;
-			$address   = $result->sl_address;
-			$address2   = $result->sl_address2;
-			$city   = $result->sl_city;
-            $state   = $result->sl_state;
-			$country   = $result->sl_country;
-			$address3=implode(", ", array_filter(array($city,$state,$country)));
-			$zip   = $result->sl_zip;
-			$phone   = $result->sl_phone;
-			$image   = $result->sl_image;
-			$email   = $result->sl_email;
+				$query.=" where sl_zip LIKE '%" . $search_zip . "%'";
+			}
+			$results = $wpdb->get_results($query);
+			
+			if($results) {
+	            foreach($results as $result) {
+				
+	            // Get custom meta values    
+	            $name   	= $result->sl_store;
+				$address   	= $result->sl_address;
+				$address2   = $result->sl_address2;
+				$city   	= $result->sl_city;
+	            $state   	= $result->sl_state;
+				$country   	= $result->sl_country;
+				$address3	=implode(", ", array_filter(array($city,$state,$country)));
+				$zip   		= $result->sl_zip;
+				$phone   	= $result->sl_phone;
+				$image   	= $result->sl_image;
+				$email   	= $result->sl_email;
             
 		?>
         
@@ -86,7 +90,6 @@ get_header(); ?>
 				<?php if ($email):
 					echo $email . '<br>';
 				endif ?>
-				
            </p>
         </div>
       
@@ -106,18 +109,17 @@ get_header(); ?>
 					foreach($results as $result) {
 					
 					// Get custom meta values    
-					$name   = $result->sl_store;
-					$address   = $result->sl_address;
+					$name   	= $result->sl_store;
+					$address   	= $result->sl_address;
 					$address2   = $result->sl_address2;
-					$city   = $result->sl_city;
-					$state   = $result->sl_state;
-					$country   = $result->sl_country;
-					$address3=implode(", ", array_filter(array($city,$state,$country)));
-					$zip   = $result->sl_zip;
-					$phone   = $result->sl_phone;
-					$image   = $result->sl_image;
-					$email   = $result->sl_email;
-					
+					$city   	= $result->sl_city;
+					$state   	= $result->sl_state;
+					$country   	= $result->sl_country;
+					$address3	=implode(", ", array_filter(array($city,$state,$country)));
+					$zip   		= $result->sl_zip;
+					$phone   	= $result->sl_phone;
+					$image   	= $result->sl_image;
+					$email   	= $result->sl_email;	
 				?>
         
 				<div class="block-grid-2">
@@ -152,15 +154,10 @@ get_header(); ?>
 				   </p>
 				</div>
 			  
-        <?php
-				}
+        	<?php }
             } 	
-			}
-        ?>
+		} ?>
    </div>
    <?php get_template_part( 'template', 'request-us' ); ?>
 </section>
-
-
 <?php get_footer(); ?>
-

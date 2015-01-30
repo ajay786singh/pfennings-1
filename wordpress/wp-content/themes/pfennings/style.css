@@ -1416,4 +1416,32 @@ section[role=slider] {
     border: none;
     text-decoration: none; }
 
+.post-social-share ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; }
+  .post-social-share ul li {
+    margin-left: 0;
+    float: left;
+    display: block;
+    margin-right: 10px; }
+    .post-social-share ul li:last-child {
+      margin-right: 0px; }
+    .post-social-share ul li a {
+      display: block;
+      width: 68px;
+      height: 19px;
+      text-indent: -9999px;
+      background: url(dist/images/social-share.png) no-repeat; }
+      .post-social-share ul li a#twitter-share {
+        background-position: -76px 0; }
+      .post-social-share ul li a#pinit-share {
+        background-position: -150px 0; }
+      .post-social-share ul li a#gplus-share {
+        width: 49px;
+        background-position: -224px 0; }
+      .post-social-share ul li a#fancy-share {
+        background-position: -279px 0; }
+
 /*# sourceMappingURL=style.css.map */

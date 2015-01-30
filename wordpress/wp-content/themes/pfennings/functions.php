@@ -24,6 +24,5 @@ require_once('includes/functions/remove-header-meta.php');
 require_once('includes/functions/remove-menu-id.php');
 require_once('includes/functions/remove-wp-version.php');
 require_once('includes/functions/add-placeholder-field-gravity-forms.php');
-
-
+require_once('includes/functions/register-sidebar.php');
 ?>

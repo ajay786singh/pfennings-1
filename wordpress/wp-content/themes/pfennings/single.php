@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <!-- Loop starts -->
-<?php if(have_posts()):while(have_posts()):the_post();?>
+<?php if(have_posts()): while(have_posts()): the_post();?>
 
 <!-- Get custom meta values -->
 <?php 
@@ -29,12 +29,12 @@
 </div>
 
 <section role="main">
-    <article>
-    <?php if (!$bannerImageId) : ?>
+    <div class="post-container">
+    <?php if(!$bannerImageId): ?>
         <h1><?php the_title(); ?></h1>
-    <? endif ?>
+    <?php endif;?>
         <?php the_content(); ?>  
-   </article>
+   </div>
    <?php get_sidebar();?>
 </section>
 

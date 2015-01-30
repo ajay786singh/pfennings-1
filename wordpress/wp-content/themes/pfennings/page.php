@@ -32,7 +32,7 @@
     <article>
     <?php if (!$bannerImageId) : ?>
         <h1><?php the_title(); ?></h1>
-    <? endif ?>
+    <?php endif; ?>
         <?php the_content(); ?>  
    </article>
 </section>

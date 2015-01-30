@@ -19,6 +19,18 @@ aside {
     @include media($bp-large) {
         @include span-columns(4);
     }
+	ul {
+		margin-left:0;
+		padding-left:0;
+		list-style:none;
+		li {
+			margin-left:0;
+			padding-left:0;
+			a {
+				color:$black;
+			}
+		}
+	}
 }
 
 .team {
@@ -35,12 +47,23 @@ aside {
         }
     }
 }
+.post-container {
+	@include media($bp-large) {
+        @include span-columns(7);
+		padding-right: 50px;
+		border-right:1px solid #cbcbcb;
+        @include shift(1);
+    }
+}
 
 .post {
 	@include media($bp-large) {
-		border-bottom:1px solid grey;
+		border-bottom:1px solid #cbcbcb;
 		&:last-child {
 			border-bottom:none;
+		}		
+		small {
+			color:$black;
 		}
 		.post-image {
 			float:left;			

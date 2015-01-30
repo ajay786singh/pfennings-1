@@ -98,3 +98,44 @@ aside {
 		clear:both;
     }
 }
+
+.oddeven:nth-of-type(odd) { 
+    @include row();
+    border-bottom: 1px solid $light-gray;
+    margin-bottom: 1em;
+    .image {
+        @include media($bp-large) {
+            width: 40%;
+            float: left;
+            padding-top: 3em;
+        }
+    }
+    .content {
+        @include media($bp-large) {
+            width: 60%;
+            float: right;
+        }
+    }
+}
+
+.oddeven:nth-of-type(even) {
+    @include row();
+    border-bottom: 1px solid $light-gray;
+    margin-bottom: 1em;
+    .image {
+        @include media($bp-large) {
+            width: 30%;
+            float: right;
+            padding-top: 3em;
+            img {
+                float: right;
+            }       
+        }
+    }
+    .content {
+        @include media($bp-large) {
+            width: 70%;
+            float: left;
+        }
+    }
+}

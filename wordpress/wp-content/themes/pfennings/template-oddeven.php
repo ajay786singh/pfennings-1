@@ -49,11 +49,17 @@ get_header(); ?>
     foreach ($childpages as $post) :
         setup_postdata($post); 
 ?>
- 
+ <div class="oddeven" >
+ <span class="image">
+ <?php echo get_the_post_thumbnail($post->ID, array(400,300)); ?>
+</span>
+<span class="content">
     <h2><?php the_title(); ?></h2>
     <?php the_content();?>
-    <?php echo get_the_post_thumbnail($post->ID, array(400,300)); ?> 
-    <hr />
+  </span>  
+    </div>
+     
+  
  
      <?php
         endforeach;

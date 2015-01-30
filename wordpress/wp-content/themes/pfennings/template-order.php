@@ -64,12 +64,7 @@ get_header(); ?>
 <span style="float: left; padding-right: 1em;">
 <i class="fa fa-check-square fa-5x"></i>
 </span>
-<p>Submit completed forms to:
-<ul>
-<li>Email: veggies@pfenningsfarms.ca</li>
-<li>Phone: 519-662-3468. Toll FREE 877-662-3468</li>
-<li>Fax: 519-662-4083</li>
-</ul>
+<p>Submit completed forms
 </p>
 </div>
 </div>

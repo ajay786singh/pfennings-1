@@ -92,15 +92,11 @@ small {
     color: $footer-text-color;
 }
 
-
-
-.footer-inner h5, p, ul, ol {
-    font-size: $base-font-size;
-    color: $footer-text-color;
-}
-
-.footer-inner a {
-    color: $white;
+.footer-inner {
+    & h5, p, ol, ul, a {
+        font-size: $base-font-size; 
+        color: $footer-text-color;
+    }
 }
 
 .footer-inner ul, ol, .list {

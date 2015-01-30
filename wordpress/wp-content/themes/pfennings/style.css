@@ -494,11 +494,8 @@ small {
   font-size: .9em;
   color: white; }
 
-.footer-inner h5, p, ul, ol {
+.footer-inner h5, .footer-inner p, .footer-inner ol, .footer-inner ul, .footer-inner a {
   font-size: 1em;
-  color: white; }
-
-.footer-inner a {
   color: white; }
 
 .footer-inner ul, ol, .list {

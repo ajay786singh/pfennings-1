@@ -55,6 +55,11 @@ li {
     margin: 0 0 .5em 2.5em;
 }
 
+li ul li {
+    margin: .5em 0 0 1.5em;
+    font-size: .8em;
+}
+
 a {
     @include transition(opacity 0.1s linear);
     color: $blue;

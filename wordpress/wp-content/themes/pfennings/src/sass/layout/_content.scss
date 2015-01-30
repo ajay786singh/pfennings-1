@@ -101,18 +101,18 @@ aside {
 
 .oddeven:nth-of-type(odd) { 
     @include row();
-    border-bottom: 1px solid $light-gray;
-    margin-bottom: 1em;
+    border-bottom: 2px solid $light-gray;
+    margin: 1em 0 1em 0;
     .image {
         @include media($bp-large) {
-            width: 40%;
+            width: 30%;
             float: left;
-            padding-top: 3em;
+            padding: 3em 2em 0 0;
         }
     }
     .content {
         @include media($bp-large) {
-            width: 60%;
+            width: 70%;
             float: right;
         }
     }
@@ -120,13 +120,13 @@ aside {
 
 .oddeven:nth-of-type(even) {
     @include row();
-    border-bottom: 1px solid $light-gray;
-    margin-bottom: 1em;
+    border-bottom: 2px solid $light-gray;
+    margin: 1em 0 1em 0;
     .image {
         @include media($bp-large) {
             width: 30%;
             float: right;
-            padding-top: 3em;
+            padding: 3em 0 0 2em;
             img {
                 float: right;
             }       

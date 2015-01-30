@@ -451,6 +451,10 @@ p, ul, ol {
 
 .team p {
   font-size: 1em; }
+.team img {
+  border-radius: 10%; }
+.team a {
+  text-decoration: none; }
 
 li {
   margin: 0 0 .5em 2.5em; }
@@ -521,6 +525,7 @@ small {
       font-size: 2.44141em; } }
   .headline a {
     color: white;
+    text-decoration: none;
     border-bottom: 1px solid white; }
     .headline a:hover {
       opacity: 0.6; }
@@ -557,29 +562,6 @@ small {
 
 .copyright {
   text-align: center; }
-
-.symbol, a.symbol:before {
-  font-family: "Mono Social Icons Font";
-  -webkit-text-rendering: optimizeLegibility;
-  -moz-text-rendering: optimizeLegibility;
-  -ms-text-rendering: optimizeLegibility;
-  -o-text-rendering: optimizeLegibility;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-font-smoothing: antialiased;
-  -ms-font-smoothing: antialiased;
-  -o-font-smoothing: antialiased;
-  font-smoothing: antialiased; }
-
-.social-share {
-  text-align: center;
-  padding: .2em 0 0.5em 0;
-  font-size: 3em; }
-  .social-share a {
-    color: white;
-    margin-right: .1em;
-    border: none;
-    text-decoration: none; }
 
 /* =============================================================================
   MM - MATERIAL MENU
@@ -895,7 +877,6 @@ button.mm-menu-toggle, .gform_wrapper input.mm-menu-toggle[type="submit"] {
   width: 0;
   height: 0;
   border-radius: 100%;
-  background-color: #B6B6B6;
   -webkit-transform: scale(0);
   -moz-transform: scale(0);
   -ms-transform: scale(0);
@@ -1257,6 +1238,8 @@ aside {
       color: black; }
     .post .post-image {
       float: left; }
+      .post .post-image img {
+        border-radius: 10%; }
     .post .post-content {
       flaot: left;
       margin-left: 170px;

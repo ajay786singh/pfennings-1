@@ -208,7 +208,7 @@ $delay: 0.1;
   z-index: 1;
   width: 0; height: 0;
   border-radius: 100%;
-  background-color: $color--divider;
+  //background-color: $color--divider;
   @include transform(scale(0));
   @include transform-origin(50% 50%);
 }

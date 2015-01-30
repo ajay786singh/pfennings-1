@@ -30,8 +30,9 @@
 
 <section role="main">
     <div class="post-container">
-		<p>By: <?php the_author_posts_link(); ?><br>
-		<?php echo get_the_date('F, d'); ?><br><?php echo get_the_date('Y'); ?></p>
+		<p>
+		<?php echo get_the_date('F d, Y'); ?><br>
+        <i>By: <?php echo get_the_author(); ?></i></p>
 		<div class="post-social-share">
 			<ul>
 				<li><a href="" id="fb-share">FB-Share</a></li>
@@ -42,7 +43,10 @@
 			</ul>
 			
 		</div>
-        <?php the_content(); ?>  
+        <?php the_content(); ?>
+
+        <?php comments_template()?>
+    
    </div>
    <?php get_sidebar();?>
 </section>

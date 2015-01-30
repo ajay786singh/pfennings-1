@@ -66,7 +66,10 @@ aside {
 			color:$black;
 		}
 		.post-image {
-			float:left;			
+			float:left;	
+            img {
+                border-radius: 10%;
+            }
 		}
 		.post-content {
 			flaot:left;

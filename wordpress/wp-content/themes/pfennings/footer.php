@@ -4,9 +4,9 @@
         <div class="content">
             <h5>Get in Touch</h5>
             <p>
-                Pfenning's Organic Farm<br>
+                Pfenning's Organic Vegetables Inc.<br>
                 1209 Waterloo Street<br>
-                Baden, ON. N3A 1T1<br>
+                New Hamburg, ON. N3A 1T1<br>
                 f: +1 (519) 662-4083<br>
                 <a class="button-phone" href="tel://+15196623468">t: +1 (519) 662-3468</a><br>
                 <a class="button-phone" href="tel://8776623468">Toll free: 877-662-3468</a><br>

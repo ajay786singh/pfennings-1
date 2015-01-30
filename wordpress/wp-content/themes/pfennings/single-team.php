@@ -68,7 +68,7 @@
                 echo '<i class="fa fa-heart"></i> ' . $veggie . '<br>';
             endif ?>
             <?php if ($email):
-                echo '<i class="fa fa-envelope"></i> <a href="mailto:' . $email . '">' . $email . '</a><br>';
+                echo '<i class="fa fa-envelope"></i> <a href="mailto:' . $email . '">Email</a><br>';
             endif ?>
             <?php if ($phone):
                 echo '<i class="fa fa-phone"></i> ' . $phone . '<br>';

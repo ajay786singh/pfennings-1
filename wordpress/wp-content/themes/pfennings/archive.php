@@ -58,7 +58,7 @@ get_header(); ?>
 			</div>
 			<div class="post-content">
 				<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-				<small><?php the_author_posts_link(); ?>, <?php echo get_the_date(); ?> in <?php echo get_the_category_list(' / '); ?></small>  
+				<small><?php echo get_the_author(); ?>, <?php echo get_the_date(); ?></small>  
 				<p><?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?></p>
 			</div>
 		</div>	

@@ -39,8 +39,16 @@ p, ul, ol {
     margin-bottom: 1.5em;
 }
 
-.team p {
+.team {
+    p {
     font-size: $base-font-size;
+    }
+    img {
+        border-radius: 10%;
+    }
+    a {
+        text-decoration: none;
+    }
 }
 
 li {
@@ -127,6 +135,7 @@ small {
     }
     a {
         color: $white;
+        text-decoration: none;
         border-bottom: 1px solid $white;
         &:hover {
             opacity: 0.6;
@@ -158,29 +167,3 @@ small {
 .copyright {
         text-align: center;
     }
-
-.symbol, a.symbol:before {
-    font-family: $icon-font;
-    -webkit-text-rendering: optimizeLegibility;
-    -moz-text-rendering: optimizeLegibility;
-    -ms-text-rendering: optimizeLegibility;
-    -o-text-rendering: optimizeLegibility;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-font-smoothing: antialiased;
-    -ms-font-smoothing: antialiased;
-    -o-font-smoothing: antialiased;
-    font-smoothing: antialiased;
-}
-
-.social-share {
-    text-align: center;
-    padding: .2em 0 0.5em 0;
-    font-size: 3em;
-    a {
-        color: $white;
-        margin-right: .1em;
-        border: none;
-        text-decoration: none;
-    }
-}

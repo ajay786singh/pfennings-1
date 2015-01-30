@@ -24,11 +24,14 @@
         <!-- Column 3 -->
          <div class="content">
             <h5>Newsletter</h5>
-            <form action="http://hypenotic.us1.list-manage.com/subscribe/post?u=24fdcfc8d7addaf3c603f28a9&amp;id=06041ce3ca" method="post">
+
+            <form action="//pfenningsfarms.us10.list-manage.com/subscribe/post?u=eb15a6953cd072b51e5330b15&amp;id=2cc6b23376" method="post">
                 <input type="hidden" value="2" name="group[2][2]" id="mce-group[2]-2-1">
                 <fieldset>
                     <ol>
+                        <li><input name="FNAME" placeholder="First Name" type="text" value="" id="mce-FNAME"></li>
                         <li><input name="EMAIL" placeholder="you@yourdomain.com" type="email" value=""  id="mce-EMAIL" required></li>
+                        <div style="position: absolute; left: -5000px;"><input type="text" name="b_eb15a6953cd072b51e5330b15_2cc6b23376" tabindex="-1" value=""></div>
                         <li><input type="submit" value="Subscribe"></li>
                     </ol>
                 </fieldset>
@@ -54,7 +57,13 @@
 <script>
     var menu = new Menu;
 </script>
-
+<!--
+<script>
+    jQuery(document).ready(function() {
+        jQuery(".headline").lettering();
+    });
+</script>
+-->
 <script>
     jQuery(document).ready(function() {
         jQuery('#input_1_1').attr('placeholder','Favourite store');

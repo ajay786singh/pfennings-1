@@ -7,14 +7,6 @@ section[role=slider] {
     //background-size: cover;
     //background-position: center center;
     height: 100vh;
-	&.instore-banner {
-		background: -webkit-radial-gradient(top center, ellipse cover, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%), url("dist/images/bg-map.jpg") no-repeat;
-		//background-size: cover; 
-		//background-position: center center;
-	}
-	.page-template-archive & {
-		background: -webkit-radial-gradient(top center, ellipse cover, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%), url("dist/images/bg-hero.jpg") no-repeat;
-	}
     header {
         @include outer-container;
     }

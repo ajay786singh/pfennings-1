@@ -89,10 +89,14 @@ cite {
 small {
     font-family: $serif;
     font-size: .9em;
+    color: $footer-text-color;
 }
 
-.footer-inner p, ul, ol {
-    font-size: $base-font-size
+
+
+.footer-inner h5, p, ul, ol {
+    font-size: $base-font-size;
+    color: $footer-text-color;
 }
 
 .footer-inner a {
@@ -116,7 +120,7 @@ small {
 
 .headline {
     font-family: $sans-serif;
-    font-weight: 400;
+    font-weight: 100;
     color: $white;
     @include media($bp-mid) {
         font-size: modular-scale(5);
@@ -127,7 +131,7 @@ small {
         &:hover {
             opacity: 0.6;
         }
-    } 
+    }    
 }
 
 .error {

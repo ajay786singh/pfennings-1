@@ -25,6 +25,7 @@ var scriptList = [
 	'src/components/jquery/dist/jquery.js', 
 	'src/components/jquery-viewport-checker/src/jquery.viewportchecker.js',
 	'src/components/viewport-units-buggyfill/viewport-units-buggyfill.js',
+	'src/components/Lettering.js/jquery.lettering.js',
 	'src/js/custom/mm.js'
 ];
 

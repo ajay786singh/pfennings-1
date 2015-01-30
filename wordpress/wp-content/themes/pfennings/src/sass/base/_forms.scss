@@ -44,6 +44,7 @@ select[multiple=multiple] {
     padding: $base-line-height / 2.3 $base-line-height / 2.3;
     width: 100%;
     margin-right: 10px;
+    color: $dark-gray;
     &:hover {
         border-color: $form-border-color-hover;
     }

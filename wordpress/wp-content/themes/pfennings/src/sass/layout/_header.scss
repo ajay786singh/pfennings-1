@@ -10,13 +10,13 @@ section[role=banner] {
         .logo {
             float: left;
             height: auto;
-            max-width: 70px;
+            max-width: 130px;
             padding: .5em 0 .5em .5em;
             &:hover {
                 opacity: 0.8;
             }
             @include media($bp-mid) {
-                max-width: 160px;
+                max-width: 300px;
                 padding: 1em 0 0 1.5em;
             }
         }

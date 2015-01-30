@@ -58,7 +58,7 @@
 <section role="banner">
     <header>
         <div class="logo">
-            <a href="<?php bloginfo('url');?>"><img src="<?php bloginfo('template_url' ); ?>/dist/images/logo-white.png"></a>
+            <a href="<?php bloginfo('url');?>"><img src="<?php bloginfo('template_url' ); ?>/dist/images/pfenningslogo.png"></a>
         </div>
         <button id="mm-menu-toggle" class="mm-menu-toggle">Toggle Menu</button>
         <nav id="mm-menu" class="mm-menu">

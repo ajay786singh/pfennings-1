@@ -1286,13 +1286,13 @@ section[role=banner] {
   section[role=banner] header .logo {
     float: left;
     height: auto;
-    max-width: 70px;
+    max-width: 130px;
     padding: .5em 0 .5em .5em; }
     section[role=banner] header .logo:hover {
       opacity: 0.8; }
     @media screen and (min-width: 64em) {
       section[role=banner] header .logo {
-        max-width: 160px;
+        max-width: 300px;
         padding: 1em 0 0 1.5em; } }
 
 footer {

@@ -16,7 +16,7 @@ section[role=banner] {
                 opacity: 0.8;
             }
             @include media($bp-mid) {
-                max-width: 300px;
+                max-width: 360px;
                 padding: 1em 0 0 1.5em;
             }
         }

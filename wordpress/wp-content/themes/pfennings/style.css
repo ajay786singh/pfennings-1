@@ -447,7 +447,8 @@ p, ul, ol {
   list-style-type: disc;
   font-size: 1.25em;
   line-height: 1.5em;
-  margin-bottom: 1.5em; }
+  margin-bottom: 1.5em;
+  font-weight: 100; }
 
 .team p {
   font-size: 1em; }
@@ -469,7 +470,8 @@ a {
   transition: opacity 0.1s linear;
   color: #477dca;
   opacity: 1;
-  text-decoration: underline; }
+  text-decoration: none;
+  border-bottom: 1px solid #477dca; }
   a:hover {
     opacity: 0.6;
     text-decoration: none; }
@@ -508,6 +510,8 @@ small {
 .footer-inner h5, .footer-inner p, .footer-inner ol, .footer-inner ul, .footer-inner a {
   font-size: 1em;
   color: white; }
+  .footer-inner h5 a, .footer-inner p a, .footer-inner ol a, .footer-inner ul a, .footer-inner a a {
+    border-bottom: none; }
 
 .footer-inner ul, ol, .list {
   list-style: none; }

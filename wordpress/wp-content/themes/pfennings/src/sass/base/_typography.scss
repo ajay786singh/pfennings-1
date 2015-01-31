@@ -113,13 +113,14 @@ small {
 
 .footer-inner {
     & h5, p, ol, ul, a {
-        font-size: $base-font-size * 1.25; 
+        font-size: $base-font-size; 
         color: $footer-text-color;
         a {
             border-bottom: none;
         }
     }
 }
+
 
 .footer-inner ul, ol, .list {
     list-style: none;

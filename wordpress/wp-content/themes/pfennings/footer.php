@@ -10,8 +10,8 @@
                 f: +1 (519) 662-4083<br>
                 <a class="button-phone" href="tel://+15196623468">t: +1 (519) 662-3468</a><br>
                 <a class="button-phone" href="tel://8776623468">Toll free: 877-662-3468</a><br>
-                <a class="button-email" href="mailto: veggies@pfenningsfarms.ca">veggies@pfenningsfarms.ca</a><br>
-                <a class="button-map" href="https://goo.gl/maps/RnHjJ" target="_blank">Map</a>
+                <a class="button-email" href="mailto:veggies@pfenningsfarms.ca">veggies@pfenningsfarms.ca</a><br>
+                <a class="button-map" href="https://goo.gl/maps/RnHjJ" target="_blank" style="border-bottom: 1px solid white">Map</a>
             </p>
         </div>  
 

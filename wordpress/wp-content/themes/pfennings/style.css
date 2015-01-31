@@ -1479,7 +1479,7 @@ section[role=slider] {
       content: "";
       display: table; }
   section[role=slider] hgroup {
-    padding: 16em 16em; }
+    padding: 11em 11em; }
 
 .symbol, a.symbol:before {
   font-family: "Mono Social Icons Font";

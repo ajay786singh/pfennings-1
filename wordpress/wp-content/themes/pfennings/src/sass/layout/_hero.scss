@@ -11,7 +11,7 @@ section[role=slider] {
         @include outer-container;
     }
     hgroup {
-        @include pad(null 6em null 6em);
+        @include pad(null 16em null 16em);
     }
 }
 

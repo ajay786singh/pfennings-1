@@ -1397,8 +1397,8 @@ section[role=banner] {
       opacity: 0.8; }
     @media screen and (min-width: 64em) {
       section[role=banner] header .logo {
-        max-width: 360px;
-        padding: 1em 0 0 1.5em; } }
+        max-width: 450px;
+        padding: 1em 0 0 2em; } }
 
 footer {
   background: #e0701e; }
@@ -1479,7 +1479,7 @@ section[role=slider] {
       content: "";
       display: table; }
   section[role=slider] hgroup {
-    padding: 6em 6em; }
+    padding: 16em 16em; }
 
 .symbol, a.symbol:before {
   font-family: "Mono Social Icons Font";

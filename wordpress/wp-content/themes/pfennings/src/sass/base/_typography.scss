@@ -113,7 +113,7 @@ small {
 
 .footer-inner {
     & h5, p, ol, ul, a {
-        font-size: $base-font-size; 
+        font-size: $base-font-size * 1.25; 
         color: $footer-text-color;
         a {
             border-bottom: none;

@@ -508,7 +508,7 @@ small {
   color: white; }
 
 .footer-inner h5, .footer-inner p, .footer-inner ol, .footer-inner ul, .footer-inner a {
-  font-size: 1em;
+  font-size: 1.25em;
   color: white; }
   .footer-inner h5 a, .footer-inner p a, .footer-inner ol a, .footer-inner ul a, .footer-inner a a {
     border-bottom: none; }

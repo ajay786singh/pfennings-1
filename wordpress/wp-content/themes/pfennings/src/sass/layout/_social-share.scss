@@ -24,41 +24,405 @@
     }
 }
 
-
-.post-social-share {
-	ul {
-		list-style:none;
-		margin:0;
-		padding:0;
-		overflow:hidden;
-		li {
-			margin-left:0;
-			float:left;
-			display:block;
-			margin-right:10px;
-			&:last-child {
-				margin-right:0px;
-			}
-			a {
-				display:block;
-				width:68px;
-				height:19px;
-				text-indent:-9999px;
-				background:url(dist/images/social-share.png) no-repeat;
-				&#twitter-share {
-					background-position:-76px 0;
-				}
-				&#pinit-share {
-					background-position:-150px 0;
-				}
-				&#gplus-share {
-					width:49px;
-					background-position:-224px 0;
-				}
-				&#fancy-share {
-					background-position:-279px 0;
-				}
+#share {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    .sharrre {
+        display: inline-block;
+        margin-right: 5px;
+        overflow: hidden;
+        position: relative;
+        @include transition(all 0.3s ease-in-out);
+		a {
+			&:hover {
+				opacity:1;
 			}
 		}
-	}
+        .share {
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            border: none;
+            display: inline-block;
+            text-decoration: none;
+            @include transition(all 0.3s ease-in-out);
+            color: #fff;
+            float: left;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+        }
+        .count {
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            display: inline-block;
+            padding: 0;
+            text-decoration: none;
+            @include transition(all 0.3s ease-in-out);
+            font-style: normal;
+            font-weight: bold;
+            position: relative;
+            text-align: center;
+        }
+    }
+}
+
+.sharrre:hover .share {
+    border: none;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Small */
+.share-small .share,
+.share-small .count {
+    font-size: 12px;
+    height: 20px;
+    line-height: 20px;
+}
+
+.share-small .share {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    padding: 0 0 0 24px;
+    width: 20px;
+}
+
+.share-small .sharrre:hover .share {
+    width: 60px;
+}
+
+.share-small .facebook:hover .share {
+    width: 60px;
+}
+
+.share-small .pinterest:hover .share {
+    width: 45px;
+}
+
+.share-small .googlePlus:hover .share {
+    width: 60px;
+}
+
+.share-small .count {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    float: right;
+    width: 42px;
+}
+
+.share-small .no-count .share {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    width: 65px;
+}
+
+/* Icons */
+.share-small .share:before,
+.share-medium .share:before,
+.share-tall .share:before {
+    line-height: 1;
+    display: block;
+    font-family: 'Genericons';
+    font-size: 13px;
+    height: 20px;
+    top: 4px;
+    left: 6px;
+    text-indent: 0;
+    -webkit-font-smoothing: antialiased;
+    position: absolute;
+    width: 20px;
+}
+
+.share-medium .share:before {
+    font-size: 14px;
+    top: 5px;
+    left: 7px;
+}
+
+.share-tall .share:before {
+    bottom: 0px;
+    top: auto;
+}
+
+.twitter .share:before {
+    content: '\f202';
+}
+
+.facebook .share:before {
+    content: '\f204';
+}
+
+.googlePlus .share:before {
+    content: '\f218';
+}
+
+.youtube .share:before {
+    content: '\f213';
+}
+
+.digg .share:before {
+    content: '\f221';
+}
+
+.delicious .share:before {
+    content: '\f202';
+}
+
+.pinterest .share:before {
+    content: '\f209';
+}
+
+.linkedin .share:before {
+    content: '\f207';
+}
+
+.stumbleupon .share:before {
+    content: '\f223';
+}
+
+.share-small .pinterest .share:before {
+    font-size: 12px;
+}
+
+.share-small .linkedin .share:before {
+    font-size: 16px;
+    top: 1px;
+}
+
+.share-small .stumbleupon .share:before {
+    font-size: 16px;
+    top: 3px;
+}
+
+.share-medium .pinterest .share:before {
+    font-size: 13px;
+    top: 6px;
+}
+
+.share-medium .linkedin .share:before {
+    font-size: 17px;
+    top: 3px;
+}
+
+.share-medium .stumbleupon .share:before {
+    font-size: 16px;
+    top: 5px;
+}
+
+.share-tall .pinterest .share:before {
+    font-size: 13px;
+    bottom: -1px;
+}
+
+.share-tall .linkedin .share:before {
+    font-size: 17px;
+    bottom: 2px;
+}
+
+.share-tall .stumbleupon .share:before {
+    font-size: 16px;
+}
+
+/* Appearance - filled */
+.share-filled .twitter .share {
+    background: #09b0ed;
+}
+
+.share-filled .twitter .count,
+.share-filled .twitter .count:hover {
+    color: #09b0ed;
+    border: 1px solid #09b0ed;
+}
+
+.share-filled .facebook .share {
+    background: #3d5a98;
+}
+
+.share-filled .facebook .count,
+.share-filled .facebook .count:hover {
+    color: #3d5a98;
+    border: 1px solid #3d5a98;
+}
+
+.share-filled .googlePlus .share {
+    background: #dd4c39;
+}
+
+.share-filled .googlePlus .count,
+.share-filled .googlePlus .count:hover {
+    color: #dd4c39;
+    border: 1px solid #dd4c39;
+}
+
+.share-filled .linkedin .share {
+    background: #035a87;
+}
+
+.share-filled .linkedin .count,
+.share-filled .linkedin .count:hover {
+    color: #035a87;
+    border: 1px solid #035a87;
+}
+
+.share-filled .youtube .share {
+    background: #cc181e;
+}
+
+.share-filled .youtube .count,
+.share-filled .youtube .count:hover {
+    color: #cc181e;
+    border: 1px solid #cc181e;
+}
+
+.share-filled .pinterest .share {
+    background: #cb2127;
+}
+
+.share-filled .pinterest .count,
+.share-filled .pinterest .count:hover {
+    color: #cb2127;
+    border: 1px solid #cb2127;
+}
+
+.share-filled .stumbleupon .share {
+    background: #eb4923;
+}
+
+.share-filled .stumbleupon .count,
+.share-filled .stumbleupon .count:hover {
+    color: #eb4923;
+    border: 1px solid #eb4923;
+}
+
+.share-filled .twitter:hover .count {
+    background: #09b0ed;
+}
+
+.share-filled .facebook:hover .count {
+    background: #3d5a98;
+}
+
+.share-filled .googlePlus:hover .count {
+    background: #dd4c39;
+}
+
+.share-filled .linkedin:hover .count {
+    background: #035a87;
+}
+
+.share-filled .youtube:hover .count {
+    background: #cc181e;
+}
+
+.share-filled .pinterest:hover .count {
+    background: #cb2127;
+}
+
+.share-filled .stumbleupon:hover .count {
+    background: #eb4923;
+}
+
+.share-filled .sharrre:hover .count {
+    color: #fff;
+}
+
+/* Appearance - outlined */
+.share-outlined .twitter .share,
+.share-outlined .twitter .count,
+.share-outlined .twitter .count:hover {
+    border: 1px solid #09b0ed;
+    color: #09b0ed;
+}
+
+.share-outlined .facebook .share,
+.share-outlined .facebook .count,
+.share-outlined .facebook .count:hover {
+    border: 1px solid #3d5a98;
+    color: #3d5a98;
+}
+
+.share-outlined .googlePlus .share,
+.share-outlined .googlePlus .count,
+.share-outlined .googlePlus .count:hover {
+    border: 1px solid #dd4c39;
+    color: #dd4c39;
+}
+
+.share-outlined .linkedin .share,
+.share-outlined .linkedin .count,
+.share-outlined .linkedin .count:hover {
+    border: 1px solid #035a87;
+    color: #035a87;
+}
+
+.share-outlined .youtube .share,
+.share-outlined .youtube .count,
+.share-outlined .youtube .count:hover {
+    border: 1px solid #cc181e;
+    color: #cc181e;
+}
+
+.share-outlined .pinterest .share,
+.share-outlined .pinterest .count,
+.share-outlined .pinterest .count:hover {
+    border: 1px solid #cb2127;
+    color: #cb2127;
+}
+
+.share-outlined .stumbleupon .share,
+.share-outlined .stumbleupon .count,
+.share-outlined .stumbleupon .count:hover {
+    border: 1px solid #eb4923;
+    color: #eb4923;
+}
+
+.share-outlined.share-small .share,
+.share-outlined.share-medium .share {
+    border-right: none;
+}
+
+.share-outlined.share-tall .share {
+    border-top: none;
+}
+
+.share-outlined .twitter:hover .share,
+.share-outlined .twitter:hover .count {
+    background: #09b0ed;
+}
+
+.share-outlined .facebook:hover .share,
+.share-outlined .facebook:hover .count {
+    background: #3d5a98;
+}
+
+.share-outlined .googlePlus:hover .share,
+.share-outlined .googlePlus:hover .count {
+    background: #dd4c39;
+}
+
+.share-outlined .linkedin:hover .share,
+.share-outlined .linkedin:hover .count {
+    background: #035a87;
+}
+
+.share-outlined .youtube:hover .share,
+.share-outlined .youtube:hover .count {
+    background: #cc181e;
+}
+
+.share-outlined .pinterest:hover .share,
+.share-outlined .pinterest:hover .count {
+    background: #cb2127;
+}
+
+.share-outlined .stumbleupon:hover .share,
+.share-outlined .stumbleupon:hover .count {
+    background: #eb4923;
+}
+
+.share-outlined .sharrre:hover .count,
+.share-outlined .sharrre:hover .share {
+    color: #fff;
 }

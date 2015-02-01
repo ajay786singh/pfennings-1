@@ -52,6 +52,9 @@
 <noscript>Please enable javascript, or <a href="http://pfennings-organic-vegetables-inc.myshopify.com">click here</a> to visit my <a href="http://www.shopify.com/tour/ecommerce-website">ecommerce web site</a> powered by Shopify.</noscript>
 -->
     <?php wp_head(); ?>
+<script>
+	var share_function_url="<?php bloginfo('template_url');?>/includes/social-share/sharrre.php";
+</script>
 </head>
 
 <body <?php body_class();?>>

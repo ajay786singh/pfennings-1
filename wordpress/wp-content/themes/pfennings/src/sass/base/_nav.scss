@@ -42,7 +42,7 @@ button.mm-menu-toggle {
 	text-indent: -9999px;
 	@include media($bp-large) {
 		@include transition(all 0.5s);
-	}	
+	}
 	display: block;
 	&::before {
         display: block;

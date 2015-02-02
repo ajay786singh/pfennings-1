@@ -24,12 +24,15 @@ $toggle-button-color: $white; //$purple; // also for icons
 $menu-background: rgba(224,112,30, 1);
 
 body.mm-menu-open {
-  overflow: hidden;
+	overflow: hidden;
+	.down-arrow {
+		z-index:-1;
+	}
 }
 button.mm-menu-toggle {
 	position: absolute;
 	top: 24px; 
-	right: 4.67%;
+	right: 7.67%;
 	z-index: 21001;
 	width: $menu-toggle-width;
 	height: $menu-toggle-height;
@@ -37,13 +40,17 @@ button.mm-menu-toggle {
 	background:-webkit-linear-gradient(90deg, rgba($toggle-button-color,0), rgba($toggle-button-color,0) $menu-gradient-stop-1, $toggle-button-color $menu-gradient-stop-1, $toggle-button-color $menu-gradient-stop-2, rgba($toggle-button-color,0) $menu-gradient-stop-2, rgba($toggle-button-color,0) $menu-toggle-height);
 	font-size: 0;
 	text-indent: -9999px;
-	@include transition(all 0.5s);
+	@include media($bp-large) {
+		@include transition(all 0.5s);
+	}	
 	display: block;
 	&::before {
         display: block;
         position: absolute;
-		@include transition(all 0.5s);
-        left: 0;
+		@include media($bp-large) {
+			@include transition(all 0.5s);
+        }
+		left: 0;
         width: 100%;
         height: $menu-toggle-layer-thickness;
         background-color: $toggle-button-color;
@@ -55,8 +62,10 @@ button.mm-menu-toggle {
         display: block;
         position: absolute;
         left: 0;
-		@include transition(all 0.5s);
-        width: 100%;
+		@include media($bp-large) {
+			@include transition(all 0.5s);
+        }
+		width: 100%;
         height: $menu-toggle-layer-thickness;
         background-color: $toggle-button-color;
         content: "";        
@@ -75,12 +84,10 @@ button.mm-menu-toggle {
         }
     }
     &:focus {
-       // background:none;
         border:none;
         outline:none;
     }
     &:active {
-        //background:none;
         border:none;
         outline:none;
     }

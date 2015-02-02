@@ -595,11 +595,13 @@ small {
  */
 body.mm-menu-open {
   overflow: hidden; }
+  body.mm-menu-open .down-arrow {
+    z-index: -1; }
 
 button.mm-menu-toggle, .gform_wrapper input.mm-menu-toggle[type="submit"] {
   position: absolute;
   top: 24px;
-  right: 4.67%;
+  right: 7.67%;
   z-index: 21001;
   width: 24px;
   height: 18px;
@@ -607,16 +609,15 @@ button.mm-menu-toggle, .gform_wrapper input.mm-menu-toggle[type="submit"] {
   background: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 7px, white 7px, white 11px, rgba(255, 255, 255, 0) 11px, rgba(255, 255, 255, 0) 18px);
   font-size: 0;
   text-indent: -9999px;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  transition: all 0.5s;
   display: block; }
+  @media screen and (min-width: 50em) {
+    button.mm-menu-toggle, .gform_wrapper input.mm-menu-toggle[type="submit"] {
+      -webkit-transition: all 0.5s;
+      -moz-transition: all 0.5s;
+      transition: all 0.5s; } }
   button.mm-menu-toggle::before, .gform_wrapper input.mm-menu-toggle[type="submit"]::before {
     display: block;
     position: absolute;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    transition: all 0.5s;
     left: 0;
     width: 100%;
     height: 4px;
@@ -628,13 +629,15 @@ button.mm-menu-toggle, .gform_wrapper input.mm-menu-toggle[type="submit"] {
     -ms-transform-origin: bottom left;
     -o-transform-origin: bottom left;
     transform-origin: bottom left; }
+    @media screen and (min-width: 50em) {
+      button.mm-menu-toggle::before, .gform_wrapper input.mm-menu-toggle[type="submit"]::before {
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        transition: all 0.5s; } }
   button.mm-menu-toggle::after, .gform_wrapper input.mm-menu-toggle[type="submit"]::after {
     display: block;
     position: absolute;
     left: 0;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    transition: all 0.5s;
     width: 100%;
     height: 4px;
     background-color: white;
@@ -645,6 +648,11 @@ button.mm-menu-toggle, .gform_wrapper input.mm-menu-toggle[type="submit"] {
     -ms-transform-origin: top left;
     -o-transform-origin: top left;
     transform-origin: top left; }
+    @media screen and (min-width: 50em) {
+      button.mm-menu-toggle::after, .gform_wrapper input.mm-menu-toggle[type="submit"]::after {
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        transition: all 0.5s; } }
   button.mm-menu-toggle.active, .gform_wrapper input.mm-menu-toggle.active[type="submit"] {
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);

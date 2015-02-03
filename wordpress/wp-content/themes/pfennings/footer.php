@@ -6,10 +6,10 @@
             <p>
                 Pfenning's Organic Vegetables Inc.<br>
                 1209 Waterloo Street<br>
-                New Hamburg, ON. N3A 1T1<br>
-                f: +1 (519) 662-4083<br>
-                <a class="button-phone" href="tel://+15196623468">t: +1 (519) 662-3468</a><br>
-                <a class="button-phone" href="tel://8776623468">Toll free: 877-662-3468</a><br>
+                New Hamburg, ON. N3A 1T1<br><br>
+                <b>f:</b> +1 (519) 662-4083<br>
+                <a class="button-phone" href="tel://+15196623468"><b>t:</b> +1 (519) 662-3468</a><br>
+                <a class="button-phone" href="tel://8776623468"><b>Toll free:</b> 877-662-3468</a><br>
                 <a class="button-email" href="mailto:veggies@pfenningsfarms.ca">veggies@pfenningsfarms.ca</a><br>
                 <a class="button-map" href="https://goo.gl/maps/RnHjJ" target="_blank" style="border-bottom: 1px solid white">Map</a>
             </p>

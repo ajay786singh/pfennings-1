@@ -54,6 +54,10 @@
     <?php wp_head(); ?>
 <script>
 	var share_function_url="<?php bloginfo('template_url');?>/includes/social-share/sharrre.php";
+	var only_single=0;
+	<?php if (is_single()) { ?>
+		only_single=1;
+	<?php } ?>
 </script>
 </head>
 

@@ -23,7 +23,7 @@
 
         <!-- Column 3 -->
          <div class="content">
-            <h5>Newsletter</h5>
+            <h5>Get community flavoured news in your inbox</h5>
 
             <form action="//pfenningsfarms.us10.list-manage.com/subscribe/post?u=eb15a6953cd072b51e5330b15&amp;id=2cc6b23376" method="post">
                 <input type="hidden" value="2" name="group[2][2]" id="mce-group[2]-2-1">
@@ -45,7 +45,7 @@
     </div>
     <div class="footer-inner">
        <div class="copyright">
-            <small>Made with love by <a href="http://hypenotic.com">Hypenotic</a></small>
+            <small>Made with Purpose by B Corp Certified <a href="http://hypenotic.com">Hypenotic</a></small>
         </div>
     </div>
 </footer>

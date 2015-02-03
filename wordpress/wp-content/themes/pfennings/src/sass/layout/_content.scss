@@ -38,6 +38,7 @@ aside {
         @include span-columns(7);
         @include shift(1);
         .list {
+            margin-top: 0;
             @include span-columns(3 of 7);
             @include omega(2n);
             &:nth-child(2n) {

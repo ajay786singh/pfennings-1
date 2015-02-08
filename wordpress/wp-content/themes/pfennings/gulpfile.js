@@ -28,7 +28,8 @@ var scriptList = [
 	'src/components/Lettering.js/jquery.lettering.js',
 	'src/js/custom/mm.js',
 	'src/js/custom/jquery.sharrre.min.js',
-	'src/js/custom/share.js'
+	'src/js/custom/share.js',
+	'src/js/custom/scroll-down.js'
 ];
 
 var fontIcons = [

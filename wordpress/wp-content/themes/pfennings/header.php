@@ -21,16 +21,6 @@
     <?php } endwhile; endif; ?>
     <?php wp_reset_query(); ?>
 
-<script type='text/javascript'>
-(function (d, t) {
-  var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
-  bh.type = 'text/javascript';
-  bh.src = '//www.bugherd.com/sidebarv2.js?apikey=uh2exxjlucwhftycv1mn7g';
-  s.parentNode.insertBefore(bh, s);
-  })(document, 'script');
-</script>
-
-
 <script>
     (function(d) {
     var config = {

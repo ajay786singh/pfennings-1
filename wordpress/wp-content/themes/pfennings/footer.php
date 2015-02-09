@@ -51,19 +51,10 @@
 </footer>
 
 </div><!--/wrapper-->
-
 <?php wp_footer();?>
-
 <script>
     var menu = new Menu;
 </script>
-<!--
-<script>
-    jQuery(document).ready(function() {
-        jQuery(".headline").lettering();
-    });
-</script>
--->
 <script>
     jQuery(document).ready(function() {
         jQuery('#input_1_1').attr('placeholder','Favourite store');

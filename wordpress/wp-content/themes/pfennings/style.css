@@ -1465,7 +1465,8 @@ section[role=banner] {
         transition: all 2s ease;
         position: fixed;
         width: 100%;
-        background: black; }
+        background: black;
+        z-index: 9999; }
         section[role=banner] header.sticky .logo {
           max-width: 140px;
           padding: .5em 0 .5em .5em; }

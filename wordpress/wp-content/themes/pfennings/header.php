@@ -41,7 +41,7 @@
 </script>
 <noscript>Please enable javascript, or <a href="http://pfennings-organic-vegetables-inc.myshopify.com">click here</a> to visit my <a href="http://www.shopify.com/tour/ecommerce-website">ecommerce web site</a> powered by Shopify.</noscript>
 -->
-    <?php wp_head(); ?>
+<?php wp_head(); ?>
 <script>
 	var share_function_url="<?php bloginfo('template_url');?>/includes/social-share/sharrre.php";
 	var only_single=0;
@@ -53,10 +53,9 @@
 
 <body <?php body_class();?>>
 <section role="banner">
-    <header>
+    <header class="original">
         <div class="logo">
             <a href="<?php bloginfo('url');?>">
-				<h1>Pfennings</h1>
 				<img src="<?php bloginfo('template_url' ); ?>/dist/images/pfenningslogo.png">
 			</a>
         </div>

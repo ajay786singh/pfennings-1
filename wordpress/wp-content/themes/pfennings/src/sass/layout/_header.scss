@@ -33,6 +33,7 @@ section[role=banner] {
 				position:fixed;
 				width:100%;
 				background:$black;
+				z-index: 9999;
 				.logo {
 					max-width: 140px;
 					padding: .5em 0 .5em .5em;

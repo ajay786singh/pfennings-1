@@ -56,7 +56,6 @@
     <header>
         <div class="logo">
             <a href="<?php bloginfo('url');?>">
-				<h1>Pfennings</h1>
 				<img src="<?php bloginfo('template_url' ); ?>/dist/images/pfenningslogo.png">
 			</a>
         </div>

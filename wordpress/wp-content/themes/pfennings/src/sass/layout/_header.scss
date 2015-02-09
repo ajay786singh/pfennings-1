@@ -23,11 +23,6 @@ section[role=banner] {
                 max-width: 450px;
                 padding: 1em 0 0 2em;
             }
-			@include media($bp-mid) {
-				h1 {
-					display:none;
-				}
-			}
         }
 		@include media($bp-mid) {
 			&.sticky {
@@ -39,9 +34,8 @@ section[role=banner] {
 				width:100%;
 				background:$black;
 				.logo {
-					img {
-						display:none;
-					}
+					max-width: 140px;
+					padding: .5em 0 .5em .5em;
 					h1 {
 						font-size: 1.5em;
 						margin-top: 10px;

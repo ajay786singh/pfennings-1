@@ -1401,6 +1401,38 @@ aside {
       width: 70%;
       float: left; } }
 
+.order-form-container {
+  overflow: hidden; }
+  .order-form-container .content {
+    display: block;
+    margin-right: 0;
+    float: left;
+    display: block;
+    margin-right: 5.85151%;
+    width: 100%; }
+    .order-form-container .content::after {
+      clear: both;
+      content: "";
+      display: table; }
+    .order-form-container .content:last-child {
+      margin-right: 0; }
+    @media screen and (min-width: 50em) {
+      .order-form-container .content {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 31.76157%; }
+        .order-form-container .content:last-child {
+          margin-right: 0; } }
+    .order-form-container .content:nth-child(3n) {
+      margin-right: 0; }
+    .order-form-container .content .step-box {
+      width: 95%;
+      float: left; }
+    .order-form-container .content .icon {
+      float: left;
+      padding-right: 1em; }
+
 section[role=banner] {
   position: fixed;
   width: 100%;
@@ -1410,10 +1442,10 @@ section[role=banner] {
       position: absolute;
       background-color: transparent; } }
   section[role=banner] header {
-    -webkit-transition: all .5s ease;
-    -moz-transition: all .5s ease;
-    -o-transition: all .5s ease;
-    transition: all .5s ease; }
+    -webkit-transition: all 2s ease;
+    -moz-transition: all 2s ease;
+    -o-transition: all 2s ease;
+    transition: all 2s ease; }
     section[role=banner] header .logo {
       float: left;
       height: auto;
@@ -1428,10 +1460,10 @@ section[role=banner] {
       section[role=banner] header .logo h1 {
         display: none; }
     section[role=banner] header.sticky {
-      -webkit-transition: all .5s ease;
-      -moz-transition: all .5s ease;
-      -o-transition: all .5s ease;
-      transition: all .5s ease;
+      -webkit-transition: all 2s ease;
+      -moz-transition: all 2s ease;
+      -o-transition: all 2s ease;
+      transition: all 2s ease;
       position: fixed;
       width: 100%;
       background: black; }

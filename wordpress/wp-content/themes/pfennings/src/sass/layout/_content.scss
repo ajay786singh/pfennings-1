@@ -140,3 +140,26 @@ aside {
         }
     }
 }
+
+.order-form-container {
+	overflow:hidden;
+	.content {
+		@include row;
+		@include omega;
+		@include span-columns(5);
+		@include media($bp-large) {
+			@include span-columns(4 of 12);
+		}
+		&:nth-child(3n) {
+			margin-right: 0;
+		}
+		.step-box {
+			width:95%;
+			float:left;
+		}
+		.icon {
+			float:left;
+			padding-right:1em;
+		}
+	}
+}

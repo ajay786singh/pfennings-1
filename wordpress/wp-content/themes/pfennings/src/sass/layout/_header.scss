@@ -7,10 +7,10 @@ section[role=banner] {
         background-color: transparent;
     }
     header {		
-		-webkit-transition: all .5s ease; // Chrome
-		-moz-transition: all .5s ease; // Mozilla
-		-o-transition: all .5s ease; // Opera
-		transition: all .5s ease;
+		-webkit-transition: all 2s ease; // Chrome
+		-moz-transition: all 2s ease; // Mozilla
+		-o-transition: all 2s ease; // Opera
+		transition: all 2s ease;
         .logo {
             float: left;
             height: auto;
@@ -28,10 +28,10 @@ section[role=banner] {
 			}
         }
 		&.sticky {
-			-webkit-transition: all .5s ease; // Chrome
-			-moz-transition: all .5s ease; // Mozilla
-			-o-transition: all .5s ease; // Opera
-			transition: all .5s ease;
+			-webkit-transition: all 2s ease; // Chrome
+			-moz-transition: all 2s ease; // Mozilla
+			-o-transition: all 2s ease; // Opera
+			transition: all 2s ease;
 			position:fixed;
 			width:100%;
 			background:$black;

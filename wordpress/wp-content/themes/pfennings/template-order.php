@@ -34,40 +34,38 @@ get_header(); ?>
 
 <section role="main">
 
-<h3>To set up an account</h3>
-<p>Please <a href="/team/staff">contact our sales team</a> to find out more about buying our produce.<p>
-<h3>Already have an account? Send us your order</h3>
+	<h3>To set up an account</h3>
+	<p>Please <a href="/team/staff">contact our sales team</a> to find out more about buying our produce.<p>
+	<h3>Already have an account? Send us your order</h3>
+	<div class="order-form-container">
+		<div class="content">
+			<div class="step-box">
+				<h5>Step 1</h5>
+				<span class="icon"><i class="fa fa-cloud-download fa-5x"></i></span>
+				<p>To get started, download our <a href="/wordpress/wp-content/uploads/2015/01/currentproductlist.pdf">order form</a> (pdf).</p>
+			</div>
+		</div>
 
-<div class="content" style="width:33%; float: left;">
-<div style="float:left">
-<h5>Step 1</h5>
-<span style="float: left; padding-right: 1em;">
-<i class="fa fa-cloud-download fa-5x"></i>
-</span>
-<p>To get started, download our <a href="/wordpress/wp-content/uploads/2015/01/currentproductlist.pdf">order form</a> (pdf).</p>
-</div>
-</div>
+		<div class="content">
+			<div class="step-box">
+				<h5>Step 2</h5>
+				<span class="icon">
+				<i class="fa fa-print fa-5x"></i>
+				</span>
+				<p>Print the form and fill in your order.</p>
+			</div>
+		</div>
 
-<div class="content" style="width:33%; float: left;">
-<div style="float:left">
-<h5>Step 2</h5>
-<span style="float: left; padding-right: 1em;">
-<i class="fa fa-print fa-5x"></i>
-</span>
-<p>Print the form and fill in your order.</p>
-</div>
-</div>
-
-<div class="content" style="width:33%; float: left;">
-<div style="float:left">
-<h5>Step 3</h5>
-<span style="float: left; padding-right: 1em;">
-<i class="fa fa-check-square fa-5x"></i>
-</span>
-<p>Submit completed forms
-</p>
-</div>
-</div>
+		<div class="content">
+			<div class="step-box">
+				<h5>Step 3</h5>
+				<span class="icon">
+				<i class="fa fa-check-square fa-5x"></i>
+				</span>
+				<p>Submit completed forms</p>
+			</div>
+		</div>
+	</div>
 <article>
     <?php the_content(); ?>
     </article>

@@ -29,7 +29,8 @@ var scriptList = [
 	'src/js/custom/mm.js',
 	'src/js/custom/jquery.sharrre.min.js',
 	'src/js/custom/share.js',
-	'src/js/custom/scroll-down.js'
+	'src/js/custom/scroll-down.js',
+	'src/js/custom/sticky-header.js'
 ];
 
 var fontIcons = [

@@ -6,7 +6,11 @@ section[role=banner] {
         position: absolute;
         background-color: transparent;
     }
-    header {
+    header {		
+		-webkit-transition: all .5s ease; // Chrome
+		-moz-transition: all .5s ease; // Mozilla
+		-o-transition: all .5s ease; // Opera
+		transition: all .5s ease;
         .logo {
             float: left;
             height: auto;
@@ -19,6 +23,33 @@ section[role=banner] {
                 max-width: 450px;
                 padding: 1em 0 0 2em;
             }
+			h1 {
+				display:none;
+			}
         }
+		&.sticky {
+			-webkit-transition: all .5s ease; // Chrome
+			-moz-transition: all .5s ease; // Mozilla
+			-o-transition: all .5s ease; // Opera
+			transition: all .5s ease;
+			position:fixed;
+			width:100%;
+			background:$black;
+			.logo {
+				img {
+					display:none;
+				}
+				h1 {
+					font-size: 1.5em;
+					margin-top: 10px;
+					display:block;
+					@include media($bp-mid) {
+						margin-top: 5px;
+						font-size: 1.75em;
+					}
+					color: white;
+				}
+			}
+		}
     }
 }

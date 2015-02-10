@@ -598,87 +598,77 @@ body.mm-menu-open {
   body.mm-menu-open .down-arrow {
     z-index: -1; }
 
-button.mm-menu-toggle, .gform_wrapper input.mm-menu-toggle[type="submit"] {
+.mm-menu-toggle {
   position: absolute;
-  top: 24px;
-  right: 7.67%;
   z-index: 21001;
-  width: 24px;
-  height: 18px;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 7px, white 7px, white 11px, rgba(255, 255, 255, 0) 11px, rgba(255, 255, 255, 0) 18px);
-  background: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 7px, white 7px, white 11px, rgba(255, 255, 255, 0) 11px, rgba(255, 255, 255, 0) 18px);
-  font-size: 0;
-  text-indent: -9999px;
-  display: block; }
+  cursor: pointer;
+  color: white;
+  top: 18px;
+  right: 50px;
+  font-size: 1.25em;
+  line-height: 1.5em;
+  font-weight: 600;
+  padding-right: 10px; }
   @media screen and (min-width: 50em) {
-    button.mm-menu-toggle, .gform_wrapper input.mm-menu-toggle[type="submit"] {
-      -webkit-transition: all 0.5s;
-      -moz-transition: all 0.5s;
-      transition: all 0.5s; } }
-  button.mm-menu-toggle::before, .gform_wrapper input.mm-menu-toggle[type="submit"]::before {
-    display: block;
+    .mm-menu-toggle {
+      top: 24px;
+      right: 7.67%; } }
+  .mm-menu-toggle span {
+    cursor: pointer;
+    top: 15px;
+    border-radius: 1px;
+    height: 5px;
+    width: 35px;
+    padding-left: 5px;
+    right: -30px;
+    background: white;
     position: absolute;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background-color: white;
-    content: "";
-    top: 0;
-    -webkit-transform-origin: bottom left;
-    -moz-transform-origin: bottom left;
-    -ms-transform-origin: bottom left;
-    -o-transform-origin: bottom left;
-    transform-origin: bottom left; }
-    @media screen and (min-width: 50em) {
-      button.mm-menu-toggle::before, .gform_wrapper input.mm-menu-toggle[type="submit"]::before {
-        -webkit-transition: all 0.5s;
-        -moz-transition: all 0.5s;
-        transition: all 0.5s; } }
-  button.mm-menu-toggle::after, .gform_wrapper input.mm-menu-toggle[type="submit"]::after {
     display: block;
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background-color: white;
-    content: "";
-    bottom: 0;
-    -webkit-transform-origin: top left;
-    -moz-transform-origin: top left;
-    -ms-transform-origin: top left;
-    -o-transform-origin: top left;
-    transform-origin: top left; }
-    @media screen and (min-width: 50em) {
-      button.mm-menu-toggle::after, .gform_wrapper input.mm-menu-toggle[type="submit"]::after {
-        -webkit-transition: all 0.5s;
-        -moz-transition: all 0.5s;
-        transition: all 0.5s; } }
-  button.mm-menu-toggle.active, .gform_wrapper input.mm-menu-toggle.active[type="submit"] {
-    -webkit-transform: rotate(180deg);
-    -moz-transform: rotate(180deg);
-    -ms-transform: rotate(180deg);
-    -o-transform: rotate(180deg);
-    transform: rotate(180deg); }
-    button.mm-menu-toggle.active::before, .gform_wrapper input.mm-menu-toggle.active[type="submit"]::before {
-      width: 75%;
-      -webkit-transform: translateY(7px) rotate(-45deg);
-      -moz-transform: translateY(7px) rotate(-45deg);
-      -ms-transform: translateY(7px) rotate(-45deg);
-      -o-transform: translateY(7px) rotate(-45deg);
-      transform: translateY(7px) rotate(-45deg); }
-    button.mm-menu-toggle.active::after, .gform_wrapper input.mm-menu-toggle.active[type="submit"]::after {
-      width: 75%;
-      -webkit-transform: translateY(-7px) rotate(45deg);
-      -moz-transform: translateY(-7px) rotate(45deg);
-      -ms-transform: translateY(-7px) rotate(45deg);
-      -o-transform: translateY(-7px) rotate(45deg);
-      transform: translateY(-7px) rotate(45deg); }
-  button.mm-menu-toggle:focus, .gform_wrapper input.mm-menu-toggle[type="submit"]:focus {
-    border: none;
-    outline: none; }
-  button.mm-menu-toggle:active, .gform_wrapper input.mm-menu-toggle[type="submit"]:active {
-    border: none;
-    outline: none; }
+    content: '';
+    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out; }
+    .mm-menu-toggle span:before {
+      cursor: pointer;
+      border-radius: 1px;
+      height: 5px;
+      width: 35px;
+      right: 0;
+      background: white;
+      position: absolute;
+      display: block;
+      content: '';
+      top: -10px;
+      -webkit-transition: all 500ms ease-in-out;
+      -moz-transition: all 500ms ease-in-out;
+      transition: all 500ms ease-in-out; }
+    .mm-menu-toggle span:after {
+      cursor: pointer;
+      top: 24px;
+      border-radius: 1px;
+      height: 5px;
+      width: 35px;
+      right: 0;
+      background: white;
+      position: absolute;
+      display: block;
+      content: '';
+      -webkit-transition: all 500ms ease-in-out;
+      -moz-transition: all 500ms ease-in-out;
+      transition: all 500ms ease-in-out;
+      top: 10px; }
+
+.mm-menu-toggle.active span {
+  background-color: transparent; }
+
+.mm-menu-toggle.active span:before, .mm-menu-toggle.active span:after {
+  top: 0px; }
+
+.mm-menu-toggle.active span:before {
+  transform: rotate(45deg); }
+
+.mm-menu-toggle.active span:after {
+  transform: rotate(-45deg); }
 
 /**
  * The actual menu

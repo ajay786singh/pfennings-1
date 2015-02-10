@@ -59,7 +59,7 @@
 				<img src="<?php bloginfo('template_url' ); ?>/dist/images/pfenningslogo.png">
 			</a>
         </div>
-        <button id="mm-menu-toggle" class="mm-menu-toggle">Toggle Menu</button>
+        <div id="mm-menu-toggle" class="mm-menu-toggle"><span></span>Menu</div>
         <nav id="mm-menu" class="mm-menu">
             <?php wp_nav_menu(array('theme_location'=>'header-menu','items_wrap'=> '<ul id="%1$s" class="mm-menu__items %2$s">%3$s</ul>','walker'=> new Walker_MM_Menu()));?>     
         </nav>

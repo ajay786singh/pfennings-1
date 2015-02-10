@@ -1271,18 +1271,22 @@ button, .gform_wrapper input[type="submit"], #sl_div #address_search input[type=
   margin: 0 auto;
   left: 0;
   right: 0;
-  padding-top: 10px;
   border-radius: 50%;
   -webkit-transition-duration: 0.3s;
   -moz-transition-duration: 0.3s;
-  transition-duration: 0.3s; }
-
-.down-arrow {
+  transition-duration: 0.3s;
   color: #222;
   background: #ffffff; }
 
 .down-arrow a {
-  color: #222; }
+  color: #222;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%; }
+  .down-arrow a .fa-chevron-down {
+    margin-top: 33%; }
 
 .down-arrow:hover {
   background: none;

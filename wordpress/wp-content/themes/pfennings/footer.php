@@ -37,9 +37,9 @@
                 </fieldset>
             </form>
             <div class="social-share">
-                <span class='symbol'><a href="https://www.facebook.com/pfenningsfarm">circlefacebook</a></span>
+                <span class='symbol'><a target="_blank" href="https://www.facebook.com/pfenningsfarm">circlefacebook</a></span>
                 <span class='symbol'><a href="mailto:veggies@pfenningsfarms.ca">circleemail</a></span>
-                <span class='symbol'><a href="https://twitter.com/PfOrganicFarms">circletwitterbird</a></span></a>
+                <span class='symbol'><a target="_blank" href="https://twitter.com/PfOrganicFarms">circletwitterbird</a></span></a>
             </div>
         </div> 
     </div>

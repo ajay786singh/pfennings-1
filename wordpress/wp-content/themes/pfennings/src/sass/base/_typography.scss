@@ -26,7 +26,12 @@ h1, h2, h3, h4, h5, h6 {
     text-rendering: optimizeLegibility;
 }
 
-h1 { font-size: modular-scale(6); }
+h1 { 
+	font-size: modular-scale(3); 
+	@include media($bp-mid) {
+		font-size: modular-scale(6); 
+	}
+}
 
 h2 { font-size: modular-scale(5); }
 
@@ -190,4 +195,28 @@ small {
 
 .copyright {
         text-align: right;
-    }
+}
+.results_wrapper {
+	.results_entry {
+		span {
+			&.location_name {
+				text-transform:uppercase;
+				color:$base-font-color;
+			}
+			&.location_distance {
+				display:none;
+			}
+		}
+		&:hover {
+			background:none;
+		}
+		a {
+			div#map_sidebar & {
+				color: $blue;
+			}
+			&:hover {
+				background:none;
+			}
+		}
+	}	
+}	

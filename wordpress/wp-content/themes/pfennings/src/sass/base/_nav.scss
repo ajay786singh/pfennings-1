@@ -29,70 +29,76 @@ body.mm-menu-open {
 		z-index:-1;
 	}
 }
-button.mm-menu-toggle {
-	position: absolute;
-	top: 24px; 
-	right: 7.67%;
+.mm-menu-toggle {
+	position:absolute;
 	z-index: 21001;
-	width: $menu-toggle-width;
-	height: $menu-toggle-height;
-	background: linear-gradient(0deg, rgba($toggle-button-color,0), rgba($toggle-button-color,0) $menu-gradient-stop-1, $toggle-button-color $menu-gradient-stop-1, $toggle-button-color $menu-gradient-stop-2, rgba($toggle-button-color,0) $menu-gradient-stop-2, rgba($toggle-button-color,0) $menu-toggle-height);
-	background:-webkit-linear-gradient(90deg, rgba($toggle-button-color,0), rgba($toggle-button-color,0) $menu-gradient-stop-1, $toggle-button-color $menu-gradient-stop-1, $toggle-button-color $menu-gradient-stop-2, rgba($toggle-button-color,0) $menu-gradient-stop-2, rgba($toggle-button-color,0) $menu-toggle-height);
-	font-size: 0;
-	text-indent: -9999px;
+	cursor:pointer;
+	color: white;
+	top: 18px;
+	right: 50px;
 	@include media($bp-large) {
-		@include transition(all 0.5s);
+		top: 24px; 
+		right: 7.67%;
 	}
-	display: block;
-	&::before {
-        display: block;
-        position: absolute;
-		@include media($bp-large) {
-			@include transition(all 0.5s);
-        }
-		left: 0;
-        width: 100%;
-        height: $menu-toggle-layer-thickness;
-        background-color: $toggle-button-color;
-        content: "";
-        top: 0;
-        @include transform-origin( bottom left);
-    }
-    &::after {
-        display: block;
-        position: absolute;
-        left: 0;
-		@include media($bp-large) {
-			@include transition(all 0.5s);
-        }
-		width: 100%;
-        height: $menu-toggle-layer-thickness;
-        background-color: $toggle-button-color;
-        content: "";        
-        bottom: 0;
-        @include transform-origin(top left);
-    }  
-    &.active {
-        @include transform(rotate(180deg));
-        &::before {
-            width: 75%;
-            @include transform(translateY(7px) rotate(-45deg));
-        }
-        &::after {
-            width: 75%;
-            @include transform(translateY(-7px) rotate(45deg));
-        }
-    }
-    &:focus {
-        border:none;
-        outline:none;
-    }
-    &:active {
-        border:none;
-        outline:none;
-    }
-}
 
+	font-size: 1.25em;
+	line-height: 1.5em;
+	font-weight: 600;
+	padding-right: 10px;
+	span {
+		cursor: pointer;
+		top: 15px; 
+		border-radius: 1px;
+		height: 5px;
+		width: 35px;
+		padding-left:5px;
+		right:-30px;
+		background: white;
+		position: absolute;
+		display: block;
+		content: '';
+		@include transition(all 500ms ease-in-out);
+		&:before {
+			cursor: pointer;
+			border-radius: 1px;
+			height: 5px;
+			width: 35px;
+			right:0;
+			background: white;
+			position: absolute;
+			display: block;
+			content: '';
+			top:-10px;
+			@include transition(all 500ms ease-in-out);
+		}
+		&:after {
+			cursor: pointer;
+			top: 24px; 
+			border-radius: 1px;
+			height: 5px;
+			width: 35px;
+			right:0;
+			background: white;
+			position: absolute;
+			display: block;
+			content: '';
+			@include transition(all 500ms ease-in-out);
+			top:10px;
+		}
+	}
+}
+.mm-menu-toggle.active span {
+  background-color: transparent;
+}
+.mm-menu-toggle.active span:before, .mm-menu-toggle.active span:after {
+  top: 0px;
+}
+.mm-menu-toggle.active span:before {
+  transform: rotate(45deg);
+}
+.mm-menu-toggle.active span:after {
+  transform: rotate(-45deg);
+}
 /**
  * The actual menu
  *

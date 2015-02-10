@@ -159,3 +159,51 @@ select {
     margin: 0;
     width: 90%;
 }
+
+#sl_div {
+	#searchForm {
+		LABEL {
+			text-align:left;
+			font-size:1.25em;
+		}
+		.search_item {			
+			@include row;
+			@include omega;
+			@include span-columns(5);
+			@include media($bp-large) {
+				clear:none;
+				@include span-columns(6 of 12);
+				display: inline-block;
+			}
+			&:nth-child(2n) {
+				margin-right: 0;
+			}
+		}
+		select {
+			font-size: 1.5em;
+			padding: 8px 5px;
+			width:100%;
+			margin-bottom:1em;				
+			@include box-sizing(border-box);
+			@include transition(border-color);
+			background-color: white;
+			border-radius: $form-border-radius;
+			//border: 1px solid $form-border-color;
+			box-shadow: $form-box-shadow;
+		}
+		input[type="text"] {
+			width:100%;
+		}
+	}
+	#address_search {
+		overflow:hidden;
+		margin-bottom:2em;
+		#addy_in_radius {
+			display:block;
+			width:100%;
+		}
+		input[type="submit"] {
+			@extend button;
+		}
+	}
+}

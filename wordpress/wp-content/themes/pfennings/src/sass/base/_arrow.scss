@@ -8,18 +8,22 @@
     margin: 0 auto;
     left: 0;
     right: 0;
-    padding-top: 10px;
     border-radius: 50%;
     @include transition-duration(0.3s);
-}
-
-.down-arrow {
     color: #222;
     background: #ffffff;
 }
 
 .down-arrow a {
     color: #222;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	.fa-chevron-down {
+		margin-top: 33%;
+	}
 }
 
 .down-arrow:hover {

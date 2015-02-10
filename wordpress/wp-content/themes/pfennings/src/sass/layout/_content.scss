@@ -163,3 +163,34 @@ aside {
 		}
 	}
 }
+#map_sidebar {
+	margin-top:2em;
+}
+.results_wrapper {
+	@include row;
+	@include omega;
+	@include span-columns(5);
+	@include media($bp-large) {
+		@include span-columns(4 of 12);
+	}
+	&:nth-child(3n) {
+		margin-right: 0;
+	}
+	margin-bottom:1.5em;
+	.results_row_left_column {
+		display:block;
+		width:100%;
+		margin-bottom: 1em;
+		overflow: hidden;
+	}
+	.results_row_center_column {
+		margin-bottom: 1em;
+		width:100%;
+		display:block;
+	}
+	.results_row_right_column {
+		width:100%;
+		display:block;
+		text-align:left;
+	}
+}

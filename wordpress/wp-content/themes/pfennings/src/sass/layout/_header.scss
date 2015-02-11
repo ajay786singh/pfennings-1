@@ -1,7 +1,6 @@
 section[role=banner] {
     position: fixed;
     width: 100%;
-	z-index: 10;
     background-color: $header-background-color;
     @include media($bp-mid) {
         position: absolute;

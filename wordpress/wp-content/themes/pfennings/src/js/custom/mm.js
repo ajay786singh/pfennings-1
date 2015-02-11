@@ -122,7 +122,7 @@
   function Menu() {
     this.body = document.body;
     this.wrapper = document.querySelector("#wrapper");
-    this.toggle = document.querySelector("#mm-menu-toggle");
+    this.toggle = document.querySelector(".mm-menu-toggle");
     this.menu = document.querySelector("#mm-menu");
     this.menuItems = this.menu.querySelectorAll("li");
     this.menuItemLinks = this.menu.querySelectorAll("a");

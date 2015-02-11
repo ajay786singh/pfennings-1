@@ -194,3 +194,12 @@ aside {
 		text-align:left;
 	}
 }
+#map {
+	height:250px;
+	@include media($bp-large) {
+		height: 500px;
+	}	
+}
+#slp_tagline {
+	display:none;
+}

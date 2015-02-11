@@ -222,7 +222,7 @@ samp {
  * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
  * 4. Improves appearance and consistency in all browsers.
  */
-button, .gform_wrapper input[type="submit"], #sl_div #address_search input[type="submit"],
+button, .gform_wrapper input[type="submit"], aside #address_search input[type="submit"],
 input,
 optgroup,
 select,
@@ -237,7 +237,7 @@ textarea {
 /**
  * Address `overflow` set to `hidden` in IE 8/9/10/11.
  */
-button, .gform_wrapper input[type="submit"], #sl_div #address_search input[type="submit"] {
+button, .gform_wrapper input[type="submit"], aside #address_search input[type="submit"] {
   overflow: visible; }
 
 /**
@@ -246,7 +246,7 @@ button, .gform_wrapper input[type="submit"], #sl_div #address_search input[type=
  * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
  * Correct `select` style inheritance in Firefox.
  */
-button, .gform_wrapper input[type="submit"], #sl_div #address_search input[type="submit"],
+button, .gform_wrapper input[type="submit"], aside #address_search input[type="submit"],
 select {
   text-transform: none; }
 
@@ -259,7 +259,7 @@ select {
  * 4. Removes inner spacing in IE 7 without affecting normal text inputs.
  *  Known issue: inner spacing remains in IE 6.
  */
-button, .gform_wrapper input[type="submit"], #sl_div #address_search input[type="submit"],
+button, .gform_wrapper input[type="submit"], aside #address_search input[type="submit"],
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
@@ -271,14 +271,14 @@ input[type="submit"] {
 /**
  * Re-set default cursor for disabled elements.
  */
-button[disabled], .gform_wrapper input[disabled][type="submit"], #sl_div #address_search input[disabled][type="submit"],
+button[disabled], .gform_wrapper input[disabled][type="submit"], aside #address_search input[disabled][type="submit"],
 html input[disabled] {
   cursor: default; }
 
 /**
  * Remove inner padding and border in Firefox 4+.
  */
-button::-moz-focus-inner, .gform_wrapper input[type="submit"]::-moz-focus-inner, #sl_div #address_search input[type="submit"]::-moz-focus-inner,
+button::-moz-focus-inner, .gform_wrapper input[type="submit"]::-moz-focus-inner, aside #address_search input[type="submit"]::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
   padding: 0; }
@@ -382,7 +382,7 @@ th {
 /* 
 http://drinchev.github.io/monosocialiconsfont/
 */
-button, .gform_wrapper input[type="submit"], #sl_div #address_search input[type="submit"] {
+button, .gform_wrapper input[type="submit"], aside #address_search input[type="submit"] {
   -webkit-font-smoothing: antialiased;
   background-color: #477dca;
   border-radius: 0.1875em;
@@ -393,7 +393,7 @@ button, .gform_wrapper input[type="submit"], #sl_div #address_search input[type=
   line-height: 1;
   padding: .75em 1em;
   text-decoration: none; }
-  button:hover, .gform_wrapper input[type="submit"]:hover, #sl_div #address_search input[type="submit"]:hover {
+  button:hover, .gform_wrapper input[type="submit"]:hover, aside #address_search input[type="submit"]:hover {
     background-color: #2c5999;
     color: white; }
 
@@ -631,11 +631,10 @@ body.mm-menu-open {
   .mm-menu-toggle span {
     cursor: pointer;
     top: 15px;
-    border-radius: 1px;
-    height: 5px;
-    width: 35px;
+    height: 4px;
+    width: 24px;
     padding-left: 5px;
-    right: -30px;
+    right: -20px;
     background: white;
     position: absolute;
     display: block;
@@ -645,24 +644,8 @@ body.mm-menu-open {
     transition: all 500ms ease-in-out; }
     .mm-menu-toggle span:before {
       cursor: pointer;
-      border-radius: 1px;
-      height: 5px;
-      width: 35px;
-      right: 0;
-      background: white;
-      position: absolute;
-      display: block;
-      content: '';
-      top: -10px;
-      -webkit-transition: all 500ms ease-in-out;
-      -moz-transition: all 500ms ease-in-out;
-      transition: all 500ms ease-in-out; }
-    .mm-menu-toggle span:after {
-      cursor: pointer;
-      top: 24px;
-      border-radius: 1px;
-      height: 5px;
-      width: 35px;
+      height: 4px;
+      width: 24px;
       right: 0;
       background: white;
       position: absolute;
@@ -671,7 +654,20 @@ body.mm-menu-open {
       -webkit-transition: all 500ms ease-in-out;
       -moz-transition: all 500ms ease-in-out;
       transition: all 500ms ease-in-out;
-      top: 10px; }
+      top: -7px; }
+    .mm-menu-toggle span:after {
+      cursor: pointer;
+      height: 4px;
+      width: 24px;
+      right: 0;
+      background: white;
+      position: absolute;
+      display: block;
+      content: '';
+      -webkit-transition: all 500ms ease-in-out;
+      -moz-transition: all 500ms ease-in-out;
+      transition: all 500ms ease-in-out;
+      top: 7px; }
 
 .mm-menu-toggle.active span {
   background-color: transparent; }
@@ -1099,35 +1095,14 @@ select {
   margin: 0;
   width: 90%; }
 
-#sl_div #searchForm LABEL {
+aside #searchForm LABEL {
   text-align: left;
   font-size: 1.25em; }
-#sl_div #searchForm .search_item {
-  display: block;
-  margin-right: 0;
-  float: left;
-  display: block;
-  margin-right: 5.85151%;
-  width: 100%; }
-  #sl_div #searchForm .search_item::after {
-    clear: both;
-    content: "";
-    display: table; }
-  #sl_div #searchForm .search_item:last-child {
-    margin-right: 0; }
-  @media screen and (min-width: 50em) {
-    #sl_div #searchForm .search_item {
-      clear: none;
-      float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 48.82117%;
-      display: inline-block; }
-      #sl_div #searchForm .search_item:last-child {
-        margin-right: 0; } }
-  #sl_div #searchForm .search_item:nth-child(2n) {
-    margin-right: 0; }
-#sl_div #searchForm select {
+aside #searchForm .search_item {
+  width: 98%;
+  margin-bottom: 0.5em;
+  overflow: hidden; }
+aside #searchForm select {
   font-size: 1.5em;
   padding: 8px 5px;
   width: 100%;
@@ -1141,12 +1116,12 @@ select {
   background-color: white;
   border-radius: 0.1875em;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06); }
-#sl_div #searchForm input[type="text"] {
+aside #searchForm input[type="text"] {
   width: 100%; }
-#sl_div #address_search {
+aside #address_search {
   overflow: hidden;
   margin-bottom: 2em; }
-  #sl_div #address_search #addy_in_radius {
+  aside #address_search #addy_in_radius {
     display: block;
     width: 100%; }
 
@@ -1213,7 +1188,7 @@ a img.aligncenter {
   padding: 0;
   width: auto; }
 
-button, .gform_wrapper input[type="submit"], #sl_div #address_search input[type="submit"] {
+button, .gform_wrapper input[type="submit"], aside #address_search input[type="submit"] {
   padding: .4em .5em;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -1534,10 +1509,18 @@ aside {
     display: block;
     text-align: left; }
 
+#map {
+  height: 250px; }
+  @media screen and (min-width: 50em) {
+    #map {
+      height: 500px; } }
+
+#slp_tagline {
+  display: none; }
+
 section[role=banner] {
   position: fixed;
   width: 100%;
-  z-index: 10;
   background-color: black; }
   @media screen and (min-width: 64em) {
     section[role=banner] {

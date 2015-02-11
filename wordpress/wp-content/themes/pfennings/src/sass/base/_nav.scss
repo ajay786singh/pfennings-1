@@ -40,7 +40,6 @@ body.mm-menu-open {
 		top: 24px; 
 		right: 7.67%;
 	}
-
 	font-size: 1.25em;
 	line-height: 1.5em;
 	font-weight: 600;
@@ -48,11 +47,10 @@ body.mm-menu-open {
 	span {
 		cursor: pointer;
 		top: 15px; 
-		border-radius: 1px;
-		height: 5px;
-		width: 35px;
+		height: 4px;
+		width: 24px;
 		padding-left:5px;
-		right:-30px;
+		right:-20px;
 		background: white;
 		position: absolute;
 		display: block;
@@ -60,30 +58,27 @@ body.mm-menu-open {
 		@include transition(all 500ms ease-in-out);
 		&:before {
 			cursor: pointer;
-			border-radius: 1px;
-			height: 5px;
-			width: 35px;
+			height: 4px;
+			width: 24px;
 			right:0;
 			background: white;
 			position: absolute;
 			display: block;
 			content: '';
-			top:-10px;
 			@include transition(all 500ms ease-in-out);
+			top:-7px;
 		}
 		&:after {
 			cursor: pointer;
-			top: 24px; 
-			border-radius: 1px;
-			height: 5px;
-			width: 35px;
+			height: 4px;
+			width: 24px;
 			right:0;
 			background: white;
 			position: absolute;
 			display: block;
 			content: '';
 			@include transition(all 500ms ease-in-out);
-			top:10px;
+			top:7px;
 		}
 	}
 }

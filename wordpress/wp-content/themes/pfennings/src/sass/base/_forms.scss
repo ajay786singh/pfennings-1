@@ -160,24 +160,16 @@ select {
     width: 90%;
 }
 
-#sl_div {
+aside {
 	#searchForm {
 		LABEL {
 			text-align:left;
 			font-size:1.25em;
 		}
 		.search_item {			
-			@include row;
-			@include omega;
-			@include span-columns(5);
-			@include media($bp-large) {
-				clear:none;
-				@include span-columns(6 of 12);
-				display: inline-block;
-			}
-			&:nth-child(2n) {
-				margin-right: 0;
-			}
+			width:98%;
+			margin-bottom: 0.5em;
+			overflow: hidden;
 		}
 		select {
 			font-size: 1.5em;

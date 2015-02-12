@@ -42,7 +42,7 @@ get_header(); ?>
 			<div class="step-box">
 				<h5>Step 1</h5>
 				<span class="icon"><i class="fa fa-cloud-download fa-5x"></i></span>
-				<p>To get started, download our <a href="/wordpress/wp-content/uploads/2015/01/currentproductlist.pdf">order form</a> (pdf).</p>
+				<p>To get started, download our order form</p>
 			</div>
 		</div>
 

@@ -5,6 +5,7 @@ section[role=banner] {
     @include media($bp-mid) {
         position: absolute;
         background-color: transparent;
+		z-index:1;
     }
     header {		
 		-webkit-transition: all 2s ease; // Chrome

@@ -52,8 +52,8 @@
 </head>
 
 <body <?php body_class();?>>
-test6 webhook
-
+<div id="mm-menu-toggle" class="mm-menu-toggle">Menu</div>
+  
 <nav id="mm-menu" class="mm-menu">
 	<?php wp_nav_menu(array('theme_location'=>'header-menu','items_wrap'=> '<ul id="%1$s" class="mm-menu__items %2$s">%3$s</ul>','walker'=> new Walker_MM_Menu()));?>     
 </nav>
@@ -65,7 +65,7 @@ test6 webhook
 				<img src="<?php bloginfo('template_url' ); ?>/dist/images/pfenningslogo.png">
 			</a>
         </div>
-        <div id="mm-menu-toggle" class="mm-menu-toggle"><span></span>Menu</div>
+        <!--<div id="mm-menu-toggle" class="mm-menu-toggle"><span></span>Menu</div> -->
     </header>
 </section>
 <div id="wrapper" class="wrapper">

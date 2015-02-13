@@ -15,8 +15,8 @@
  * a.k.a. hamburger icon. See the "resets" section for global button resets.
  */
 
-$menu-toggle-width: 24px;
-$menu-toggle-height: 18px;
+$menu-toggle-width: 90px;
+$menu-toggle-height: 26px;
 $menu-toggle-layer-thickness: 4px;
 $menu-gradient-stop-1: $menu-toggle-height/2 - $menu-toggle-layer-thickness/2;
 $menu-gradient-stop-2: $menu-gradient-stop-1 + $menu-toggle-layer-thickness;
@@ -29,71 +29,40 @@ body.mm-menu-open {
 		z-index:-1;
 	}
 }
+
 .mm-menu-toggle {
-	position:absolute;
+	position: fixed;
+	top: 24px; 
+	right: 50px;
+	padding-right: 35px;
 	z-index: 21001;
 	cursor:pointer;
-	color: white;
-	top: 18px;
-	right: 50px;
-	@include media($bp-large) {
-		top: 24px; 
-		right: 7.67%;
-	}
+	width: $menu-toggle-width;
+	height: $menu-toggle-height;
+	color:$white;
 	font-size: 1.25em;
 	line-height: 1.5em;
 	font-weight: 600;
-	padding-right: 10px;
-	span {
-		cursor: pointer;
-		top: 15px; 
-		height: 4px;
-		width: 24px;
-		padding-left:5px;
-		right:-20px;
-		background: white;
-		position: absolute;
-		display: block;
-		content: '';
-		@include transition(all 500ms ease-in-out);
-		&:before {
-			cursor: pointer;
-			height: 4px;
-			width: 24px;
-			right:0;
-			background: white;
-			position: absolute;
-			display: block;
-			content: '';
-			@include transition(all 500ms ease-in-out);
-			top:-7px;
-		}
+	&:after {
+		background: url(dist/images/menu-buttons.png) 0 0 no-repeat;
+		content:"";
+		display:block;
+		height:26px;
+		position:absolute;
+		right:0;
+		top: 4px;
+		@include transition(0.5s all);
+		width: 27px;
+	}
+	/* active states */
+	&.active { 
 		&:after {
-			cursor: pointer;
-			height: 4px;
-			width: 24px;
-			right:0;
-			background: white;
-			position: absolute;
-			display: block;
-			content: '';
-			@include transition(all 500ms ease-in-out);
-			top:7px;
-		}
+			@include transform(rotate(360deg));
+			background-position: -30px 0;
+		}	
 	}
 }
-.mm-menu-toggle.active span {
-  background-color: transparent;
-}
-.mm-menu-toggle.active span:before, .mm-menu-toggle.active span:after {
-  top: 0px;
-}
-.mm-menu-toggle.active span:before {
-  transform: rotate(45deg);
-}
-.mm-menu-toggle.active span:after {
-  transform: rotate(-45deg);
-}
+
 /**
  * The actual menu
  *
@@ -244,9 +213,9 @@ $delay: 0.1;
 	opacity: 0;
 	@include transition(opacity 0.5s, visibility 0.5s);
 	&.active {
-	  @include media($bp-large) {
+	  //@include media($bp-large) {
 			visibility: visible;
 			opacity: 1;
-	  }
+	  //}
 	}
 }

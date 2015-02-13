@@ -1,13 +1,15 @@
-jQuery(document).ready(function($) {
-	var $header = $('section[role="banner"] header');
-	var $sticky="sticky";
-	var $position = "100";
-	$(window).on("scroll", function() {
-		var fromTop = $("body").scrollTop();		
-		if( fromTop > $position && !$header.hasClass($sticky) ) {
-			$header.addClass($sticky);
-		   } else if ( fromTop <= $position ) {
-			$header.removeClass($sticky);
-		}
-	});
+jQuery(function(){
+ var stickHeader = 70;
+  jQuery(window).scroll(function() {
+    var scroll = getCurrentScroll();
+      if ( scroll >= stickHeader ) {
+           jQuery('section[role="banner"] header').addClass('sticky');
+        }
+        else {
+            jQuery('section[role="banner"] header').removeClass('sticky');
+        }
+  });
+function getCurrentScroll() {
+    return window.pageYOffset || document.documentElement.scrollTop;
+    }
 });

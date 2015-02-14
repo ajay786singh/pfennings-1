@@ -52,6 +52,8 @@
 </head>
 
 <body <?php body_class();?>>
+
+test
 <div id="mm-menu-toggle" class="mm-menu-toggle">Menu</div>
   
 <nav id="mm-menu" class="mm-menu">

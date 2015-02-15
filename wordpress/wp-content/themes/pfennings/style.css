@@ -616,7 +616,7 @@ body.mm-menu-open {
 .mm-menu-toggle {
   position: fixed;
   top: 20px;
-  right: 50px;
+  right: 30px;
   padding-right: 35px;
   z-index: 21001;
   cursor: pointer;
@@ -630,6 +630,11 @@ body.mm-menu-open {
   @media screen and (min-width: 50em) {
     .mm-menu-toggle {
       top: 27px; } }
+  .admin-bar .mm-menu-toggle {
+    top: 65px; }
+    @media screen and (min-width: 50em) {
+      .admin-bar .mm-menu-toggle {
+        top: 50px; } }
   .mm-menu-toggle:after {
     background: url(dist/images/menu-buttons.png) 0 0 no-repeat;
     content: "";

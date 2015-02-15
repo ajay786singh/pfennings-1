@@ -36,7 +36,13 @@ body.mm-menu-open {
 	@include media($bp-large) {
 		top: 27px; 
 	}
-	right: 50px;
+	.admin-bar & {
+		top: 65px; 		 
+		@include media($bp-large) {
+			top: 50px; 
+		}
+	}
+	right: 30px;
 	padding-right: 35px;
 	z-index: 21001;
 	cursor:pointer;

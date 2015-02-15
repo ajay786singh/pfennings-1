@@ -32,8 +32,17 @@ body.mm-menu-open {
 
 .mm-menu-toggle {
 	position: fixed;
-	top: 24px; 
-	right: 50px;
+	top: 20px; 
+	@include media($bp-large) {
+		top: 27px; 
+	}
+	.admin-bar & {
+		top: 65px; 		 
+		@include media($bp-large) {
+			top: 50px; 
+		}
+	}
+	right: 30px;
 	padding-right: 35px;
 	z-index: 21001;
 	cursor:pointer;

@@ -32,7 +32,10 @@ body.mm-menu-open {
 
 .mm-menu-toggle {
 	position: fixed;
-	top: 24px; 
+	top: 20px; 
+	@include media($bp-large) {
+		top: 27px; 
+	}
 	right: 50px;
 	padding-right: 35px;
 	z-index: 21001;

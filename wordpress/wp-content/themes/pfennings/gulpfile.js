@@ -31,7 +31,8 @@ var scriptList = [
 	'src/js/custom/share.js',
 	'src/js/custom/scroll-down.js',
 	'src/js/custom/sticky-header.js',
-	'src/js/custom/store.js'
+	'src/js/custom/store.js',
+	'src/js/custom/social_aggregator.js'
 ];
 
 var fontIcons = [

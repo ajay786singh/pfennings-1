@@ -3,15 +3,20 @@
 Template Name: Blog Archive
 */
 get_header(); ?>
-
 <!-- Get custom meta values -->
 <?php 
     $bannerHeadline     = wpautop(get_post_meta($post->ID,'_banner_heading',true));
     $bannerImageId      = get_post_meta($post->ID, '_banner_image', true);
     $bannerImageUrl     = wp_get_attachment_image_src($bannerImageId,'banner', true);
+	if($bannerImageUrl == "") {
+		$image=get_bloginfo('template_url')."/dist/images/bg-hero.png";
+	} else {
+		//$image=$bannerImageUrl[0];
+		$image=get_bloginfo('template_url')."/dist/images/bg-hero.png";
+	}
+	
 ?>
-
-<section role="slider" style="background: url(<?php echo $bannerImageUrl[0]; ?>) no-repeat; background-size: cover; background-position: center center;">
+<section role="slider" style="background: url(<?php echo $image; ?>) no-repeat; background-size: cover; background-position: center center;">
     <header>
         <hgroup>
             <h6 class="headline"> 
@@ -29,45 +34,17 @@ get_header(); ?>
     <a id="down-link" href="#content" class="target"><i class="fa fa-chevron-down"></i></a>
 </div>
 
-<?php 
-    $args  = array(
-        'posts_per_page' => 10,
-        'paged' => $paged,
-    );
-    query_posts($args);
-?>
-
 <section role="main">
+	
 	<div class="post-container">
     <!-- loop starts -->
-    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	
-    	<!-- Get post values -->
-    	<?php
-    		$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'thumbnail' );
-    		$imageDummy = "http://placehold.it/150&text=Pfennings";
-    	?>
-
-        <div class="post">
-			<div class="post-image">
-				<?php 
-					if(!$image) { ?>
-						<img src="<?php echo $imageDummy; ?>">
-					<?php } else { ?>
-						<img src="<?php echo $image[0]; ?>">
-				<?php } ?>
-			</div>
-			<div class="post-content">
-				<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-				<small><?php echo get_the_author(); ?>, <?php echo get_the_date(); ?></small>  
-				<p><?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?></p>
-			</div>
-		</div>	
-    <?php endwhile; endif; ?>
+		<?php 
+			$feeds = array( array('label'=>'twitter','link'=>'https://twitter.com/PfOrganicFarms','filter'=>'social'));
+			$results = json_cached_results($feeds);
+			show_feed_results($results);
+		?>
 		
-		<?php pagination(); ?>
-		
-	</div>
-	<?php get_sidebar();?>
-	
+	<!-- loop ends -->
+    </div>
 </section>
 <?php get_footer(); ?>

@@ -1,6 +1,21 @@
 <?php
 require get_template_directory().'/includes/library/facebook/facebook.php';
 
+function super_unique($array)
+{
+  $result = array_map("unserialize", array_unique(array_map("serialize", $array)));
+
+  foreach ($result as $key => $value)
+  {
+    if ( is_array($value) )
+    {
+      $result[$key] = super_unique($value);
+    }
+  }
+
+  return $result;
+}
+
 function fetch_facebook_feed() {
 	// Create our Application instance (replace this with your appId and secret).
 	$facebook = new Facebook(array(
@@ -20,7 +35,7 @@ function fetch_facebook_feed() {
 			$title = $post['message'];
 			$link = $post['link'];
 			$author=$post[$i]['from']['name'];
-			$results[]=array('title'=>$title,'author'=>$author,'link'=>$link,'img'=>$img,'date'=>$date,'label'=>'facebook','filter'=>'social');
+			$results[]=super_unique(array('title'=>$title,'author'=>$author,'link'=>$link,'img'=>$img,'date'=>$date,'label'=>'facebook','filter'=>'social'));
 			$i++; // add 1 to the counter
 		}
 		//  break out of the loop if counter has reached 10
@@ -309,20 +324,18 @@ function show_feed_results( $results = NULL ) {
 									}
 								}
 							?>
-					<p class="none"><?php echo $label;?></p>
-                    <div class="post-title" style="height: 100px; margin: 0 12px 18px 12px;">
-                    	<p><b><?php 
-                    			if (!$author): 
-                    				echo "Pfennings";
-                    			else: 
-                    				echo $author;
-                    			endif; ?></b> // Posted <?php echo date("M d, Y", strtotime($newDate));?></p>
+					
+	                <div class="post-image" style="background-image:url(<?php echo $feed_img;?>);">
+		                <img class="post-img" src="<?php echo $feed_img;?>" style="display:none;">
+	            	</div>		
+                    <div class="post-title">
+                    	<p><?php echo date("M d, Y", strtotime($newDate));?></p>
 					
                     <p class="title">
                     	<a href="<?php echo $link;?>" <?php if($label!='blog') { ?> target="_blank" <?php } ?>>
 						<?php 					
-							if (strlen($title) > 100 && $label !='twitter') {
-								echo substr($title, 0, 100) . '...'; 
+							if (strlen($title) > 75) {
+								echo substr($title, 0, 75) . '...'; 
 							
 							} else {
 								echo $title;
@@ -331,9 +344,6 @@ function show_feed_results( $results = NULL ) {
                         </a>
                     </p>
 					</div>
-	                <div style="overflow: hidden;width: 100%;height: 250px; background-image:url(<?php echo $feed_img;?>); background-repeat:no-repeat; background-size: cover; background-position: center center;">
-		                <img class="post-img" src="<?php echo $feed_img;?>" style="display:none;">
-	            	</div>
 				</div>
 
 				<?php

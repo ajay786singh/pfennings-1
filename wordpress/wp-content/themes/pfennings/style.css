@@ -1313,38 +1313,58 @@ aside {
       .team .list:nth-child(2n) {
         margin-left: 14.87299%; } }
 
-@media screen and (min-width: 50em) {
-  .post-container {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 57.35098%;
-    padding-right: 50px;
-    border-right: 1px solid #cbcbcb;
-    margin-left: 8.5298%; }
-    .post-container:last-child {
-      margin-right: 0; } }
+.post-container {
+  float: left;
+  display: block;
+  margin-right: 5.85151%;
+  width: 100%; }
+  .post-container:last-child {
+    margin-right: 0; }
+  @media screen and (min-width: 50em) {
+    .post-container {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 82.94039%;
+      margin-left: 8.5298%; }
+      .post-container:last-child {
+        margin-right: 0; } }
 
-@media screen and (min-width: 50em) {
-  .post {
-    border-bottom: 1px solid #cbcbcb; }
-    .post:last-child {
-      border-bottom: none; }
-    .post small {
-      color: black; }
-    .post .post-image {
+.post {
+  border: 1px solid #cbcbcb;
+  margin-bottom: 50px;
+  padding: 20px; }
+  @media screen and (min-width: 50em) {
+    .post {
+      width: 30%;
+      margin-left: 2%;
+      margin-right: 2%;
       float: left; }
-      .post .post-image img {
-        border-radius: 10%; }
-    .post .post-content {
-      flaot: left;
-      margin-left: 170px;
-      margin-bottom: 55px; }
-      .post .post-content h4 {
-        margin-bottom: 0.5em; }
-      .post .post-content a {
-        color: black;
-        text-decoration: none; } }
+      .post:nth-child(3n) {
+        margin-right: 0; }
+      .post:nth-child(3n+1) {
+        margin-left: 0; }
+      .post small {
+        color: black; }
+      .post .post-image {
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        float: left;
+        height: 250px;
+        overflow: hidden;
+        width: 100%; }
+        .post .post-image img {
+          border-radius: 10%; }
+      .post .post-content {
+        flaot: left;
+        margin-left: 170px;
+        margin-bottom: 55px; }
+        .post .post-content h4 {
+          margin-bottom: 0.5em; }
+        .post .post-content a {
+          color: black;
+          text-decoration: none; } }
 
 .block-grid-2 {
   display: block;

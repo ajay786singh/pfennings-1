@@ -49,26 +49,40 @@ aside {
     }
 }
 .post-container {
+	@include span-columns(5);
 	@include media($bp-large) {
-        @include span-columns(7);
-		padding-right: 50px;
-		border-right:1px solid #cbcbcb;
-        @include shift(1);
+        @include span-columns(10);
+		@include shift(1);
     }
 }
 
 .post {
+	border:1px solid #cbcbcb;
+	margin-bottom:50px;
+	padding: 20px;
 	@include media($bp-large) {
-		border-bottom:1px solid #cbcbcb;
-		&:last-child {
-			border-bottom:none;
+		width:30%;
+		margin-left:2%;
+		margin-right:2%;
+		float:left;
+		&:nth-child(3n) {
+			margin-right:0;
+		}		
+		&:nth-child(3n+1) {
+			margin-left:0;
 		}		
 		small {
 			color:$black;
 		}
 		.post-image {
+			background-position: center center;
+            background-repeat:no-repeat; 
+			background-size: cover; 
 			float:left;	
-            img {
+			height: 250px; 
+			overflow: hidden;
+			width: 100%;
+			img {
                 border-radius: 10%;
             }
 		}

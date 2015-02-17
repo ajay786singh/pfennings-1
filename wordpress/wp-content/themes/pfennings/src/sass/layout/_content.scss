@@ -187,10 +187,14 @@ aside {
 	@include omega;
 	@include span-columns(5);
 	@include media($bp-large) {
-		@include span-columns(4 of 12);
-	}
-	&:nth-child(3n) {
-		margin-right: 0;
+		@include span-columns(4 of 12);		
+		&:nth-child(3n) {
+			margin-right: 0;
+			clear:none;
+		}
+		&:nth-child(3n+1) {
+			clear:both;
+		}
 	}
 	margin-bottom:1.5em;
 	.results_row_left_column {

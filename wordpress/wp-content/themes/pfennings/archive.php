@@ -16,7 +16,7 @@ get_header(); ?>
 	}
 	
 ?>
-<section role="slider" style="background: url(<?php echo $image; ?>) no-repeat; background-size: cover; background-position: center center;">
+<section role="slider" style="background-image: url(<?php echo $image; ?>); background-repeat: no-repeat;">
     <header>
         <hgroup>
             <h6 class="headline"> 

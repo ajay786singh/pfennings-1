@@ -10,7 +10,7 @@
     $bannerImageUrl     = wp_get_attachment_image_src($bannerImageId,'banner', true);
 ?>
 
-<section role="slider" style="background: url(<?php echo $bannerImageUrl[0]; ?>) no-repeat; background-size: cover; background-position: center center;">
+<section role="slider" style="background-image: url(<?php echo $bannerImageUrl[0]; ?>); background-repeat: no-repeat;">
     <header>
         <hgroup>
             <h6 class="headline"> 

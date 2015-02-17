@@ -13,7 +13,7 @@
     $currentPartners    = get_post_meta($post->ID,'_current_partners',true);
 ?>
 
-<section role="slider" style="background-image: url(<?php echo $bannerImageUrl[0]; ?>); background-repeat: no-repeat;">
+<section role="slider" style="background-image: url(<?php echo $bannerImageUrl[0]; ?>);">
     <header>
         <hgroup>
             <h6 class="headline"> 

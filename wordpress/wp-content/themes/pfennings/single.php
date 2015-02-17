@@ -10,7 +10,7 @@
 <script>
 	var share_image ='<?php echo $postThumb;?>';
 </script>
-<section role="slider" style="background-image: url(<?php echo $postThumb['0']; ?>); background-repeat: no-repeat;">
+<section role="slider" style="background-image: url(<?php echo $postThumb['0']; ?>);">
     <header>
         <hgroup>
             <h6 class="headline">              

@@ -2,10 +2,9 @@ section[role=slider] {
     @include display(flex);
     @include align-items(center);
     @include justify-content(center);
-    //background: -webkit-radial-gradient(top center, ellipse cover, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%), url("../images/bg-hero.png") no-repeat;
-    //background: url("../images/bg-hero.png") no-repeat;
-	background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.8);
 	background-position: center center;
+	background-repeat: no-repeat;
 	background-size: cover;
     height: 100vh;
     header {

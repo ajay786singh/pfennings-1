@@ -33,25 +33,46 @@ h1 {
 	}
 }
 
-h2 { font-size: modular-scale(5); }
+h2 { 
+	font-size: modular-scale(2); 
+	@include media($bp-mid) {
+		font-size: modular-scale(5); 
+	}
+}
 
-h3 { font-size: modular-scale(4); }
+h3 { 
+	font-size: modular-scale(2); 
+	@include media($bp-mid) {
+		font-size: modular-scale(4); 
+	}
+}
 
-h4 { font-size: modular-scale(3); }
+h4 { 
+	font-size: modular-scale(1); 
+	@include media($bp-mid) {
+		font-size: modular-scale(3); 
+	}
+}
 
 h5 { 
-    font-size: modular-scale(2); 
+	font-size: modular-scale(1); 
+	@include media($bp-mid) {
+		font-size: modular-scale(2); 
+	} 
     text-transform: uppercase;
     @include margin(null null 1em null);
 }
 
 h6 { 
-    font-size: modular-scale(1); 
+	font-size: modular-scale(1); 
 }
 
 p, ul, ol {
     list-style-type: disc;
-    font-size: $base-font-size * 1.25;
+	font-size: $base-font-size * 1;
+    @include media($bp-mid) {
+		font-size: $base-font-size * 1.25;
+	}	
     line-height: 1.5em;
     margin-bottom: 1.5em;
     font-weight: 100;

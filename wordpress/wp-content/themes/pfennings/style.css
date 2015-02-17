@@ -438,28 +438,43 @@ h1 {
       font-size: 3.8147em; } }
 
 h2 {
-  font-size: 3.05176em; }
+  font-size: 1.5625em; }
+  @media screen and (min-width: 64em) {
+    h2 {
+      font-size: 3.05176em; } }
 
 h3 {
-  font-size: 2.44141em; }
+  font-size: 1.5625em; }
+  @media screen and (min-width: 64em) {
+    h3 {
+      font-size: 2.44141em; } }
 
 h4 {
-  font-size: 1.95313em; }
+  font-size: 1.25em; }
+  @media screen and (min-width: 64em) {
+    h4 {
+      font-size: 1.95313em; } }
 
 h5 {
-  font-size: 1.5625em;
+  font-size: 1.25em;
   text-transform: uppercase;
   margin-bottom: 1em; }
+  @media screen and (min-width: 64em) {
+    h5 {
+      font-size: 1.5625em; } }
 
 h6 {
   font-size: 1.25em; }
 
 p, ul, ol {
   list-style-type: disc;
-  font-size: 1.25em;
+  font-size: 1em;
   line-height: 1.5em;
   margin-bottom: 1.5em;
   font-weight: 100; }
+  @media screen and (min-width: 64em) {
+    p, ul, ol {
+      font-size: 1.25em; } }
 
 .team p {
   font-size: 1em; }
@@ -1628,6 +1643,10 @@ section[role=slider] {
   -o-justify-content: center;
   justify-content: center;
   -ms-flex-pack: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 100vh; }
   section[role=slider] header {
     max-width: 80em;

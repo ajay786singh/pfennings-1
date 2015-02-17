@@ -1,20 +1,19 @@
 <?php
 require get_template_directory().'/includes/library/facebook/facebook.php';
 
-function super_unique($array)
-{
-  $result = array_map("unserialize", array_unique(array_map("serialize", $array)));
+function array_multi_unique($multiArray){
 
-  foreach ($result as $key => $value)
-  {
-    if ( is_array($value) )
-    {
-      $result[$key] = super_unique($value);
+  $uniqueArray = array();
+
+  foreach($multiArray as $subArray){
+
+    if(!in_array($subArray, $uniqueArray)){
+      $uniqueArray[] = $subArray;
     }
   }
-
-  return $result;
+  return $uniqueArray;
 }
+
 
 function fetch_facebook_feed() {
 	// Create our Application instance (replace this with your appId and secret).
@@ -35,7 +34,7 @@ function fetch_facebook_feed() {
 			$title = $post['message'];
 			$link = $post['link'];
 			$author=$post[$i]['from']['name'];
-			$results[]=super_unique(array('title'=>$title,'author'=>$author,'link'=>$link,'img'=>$img,'date'=>$date,'label'=>'facebook','filter'=>'social'));
+			$results[]=array('title'=>$title,'author'=>$author,'link'=>$link,'img'=>$img,'date'=>$date,'label'=>'facebook','filter'=>'social');
 			$i++; // add 1 to the counter
 		}
 		//  break out of the loop if counter has reached 10
@@ -43,7 +42,8 @@ function fetch_facebook_feed() {
 			break;
 		}
 	}
-	return $results;
+	
+	return array_multi_unique($results);
 }
 
 function fetch_instagram_feed($url) {

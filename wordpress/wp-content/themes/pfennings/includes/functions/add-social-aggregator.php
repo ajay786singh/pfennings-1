@@ -248,6 +248,8 @@ function get_feed_results($feeds) {
 				}
 			}
 		}
+		
+		// Facebook Feeds
 		$fb_feeds=fetch_facebook_feed();
 		if($fb_feeds !='') {
 			if($results !='') {
@@ -256,6 +258,7 @@ function get_feed_results($feeds) {
 				$results=$fb_feeds;	
 			}
 		}	
+		// Blog Feeds
 		$posts="";	
 		query_posts("post_type=post&showposts=-1");
 		if(have_posts()):while(have_posts()):the_post();
@@ -268,15 +271,6 @@ function get_feed_results($feeds) {
 				$results=$posts;	
 			}
 		}
-		
-		$posts=fetch_facebook_feed();
-		if($fb_feeds !='') {
-			if($results !='') {
-				$results=array_merge($fb_feeds,$results);
-			}else {
-				$results=$fb_feeds;	
-			}
-		}	
 		
 		if($results) {
 			usort($results, "sort_by_date");

@@ -51,7 +51,9 @@ aside {
 .post-container {
 	@include span-columns(5);
 	@include media($bp-large) {
-        @include span-columns(10);
+		@include span-columns(7);
+		padding-right: 30px;	
+		border-right:1px solid #cbcbcb;
 		@include shift(1);
     }
 }
@@ -61,14 +63,14 @@ aside {
 	margin-bottom:50px;
 	padding: 20px;
 	@include media($bp-large) {
-		width:30%;
+		width:45%;
 		margin-left:2%;
-		margin-right:2%;
+		margin-right:3%;
 		float:left;
-		&:nth-child(3n) {
+		&:nth-child(2n) {
 			margin-right:0;
-		}		
-		&:nth-child(3n+1) {
+		}
+		&:nth-child(2n+1) {
 			margin-left:0;
 		}		
 		small {
@@ -185,10 +187,14 @@ aside {
 	@include omega;
 	@include span-columns(5);
 	@include media($bp-large) {
-		@include span-columns(4 of 12);
-	}
-	&:nth-child(3n) {
-		margin-right: 0;
+		@include span-columns(4 of 12);		
+		&:nth-child(3n) {
+			margin-right: 0;
+			clear:none;
+		}
+		&:nth-child(3n+1) {
+			clear:both;
+		}
 	}
 	margin-bottom:1.5em;
 	.results_row_left_column {

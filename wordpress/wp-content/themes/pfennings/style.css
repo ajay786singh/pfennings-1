@@ -1340,7 +1340,9 @@ aside {
       float: left;
       display: block;
       margin-right: 2.35765%;
-      width: 82.94039%;
+      width: 57.35098%;
+      padding-right: 30px;
+      border-right: 1px solid #cbcbcb;
       margin-left: 8.5298%; }
       .post-container:last-child {
         margin-right: 0; } }
@@ -1351,13 +1353,13 @@ aside {
   padding: 20px; }
   @media screen and (min-width: 50em) {
     .post {
-      width: 30%;
+      width: 45%;
       margin-left: 2%;
-      margin-right: 2%;
+      margin-right: 3%;
       float: left; }
-      .post:nth-child(3n) {
+      .post:nth-child(2n) {
         margin-right: 0; }
-      .post:nth-child(3n+1) {
+      .post:nth-child(2n+1) {
         margin-left: 0; }
       .post small {
         color: black; }
@@ -1500,9 +1502,12 @@ aside {
       margin-right: 2.35765%;
       width: 31.76157%; }
       .results_wrapper:last-child {
-        margin-right: 0; } }
-  .results_wrapper:nth-child(3n) {
-    margin-right: 0; }
+        margin-right: 0; }
+      .results_wrapper:nth-child(3n) {
+        margin-right: 0;
+        clear: none; }
+      .results_wrapper:nth-child(3n+1) {
+        clear: both; } }
   .results_wrapper .results_row_left_column {
     display: block;
     width: 100%;

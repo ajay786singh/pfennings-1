@@ -76,6 +76,9 @@ aside {
 		small {
 			color:$black;
 		}
+		.post-title {
+			margin-bottom: 0;
+		}
 		.post-image {
 			background-position: center center;
             background-repeat:no-repeat; 
@@ -83,6 +86,7 @@ aside {
 			float:left;	
 			height: 250px; 
 			overflow: hidden;
+			margin-bottom:10px;
 			width: 100%;
 			img {
                 border-radius: 10%;

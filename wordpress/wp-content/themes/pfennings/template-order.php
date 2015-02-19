@@ -21,7 +21,7 @@ get_header(); ?>
                 <?php if ($bannerHeadline) { ?>
                     <?php echo $bannerHeadline; ?>
                 <?php } else { ?>
-                    <?php echo the_title(); ?>
+                    <p><?php echo the_title(); ?></p>
                 <?php  } ?> 
             </h6>
         </hgroup>

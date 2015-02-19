@@ -14,7 +14,7 @@
     <header>
         <hgroup>
             <h6 class="headline">              
-                <?php echo the_title(); ?>
+                <p><?php echo the_title(); ?></p>
             </h6>
         </hgroup>
     </header>

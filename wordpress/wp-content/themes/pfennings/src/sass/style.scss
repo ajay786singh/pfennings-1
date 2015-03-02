@@ -1,1 +1,41 @@
-@import "settings";
+/*!
+Theme Name: Pfennings
+Theme URI: http://wordpress.org/
+Description: The 2014 default theme for WordPress.
+Author: Hypenotic
+Author URI: http://wordpress.org/
+Version: 1.0
+*/
+
+// ONE FILE TO RULE THEM ALL :)
+
+// Library
+@import "../components/normalize-scss/normalize";
+@import "../components/bourbon/app/assets/stylesheets/bourbon";
+
+//Neat Settings -- uncomment if using Neat -- must be imported before Neat
+@import "layout/grid-settings";
+@import "../components/neat/app/assets/stylesheets/neat";
+
+@import "helpers/variables.scss";
+@import "helpers/mixins/flash";
+@import "helpers/extends/button";
+@import "helpers/extends/clearfix";
+@import "helpers/extends/hide-text";
+
+@import "base/typography.scss";
+@import "base/wp_core.scss";
+
+@import "layout/header";
+@import "layout/content";
+@import "layout/footer";
+@import "layout/nav";
+@import "layout/hero";
+
+@import "components/arrow";
+@import "components/buttons";
+@import "components/pagination";
+@import "components/social-share";
+@import "components/forms";
+
+@import "vendors/animate";

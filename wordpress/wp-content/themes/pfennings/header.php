@@ -65,6 +65,11 @@
 				<img src="<?php bloginfo('template_url' ); ?>/dist/images/pfenningslogo.png">
 			</a>
         </div>
+        <div class="logo_sticky">
+            <a href="<?php bloginfo('url');?>">
+                <h1>Pfenning's Organic Farms</h1>
+            </a>
+        </div>
         <!--<div id="mm-menu-toggle" class="mm-menu-toggle"><span></span>Menu</div> -->
     </header>
 </section>

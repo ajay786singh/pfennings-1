@@ -12,7 +12,7 @@ $bp-mid: new-breakpoint(min-width 64em 12);
 $bp-small: new-breakpoint(max-width 64em);
 
 // Visual Grid view
-$visual-grid: false;
+$visual-grid: font-style: italic;
 $visual-grid-color: #cccccc;
 $visual-grid-index: front;
 $visual-grid-opacity: 0.2;

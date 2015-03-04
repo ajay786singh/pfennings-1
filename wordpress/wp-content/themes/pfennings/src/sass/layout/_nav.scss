@@ -42,14 +42,15 @@ body.mm-menu-open {
 			top: 50px; 
 		}
 	}
-	right: 30px;
+	right: 47px;
 	padding-right: 35px;
+	padding-top: 4px;
 	z-index: 21001;
 	cursor:pointer;
 	width: $menu-toggle-width;
 	height: $menu-toggle-height;
 	color:$white;
-	font-size: 1.25em;
+	font-size: 1em;
 	line-height: 1.5em;
 	font-weight: 600;
 	&:after {

@@ -70,7 +70,7 @@ gulp.task('sass', function() {
     .pipe(gulp.dest(''))
     .pipe(livereload())
     .pipe(notify("sass task finished"));
-});
+}); 
 
 // Create fonticons compile task
 gulp.task('icons', function() { 

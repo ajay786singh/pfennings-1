@@ -37,46 +37,47 @@ select[multiple=multiple] {
     background-color: white;
     border-radius: $form-border-radius;
     border: 1px solid $form-border-color;
-    box-shadow: $form-box-shadow;
+    // box-shadow: $form-box-shadow;
     font-family: $serif;
     font-size: 1.1em;
     margin-bottom: $base-line-height / 2;
     padding: $base-line-height / 2.3 $base-line-height / 2.3;
     width: 100%;
     margin-right: 10px;
-    color: $dark-gray;
+    color: white;
     &:hover {
-        border-color: $form-border-color-hover;
+        // border-color: $form-border-color-hover;
     }
     &:focus {
-        border-color: $form-border-color-focus;
-        box-shadow: $form-box-shadow-focus;
+        // border-color: $form-border-color-focus;
+        // box-shadow: $form-box-shadow-focus;
         outline: none;
-        color: rgb(54, 116, 187);
+        color: white;
     }
 }
 
 footer input[type="submit"] {
     -webkit-font-smoothing: antialiased;
-    background-color: $light-gray;
+    background-color: $footer-background-color;
     border-radius: $base-border-radius;
-    color: $dark-gray;
+    color: $light-gray;
     display: inline-block;
     font-size: $base-font-size;
     font-family: $serif;
     font-size: 1em;
-    padding: .7em 2em;
+    padding: 0.5em;
     width: 100%;
     text-decoration: none;
-    @include appearance(none);
-    border: none;
+    // @include appearance(none);
+    border: 1px solid $light-gray;
     cursor: pointer;
     user-select: none;
     vertical-align: middle;
     white-space: nowrap;
+    margin-top: 0.1em;
     &:hover {
-        background-color: $green;
-        color: white;
+        background-color: $light-gray;
+        color: $footer-background-color;
     }
 }
 
@@ -127,6 +128,7 @@ select {
     input[type="text"], input[type="email"]  {
         padding: .2em .2em;
     }
+
     input[type="checkbox"] {
         float: left;
         display: inline-block;
@@ -161,41 +163,90 @@ select {
 }
 
 aside {
-	#searchForm {
-		LABEL {
-			text-align:left;
-			font-size:1.25em;
-		}
-		.search_item {			
-			width:98%;
-			margin-bottom: 0.5em;
-			overflow: hidden;
-		}
-		select {
-			font-size: 1.5em;
-			padding: 8px 5px;
-			width:100%;
-			margin-bottom:1em;				
-			@include box-sizing(border-box);
-			@include transition(border-color);
-			background-color: white;
-			border-radius: $form-border-radius;
-			//border: 1px solid $form-border-color;
-			box-shadow: $form-box-shadow;
-		}
-		input[type="text"] {
-			width:100%;
-		}
-	}
-	#address_search {
-		overflow:hidden;
-		margin-bottom:2em;
-		#addy_in_radius {
-			display:block;
-			width:100%;
-		}
-		input[type="submit"] {
-			@extend button;
-		}
-	}
+    #searchForm {
+        LABEL {
+            text-align:left;
+            font-size:1.25em;
+        }
+        .search_item {          
+            width:98%;
+            margin-bottom: 0.5em;
+            overflow: hidden;
+        }
+        select {
+            font-size: 1.5em;
+            padding: 8px 5px;
+            width:100%;
+            margin-bottom:1em;              
+            @include box-sizing(border-box);
+            @include transition(border-color);
+            background-color: white;
+            border-radius: $form-border-radius;
+            //border: 1px solid $form-border-color;
+            box-shadow: $form-box-shadow;
+        }
+        input[type="text"] {
+            width:100%;
+        }
+    }
+    #address_search {
+        overflow:hidden;
+        margin-bottom:2em;
+        #addy_in_radius {
+            display:block;
+            width:100%;
+        }
+        input[type="submit"] {
+            @extend button;
+        }
+    }
 }
+
+#mce-FNAME, #mce-EMAIL {
+    font-size: 0.8em;
+}
+
+#mce-FNAME {
+    display: inline-block;
+    width: 32%;
+    float: left;
+    margin-right: 0;
+    margin-bottom: 1em;
+    background: $footer-background-color;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+#mce-EMAIL {
+    display: inline-block;
+    width: 62%;
+    clear: both;
+    margin: 0 0 1em 1em;
+    background: $footer-background-color;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+footer {
+    ::-webkit-input-placeholder {
+       color: white;
+    }
+
+    :-moz-placeholder { /* Firefox 18- */
+       color: white;  
+    }
+
+    ::-moz-placeholder {  /* Firefox 19+ */
+       color: white;  
+    }
+
+    :-ms-input-placeholder {  
+       color: white;  
+    }
+
+}
+
+
+

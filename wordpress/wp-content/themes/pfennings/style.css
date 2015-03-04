@@ -609,6 +609,11 @@ div#map_sidebar .results_wrapper .results_entry a {
 .results_wrapper .results_entry a:hover {
   background: none; }
 
+.footer-inner h5 {
+  font-size: 1.25em;
+  margin-top: 0;
+  margin-bottom: 0.5em; }
+
 img {
   max-width: 100%; }
 
@@ -1053,11 +1058,7 @@ footer {
           footer .footer-inner .content ul li {
             margin-top: -0.5em; }
           footer .footer-inner .content p {
-            margin-bottom: 0; }
-          footer .footer-inner .content h5 {
-            font-size: 1.25em;
-            margin-top: 0;
-            margin-bottom: 0.5em; } }
+            margin-bottom: 0; } }
     @media screen and (max-width: 64em) {
       footer .footer-inner .footer_logo, footer .footer-inner .copyright {
         display: none; } }

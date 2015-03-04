@@ -13,7 +13,7 @@
         </div>
         <!-- Column 1 -->
         <div class="content">
-            <h5>TEST Get in Touch</h5>
+            <h5>Get in Touch</h5>
             <p>
                 1209 Waterloo Street<br>
                 New Hamburg, ON. N3A 1T1 <br>

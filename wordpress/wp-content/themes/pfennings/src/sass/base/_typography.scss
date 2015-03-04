@@ -18,11 +18,17 @@ body {
     color: $base-font-color;
     font-family: $base-font-family;
     font-size: $base-font-size;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: 0.5px;
     //line-height: $unitless-line-height;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: $header-font-family;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 0.5px;
     text-rendering: optimizeLegibility;
 }
 
@@ -75,7 +81,7 @@ p, ul, ol {
 	}	
     line-height: 1.5em;
     margin-bottom: 1.5em;
-    font-weight: 100;
+    font-weight: 300;
 }
 
 .team {
@@ -191,8 +197,10 @@ small {
             opacity: 0.6;
         }
     }
-    .home-font {
+    span.home-font {
         font-family: $serif;
+        font-weight: 100;
+        font-style: normal;
     }
 }
 
@@ -246,4 +254,20 @@ small {
 	   font-size: 1.25em;
 	   margin-top: 0;
 	   margin-bottom: 0.5em;
-}	
+}
+
+.logo_sticky{
+
+    h1 {
+        font-size: 1.5em;
+        color: white;
+        padding: 0.5em 2em;
+        float: left;
+    }
+
+    .tagline {
+        font-family: $sans-serif;
+        font-size: 0.7em;
+        margin-left: 0.8em;
+    }
+}

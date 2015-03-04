@@ -424,11 +424,17 @@ body {
   -webkit-font-smoothing: antialiased;
   background-color: white;
   color: #333333;
-  font-family: "museo-slab", serif;
-  font-size: 1em; }
+  font-family: "adelle", serif;
+  font-size: 1em;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: 0.5px; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "museo-slab", serif;
+  font-family: "adelle", serif;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 0.5px;
   text-rendering: optimizeLegibility; }
 
 h1 {
@@ -471,7 +477,7 @@ p, ul, ol {
   font-size: 1em;
   line-height: 1.5em;
   margin-bottom: 1.5em;
-  font-weight: 100; }
+  font-weight: 300; }
   @media screen and (min-width: 64em) {
     p, ul, ol {
       font-size: 1.25em; } }
@@ -528,7 +534,7 @@ cite {
     content: '\2014 \00A0'; }
 
 small {
-  font-family: "museo-slab", serif;
+  font-family: "adelle", serif;
   font-size: .8em;
   color: white; }
 
@@ -563,8 +569,10 @@ small {
     border-bottom: 1px solid white; }
     .headline a:hover {
       opacity: 0.6; }
-  .headline .home-font {
-    font-family: "museo-slab", serif; }
+  .headline span.home-font {
+    font-family: "adelle", serif;
+    font-weight: 100;
+    font-style: normal; }
 
 .error {
   background: #fbe3e4;
@@ -613,6 +621,16 @@ div#map_sidebar .results_wrapper .results_entry a {
   font-size: 1.25em;
   margin-top: 0;
   margin-bottom: 0.5em; }
+
+.logo_sticky h1 {
+  font-size: 1.5em;
+  color: white;
+  padding: 0.5em 2em;
+  float: left; }
+.logo_sticky .tagline {
+  font-family: "grafolita-script", sans-serif;
+  font-size: 0.7em;
+  margin-left: 0.8em; }
 
 img {
   max-width: 100%; }
@@ -701,7 +719,7 @@ section[role=banner] {
       @media screen and (min-width: 64em) {
         section[role=banner] header .logo {
           max-width: 400px;
-          padding: 1em 0 0 2em; } }
+          padding: 1em 0 0 3em; } }
     section[role=banner] header .logo_sticky {
       display: none; }
     @media screen and (min-width: 64em) {
@@ -716,10 +734,6 @@ section[role=banner] {
         z-index: 9999; }
         section[role=banner] header.sticky .logo_sticky {
           display: block; }
-          section[role=banner] header.sticky .logo_sticky h1 {
-            font-size: 1.5em;
-            color: white;
-            padding: 0.5em 2em; }
         section[role=banner] header.sticky .logo {
           display: none; } }
 
@@ -1550,7 +1564,7 @@ button, .gform_wrapper input[type="submit"], aside #address_search input[type="s
 
 .social-share {
   padding: .2em 0 0.5em 0;
-  font-size: 3em; }
+  font-size: 2em; }
   .social-share a {
     color: white;
     margin-right: .1em;
@@ -1902,7 +1916,7 @@ input,
 label,
 select {
   display: block;
-  font-family: "museo-slab", serif;
+  font-family: "adelle", serif;
   font-size: 2em; }
 
 label {
@@ -1925,7 +1939,7 @@ select[multiple=multiple] {
   background-color: white;
   border-radius: 0.1875em;
   border: 1px solid #f2f2f2;
-  font-family: "museo-slab", serif;
+  font-family: "adelle", serif;
   font-size: 1.1em;
   margin-bottom: 0.75em;
   padding: 0.65217em 0.65217em;
@@ -1945,7 +1959,7 @@ footer input[type="submit"] {
   color: #f2f2f2;
   display: inline-block;
   font-size: 1em;
-  font-family: "museo-slab", serif;
+  font-family: "adelle", serif;
   font-size: 1em;
   padding: 0.5em;
   width: 100%;
@@ -1993,7 +2007,7 @@ select {
 .gform_wrapper label {
   font-size: .9em;
   font-weight: normal;
-  font-family: "museo-slab", serif; }
+  font-family: "adelle", serif; }
 .gform_wrapper input::-webkit-input-placeholder {
   font-size: .9em; }
 .gform_wrapper input::-moz-placeholder {

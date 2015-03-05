@@ -93,7 +93,7 @@ body.mm-menu-open {
 	@include transition(transform 0.5s, box-shadow 0.5s);
 	ul {
         list-style: none;
-        margin: 70px 0 0;
+        margin: 115px 0 0;
         padding: 0;
 		li {
 			margin-left:0;
@@ -105,7 +105,9 @@ body.mm-menu-open {
 				margin: 4px 0;
 				padding: 0px;
 				color: $white;
-				font-size: $font-size--small;
+				font-size: 1.7em;
+				font-weight: 100;
+				line-height: 55px;
 				text-decoration: none;
 				transition: background 0.5s, color 0.5s;
 			}
@@ -119,8 +121,8 @@ body.mm-menu-open {
 
 @media all and ( min-width: 300px ) {
   .mm-menu {
-    width: 300px;
-   @include transform(translateX(300px));
+    width: 440px;
+   @include transform(translateX(440px));
   }
 }
 

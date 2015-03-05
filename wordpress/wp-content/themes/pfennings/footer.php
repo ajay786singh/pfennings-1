@@ -1,18 +1,33 @@
 <footer>
     <div class="footer-inner">
+
+        <div class="content fLogo_area">
+            <div class="footer_logo">
+                <a href="<?php bloginfo('url');?>">
+                    <img src="<?php bloginfo('template_url' ); ?>/dist/images/pfenningslogo_WT.png">
+                </a>
+            </div>
+            <div class="copyright">
+                 <small>Made with Purpose by <br> B Corp Certified <a href="http://hypenotic.com">Hypenotic</a></small>
+             </div>
+        </div>
         <!-- Column 1 -->
         <div class="content">
             <h5>Get in Touch</h5>
             <p>
-                Pfenning's Organic Vegetables Inc.<br>
                 1209 Waterloo Street<br>
-                New Hamburg, ON. N3A 1T1<br><br>
+                New Hamburg, ON. N3A 1T1 <br>
+                <a class="button-map" href="https://goo.gl/maps/RnHjJ" target="_blank" style="border-bottom: 1px solid white">Map</a><br>
                 <b>f:</b> +1 (519) 662-4083<br>
                 <a class="button-phone" href="tel://+15196623468"><b>t:</b> +1 (519) 662-3468</a><br>
                 <a class="button-phone" href="tel://8776623468"><b>Toll free:</b> 877-662-3468</a><br>
                 <a class="button-email" href="mailto:veggies@pfenningsfarms.ca">veggies@pfenningsfarms.ca</a><br>
-                <a class="button-map" href="https://goo.gl/maps/RnHjJ" target="_blank" style="border-bottom: 1px solid white">Map</a>
             </p>
+
+            <div class="social-share">
+                <span class='symbol'><a target="_blank" href="https://www.facebook.com/pfenningsfarm">circlefacebook</a></span>
+                <span class='symbol'><a target="_blank" href="https://twitter.com/PfOrganicFarms">circletwitterbird</a></span></a>
+            </div>
         </div>  
 
         <!-- Column 2 -->
@@ -36,18 +51,18 @@
                     </ol>
                 </fieldset>
             </form>
-            <div class="social-share">
+<!--             <div class="social-share">
                 <span class='symbol'><a target="_blank" href="https://www.facebook.com/pfenningsfarm">circlefacebook</a></span>
                 <span class='symbol'><a href="mailto:veggies@pfenningsfarms.ca">circleemail</a></span>
                 <span class='symbol'><a target="_blank" href="https://twitter.com/PfOrganicFarms">circletwitterbird</a></span></a>
-            </div>
+            </div> -->
         </div> 
     </div>
-    <div class="footer-inner">
+<!--     <div class="footer-inner">
        <div class="copyright">
-            <small>Made with Purpose by B Corp Certified <a href="http://hypenotic.com">Hypenotic</a></small>
+            <small>Made with Purpose by <br> B Corp Certified <a href="http://hypenotic.com">Hypenotic</a></small>
         </div>
-    </div>
+    </div> -->
 </footer>
 
 </div><!--/wrapper-->

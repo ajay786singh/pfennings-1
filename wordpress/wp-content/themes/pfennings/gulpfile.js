@@ -65,13 +65,11 @@ gulp.task('js', function() {
 
 // Create sass compile task
 gulp.task('sass', function() {
-	return gulp.src('src/sass/style.scss')
-		.pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
-		.pipe(sass(sassOptions))
-		//.pipe(gulp.dest(outputDir + '/css'))
-		.pipe(gulp.dest(''))
-		.pipe(livereload())
-		.pipe(notify("sass task finished"));
+    return sass('src/sass/style.scss', sassOptions) 
+    .on('error', function (err) { console.error('Error!', err.message); })
+    .pipe(gulp.dest(''))
+    .pipe(livereload())
+    .pipe(notify("sass task finished"));
 }); 
 
 // Create fonticons compile task

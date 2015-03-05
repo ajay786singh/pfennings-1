@@ -22,13 +22,13 @@
     <?php wp_reset_query(); ?>
 
 <script>
-    (function(d) {
+  (function(d) {
     var config = {
-    kitId: 'lrw1dbe',
-    scriptTimeout: 3000
+      kitId: 'igh1gex',
+      scriptTimeout: 3000
     },
     h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-    })(document);
+  })(document);
 </script>
 <!--
 <script type="text/javascript">
@@ -67,7 +67,8 @@
         </div>
         <div class="logo_sticky">
             <a href="<?php bloginfo('url');?>">
-                <h1>Pfenning's Organic Farms</h1>
+                <h1>Pfenning's Organic Farms<span class="tagline">Community Flavoured Agriculture</span>
+</h1>
             </a>
         </div>
         <!--<div id="mm-menu-toggle" class="mm-menu-toggle"><span></span>Menu</div> -->

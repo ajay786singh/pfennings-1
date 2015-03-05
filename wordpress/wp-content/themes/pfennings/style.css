@@ -1,60 +1,11 @@
-/*
-Error: Invalid CSS after "...rid: font-style": expected selector or at-rule, was ": italic;"
-        on line 15 of src/sass/layout/_grid-settings.scss
-        from line 17 of src/sass/style.scss
-
-10: $bp-large: new-breakpoint(min-width 50em 12);
-11: $bp-mid: new-breakpoint(min-width 64em 12);
-12: $bp-small: new-breakpoint(max-width 64em);
-13: 
-14: // Visual Grid view
-15: $visual-grid: font-style: italic;
-16: $visual-grid-color: #cccccc;
-17: $visual-grid-index: front;
-18: $visual-grid-opacity: 0.2;
-
-Backtrace:
-src/sass/layout/_grid-settings.scss:15
-src/sass/style.scss:17
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:1165:in `expected'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:1101:in `expected'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:43:in `parse'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/engine.rb:393:in `_to_tree'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/engine.rb:299:in `to_tree'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:313:in `block in visit_import'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/stack.rb:88:in `block in with_import'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/stack.rb:115:in `with_frame'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/stack.rb:88:in `with_import'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:312:in `visit_import'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/stack.rb:79:in `block in with_base'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/stack.rb:115:in `with_frame'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/stack.rb:79:in `with_base'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:158:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:52:in `map'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:157:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:8:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/tree/root_node.rb:36:in `css_tree'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/tree/root_node.rb:20:in `render'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/engine.rb:268:in `render'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/exec/sass_scss.rb:404:in `run'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/exec/sass_scss.rb:62:in `process_result'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/exec/base.rb:52:in `parse'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/exec/base.rb:19:in `parse!'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/bin/sass:13:in `<top (required)>'
-/usr/bin/sass:23:in `load'
-/usr/bin/sass:23:in `<main>'
+/*!
+Theme Name: Pfennings
+Theme URI: http://wordpress.org/
+Description: The 2014 default theme for WordPress.
+Author: Hypenotic
+Author URI: http://wordpress.org/
+Version: 1.0
 */
-<<<<<<< Updated upstream
 /* ==========================================================================
    Normalize.scss settings
    ========================================================================== */
@@ -473,11 +424,17 @@ body {
   -webkit-font-smoothing: antialiased;
   background-color: white;
   color: #333333;
-  font-family: "museo-slab", serif;
-  font-size: 1em; }
+  font-family: "adelle", serif;
+  font-size: 1em;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: 0.5px; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "museo-slab", serif;
+  font-family: "adelle", serif;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 0.5px;
   text-rendering: optimizeLegibility; }
 
 h1 {
@@ -520,7 +477,7 @@ p, ul, ol {
   font-size: 1em;
   line-height: 1.5em;
   margin-bottom: 1.5em;
-  font-weight: 100; }
+  font-weight: 300; }
   @media screen and (min-width: 64em) {
     p, ul, ol {
       font-size: 1.25em; } }
@@ -547,10 +504,10 @@ a {
   opacity: 1;
   text-decoration: none; }
   a:hover {
-    opacity: 0.6;
+    opacity: 0.9;
     text-decoration: none; }
   a:active, a:focus {
-    opacity: 0.6;
+    opacity: 0.9;
     outline: none; }
 
 hr {
@@ -577,7 +534,7 @@ cite {
     content: '\2014 \00A0'; }
 
 small {
-  font-family: "museo-slab", serif;
+  font-family: "adelle", serif;
   font-size: .8em;
   color: white; }
 
@@ -612,8 +569,10 @@ small {
     border-bottom: 1px solid white; }
     .headline a:hover {
       opacity: 0.6; }
-  .headline .home-font {
-    font-family: "museo-slab", serif; }
+  .headline span.home-font {
+    font-family: "adelle", serif;
+    font-weight: 100;
+    font-style: normal; }
 
 .error {
   background: #fbe3e4;
@@ -657,6 +616,21 @@ div#map_sidebar .results_wrapper .results_entry a {
   color: #477dca; }
 .results_wrapper .results_entry a:hover {
   background: none; }
+
+.footer-inner h5 {
+  font-size: 1.25em;
+  margin-top: 0;
+  margin-bottom: 0.5em; }
+
+.logo_sticky h1 {
+  font-size: 1.5em;
+  color: white;
+  padding: 0.5em 2em;
+  float: left; }
+.logo_sticky .tagline {
+  font-family: "grafolita-script", sans-serif;
+  font-size: 0.7em;
+  margin-left: 0.8em; }
 
 img {
   max-width: 100%; }
@@ -744,8 +718,10 @@ section[role=banner] {
         opacity: 0.8; }
       @media screen and (min-width: 64em) {
         section[role=banner] header .logo {
-          max-width: 450px;
-          padding: 1em 0 0 2em; } }
+          max-width: 400px;
+          padding: 1em 0 0 3em; } }
+    section[role=banner] header .logo_sticky {
+      display: none; }
     @media screen and (min-width: 64em) {
       section[role=banner] header.sticky {
         -webkit-transition: all 2s ease;
@@ -754,20 +730,12 @@ section[role=banner] {
         transition: all 2s ease;
         position: fixed;
         width: 100%;
-        background: black;
+        background: #188548;
         z-index: 9999; }
+        section[role=banner] header.sticky .logo_sticky {
+          display: block; }
         section[role=banner] header.sticky .logo {
-          max-width: 180px;
-          padding: .5em 0 .5em .5em; }
-          section[role=banner] header.sticky .logo h1 {
-            font-size: 1.5em;
-            margin-top: 10px;
-            display: block;
-            color: white; } }
-      @media screen and (min-width: 64em) and (min-width: 64em) {
-        section[role=banner] header.sticky .logo h1 {
-          margin-top: 5px;
-          font-size: 1.75em; } }
+          display: none; } }
 
 section[role=main] {
   max-width: 80em;
@@ -1048,7 +1016,7 @@ footer {
     max-width: 80em;
     margin-left: auto;
     margin-right: auto;
-    padding: 2em; }
+    padding: 2.25em 2em; }
     footer .footer-inner::after {
       clear: both;
       content: "";
@@ -1069,21 +1037,52 @@ footer {
           footer .footer-inner .content:last-child {
             margin-right: 0; }
           footer .footer-inner .content:nth-of-type(2) {
-            margin-left: 8.5298%;
+            margin-left: 0%;
             float: left;
             display: block;
             margin-right: 2.35765%;
-            width: 31.76157%; }
+            width: 23.23176%;
+            margin-left: 2em; }
             footer .footer-inner .content:nth-of-type(2):last-child {
               margin-right: 0; }
           footer .footer-inner .content:nth-of-type(3) {
-            margin-left: 8.5298%;
+            margin-left: 0%;
             float: left;
             display: block;
             margin-right: 2.35765%;
             width: 23.23176%; }
             footer .footer-inner .content:nth-of-type(3):last-child {
-              margin-right: 0; } }
+              margin-right: 0; }
+          footer .footer-inner .content:first-of-type {
+            float: left;
+            display: block;
+            margin-right: 2.35765%;
+            width: 14.70196%; }
+            footer .footer-inner .content:first-of-type:last-child {
+              margin-right: 0; }
+          footer .footer-inner .content:last-of-type {
+            float: left;
+            display: block;
+            margin-right: 2.35765%;
+            width: 23.23176%; }
+            footer .footer-inner .content:last-of-type:last-child {
+              margin-right: 0; }
+          footer .footer-inner .content fieldset {
+            margin-top: -0.5em; }
+          footer .footer-inner .content ul li {
+            margin-top: -0.5em; }
+          footer .footer-inner .content p {
+            margin-bottom: 0; } }
+    @media screen and (max-width: 64em) {
+      footer .footer-inner .footer_logo, footer .footer-inner .copyright {
+        display: none; } }
+  footer .copyright {
+    text-align: center;
+    display: inline-block;
+    clear: both;
+    margin: 1em 0 0 0; }
+  footer .fLogo_area {
+    text-align: center; }
 
 /* =============================================================================
   MM - MATERIAL MENU
@@ -1107,14 +1106,15 @@ body.mm-menu-open {
 .mm-menu-toggle {
   position: fixed;
   top: 20px;
-  right: 30px;
+  right: 47px;
   padding-right: 35px;
+  padding-top: 4px;
   z-index: 21001;
   cursor: pointer;
   width: 90px;
   height: 26px;
   color: white;
-  font-size: 1.25em;
+  font-size: 1em;
   line-height: 1.5em;
   font-weight: 600;
   /* active states */ }
@@ -1564,7 +1564,7 @@ button, .gform_wrapper input[type="submit"], aside #address_search input[type="s
 
 .social-share {
   padding: .2em 0 0.5em 0;
-  font-size: 3em; }
+  font-size: 2em; }
   .social-share a {
     color: white;
     margin-right: .1em;
@@ -1916,7 +1916,7 @@ input,
 label,
 select {
   display: block;
-  font-family: "museo-slab", serif;
+  font-family: "adelle", serif;
   font-size: 2em; }
 
 label {
@@ -1939,51 +1939,40 @@ select[multiple=multiple] {
   background-color: white;
   border-radius: 0.1875em;
   border: 1px solid #f2f2f2;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
-  font-family: "museo-slab", serif;
+  font-family: "adelle", serif;
   font-size: 1.1em;
   margin-bottom: 0.75em;
   padding: 0.65217em 0.65217em;
   width: 100%;
   margin-right: 10px;
-  color: #333333; }
-  textarea:hover,
-  input[type="email"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="url"]:hover, input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="month"]:hover, input[type="time"]:hover, input[type="week"]:hover,
-  select[multiple=multiple]:hover {
-    border-color: #d8d8d8; }
+  color: white; }
   textarea:focus,
   input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus,
   select[multiple=multiple]:focus {
-    border-color: #477dca;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(55, 112, 192, 0.7);
     outline: none;
-    color: #3674bb; }
+    color: white; }
 
 footer input[type="submit"] {
   -webkit-font-smoothing: antialiased;
-  background-color: #f2f2f2;
+  background-color: #e0701e;
   border-radius: 0.1875em;
-  color: #333333;
+  color: #f2f2f2;
   display: inline-block;
   font-size: 1em;
-  font-family: "museo-slab", serif;
+  font-family: "adelle", serif;
   font-size: 1em;
-  padding: .7em 2em;
+  padding: 0.5em;
   width: 100%;
   text-decoration: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  -o-appearance: none;
-  appearance: none;
-  border: none;
+  border: 1px solid #f2f2f2;
   cursor: pointer;
   user-select: none;
   vertical-align: middle;
-  white-space: nowrap; }
+  white-space: nowrap;
+  margin-top: 0.1em; }
   footer input[type="submit"]:hover {
-    background-color: #008348;
-    color: white; }
+    background-color: #f2f2f2;
+    color: #e0701e; }
 
 textarea {
   resize: vertical; }
@@ -2018,7 +2007,7 @@ select {
 .gform_wrapper label {
   font-size: .9em;
   font-weight: normal;
-  font-family: "museo-slab", serif; }
+  font-family: "adelle", serif; }
 .gform_wrapper input::-webkit-input-placeholder {
   font-size: .9em; }
 .gform_wrapper input::-moz-placeholder {
@@ -2081,6 +2070,41 @@ aside #address_search {
   aside #address_search #addy_in_radius {
     display: block;
     width: 100%; }
+
+#mce-FNAME, #mce-EMAIL {
+  font-size: 0.8em; }
+
+#mce-FNAME {
+  display: inline-block;
+  width: 32%;
+  float: left;
+  margin-right: 0;
+  margin-bottom: 1em;
+  background: #e0701e;
+  border-top: none;
+  border-left: none;
+  border-right: none; }
+
+#mce-EMAIL {
+  display: inline-block;
+  width: 62%;
+  clear: both;
+  margin: 0 0 1em 1em;
+  background: #e0701e;
+  border-top: none;
+  border-left: none;
+  border-right: none; }
+
+footer ::-webkit-input-placeholder {
+  color: white; }
+footer :-moz-placeholder {
+  /* Firefox 18- */
+  color: white; }
+footer ::-moz-placeholder {
+  /* Firefox 19+ */
+  color: white; }
+footer :-ms-input-placeholder {
+  color: white; }
 
 /*!
 Animate.css - http://daneden.me/animate
@@ -4068,11 +4092,3 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 .rollOut {
   -webkit-animation-name: rollOut;
   animation-name: rollOut; }
-
-/*# sourceMappingURL=style.css.map */
-=======
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"...rid: font-style\": expected selector or at-rule, was \": italic;\"\A         on line 15 of src/sass/layout/_grid-settings.scss\A         from line 17 of src/sass/style.scss\A \A 10: $bp-large: new-breakpoint(min-width 50em 12);\A 11: $bp-mid: new-breakpoint(min-width 64em 12);\A 12: $bp-small: new-breakpoint(max-width 64em);\A 13: \A 14: // Visual Grid view\A 15: $visual-grid: font-style: italic;\A 16: $visual-grid-color: #cccccc;\A 17: $visual-grid-index: front;\A 18: $visual-grid-opacity: 0.2;"; }
->>>>>>> Stashed changes

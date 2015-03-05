@@ -2,21 +2,63 @@ footer {
     background: $footer-background-color;
     .footer-inner {
         @include outer-container;
-        padding: 2em;
+        padding: 2.25em 2em;
         .content {
             @include span-columns(5);
+
             @include media($bp-mid) {
                 @include span-columns(3);
+
                 &:nth-of-type(2) {
-                    @include shift(1);
-                    @include span-columns(4);
-                }
-                &:nth-of-type(3) {
-                    @include shift(1);
+                    @include shift(0);
                     @include span-columns(3);
-                    
+                    margin-left: 2em;
                 }
+
+                &:nth-of-type(3) {
+                    @include shift(0);
+                    @include span-columns(3);
+               }
+
+               &:first-of-type {
+                    @include span-columns(2);
+               }
+
+                &:last-of-type {
+                    @include span-columns(3);
+                }
+
+                fieldset {
+                    margin-top: -0.5em;
+                }
+
+                ul li {
+                    margin-top: -0.5em;
+                }
+
+                 p {
+                     margin-bottom: 0;
+                 }
+            }
+        }
+
+        @include media ($bp-small){
+            .footer_logo, .copyright {
+                display: none;
             }
         }
     }
+
+    .copyright {
+        text-align: center;
+        display: inline-block;
+        clear: both;
+        margin: 1em 0 0 0;
+    }
+
+    .fLogo_area {
+        text-align: center;
+    }
 }
+
+

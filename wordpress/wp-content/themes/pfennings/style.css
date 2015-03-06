@@ -1171,7 +1171,7 @@ body.mm-menu-open {
   transition: transform 0.5s, box-shadow 0.5s; }
   .mm-menu ul {
     list-style: none;
-    margin: 70px 0 0;
+    margin: 115px 0 0;
     padding: 0; }
     .mm-menu ul li {
       margin-left: 0;
@@ -1183,7 +1183,9 @@ body.mm-menu-open {
         margin: 4px 0;
         padding: 0px;
         color: white;
-        font-size: 16px;
+        font-size: 1.7em;
+        font-weight: 100;
+        line-height: 55px;
         text-decoration: none;
         transition: background 0.5s, color 0.5s; }
   .mm-menu.active {
@@ -1196,12 +1198,12 @@ body.mm-menu-open {
 
 @media all and (min-width: 300px) {
   .mm-menu {
-    width: 300px;
-    -webkit-transform: translateX(300px);
-    -moz-transform: translateX(300px);
-    -ms-transform: translateX(300px);
-    -o-transform: translateX(300px);
-    transform: translateX(300px); } }
+    width: 440px;
+    -webkit-transform: translateX(440px);
+    -moz-transform: translateX(440px);
+    -ms-transform: translateX(440px);
+    -o-transform: translateX(440px);
+    transform: translateX(440px); } }
 /* header */
 .mm-menu__header {
   position: relative;

@@ -1,12 +1,8 @@
-<?php
+<?php 
 require get_template_directory().'/includes/library/facebook/facebook.php';
-
 function array_multi_unique($multiArray){
-
   $uniqueArray = array();
-
   foreach($multiArray as $subArray){
-
     if(!in_array($subArray, $uniqueArray)){
       $uniqueArray[] = $subArray;
     }
@@ -14,20 +10,16 @@ function array_multi_unique($multiArray){
   return $uniqueArray;
 }
 
-
 function fetch_facebook_feed() {
 	// Create our Application instance (replace this with your appId and secret).
 	$facebook = new Facebook(array(
 	  'appId'  => '757154670988865',
 	  'secret' => 'e8cfdf2c203d7cae9c1ce4bcd91254f6',
 	));
-	
 	$feeds=$facebook->api('/267357574592/feed');
-	
 	$i = 0;
 	foreach($feeds['data'] as $post) {
 		if($post['type']=='photo') {
-			
 			$object_id = $post['object_id'];
 			$img ='https://graph.facebook.com/'.$object_id.'/picture?width=9999&height=9999';
 			$date = date("d-m-Y H:i:s", strtotime($post['created_time']));
@@ -42,7 +34,6 @@ function fetch_facebook_feed() {
 			break;
 		}
 	}
-	
 	return array_multi_unique($results);
 }
 
@@ -51,7 +42,6 @@ function fetch_instagram_feed($url) {
 	 curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 20); 
 	 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
 	 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); 
-
 		$json = curl_exec($ch); 
 		$data=json_decode($json, true);
 		$result=$data['data'];
@@ -59,7 +49,6 @@ function fetch_instagram_feed($url) {
 		$img='';
 		$date='';
 		$total_feeds=count($result);	
-		
 		if($total_feeds>0) {
 			for($i=0;$i<$total_feeds;$i++) {
 				$img = $result[$i]['images']['standard_resolution']['url'];
@@ -70,9 +59,7 @@ function fetch_instagram_feed($url) {
 				$results[]=array('title'=>$title,'author'=>$author,'link'=>$link,'img'=>$img,'date'=>$date,'label'=>'instagram','filter'=>'social');
 			}
 		}
-	
 	curl_close($ch);
-
 	return $results;
 }
 
@@ -81,7 +68,6 @@ function is_url_exist($url){
     curl_setopt($ch, CURLOPT_NOBODY, true);
     curl_exec($ch);
     $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-
     if($code == 200){
        $status = true;
     } else {
@@ -133,7 +119,6 @@ function youtube_thumbnail_url($url) {
 			else return false;
 		}
 		else return false;
-	 
 	}
 	elseif($domain == 'youtu.be') // something like http://youtu.be/t7rtVX0bcj8
 	{
@@ -172,17 +157,14 @@ function get_feed_results($feeds) {
 			$result = file_get_contents('http://ajax.googleapis.com/ajax/services/feed/load?' . http_build_query($params));
 			$json = json_decode($result);
 			$data = $json->responseData;
-			
 			// json version
 			if($data->feed->entries) {
-				
 				foreach ($data->feed->entries as $entry) {
 					$title=$entry->title;
 					$author=$entry->author;
 					if($feeds[$i]['label']=='pinterest') {
 						$title=$entry->contentSnippet;	
 					}
-		
 					// Get Img src from content
 					$doc = new DOMDocument();
 					@$doc->loadHTML($entry->content);	
@@ -198,22 +180,18 @@ function get_feed_results($feeds) {
 								$img = explode("url=", $img);
 								$img = urldecode($img[1]);
 							}
-							
 							if (strpos($img,'/v/t1.0-9/') == true) {
 								$img = explode("/v/t1.0-9/", $img);
 								$img=implode("/",$img);
 							}
-							
 							if (strpos($img,'/v/t1.0-9/s720x720/') == true) {
 								$img = explode("/v/t1.0-9/s720x720/", $img);
 								$img=implode("/",$img);
 							}
-							
 							if (strpos($img,'/p130x130/') == true) {
 								$img = explode("/p130x130/", $img);
 								$img=implode("/",$img);
 							}
-							
 							if (strpos($img,'/s130x130/') == true) {
 								$img = explode("/s130x130/", $img);
 								$img=implode("/",$img);
@@ -222,7 +200,7 @@ function get_feed_results($feeds) {
 								$img = explode("/p100x100/", $img);
 								$img=implode("/",$img);
 							}
-						}	
+						}
 					}
 					// Push feed entries to an array
 					$newDate = date("d-m-Y H:i:s", strtotime($entry->publishedDate));
@@ -237,9 +215,7 @@ function get_feed_results($feeds) {
 			$instagram_feeds="";
 			$client_id="84e0a91bb0ca49bc91b0b5d88eb1289c";
 			$instagram_url='https://api.instagram.com/v1/tags/'.$instagram_tags[$i].'/media/recent?client_id='.$client_id;
-			$instagram_feeds=fetch_instagram_feed($instagram_url);
-			
-			
+			$instagram_feeds=fetch_instagram_feed($instagram_url);			
 			if($instagram_feeds !='') {
 				if($results !='') {
 					$results=array_merge($instagram_feeds,$results);
@@ -248,7 +224,6 @@ function get_feed_results($feeds) {
 				}
 			}
 		}
-		
 		// Facebook Feeds
 		$fb_feeds=fetch_facebook_feed();
 		if($fb_feeds !='') {
@@ -271,7 +246,6 @@ function get_feed_results($feeds) {
 				$results=$posts;	
 			}
 		}
-		
 		if($results) {
 			usort($results, "sort_by_date");
 			for( $j=0;$j<count($results);$j++) {
@@ -284,14 +258,10 @@ function get_feed_results($feeds) {
 		return $results;
 }
 
-
 function show_feed_results( $results = NULL ) {
     if( !$results ) return false;
 	$total = count($results);
-	?>
-	
-    <?php
-			$i=0;
+		$i=0;
 			foreach( $results as $result) {
 				$id=$result->row_id;
 				$link= $result->link;
@@ -300,10 +270,8 @@ function show_feed_results( $results = NULL ) {
 				$feed_img=$result->img;
 				$label=$result->label;
 				$filter=$result->filter;
-				$newDate=$result->date;
-				
+				$newDate=$result->date;			
 				?>
-
 				<div class="post item <?php echo $label;?> <?php echo $filter;?>" data-category="transition" id="<?php echo "item_".$id;?>">
 						<?php 
 								if($feed_img==''){
@@ -318,13 +286,11 @@ function show_feed_results( $results = NULL ) {
 									}
 								}
 							?>
-					
 	                <div class="post-image" style="background-image:url(<?php echo $feed_img;?>);">
 		                <img class="post-img" src="<?php echo $feed_img;?>" style="display:none;">
 	            	</div>		
                     <div class="post-title">
                     	<p><?php echo date("M d, Y", strtotime($newDate));?></p>
-					
                     <p class="title">
                     	<a href="<?php echo $link;?>" <?php if($label!='blog') { ?> target="_blank" <?php } ?>>
 						<?php 					
@@ -339,22 +305,16 @@ function show_feed_results( $results = NULL ) {
                     </p>
 					</div>
 				</div>
-
 				<?php
 			}
 }
-
-
 
 function json_cached_results($urls,$cache_file = NULL, $expires = NULL) {
     global $request_type, $purge_cache, $limit_reached, $request_limit;
 	ob_start();
     if( !$cache_file ) $cache_file = TEMPLATEPATH. '/rss-feed.json';
     if( !$expires) $expires = time() - 60 * 10;
-	
     if( !file_exists($cache_file) ) die("Cache file is missing: $cache_file");
-
-
 	if (file_exists($cache_file) && (filemtime($cache_file) > (time() - 60 * 10 )) && file_get_contents($cache_file)  != '') {
 		// Cache file is less than fifteen minutes old. 
 		// Don't bother refreshing, just use the file as-is.
@@ -367,8 +327,6 @@ function json_cached_results($urls,$cache_file = NULL, $expires = NULL) {
 		$json_results = json_encode($api_results);
 		file_put_contents($cache_file, $json_results, LOCK_EX);
 	}
-
     return json_decode($json_results);
 	ob_end_flush();
 }
-?>

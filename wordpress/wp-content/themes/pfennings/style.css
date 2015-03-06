@@ -566,6 +566,8 @@ small {
   @media screen and (min-width: 64em) {
     .headline {
       font-size: 2.44141em; } }
+  .headline p {
+    font-size: 1.25em; }
   .headline a {
     color: white;
     text-decoration: none;
@@ -575,8 +577,7 @@ small {
   .headline span.home-font {
     font-family: "adelle", serif;
     font-weight: 100;
-    font-style: normal;
-    font-size: 1.25em; }
+    font-style: normal; }
 
 .error {
   background: #fbe3e4;

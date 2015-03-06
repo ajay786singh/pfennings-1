@@ -196,6 +196,10 @@ small {
         font-size: modular-scale(4);
     }
 
+    p {
+        font-size: $base-font-size * 1.25;
+    }
+
     a {
         color: $white;
         text-decoration: none;
@@ -208,7 +212,6 @@ small {
         font-family: $serif;
         font-weight: 100;
         font-style: normal;
-        font-size: $base-font-size * 1.25;
     }
 }
 

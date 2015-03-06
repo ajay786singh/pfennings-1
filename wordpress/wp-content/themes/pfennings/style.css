@@ -752,7 +752,7 @@ section[role=main] {
     display: table; }
   @media screen and (min-width: 50em) {
     section[role=main] {
-      padding: 5.85151%; } }
+      padding: 2em 5em; } }
   @media screen and (min-width: 50em) {
     section[role=main] article {
       float: left;
@@ -894,40 +894,45 @@ aside {
 .oddeven:nth-of-type(odd) {
   display: block;
   border-bottom: 2px solid #f2f2f2;
-  margin: 1em 0 1em 0; }
+  margin: 1.5em 0 1em 0;
+  padding-bottom: 2em; }
   .oddeven:nth-of-type(odd)::after {
     clear: both;
     content: "";
     display: table; }
   @media screen and (min-width: 50em) {
     .oddeven:nth-of-type(odd) .image {
-      width: 30%;
+      width: 45%;
       float: left;
-      padding: 3em 2em 0 0; } }
+      padding: 2.25em 2em 0 0; } }
   @media screen and (min-width: 50em) {
     .oddeven:nth-of-type(odd) .content {
-      width: 70%;
+      width: 50%;
       float: right; } }
 
 .oddeven:nth-of-type(even) {
   display: block;
   border-bottom: 2px solid #f2f2f2;
-  margin: 1em 0 1em 0; }
+  margin: 1em 0 1em 0;
+  padding-bottom: 2em; }
   .oddeven:nth-of-type(even)::after {
     clear: both;
     content: "";
     display: table; }
   @media screen and (min-width: 50em) {
     .oddeven:nth-of-type(even) .image {
-      width: 30%;
+      width: 45%;
       float: right;
-      padding: 3em 0 0 2em; }
+      padding: 2.25em 0 0 2em; }
       .oddeven:nth-of-type(even) .image img {
         float: right; } }
   @media screen and (min-width: 50em) {
     .oddeven:nth-of-type(even) .content {
-      width: 70%;
+      width: 50%;
       float: left; } }
+
+.oddeven:last-of-type {
+  border-bottom: none; }
 
 .order-form-container {
   overflow: hidden; }

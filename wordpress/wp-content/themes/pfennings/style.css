@@ -432,7 +432,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "adelle", serif;
-  font-weight: 700;
+  font-weight: 600;
   font-style: normal;
   letter-spacing: 0.5px;
   text-rendering: optimizeLegibility; }
@@ -444,10 +444,13 @@ h1 {
       font-size: 3.8147em; } }
 
 h2 {
-  font-size: 1.5625em; }
+  font-size: 1.5625em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.25em; }
   @media screen and (min-width: 64em) {
     h2 {
-      font-size: 3.05176em; } }
+      font-size: 2.44141em; } }
 
 h3 {
   font-size: 1.5625em; }
@@ -475,12 +478,12 @@ h6 {
 p, ul, ol {
   list-style-type: disc;
   font-size: 1em;
-  line-height: 1.5em;
+  line-height: 1.6em;
   margin-bottom: 1.5em;
   font-weight: 300; }
   @media screen and (min-width: 64em) {
     p, ul, ol {
-      font-size: 1.25em; } }
+      font-size: 1em; } }
 
 .team p {
   font-size: 1em; }
@@ -572,7 +575,8 @@ small {
   .headline span.home-font {
     font-family: "adelle", serif;
     font-weight: 100;
-    font-style: normal; }
+    font-style: normal;
+    font-size: 1.25em; }
 
 .error {
   background: #fbe3e4;

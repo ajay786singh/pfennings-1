@@ -2,29 +2,20 @@ footer {
     background: $footer-background-color;
     .footer-inner {
         @include outer-container;
-        padding: 2.25em 2em;
+        padding: 2em;
         .content {
-            @include span-columns(5);
-
-            @include media($bp-mid) {
-                @include span-columns(3);
-
-                &:nth-of-type(2) {
-                    @include shift(0);
-                    @include span-columns(3);
-                    margin-left: 2em;
-                }
-
-                &:nth-of-type(3) {
-                    @include shift(0);
-                    @include span-columns(3);
-               }
-
-               &:first-of-type {
+            @include media($bp-mid) { 
+                &:nth-of-type(1) {
                     @include span-columns(2);
-               }
-
-                &:last-of-type {
+                    margin-right: 3em;
+                }   
+                &:nth-of-type(2) {
+                    @include span-columns(3);
+                }
+                &:nth-of-type(3) {
+                    @include span-columns(3);
+                }
+                &:nth-of-type(4) {
                     @include span-columns(3);
                 }
 
@@ -60,5 +51,3 @@ footer {
         text-align: center;
     }
 }
-
-

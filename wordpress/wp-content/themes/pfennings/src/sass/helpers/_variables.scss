@@ -39,6 +39,7 @@ $light-yellow: 	rgba(255, 246, 191, 1);
 $light-red: 	rgba(251, 227, 228, 1);
 $light-green: 	rgba(230, 239, 194, 1);
 $green:			rgba(0, 131, 72, 1);
+$button-green:	rgba(16, 130, 74, 1);
 
 // Background Color
 $base-background-color: $white;
@@ -75,14 +76,6 @@ $form-box-shadow-focus: $form-box-shadow, 0 0 5px rgba(darken($form-border-color
 $form-font-size: 2em;
 $form-font-family: $base-font-family;
 
-
-// =============================================================================
-//  RATIOS
-// =============================================================================
-
-// =============================================================================
-//  COLOURS
-// =============================================================================
 
 $color--primary-dark: #7B1FA2;
 $color--primary: #9C27B0;

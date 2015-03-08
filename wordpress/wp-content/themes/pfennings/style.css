@@ -485,6 +485,16 @@ p, ul, ol {
     p, ul, ol {
       font-size: 1em; } }
 
+aside ul {
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none; }
+  aside ul li {
+    margin-left: 0;
+    padding-left: 0; }
+    aside ul li a {
+      color: black; }
+
 .team p {
   font-size: 1em; }
 .team img {
@@ -712,7 +722,6 @@ section[role=banner] {
   section[role=banner] header {
     -webkit-transition: all 2s ease;
     -moz-transition: all 2s ease;
-    -o-transition: all 2s ease;
     transition: all 2s ease; }
     section[role=banner] header .logo {
       float: left;
@@ -731,7 +740,6 @@ section[role=banner] {
       section[role=banner] header.sticky {
         -webkit-transition: all 2s ease;
         -moz-transition: all 2s ease;
-        -o-transition: all 2s ease;
         transition: all 2s ease;
         position: fixed;
         width: 100%;
@@ -763,51 +771,6 @@ section[role=main] {
       margin-left: 21.32451%; }
       section[role=main] article:last-child {
         margin-right: 0; } }
-
-aside {
-  float: left;
-  padding: 0 0 2em 0; }
-  @media screen and (min-width: 50em) {
-    aside {
-      float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 31.76157%; }
-      aside:last-child {
-        margin-right: 0; } }
-  aside ul {
-    margin-left: 0;
-    padding-left: 0;
-    list-style: none; }
-    aside ul li {
-      margin-left: 0;
-      padding-left: 0; }
-      aside ul li a {
-        color: black; }
-
-@media screen and (min-width: 50em) {
-  .team {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 57.35098%;
-    margin-left: 8.5298%; }
-    .team:last-child {
-      margin-right: 0; }
-    .team .list {
-      margin-top: 0;
-      float: left;
-      display: block;
-      margin-right: 4.11092%;
-      width: 40.50805%; }
-      .team .list:last-child {
-        margin-right: 0; }
-      .team .list:nth-child(2n) {
-        margin-right: 0; }
-      .team .list:nth-child(2n+1) {
-        clear: left; }
-      .team .list:nth-child(2n) {
-        margin-left: 14.87299%; } }
 
 .post-container {
   float: left;
@@ -1020,69 +983,64 @@ aside {
 #slp_tagline {
   display: none; }
 
+aside {
+  padding: 0 0 2em 0; }
+  @media screen and (min-width: 50em) {
+    aside {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 23.23176%; }
+      aside:last-child {
+        margin-right: 0; } }
+
 footer {
   background: #e0701e; }
   footer .footer-inner {
     max-width: 80em;
     margin-left: auto;
     margin-right: auto;
-    padding: 2.25em 2em; }
+    padding: 2em; }
     footer .footer-inner::after {
       clear: both;
       content: "";
       display: table; }
-    footer .footer-inner .content {
-      float: left;
-      display: block;
-      margin-right: 5.85151%;
-      width: 100%; }
-      footer .footer-inner .content:last-child {
-        margin-right: 0; }
-      @media screen and (min-width: 64em) {
-        footer .footer-inner .content {
-          float: left;
-          display: block;
-          margin-right: 2.35765%;
-          width: 23.23176%; }
-          footer .footer-inner .content:last-child {
-            margin-right: 0; }
-          footer .footer-inner .content:nth-of-type(2) {
-            margin-left: 0%;
-            float: left;
-            display: block;
-            margin-right: 2.35765%;
-            width: 23.23176%;
-            margin-left: 2em; }
-            footer .footer-inner .content:nth-of-type(2):last-child {
-              margin-right: 0; }
-          footer .footer-inner .content:nth-of-type(3) {
-            margin-left: 0%;
-            float: left;
-            display: block;
-            margin-right: 2.35765%;
-            width: 23.23176%; }
-            footer .footer-inner .content:nth-of-type(3):last-child {
-              margin-right: 0; }
-          footer .footer-inner .content:first-of-type {
-            float: left;
-            display: block;
-            margin-right: 2.35765%;
-            width: 14.70196%; }
-            footer .footer-inner .content:first-of-type:last-child {
-              margin-right: 0; }
-          footer .footer-inner .content:last-of-type {
-            float: left;
-            display: block;
-            margin-right: 2.35765%;
-            width: 23.23176%; }
-            footer .footer-inner .content:last-of-type:last-child {
-              margin-right: 0; }
-          footer .footer-inner .content fieldset {
-            margin-top: -0.5em; }
-          footer .footer-inner .content ul li {
-            margin-top: -0.5em; }
-          footer .footer-inner .content p {
-            margin-bottom: 0; } }
+    @media screen and (min-width: 64em) {
+      footer .footer-inner .content:nth-of-type(1) {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 14.70196%;
+        margin-right: 3em; }
+        footer .footer-inner .content:nth-of-type(1):last-child {
+          margin-right: 0; }
+      footer .footer-inner .content:nth-of-type(2) {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 23.23176%; }
+        footer .footer-inner .content:nth-of-type(2):last-child {
+          margin-right: 0; }
+      footer .footer-inner .content:nth-of-type(3) {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 23.23176%; }
+        footer .footer-inner .content:nth-of-type(3):last-child {
+          margin-right: 0; }
+      footer .footer-inner .content:nth-of-type(4) {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 23.23176%; }
+        footer .footer-inner .content:nth-of-type(4):last-child {
+          margin-right: 0; }
+      footer .footer-inner .content fieldset {
+        margin-top: -0.5em; }
+      footer .footer-inner .content ul li {
+        margin-top: -0.5em; }
+      footer .footer-inner .content p {
+        margin-bottom: 0; } }
     @media screen and (max-width: 64em) {
       footer .footer-inner .footer_logo, footer .footer-inner .copyright {
         display: none; } }
@@ -1093,335 +1051,6 @@ footer {
     margin: 1em 0 0 0; }
   footer .fLogo_area {
     text-align: center; }
-
-/* =============================================================================
-  MM - MATERIAL MENU
-============================================================================= */
-/**
- * MM - Material Menu
- *
- * All the styles for the material menu here! I've prefixed them all with "mm",
- * which means material menu.
- */
-/**
- * Toggle Button
- *
- * a.k.a. hamburger icon. See the "resets" section for global button resets.
- */
-body.mm-menu-open {
-  overflow: hidden; }
-  body.mm-menu-open .down-arrow {
-    z-index: -1; }
-
-.mm-menu-toggle {
-  position: fixed;
-  top: 20px;
-  right: 47px;
-  padding-right: 35px;
-  padding-top: 4px;
-  z-index: 21001;
-  cursor: pointer;
-  width: 90px;
-  height: 26px;
-  color: white;
-  font-size: 1em;
-  line-height: 1.5em;
-  font-weight: 600;
-  /* active states */ }
-  @media screen and (min-width: 50em) {
-    .mm-menu-toggle {
-      top: 27px; } }
-  .admin-bar .mm-menu-toggle {
-    top: 65px; }
-    @media screen and (min-width: 50em) {
-      .admin-bar .mm-menu-toggle {
-        top: 50px; } }
-  .mm-menu-toggle:after {
-    background: url(dist/images/menu-buttons.png) 0 0 no-repeat;
-    content: "";
-    display: block;
-    height: 26px;
-    position: absolute;
-    right: 0;
-    top: 4px;
-    -webkit-transition: 0.5s all;
-    -moz-transition: 0.5s all;
-    transition: 0.5s all;
-    width: 27px; }
-  .mm-menu-toggle.active:after {
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
-    background-position: -30px 0; }
-
-/**
- * The actual menu
- *
- * Here be all the stuff for the menu itself.
- */
-.mm-menu {
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 1999;
-  background-color: #e0701e;
-  width: 100%;
-  height: 100%;
-  overflow-y: auto;
-  box-shadow: 0;
-  -webkit-transform: translateX(-100%);
-  -moz-transform: translateX(-100%);
-  -ms-transform: translateX(-100%);
-  -o-transform: translateX(-100%);
-  transform: translateX(-100%);
-  -webkit-transition: -webkit-transform 0.5s, box-shadow 0.5s;
-  -moz-transition: -moz-transform 0.5s, box-shadow 0.5s;
-  transition: transform 0.5s, box-shadow 0.5s; }
-  .mm-menu ul {
-    list-style: none;
-    margin: 115px 0 0;
-    padding: 0; }
-    .mm-menu ul li {
-      margin-left: 0;
-      padding-left: 40px; }
-      .mm-menu ul li a {
-        display: block;
-        position: relative;
-        overflow: hidden;
-        margin: 4px 0;
-        padding: 0px;
-        color: white;
-        font-size: 1.7em;
-        font-weight: 100;
-        line-height: 55px;
-        text-decoration: none;
-        transition: background 0.5s, color 0.5s; }
-  .mm-menu.active {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    -webkit-transform: translateX(0);
-    -moz-transform: translateX(0);
-    -ms-transform: translateX(0);
-    -o-transform: translateX(0);
-    transform: translateX(0); }
-
-@media all and (min-width: 300px) {
-  .mm-menu {
-    width: 440px;
-    -webkit-transform: translateX(440px);
-    -moz-transform: translateX(440px);
-    -ms-transform: translateX(440px);
-    -o-transform: translateX(440px);
-    transform: translateX(440px); } }
-/* header */
-.mm-menu__header {
-  position: relative;
-  width: 100%;
-  height: 188px;
-  background-color: #CDDC39; }
-
-.mm-menu__title {
-  position: absolute;
-  bottom: 12px;
-  left: 12px;
-  margin: 0;
-  padding: 0;
-  color: #fff;
-  font-size: 22px; }
-
-/* list */
-.mm-menu__items {
-  list-style: none;
-  margin: 0;
-  padding: 0; }
-
-.mm-menu__item {
-  display: block;
-  width: 100%;
-  opacity: 0;
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
-  transform: translateX(-50%); }
-
-.mm-menu__item.in-view {
-  opacity: 1;
-  -webkit-transform: translateX(0);
-  -moz-transform: translateX(0);
-  -ms-transform: translateX(0);
-  -o-transform: translateX(0);
-  transform: translateX(0); }
-
-.mm-menu__item.item-1 {
-  -webkit-transition: opacity 0.5s 0.1s, transform 0.5s 0.1s;
-  -moz-transition: opacity 0.5s 0.1s, transform 0.5s 0.1s;
-  transition: opacity 0.5s 0.1s, transform 0.5s 0.1s; }
-
-.mm-menu__item.item-2 {
-  -webkit-transition: opacity 0.5s 0.2s, transform 0.5s 0.2s;
-  -moz-transition: opacity 0.5s 0.2s, transform 0.5s 0.2s;
-  transition: opacity 0.5s 0.2s, transform 0.5s 0.2s; }
-
-.mm-menu__item.item-3 {
-  -webkit-transition: opacity 0.5s 0.3s, transform 0.5s 0.3s;
-  -moz-transition: opacity 0.5s 0.3s, transform 0.5s 0.3s;
-  transition: opacity 0.5s 0.3s, transform 0.5s 0.3s; }
-
-.mm-menu__item.item-4 {
-  -webkit-transition: opacity 0.5s 0.4s, transform 0.5s 0.4s;
-  -moz-transition: opacity 0.5s 0.4s, transform 0.5s 0.4s;
-  transition: opacity 0.5s 0.4s, transform 0.5s 0.4s; }
-
-.mm-menu__item.item-5 {
-  -webkit-transition: opacity 0.5s 0.5s, transform 0.5s 0.5s;
-  -moz-transition: opacity 0.5s 0.5s, transform 0.5s 0.5s;
-  transition: opacity 0.5s 0.5s, transform 0.5s 0.5s; }
-
-.mm-menu__item.item-6 {
-  -webkit-transition: opacity 0.5s 0.6s, transform 0.5s 0.6s;
-  -moz-transition: opacity 0.5s 0.6s, transform 0.5s 0.6s;
-  transition: opacity 0.5s 0.6s, transform 0.5s 0.6s; }
-
-.mm-menu__item.item-7 {
-  -webkit-transition: opacity 0.5s 0.7s, transform 0.5s 0.7s;
-  -moz-transition: opacity 0.5s 0.7s, transform 0.5s 0.7s;
-  transition: opacity 0.5s 0.7s, transform 0.5s 0.7s; }
-
-.mm-menu__item.item-8 {
-  -webkit-transition: opacity 0.5s 0.8s, transform 0.5s 0.8s;
-  -moz-transition: opacity 0.5s 0.8s, transform 0.5s 0.8s;
-  transition: opacity 0.5s 0.8s, transform 0.5s 0.8s; }
-
-.mm-menu__item.item-9 {
-  -webkit-transition: opacity 0.5s 0.9s, transform 0.5s 0.9s;
-  -moz-transition: opacity 0.5s 0.9s, transform 0.5s 0.9s;
-  transition: opacity 0.5s 0.9s, transform 0.5s 0.9s; }
-
-.mm-menu__item.item-10 {
-  -webkit-transition: opacity 0.5s 1.0s, transform 0.5s 1.0s;
-  -moz-transition: opacity 0.5s 1.0s, transform 0.5s 1.0s;
-  transition: opacity 0.5s 1.0s, transform 0.5s 1.0s; }
-
-.mm-menu__item.item-11 {
-  -webkit-transition: opacity 0.5s 1.1s, transform 0.5s 1.1s;
-  -moz-transition: opacity 0.5s 1.1s, transform 0.5s 1.1s;
-  transition: opacity 0.5s 1.1s, transform 0.5s 1.1s; }
-
-.mm-menu__item.item-12 {
-  -webkit-transition: opacity 0.5s 1.2s, transform 0.5s 1.2s;
-  -moz-transition: opacity 0.5s 1.2s, transform 0.5s 1.2s;
-  transition: opacity 0.5s 1.2s, transform 0.5s 1.2s; }
-
-.mm-menu__item.item-13 {
-  -webkit-transition: opacity 0.5s 1.3s, transform 0.5s 1.3s;
-  -moz-transition: opacity 0.5s 1.3s, transform 0.5s 1.3s;
-  transition: opacity 0.5s 1.3s, transform 0.5s 1.3s; }
-
-.mm-menu__item.item-14 {
-  -webkit-transition: opacity 0.5s 1.4s, transform 0.5s 1.4s;
-  -moz-transition: opacity 0.5s 1.4s, transform 0.5s 1.4s;
-  transition: opacity 0.5s 1.4s, transform 0.5s 1.4s; }
-
-.mm-menu__item.item-15 {
-  -webkit-transition: opacity 0.5s 1.5s, transform 0.5s 1.5s;
-  -moz-transition: opacity 0.5s 1.5s, transform 0.5s 1.5s;
-  transition: opacity 0.5s 1.5s, transform 0.5s 1.5s; }
-
-.mm-menu__item.item-16 {
-  -webkit-transition: opacity 0.5s 1.6s, transform 0.5s 1.6s;
-  -moz-transition: opacity 0.5s 1.6s, transform 0.5s 1.6s;
-  transition: opacity 0.5s 1.6s, transform 0.5s 1.6s; }
-
-.mm-menu__item.item-17 {
-  -webkit-transition: opacity 0.5s 1.7s, transform 0.5s 1.7s;
-  -moz-transition: opacity 0.5s 1.7s, transform 0.5s 1.7s;
-  transition: opacity 0.5s 1.7s, transform 0.5s 1.7s; }
-
-.mm-menu__item.item-18 {
-  -webkit-transition: opacity 0.5s 1.8s, transform 0.5s 1.8s;
-  -moz-transition: opacity 0.5s 1.8s, transform 0.5s 1.8s;
-  transition: opacity 0.5s 1.8s, transform 0.5s 1.8s; }
-
-.mm-menu__item.item-19 {
-  -webkit-transition: opacity 0.5s 1.9s, transform 0.5s 1.9s;
-  -moz-transition: opacity 0.5s 1.9s, transform 0.5s 1.9s;
-  transition: opacity 0.5s 1.9s, transform 0.5s 1.9s; }
-
-.mm-menu__item.item-20 {
-  -webkit-transition: opacity 0.5s 2.0s, transform 0.5s 2.0s;
-  -moz-transition: opacity 0.5s 2.0s, transform 0.5s 2.0s;
-  transition: opacity 0.5s 2.0s, transform 0.5s 2.0s; }
-
-.mm-menu__link {
-  display: block;
-  position: relative;
-  overflow: hidden;
-  margin: 4px 0;
-  padding: 12px;
-  color: #727272;
-  font-size: 16px;
-  text-decoration: none;
-  -webkit-transition: background 0.5s, color 0.5s;
-  -moz-transition: background 0.5s, color 0.5s;
-  transition: background 0.5s, color 0.5s; }
-
-.mm-menu__link-text {
-  position: relative;
-  z-index: 2; }
-
-/* the touch effect, for when a link is touched */
-.mm-menu__link--touch-effect {
-  display: block;
-  position: absolute;
-  z-index: 1;
-  width: 0;
-  height: 0;
-  border-radius: 100%;
-  -webkit-transform: scale(0);
-  -moz-transform: scale(0);
-  -ms-transform: scale(0);
-  -o-transform: scale(0);
-  transform: scale(0);
-  -webkit-transform-origin: 50% 50%;
-  -moz-transform-origin: 50% 50%;
-  -ms-transform-origin: 50% 50%;
-  -o-transform-origin: 50% 50%;
-  transform-origin: 50% 50%; }
-
-.mm-menu__link--touch-effect.animating {
-  -webkit-transform: scale(1);
-  -moz-transform: scale(1);
-  -ms-transform: scale(1);
-  -o-transform: scale(1);
-  transform: scale(1);
-  -webkit-transition: -webkit-transform 0.5s;
-  -moz-transition: -moz-transform 0.5s;
-  transition: transform 0.5s; }
-
-/**
- * Menu mask
- *
- * A mask that comes in and covers the wrapper when the menu is active.
- */
-.mm-menu-mask {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  width: 100%;
-  display: block;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  visibility: hidden;
-  opacity: 0;
-  -webkit-transition: opacity 0.5s, visibility 0.5s;
-  -moz-transition: opacity 0.5s, visibility 0.5s;
-  transition: opacity 0.5s, visibility 0.5s; }
-  .mm-menu-mask.active {
-    visibility: visible;
-    opacity: 1; }
 
 section[role=slider] {
   display: -webkit-box;
@@ -2117,6 +1746,355 @@ footer ::-moz-placeholder {
   color: white; }
 footer :-ms-input-placeholder {
   color: white; }
+
+/* =============================================================================
+  MM - MATERIAL MENU
+============================================================================= */
+/**
+ * MM - Material Menu
+ *
+ * All the styles for the material menu here! I've prefixed them all with "mm",
+ * which means material menu.
+ */
+/**
+ * Toggle Button
+ *
+ * a.k.a. hamburger icon. See the "resets" section for global button resets.
+ */
+body.mm-menu-open {
+  overflow: hidden; }
+  body.mm-menu-open .down-arrow {
+    z-index: -1; }
+
+.mm-menu-toggle {
+  position: fixed;
+  top: 20px;
+  right: 47px;
+  padding-right: 35px;
+  padding-top: 4px;
+  z-index: 21001;
+  cursor: pointer;
+  width: 90px;
+  height: 26px;
+  color: white;
+  font-size: 1em;
+  line-height: 1.5em;
+  font-weight: 600;
+  /* active states */ }
+  @media screen and (min-width: 50em) {
+    .mm-menu-toggle {
+      top: 27px; } }
+  .admin-bar .mm-menu-toggle {
+    top: 65px; }
+    @media screen and (min-width: 50em) {
+      .admin-bar .mm-menu-toggle {
+        top: 50px; } }
+  .mm-menu-toggle:after {
+    background: url(dist/images/menu-buttons.png) 0 0 no-repeat;
+    content: "";
+    display: block;
+    height: 26px;
+    position: absolute;
+    right: 0;
+    top: 4px;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    transition: 0.5s all;
+    width: 27px; }
+  .mm-menu-toggle.active:after {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+    background-position: -30px 0; }
+
+/**
+ * The actual menu
+ *
+ * Here be all the stuff for the menu itself.
+ */
+.mm-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1999;
+  background-color: #e0701e;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  box-shadow: 0;
+  -webkit-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -o-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -webkit-transition: -webkit-transform 0.5s, box-shadow 0.5s;
+  -moz-transition: -moz-transform 0.5s, box-shadow 0.5s;
+  transition: transform 0.5s, box-shadow 0.5s; }
+  .mm-menu ul {
+    list-style: none;
+    margin: 115px 0 0;
+    padding: 0; }
+    .mm-menu ul li {
+      margin-left: 0;
+      padding-left: 40px; }
+      .mm-menu ul li a {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        margin: 4px 0;
+        padding: 0px;
+        color: white;
+        font-size: 1.7em;
+        font-weight: 100;
+        line-height: 55px;
+        text-decoration: none;
+        transition: background 0.5s, color 0.5s; }
+  .mm-menu.active {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0); }
+
+@media all and (min-width: 300px) {
+  .mm-menu {
+    width: 440px;
+    -webkit-transform: translateX(440px);
+    -moz-transform: translateX(440px);
+    -ms-transform: translateX(440px);
+    -o-transform: translateX(440px);
+    transform: translateX(440px); } }
+/* header */
+.mm-menu__header {
+  position: relative;
+  width: 100%;
+  height: 188px;
+  background-color: #CDDC39; }
+
+.mm-menu__title {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-size: 22px; }
+
+/* list */
+.mm-menu__items {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+.mm-menu__item {
+  display: block;
+  width: 100%;
+  opacity: 0;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%); }
+
+.mm-menu__item.in-view {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  transform: translateX(0); }
+
+.mm-menu__item.item-1 {
+  -webkit-transition: opacity 0.5s 0.1s, transform 0.5s 0.1s;
+  -moz-transition: opacity 0.5s 0.1s, transform 0.5s 0.1s;
+  transition: opacity 0.5s 0.1s, transform 0.5s 0.1s; }
+
+.mm-menu__item.item-2 {
+  -webkit-transition: opacity 0.5s 0.2s, transform 0.5s 0.2s;
+  -moz-transition: opacity 0.5s 0.2s, transform 0.5s 0.2s;
+  transition: opacity 0.5s 0.2s, transform 0.5s 0.2s; }
+
+.mm-menu__item.item-3 {
+  -webkit-transition: opacity 0.5s 0.3s, transform 0.5s 0.3s;
+  -moz-transition: opacity 0.5s 0.3s, transform 0.5s 0.3s;
+  transition: opacity 0.5s 0.3s, transform 0.5s 0.3s; }
+
+.mm-menu__item.item-4 {
+  -webkit-transition: opacity 0.5s 0.4s, transform 0.5s 0.4s;
+  -moz-transition: opacity 0.5s 0.4s, transform 0.5s 0.4s;
+  transition: opacity 0.5s 0.4s, transform 0.5s 0.4s; }
+
+.mm-menu__item.item-5 {
+  -webkit-transition: opacity 0.5s 0.5s, transform 0.5s 0.5s;
+  -moz-transition: opacity 0.5s 0.5s, transform 0.5s 0.5s;
+  transition: opacity 0.5s 0.5s, transform 0.5s 0.5s; }
+
+.mm-menu__item.item-6 {
+  -webkit-transition: opacity 0.5s 0.6s, transform 0.5s 0.6s;
+  -moz-transition: opacity 0.5s 0.6s, transform 0.5s 0.6s;
+  transition: opacity 0.5s 0.6s, transform 0.5s 0.6s; }
+
+.mm-menu__item.item-7 {
+  -webkit-transition: opacity 0.5s 0.7s, transform 0.5s 0.7s;
+  -moz-transition: opacity 0.5s 0.7s, transform 0.5s 0.7s;
+  transition: opacity 0.5s 0.7s, transform 0.5s 0.7s; }
+
+.mm-menu__item.item-8 {
+  -webkit-transition: opacity 0.5s 0.8s, transform 0.5s 0.8s;
+  -moz-transition: opacity 0.5s 0.8s, transform 0.5s 0.8s;
+  transition: opacity 0.5s 0.8s, transform 0.5s 0.8s; }
+
+.mm-menu__item.item-9 {
+  -webkit-transition: opacity 0.5s 0.9s, transform 0.5s 0.9s;
+  -moz-transition: opacity 0.5s 0.9s, transform 0.5s 0.9s;
+  transition: opacity 0.5s 0.9s, transform 0.5s 0.9s; }
+
+.mm-menu__item.item-10 {
+  -webkit-transition: opacity 0.5s 1.0s, transform 0.5s 1.0s;
+  -moz-transition: opacity 0.5s 1.0s, transform 0.5s 1.0s;
+  transition: opacity 0.5s 1.0s, transform 0.5s 1.0s; }
+
+.mm-menu__item.item-11 {
+  -webkit-transition: opacity 0.5s 1.1s, transform 0.5s 1.1s;
+  -moz-transition: opacity 0.5s 1.1s, transform 0.5s 1.1s;
+  transition: opacity 0.5s 1.1s, transform 0.5s 1.1s; }
+
+.mm-menu__item.item-12 {
+  -webkit-transition: opacity 0.5s 1.2s, transform 0.5s 1.2s;
+  -moz-transition: opacity 0.5s 1.2s, transform 0.5s 1.2s;
+  transition: opacity 0.5s 1.2s, transform 0.5s 1.2s; }
+
+.mm-menu__item.item-13 {
+  -webkit-transition: opacity 0.5s 1.3s, transform 0.5s 1.3s;
+  -moz-transition: opacity 0.5s 1.3s, transform 0.5s 1.3s;
+  transition: opacity 0.5s 1.3s, transform 0.5s 1.3s; }
+
+.mm-menu__item.item-14 {
+  -webkit-transition: opacity 0.5s 1.4s, transform 0.5s 1.4s;
+  -moz-transition: opacity 0.5s 1.4s, transform 0.5s 1.4s;
+  transition: opacity 0.5s 1.4s, transform 0.5s 1.4s; }
+
+.mm-menu__item.item-15 {
+  -webkit-transition: opacity 0.5s 1.5s, transform 0.5s 1.5s;
+  -moz-transition: opacity 0.5s 1.5s, transform 0.5s 1.5s;
+  transition: opacity 0.5s 1.5s, transform 0.5s 1.5s; }
+
+.mm-menu__item.item-16 {
+  -webkit-transition: opacity 0.5s 1.6s, transform 0.5s 1.6s;
+  -moz-transition: opacity 0.5s 1.6s, transform 0.5s 1.6s;
+  transition: opacity 0.5s 1.6s, transform 0.5s 1.6s; }
+
+.mm-menu__item.item-17 {
+  -webkit-transition: opacity 0.5s 1.7s, transform 0.5s 1.7s;
+  -moz-transition: opacity 0.5s 1.7s, transform 0.5s 1.7s;
+  transition: opacity 0.5s 1.7s, transform 0.5s 1.7s; }
+
+.mm-menu__item.item-18 {
+  -webkit-transition: opacity 0.5s 1.8s, transform 0.5s 1.8s;
+  -moz-transition: opacity 0.5s 1.8s, transform 0.5s 1.8s;
+  transition: opacity 0.5s 1.8s, transform 0.5s 1.8s; }
+
+.mm-menu__item.item-19 {
+  -webkit-transition: opacity 0.5s 1.9s, transform 0.5s 1.9s;
+  -moz-transition: opacity 0.5s 1.9s, transform 0.5s 1.9s;
+  transition: opacity 0.5s 1.9s, transform 0.5s 1.9s; }
+
+.mm-menu__item.item-20 {
+  -webkit-transition: opacity 0.5s 2.0s, transform 0.5s 2.0s;
+  -moz-transition: opacity 0.5s 2.0s, transform 0.5s 2.0s;
+  transition: opacity 0.5s 2.0s, transform 0.5s 2.0s; }
+
+.mm-menu__link {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  margin: 4px 0;
+  padding: 12px;
+  color: #727272;
+  font-size: 16px;
+  text-decoration: none;
+  -webkit-transition: background 0.5s, color 0.5s;
+  -moz-transition: background 0.5s, color 0.5s;
+  transition: background 0.5s, color 0.5s; }
+
+.mm-menu__link-text {
+  position: relative;
+  z-index: 2; }
+
+/* the touch effect, for when a link is touched */
+.mm-menu__link--touch-effect {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  width: 0;
+  height: 0;
+  border-radius: 100%;
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  -o-transform-origin: 50% 50%;
+  transform-origin: 50% 50%; }
+
+.mm-menu__link--touch-effect.animating {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: -webkit-transform 0.5s;
+  -moz-transition: -moz-transform 0.5s;
+  transition: transform 0.5s; }
+
+/**
+ * Menu mask
+ *
+ * A mask that comes in and covers the wrapper when the menu is active.
+ */
+.mm-menu-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  display: block;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s, visibility 0.5s;
+  -moz-transition: opacity 0.5s, visibility 0.5s;
+  transition: opacity 0.5s, visibility 0.5s; }
+  .mm-menu-mask.active {
+    visibility: visible;
+    opacity: 1; }
+
+@media screen and (min-width: 50em) {
+  .team {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 74.41059%; }
+    .team:last-child {
+      margin-right: 0; }
+    .team .list {
+      float: left;
+      display: block;
+      margin-right: 3.16844%;
+      width: 31.22104%; }
+      .team .list:last-child {
+        margin-right: 0; }
+      .team .list:nth-child(3n) {
+        margin-right: 0; }
+      .team .list:nth-child(3n+1) {
+        clear: left; } }
 
 /*!
 Animate.css - http://daneden.me/animate

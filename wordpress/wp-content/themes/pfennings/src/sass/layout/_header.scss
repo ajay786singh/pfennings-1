@@ -7,12 +7,8 @@ section[role=banner] {
         background-color: transparent;
 		z-index:1;
     }
-    header {		
-		-webkit-transition: all 2s ease; // Chrome
-		-moz-transition: all 2s ease; // Mozilla
-		-o-transition: all 2s ease; // Opera
-		transition: all 2s ease;
-
+    header {
+    	@include transition(all 2s ease);
         .logo {
             float: left;
             height: auto;
@@ -26,40 +22,22 @@ section[role=banner] {
                 padding: 1em 0 0 3em;
             }
         }
-
         .logo_sticky {
         	display: none;
         }
 
 		@include media($bp-mid) {
 			&.sticky {
-				-webkit-transition: all 2s ease; // Chrome
-				-moz-transition: all 2s ease; // Mozilla
-				-o-transition: all 2s ease; // Opera
-				transition: all 2s ease;
+				@include transition(all 2s ease);
 				position:fixed;
 				width:100%;
 				background:#188548;
 				z-index: 9999;
-
 				.logo_sticky {
 					display: block;
-				}
-				
+				}		
 				.logo {
 					display: none;
-					// max-width: 180px;
-					// padding: .5em 0 .5em .5em;
-					// h1 {
-					// 	font-size: 1.5em;
-					// 	margin-top: 10px;
-					// 	display:block;
-					// 	@include media($bp-mid) {
-					// 		margin-top: 5px;
-					// 		font-size: 1.75em;
-					// 	}
-					// 	color: white;
-					// }
 				}
 			}
 		}

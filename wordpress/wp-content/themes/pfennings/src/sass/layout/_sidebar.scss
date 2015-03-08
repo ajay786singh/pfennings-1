@@ -1,0 +1,6 @@
+aside {
+    padding: 0 0 2em 0;
+    @include media($bp-large) {
+        @include span-columns(3);
+    }
+}

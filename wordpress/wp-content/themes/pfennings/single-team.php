@@ -30,10 +30,6 @@
 </div>
 
 <section role="main">
-    <aside>
-        <?php gravity_form(1, true, true, false, '', true, 12); ?>
-    </aside>
-
     <div class="team">
         <?php the_content(); ?>
 
@@ -80,12 +76,14 @@
                 }
             }
         ?>
-   </div>
+    </div>
+
+    <aside>
+        <?php gravity_form(1, true, true, false, '', true, 12); ?>
+    </aside>
+
 </section>
 
-<?php 
-    endwhile; 
-    endif;
-?>
+<?php endwhile; endif; ?>
 
 <?php get_footer(); ?>

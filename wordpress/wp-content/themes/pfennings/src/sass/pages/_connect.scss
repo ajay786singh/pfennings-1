@@ -1,0 +1,9 @@
+.team {
+    @include media($bp-large) {
+        @include span-columns(9);
+        .list {
+            @include span-columns(3 of 9);
+            @include omega(3n);		
+        }
+    }
+}

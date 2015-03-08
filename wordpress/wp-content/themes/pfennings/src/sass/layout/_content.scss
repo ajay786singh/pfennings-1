@@ -13,41 +13,6 @@ section[role=main] {
     }
 }
 
-aside {
-	float:left;
-    padding: 0 0 2em 0;
-    @include media($bp-large) {
-        @include span-columns(4);
-    }
-	ul {
-		margin-left:0;
-		padding-left:0;
-		list-style:none;
-		li {
-			margin-left:0;
-			padding-left:0;
-			a {
-				color:$black;
-			}
-		}
-	}
-}
-
-.team {
-    @include media($bp-large) {
-        @include span-columns(7);
-        @include shift(1);
-        .list {
-            margin-top: 0;
-            @include span-columns(3 of 7);
-            @include omega(2n);
-            &:nth-child(2n) {
-                @include shift(1);
-            }
-			
-        }
-    }
-}
 .post-container {
 	@include span-columns(5);
 	@include media($bp-large) {
@@ -166,6 +131,7 @@ aside {
 .oddeven:last-of-type {
 	border-bottom: none;
 }
+
 
 .order-form-container {
 	overflow:hidden;

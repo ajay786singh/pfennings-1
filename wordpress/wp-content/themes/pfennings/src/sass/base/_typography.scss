@@ -81,11 +81,25 @@ p, ul, ol {
     font-size: $base-font-size;
     @include media($bp-mid) {
         font-size: $base-font-size;
-        // letter-spacing: 0.75px;
     }   
     line-height: 1.6em;
     margin-bottom: 1.5em;
     font-weight: 300; 
+}
+
+aside {
+    ul {
+        margin-left:0;
+        padding-left:0;
+        list-style:none;
+        li {
+            margin-left:0;
+            padding-left:0;
+            a {
+                color:$black;
+            }
+        }
+    }
 }
 
 .team {

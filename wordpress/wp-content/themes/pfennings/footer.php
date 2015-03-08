@@ -51,18 +51,8 @@
                     </ol>
                 </fieldset>
             </form>
-<!--             <div class="social-share">
-                <span class='symbol'><a target="_blank" href="https://www.facebook.com/pfenningsfarm">circlefacebook</a></span>
-                <span class='symbol'><a href="mailto:veggies@pfenningsfarms.ca">circleemail</a></span>
-                <span class='symbol'><a target="_blank" href="https://twitter.com/PfOrganicFarms">circletwitterbird</a></span></a>
-            </div> -->
         </div> 
     </div>
-<!--     <div class="footer-inner">
-       <div class="copyright">
-            <small>Made with Purpose by <br> B Corp Certified <a href="http://hypenotic.com">Hypenotic</a></small>
-        </div>
-    </div> -->
 </footer>
 
 </div><!--/wrapper-->

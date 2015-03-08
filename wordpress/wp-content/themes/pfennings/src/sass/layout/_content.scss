@@ -2,7 +2,7 @@ section[role=main] {
     @include outer-container;
     @include pad(0 2em 0 2em);
     @include media($bp-large) {
-        @include pad(default);
+        @include pad(2em 5em);
     }
 
     article {
@@ -123,17 +123,18 @@ aside {
 .oddeven:nth-of-type(odd) { 
     @include row();
     border-bottom: 2px solid $light-gray;
-    margin: 1em 0 1em 0;
+    margin: 1.5em 0 1em 0;
+    padding-bottom: 2em;
     .image {
         @include media($bp-large) {
-            width: 30%;
+            width: 45%;
             float: left;
-            padding: 3em 2em 0 0;
+            padding: 2.25em 2em 0 0;
         }
     }
     .content {
         @include media($bp-large) {
-            width: 70%;
+            width: 50%;
             float: right;
         }
     }
@@ -143,11 +144,12 @@ aside {
     @include row();
     border-bottom: 2px solid $light-gray;
     margin: 1em 0 1em 0;
+    padding-bottom: 2em;
     .image {
         @include media($bp-large) {
-            width: 30%;
+            width: 45%;
             float: right;
-            padding: 3em 0 0 2em;
+            padding: 2.25em 0 0 2em;
             img {
                 float: right;
             }       
@@ -155,10 +157,14 @@ aside {
     }
     .content {
         @include media($bp-large) {
-            width: 70%;
+            width: 50%;
             float: left;
         }
     }
+}
+
+.oddeven:last-of-type {
+	border-bottom: none;
 }
 
 .order-form-container {

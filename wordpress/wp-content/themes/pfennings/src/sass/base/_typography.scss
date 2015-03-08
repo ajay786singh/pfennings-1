@@ -26,62 +26,66 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: $header-font-family;
-    font-weight: 700;
+    font-weight: 600;
     font-style: normal;
     letter-spacing: 0.5px;
     text-rendering: optimizeLegibility;
 }
 
 h1 { 
-	font-size: modular-scale(3); 
-	@include media($bp-mid) {
-		font-size: modular-scale(6); 
-	}
+    font-size: modular-scale(3); 
+    @include media($bp-mid) {
+        font-size: modular-scale(6); 
+    }
 }
 
 h2 { 
-	font-size: modular-scale(2); 
-	@include media($bp-mid) {
-		font-size: modular-scale(5); 
-	}
+    font-size: modular-scale(2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.25em; 
+    @include media($bp-mid) {
+        font-size: modular-scale(4); 
+    }
 }
 
 h3 { 
-	font-size: modular-scale(2); 
-	@include media($bp-mid) {
-		font-size: modular-scale(4); 
-	}
+    font-size: modular-scale(2); 
+    @include media($bp-mid) {
+        font-size: modular-scale(4); 
+    }
 }
 
 h4 { 
-	font-size: modular-scale(1); 
-	@include media($bp-mid) {
-		font-size: modular-scale(3); 
-	}
+    font-size: modular-scale(1); 
+    @include media($bp-mid) {
+        font-size: modular-scale(3); 
+    }
 }
 
 h5 { 
-	font-size: modular-scale(1); 
-	@include media($bp-mid) {
-		font-size: modular-scale(2); 
-	} 
+    font-size: modular-scale(1); 
+    @include media($bp-mid) {
+        font-size: modular-scale(2); 
+    } 
     text-transform: uppercase;
     @include margin(null null 1em null);
 }
 
 h6 { 
-	font-size: modular-scale(1); 
+    font-size: modular-scale(1); 
 }
 
 p, ul, ol {
     list-style-type: disc;
-	font-size: $base-font-size * 1;
+    font-size: $base-font-size;
     @include media($bp-mid) {
-		font-size: $base-font-size * 1.25;
-	}	
-    line-height: 1.5em;
+        font-size: $base-font-size;
+        // letter-spacing: 0.75px;
+    }   
+    line-height: 1.6em;
     margin-bottom: 1.5em;
-    font-weight: 300;
+    font-weight: 300; 
 }
 
 .team {
@@ -181,6 +185,8 @@ small {
     margin: 2.5em 0 0 0;
 }
 
+
+
 .headline {
     font-size: .9em;
     font-family: $sans-serif;
@@ -189,6 +195,11 @@ small {
     @include media($bp-mid) {
         font-size: modular-scale(4);
     }
+
+    p {
+        font-size: $base-font-size * 1.25;
+    }
+
     a {
         color: $white;
         text-decoration: none;
@@ -226,34 +237,34 @@ small {
         text-align: right;
 }
 .results_wrapper {
-	.results_entry {
-		span {
-			&.location_name {
-				text-transform:uppercase;
-				color:$base-font-color;
-			}
-			&.location_distance {
-				display:none;
-			}
-		}
-		&:hover {
-			background:none;
-		}
-		a {
-			div#map_sidebar & {
-				color: $blue;
-			}
-			&:hover {
-				background:none;
-			}
-		}
-	}	
+    .results_entry {
+        span {
+            &.location_name {
+                text-transform:uppercase;
+                color:$base-font-color;
+            }
+            &.location_distance {
+                display:none;
+            }
+        }
+        &:hover {
+            background:none;
+        }
+        a {
+            div#map_sidebar & {
+                color: $blue;
+            }
+            &:hover {
+                background:none;
+            }
+        }
+    }   
 }
 
 .footer-inner h5 {
-	   font-size: 1.25em;
-	   margin-top: 0;
-	   margin-bottom: 0.5em;
+       font-size: 1.25em;
+       margin-top: 0;
+       margin-bottom: 0.5em;
 }
 
 .logo_sticky{

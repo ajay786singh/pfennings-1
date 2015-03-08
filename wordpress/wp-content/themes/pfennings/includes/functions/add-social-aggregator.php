@@ -1,4 +1,4 @@
-<?php 
+<?php
 require get_template_directory().'/includes/library/facebook/facebook.php';
 function array_multi_unique($multiArray){
   $uniqueArray = array();

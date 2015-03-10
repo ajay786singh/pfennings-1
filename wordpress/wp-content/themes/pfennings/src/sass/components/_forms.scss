@@ -137,6 +137,10 @@ select {
     
     input[type="submit"] {
         @extend button;
+        background-color: $button-green;
+        &:hover {
+            background-color: darken($button-green, 10);
+        }
     }
 }
 

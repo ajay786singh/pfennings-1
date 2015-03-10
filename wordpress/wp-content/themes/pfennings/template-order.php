@@ -36,32 +36,35 @@ get_header(); ?>
 
 	<h3>To set up an account</h3>
 	<p>Please <a href="/team/staff">contact our sales team</a> to find out more about buying our produce.<p>
-	<h3>Already have an account? Send us your order</h3>
+	<h3>Already have an account? </br> Send us your order</h3>
 	<div class="order-form-container">
 		<div class="content">
 			<div class="step-box">
-				<h5>Step 1</h5>
 				<span class="icon"><i class="fa fa-cloud-download fa-5x"></i></span>
+				<h6>Step 1</h6>
+				<p class="big">download</p>
 				<p>To get started, download our order form</p>
 			</div>
 		</div>
 
 		<div class="content">
 			<div class="step-box">
-				<h5>Step 2</h5>
 				<span class="icon">
 				<i class="fa fa-print fa-5x"></i>
 				</span>
+				<h6>Step 2</h6>
+				<p class="big">print</p>
 				<p>Print the form and fill in your order.</p>
 			</div>
 		</div>
 
 		<div class="content">
 			<div class="step-box">
-				<h5>Step 3</h5>
 				<span class="icon">
 				<i class="fa fa-check-square fa-5x"></i>
 				</span>
+				<h6>Step 3</h6>
+				<p class="big">submit</p>
 				<p>Submit completed forms</p>
 			</div>
 		</div>

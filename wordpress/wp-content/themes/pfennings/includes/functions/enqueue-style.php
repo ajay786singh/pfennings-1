@@ -5,7 +5,9 @@
 */
 
 function my_styles() {
-	wp_register_style('style', get_template_directory_uri() . '/style.css');
+	$timestamp = @filemtime(get_stylesheet_directory().'/style.css');
+
+	wp_register_style('style', get_template_directory_uri() . '/style.css', array(), $timestamp);
  	wp_enqueue_style( 'style' );
  	wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' );
 }

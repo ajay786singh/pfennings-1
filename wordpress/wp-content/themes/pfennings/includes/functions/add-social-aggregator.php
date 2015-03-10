@@ -275,14 +275,14 @@ function show_feed_results( $results = NULL ) {
 				<div class="post item <?php echo $label;?> <?php echo $filter;?>" data-category="transition" id="<?php echo "item_".$id;?>">
 						<?php 
 								if($feed_img==''){
-									$feed_img="http://www.cabotcheese.coop/pages/recipes/images/Recipe_NoImage2.jpg";
-									$error_img="http://www.cabotcheese.coop/pages/recipes/images/Recipe_NoImage2.jpg";
+									$feed_img="http://placehold.it/300&text=No%20Image!";
+									$error_img="http://placehold.it/300&text=No%20Image!";
 								}
 								if($label =='youtube') {
 									if($feed_img=youtube_thumbnail_url($link)) {
 										$feed_img=htmlspecialchars($feed_img);
 									}else {
-										$feed_img="http://www.cabotcheese.coop/pages/recipes/images/Recipe_NoImage2.jpg";
+										$feed_img="http://placehold.it/300&text=No%20Image!";
 									}
 								}
 							?>

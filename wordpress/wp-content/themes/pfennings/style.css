@@ -435,6 +435,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   font-style: normal;
   letter-spacing: 0.5px;
+  margin-bottom: 0.25em;
   text-rendering: optimizeLegibility; }
 
 h1 {
@@ -456,7 +457,7 @@ h3 {
   font-size: 1.5625em; }
   @media screen and (min-width: 64em) {
     h3 {
-      font-size: 2.44141em; } }
+      font-size: 1.95313em; } }
 
 h4 {
   font-size: 1.25em; }
@@ -479,6 +480,7 @@ p, ul, ol {
   list-style-type: disc;
   font-size: 1em;
   line-height: 1.6em;
+  margin-top: 0;
   margin-bottom: 1.5em;
   font-weight: 300; }
   @media screen and (min-width: 64em) {
@@ -647,6 +649,34 @@ div#map_sidebar .results_wrapper .results_entry a {
   font-size: 0.7em;
   margin-left: 0.8em; }
 
+article h3 {
+  margin-top: 0; }
+article p {
+  font-size: 0.9em;
+  line-height: 1.6em;
+  margin-bottom: 2.5em; }
+article ol {
+  margin-top: 0.9em;
+  margin-bottom: 2.5em; }
+  article ol ul {
+    padding-left: 0;
+    list-style: none; }
+    article ol ul li {
+      margin-left: 0; }
+
+.content h6 {
+  font-family: "grafolita-script", sans-serif;
+  font-size: 1.5em;
+  margin-top: 0.5em;
+  margin-bottom: 0.25em; }
+@media screen and (min-width: 50em) {
+  .content .fa-5x {
+    font-size: 8em; } }
+.content .step-box p.big {
+  text-transform: uppercase;
+  margin-bottom: 0.25em;
+  font-size: 1.5em; }
+
 img {
   max-width: 100%; }
 
@@ -762,15 +792,18 @@ section[role=main] {
   @media screen and (min-width: 50em) {
     section[role=main] {
       padding: 2em 5em; } }
-  @media screen and (min-width: 50em) {
-    section[role=main] article {
-      float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 57.35098%;
-      margin-left: 21.32451%; }
-      section[role=main] article:last-child {
-        margin-right: 0; } }
+  section[role=main] article {
+    margin-top: 1.5em; }
+    @media screen and (min-width: 50em) {
+      section[role=main] article {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 31.76157%;
+        padding-left: 3em;
+        border-left: 1px solid #E0E0E0; }
+        section[role=main] article:last-child {
+          margin-right: 0; } }
 
 .post-container {
   float: left;
@@ -899,36 +932,28 @@ section[role=main] {
   border-bottom: none; }
 
 .order-form-container {
-  overflow: hidden; }
-  .order-form-container .content {
-    display: block;
-    margin-right: 0;
-    float: left;
-    display: block;
-    margin-right: 5.85151%;
-    width: 100%; }
-    .order-form-container .content::after {
-      clear: both;
-      content: "";
-      display: table; }
-    .order-form-container .content:last-child {
-      margin-right: 0; }
-    @media screen and (min-width: 50em) {
-      .order-form-container .content {
-        float: left;
-        display: block;
-        margin-right: 2.35765%;
-        width: 31.76157%; }
-        .order-form-container .content:last-child {
-          margin-right: 0; } }
-    .order-form-container .content:nth-child(3n) {
-      margin-right: 0; }
-    .order-form-container .content .step-box {
-      width: 95%;
-      float: left; }
-    .order-form-container .content .icon {
+  overflow: hidden;
+  margin-top: 1.5em; }
+  @media screen and (min-width: 50em) {
+    .order-form-container {
       float: left;
-      padding-right: 1em; }
+      display: block;
+      margin-right: 2.35765%;
+      width: 65.88078%; }
+      .order-form-container:last-child {
+        margin-right: 0; }
+      .order-form-container .content {
+        widows: 100%; }
+        .order-form-container .content:nth-child(3n) {
+          margin-right: 0; }
+        .order-form-container .content .step-box {
+          width: 100%;
+          float: left;
+          margin-bottom: 5em; }
+        .order-form-container .content .icon {
+          float: left;
+          padding-right: 3em;
+          text-align: center; } }
 
 #map_sidebar {
   margin-top: 2em; }

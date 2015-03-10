@@ -1,6 +1,11 @@
 footer {
     background: $footer-background-color;
     .footer-inner {
+        a {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
         @include outer-container;
         padding: 2em;
         .content {
@@ -41,10 +46,11 @@ footer {
     }
 
     .copyright {
+        width: 100%;
         text-align: center;
         display: inline-block;
         clear: both;
-        margin: 1em 0 0 0;
+        margin: 0.5em 0 0 0;
     }
 
     .fLogo_area {

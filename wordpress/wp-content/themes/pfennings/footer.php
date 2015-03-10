@@ -7,9 +7,6 @@
                     <img src="<?php bloginfo('template_url' ); ?>/dist/images/pfenningslogo_WT.png">
                 </a>
             </div>
-            <div class="copyright">
-                 <small>Made with Purpose by <br> B Corp Certified <a href="http://hypenotic.com">Hypenotic</a></small>
-             </div>
         </div>
         <!-- Column 1 -->
         <div class="content">
@@ -18,9 +15,13 @@
                 1209 Waterloo Street<br>
                 New Hamburg, ON. N3A 1T1 <br>
                 <a class="button-map" href="https://goo.gl/maps/RnHjJ" target="_blank" style="border-bottom: 1px solid white">Map</a><br>
-                <b>f:</b> +1 (519) 662-4083<br>
+
                 <a class="button-phone" href="tel://+15196623468"><b>t:</b> +1 (519) 662-3468</a><br>
+
                 <a class="button-phone" href="tel://8776623468"><b>Toll free:</b> 877-662-3468</a><br>
+                
+                <b>f:</b> +1 (519) 662-4083<br>
+
                 <a class="button-email" href="mailto:veggies@pfenningsfarms.ca">veggies@pfenningsfarms.ca</a><br>
             </p>
 
@@ -51,7 +52,10 @@
                     </ol>
                 </fieldset>
             </form>
-        </div> 
+        </div>
+        <div class="copyright">
+             <small>Made with Purpose by B Corp Certified <a href="http://hypenotic.com">Hypenotic</a></small>
+         </div> 
     </div>
 </footer>
 

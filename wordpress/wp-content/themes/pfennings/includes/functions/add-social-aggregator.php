@@ -271,19 +271,14 @@ function show_feed_results( $results = NULL ) {
 				$label=$result->label;
 				$filter=$result->filter;
 				$newDate=$result->date;			
+				$default_image=get_bloginfo('template_url')."/dist/images/bg-hero.png";
 				?>
 				<div class="post item <?php echo $label;?> <?php echo $filter;?>" data-category="transition" id="<?php echo "item_".$id;?>">
 						<?php 
+								
 								if($feed_img==''){
-									$feed_img="http://placehold.it/300&text=No%20Image!";
-									$error_img="http://placehold.it/300&text=No%20Image!";
-								}
-								if($label =='youtube') {
-									if($feed_img=youtube_thumbnail_url($link)) {
-										$feed_img=htmlspecialchars($feed_img);
-									}else {
-										$feed_img="http://placehold.it/300&text=No%20Image!";
-									}
+									$feed_img=$default_image;
+									$error_img=$default_image;
 								}
 							?>
 	                <div class="post-image" style="background-image:url(<?php echo $feed_img;?>);">

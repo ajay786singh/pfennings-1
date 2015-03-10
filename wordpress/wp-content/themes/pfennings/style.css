@@ -1001,6 +1001,8 @@ footer {
     margin-left: auto;
     margin-right: auto;
     padding: 2em; }
+    footer .footer-inner a:hover {
+      text-decoration: underline; }
     footer .footer-inner::after {
       clear: both;
       content: "";
@@ -1045,10 +1047,11 @@ footer {
       footer .footer-inner .footer_logo, footer .footer-inner .copyright {
         display: none; } }
   footer .copyright {
+    width: 100%;
     text-align: center;
     display: inline-block;
     clear: both;
-    margin: 1em 0 0 0; }
+    margin: 0.5em 0 0 0; }
   footer .fLogo_area {
     text-align: center; }
 

@@ -138,10 +138,138 @@ select {
     input[type="submit"] {
         @extend button;
         background-color: $button-green;
+        padding: 12px;
+        font-size: 14px;
+
         &:hover {
             background-color: darken($button-green, 10);
         }
     }
+}
+
+#gform_wrapper_2 {
+    h2 {
+        margin-bottom: 1em;
+    }
+    
+    ul {
+        padding: 0;
+        margin: 0;
+        li {
+            list-style: none;
+            margin: 1em 0 0 0;
+        }
+    }
+
+    input[type="text"], input[type="number"] {
+        border: 1px solid #E0E0E0;
+        color: $dark-gray;
+        font-size: 0.9em;
+        padding: 8px 8px;
+        
+        @include placeholder {
+            font-size: 0.9em;
+        }
+    }
+
+    textarea {
+        border: 1px solid #E0E0E0;
+        color: $dark-gray;
+        font-size: 0.9em;
+        padding-left: 1em;
+
+        @include media($bp-mid) {
+            height: 292px;
+        }
+    }
+
+    label {
+        font-size: 0.8em;
+        font-weight: normal;
+        font-family: $serif;
+    }
+}
+
+#gform_wrapper_2 .gform_body .gform_fields .gfield {
+    @include media($bp-mid) {
+        @include shift(2.5);
+        width: 50%;
+        margin-right: 1.5em;
+    }
+}
+
+#field_2_15 {
+    @include media($bp-mid) {
+        width: 24%!important;
+        float: left;
+        clear: both;
+
+        #input_2_15 {
+            width: 100%;
+        } 
+    }
+}
+
+#field_2_13 {
+    @include media($bp-mid){
+        width: 24%!important;
+        margin-right: 0;
+        margin-left: 0!important;
+        float: left;
+    }
+}
+
+#field_2_4, #field_2_7 {
+    @include media($bp-mid) {
+        float: left;
+        clear: left;
+    }
+}
+
+#field_2_4 {
+    margin-top: 3em!important;
+}
+
+#field_2_5 {
+    @include media($bp-mid) {
+        width: 24%!important;
+        float: left;
+        clear: both;
+
+        #input_2_5 {
+            width: 100%;
+        } 
+    }
+}
+
+#field_2_6 {
+    @include media($bp-mid){
+        width: 24%!important;
+        margin-right: 0;
+        margin-left: 0!important;
+        float: left;
+    }
+
+    #input_2_6 {
+        height: 34px;
+    }
+}
+
+#field_2_7 {
+    @include media($bp-mid) {
+        margin-top: -9px!important;
+    }
+}
+
+.gform_footer {
+    @include media($bp-mid) {
+        @include shift(2.5);
+    }
+    display: block;
+    float: left;
+    text-align: left;
+    clear: both;
+    margin-bottom: 3em!important;
 }
 
 .store-search {

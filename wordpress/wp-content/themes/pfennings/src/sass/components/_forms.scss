@@ -44,7 +44,7 @@ select[multiple=multiple] {
     padding: $base-line-height / 2.3 $base-line-height / 2.3;
     width: 100%;
     margin-right: 10px;
-    color: white;
+    color: $dark-gray;
     &:hover {
         // border-color: $form-border-color-hover;
     }
@@ -126,7 +126,7 @@ select {
         }
     }
     input[type="text"], input[type="email"]  {
-        padding: .2em .2em;
+        padding: 0.2em 0.2em;
     }
 
     input[type="checkbox"] {
@@ -272,6 +272,12 @@ select {
     margin-bottom: 3em!important;
 }
 
+#gform_wrapper_1 .gform_footer {
+       @include media($bp-mid) {
+         @include shift(0);
+    }
+}
+
 .store-search {
     position: relative;
     overflow: hidden;
@@ -317,8 +323,10 @@ aside {
             //border: 1px solid $form-border-color;
             box-shadow: $form-box-shadow;
         }
-        input[type="text"] {
+        input[type="text"], #addressInput {
             width:100%;
+            font-size: 1em;
+            padding: 0.188em 0.5em;
         }
     }
     #address_search {
@@ -330,7 +338,18 @@ aside {
         }
         input[type="submit"] {
             @extend button;
+            background-color: $button-green;
+            padding: 12px;
+            font-size: 14px;
+            
+            &:hover {
+                background-color: darken($button-green, 10);
+            }
         }
+    }
+
+    #searchForm #radius_in_submit {
+        float: left;
     }
 }
 

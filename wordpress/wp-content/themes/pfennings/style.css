@@ -436,6 +436,7 @@ h1, h2, h3, h4, h5, h6 {
   font-style: normal;
   letter-spacing: 0.5px;
   margin-bottom: 0.25em;
+  margin-top: 1.75em;
   text-rendering: optimizeLegibility; }
 
 h1 {
@@ -527,7 +528,7 @@ a {
   -webkit-transition: opacity 0.1s linear;
   -moz-transition: opacity 0.1s linear;
   transition: opacity 0.1s linear;
-  color: #477dca;
+  color: #008348;
   opacity: 1;
   text-decoration: none; }
   a:hover {
@@ -667,6 +668,8 @@ small {
   margin-left: 0.8em; }
 
 article h3 {
+  font-size: 1.563em;
+  text-transform: uppercase;
   margin-top: 0; }
 article p {
   font-size: 0.9em;
@@ -699,6 +702,9 @@ article ol {
 
 #searchForm select#radiusSelect {
   font-size: 1em; }
+
+section[role="main"] h3 {
+  text-transform: uppercase; }
 
 img {
   max-width: 100%; }
@@ -955,7 +961,6 @@ section[role=main] {
   border-bottom: none; }
 
 .order-form-container {
-  overflow: hidden;
   margin-top: 1.5em; }
   @media screen and (min-width: 50em) {
     .order-form-container {
@@ -966,7 +971,7 @@ section[role=main] {
       .order-form-container:last-child {
         margin-right: 0; }
       .order-form-container .content {
-        widows: 100%; }
+        width: 100%; }
         .order-form-container .content:nth-child(3n) {
           margin-right: 0; }
         .order-form-container .content .step-box {
@@ -977,6 +982,22 @@ section[role=main] {
           float: left;
           padding-right: 3em;
           text-align: center; } }
+
+@media screen and (min-width: 64em) {
+  .setUpAccount {
+    float: left;
+    display: inline-block; } }
+
+.submitOptions {
+  padding-left: 0; }
+  @media screen and (min-width: 64em) {
+    .submitOptions {
+      padding-left: 138px; } }
+
+@media screen and (min-width: 64em) {
+  section[role="main"] article.orderProduce {
+    float: right;
+    margin-top: -210px; } }
 
 #map_sidebar {
   margin-top: 2em; }

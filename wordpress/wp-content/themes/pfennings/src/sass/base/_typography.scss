@@ -90,6 +90,28 @@ p, ul, ol {
 }
 
 aside {
+    
+    h4 {
+        text-transform: uppercase;
+        font-size: 1.563em;
+    }
+
+    h3 {
+       text-transform: uppercase;
+       font-size: 1.563em; 
+    }
+
+    #address_search label[for="addressInput"] {
+        font-size: 1.125em;
+        font-weight: 300;
+    }
+
+    .search_item label[for="radiusSelect"] {
+        font-size: 1.125em;
+        font-weight: 300;
+    }
+
+
     ul {
         margin-left:0;
         padding-left:0;
@@ -258,20 +280,29 @@ small {
             &.location_name {
                 text-transform:uppercase;
                 color:$base-font-color;
+                font-size: 0.813em;
             }
             &.location_distance {
                 display:none;
+            }
+
+            &.slp_result_address {
+                font-size: 0.813em;
             }
         }
         &:hover {
             background:none;
         }
         a {
+
+            font-size: 0.688em;
+
             div#map_sidebar & {
-                color: $blue;
+                color: $green;
+
             }
             &:hover {
-                background:none;
+                background: none;
             }
         }
     }   
@@ -345,4 +376,8 @@ article {
 
 #gform_wrapper_2 h2 {
     font-size: 2em;
+}
+
+#searchForm select#radiusSelect {
+    font-size: 1em;
 }

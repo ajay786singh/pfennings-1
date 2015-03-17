@@ -133,6 +133,12 @@ body.mm-menu-open {
   }
 }
 
+@media all and ( max-width: 440px ) {
+  .mm-menu {
+    width: 100%;
+   // @include transform(translateX(440px));
+  }
+}
 /* header */
 
 .mm-menu__header {

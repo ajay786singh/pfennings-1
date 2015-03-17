@@ -773,7 +773,7 @@ a img.aligncenter {
 section[role=banner] {
   position: fixed;
   width: 100%;
-  background-color: black; }
+  background-color: #008348; }
   @media screen and (min-width: 64em) {
     section[role=banner] {
       position: absolute;
@@ -783,17 +783,27 @@ section[role=banner] {
     -webkit-transition: all 2s ease;
     -moz-transition: all 2s ease;
     transition: all 2s ease; }
+    section[role=banner] header .mobile_sticky h1 {
+      font-size: 1em;
+      margin: 1.7em 0 1.5em 2.6em;
+      color: white;
+      display: inline-block; }
+      @media screen and (min-width: 64em) {
+        section[role=banner] header .mobile_sticky h1 {
+          display: none; } }
     section[role=banner] header .logo {
       float: left;
       height: auto;
       max-width: 130px;
-      padding: .5em 0 .5em .5em; }
+      padding: .5em 0 .5em .5em;
+      display: none; }
       section[role=banner] header .logo:hover {
         opacity: 0.8; }
       @media screen and (min-width: 64em) {
         section[role=banner] header .logo {
           max-width: 400px;
-          padding: 1em 0 0 3em; } }
+          padding: 1em 0 0 3em;
+          display: block; } }
     section[role=banner] header .logo_sticky {
       display: none; }
     @media screen and (min-width: 64em) {
@@ -803,7 +813,7 @@ section[role=banner] {
         transition: all 2s ease;
         position: fixed;
         width: 100%;
-        background: #188548;
+        background: #008348;
         z-index: 9999; }
         section[role=banner] header.sticky .logo_sticky {
           display: block; }
@@ -1077,6 +1087,10 @@ footer {
       clear: both;
       content: "";
       display: table; }
+    footer .footer-inner .content p, footer .footer-inner .content h5 {
+      margin-bottom: 0; }
+    footer .footer-inner .content ul li:last-child {
+      margin-bottom: 2em; }
     @media screen and (min-width: 64em) {
       footer .footer-inner .content:nth-of-type(1) {
         float: left;
@@ -1117,6 +1131,11 @@ footer {
     @media screen and (max-width: 64em) {
       footer .footer-inner .footer_logo, footer .footer-inner .copyright {
         display: none; } }
+    footer .footer-inner .button-map {
+      border-bottom: 1px solid white; }
+      @media screen and (max-width: 64em) {
+        footer .footer-inner .button-map {
+          border-bottom: none; } }
   footer .copyright {
     width: 100%;
     text-align: center;
@@ -1226,7 +1245,7 @@ button, .gform_wrapper input[type="submit"], aside #address_search input[type="s
   @media screen and (max-width: 64em) {
     .button-map, .button-phone, .button-email {
       -webkit-font-smoothing: antialiased;
-      background-color: #477dca;
+      background-color: #10824a;
       border-radius: 0.1875em;
       color: white;
       display: inline-block;
@@ -1249,12 +1268,12 @@ button, .gform_wrapper input[type="submit"], aside #address_search input[type="s
       white-space: nowrap;
       text-decoration: none; }
       .button-map:hover, .button-phone:hover, .button-email:hover {
-        background-color: #333333;
+        background-color: #0a5530;
         color: white; } }
 
 @media screen and (max-width: 64em) {
   .button-phone {
-    background-color: #06AD60; } }
+    background-color: #10824a; } }
 
 #pagination {
   padding-top: 100px; }
@@ -1279,7 +1298,8 @@ button, .gform_wrapper input[type="submit"], aside #address_search input[type="s
 
 .social-share {
   padding: .2em 0 0.5em 0;
-  font-size: 2em; }
+  font-size: 2em;
+  margin-bottom: 0.5em; }
   .social-share a {
     color: white;
     margin-right: .1em;
@@ -1953,6 +1973,12 @@ body.mm-menu-open {
   overflow: hidden; }
   body.mm-menu-open .down-arrow {
     z-index: -1; }
+
+.hide {
+  display: none; }
+  @media screen and (min-width: 64em) {
+    .hide {
+      display: block; } }
 
 .mm-menu-toggle {
   position: fixed;

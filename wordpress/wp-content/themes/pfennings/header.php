@@ -36,7 +36,7 @@
 </head>
 
 <body <?php body_class();?>>
-<div id="mm-menu-toggle" class="mm-menu-toggle">Menu</div>
+<div id="mm-menu-toggle" class="mm-menu-toggle"><span class="hide">Menu</span></div>
   
 <nav id="mm-menu" class="mm-menu">
 	<?php wp_nav_menu(array('theme_location'=>'header-menu','items_wrap'=> '<ul id="%1$s" class="mm-menu__items %2$s">%3$s</ul>','walker'=> new Walker_MM_Menu()));?>     
@@ -53,6 +53,12 @@
             <a href="<?php bloginfo('url');?>">
                 <h1>Pfenning's Organic Farms<span class="tagline">Community Flavoured Agriculture</span>
 </h1>
+            </a>
+        </div>
+
+        <div class="mobile_sticky">
+            <a href="<?php bloginfo('url');?>">
+                <h1>Pfenning's Organic Farms</h1>
             </a>
         </div>
         <!--<div id="mm-menu-toggle" class="mm-menu-toggle"><span></span>Menu</div> -->

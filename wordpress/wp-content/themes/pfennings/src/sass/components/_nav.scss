@@ -29,7 +29,13 @@ body.mm-menu-open {
 		z-index:-1;
 	}
 }
+.hide {
+	display: none;
 
+	@include media($bp-mid) {
+		display: block;
+	}
+}
 .mm-menu-toggle {
 	position: fixed;
 	top: 20px; 
@@ -53,6 +59,7 @@ body.mm-menu-open {
 	font-size: 1em;
 	line-height: 1.5em;
 	font-weight: 600;
+
 	&:after {
 		background: url(dist/images/menu-buttons.png) 0 0 no-repeat;
 		content:"";

@@ -13,7 +13,7 @@ button {
     text-decoration: none;
     @include media($bp-small) {
         -webkit-font-smoothing: antialiased;
-        background-color: $blue;
+        background-color: $button-green;
         border-radius: $base-border-radius;
         color: $white;
         display: inline-block;
@@ -32,7 +32,7 @@ button {
         white-space: nowrap;
         text-decoration: none;
         &:hover {
-            background-color: $dark-gray;
+            background-color: darken($button-green, 10);
             color: white;
         }
     }
@@ -40,6 +40,6 @@ button {
 
 .button-phone {
     @include media($bp-small) {
-	   background-color: #06AD60;
+	   background-color: $button-green;
     }
 }

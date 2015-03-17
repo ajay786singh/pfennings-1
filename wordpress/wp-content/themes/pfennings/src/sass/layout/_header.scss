@@ -1,13 +1,24 @@
 section[role=banner] {
     position: fixed;
     width: 100%;
-    background-color: $header-background-color;
+    background-color: $green;
+
     @include media($bp-mid) {
         position: absolute;
         background-color: transparent;
 		z-index:1;
     }
     header {
+        .mobile_sticky h1 {
+            font-size: 1em;
+            margin: 1.7em 0 1.5em 2.6em;
+            color: white;
+            display: inline-block;
+
+            @include media ($bp-mid) {
+                display: none;
+            }
+        }
     	@include transition(all 2s ease);
         .logo {
             float: left;
@@ -17,13 +28,25 @@ section[role=banner] {
             &:hover {
                 opacity: 0.8;
             }
+
+            display: none;
             @include media($bp-mid) {
                 max-width: 400px;
                 padding: 1em 0 0 3em;
+                display: block;
             }
         }
         .logo_sticky {
-        	display: none;
+            display: none;
+
+            h1 {
+                // font-size: 0.79em;
+                // margin: 1.75em 0;
+
+                .tagline {
+                    // display: none;
+                }
+            }
         }
 
 		@include media($bp-mid) {
@@ -31,7 +54,7 @@ section[role=banner] {
 				@include transition(all 2s ease);
 				position:fixed;
 				width:100%;
-				background:#188548;
+				background: $green;
 				z-index: 9999;
 				.logo_sticky {
 					display: block;

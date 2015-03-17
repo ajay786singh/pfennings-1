@@ -14,7 +14,7 @@
             <p>
                 1209 Waterloo Street<br>
                 New Hamburg, ON. N3A 1T1 <br>
-                <a class="button-map" href="https://goo.gl/maps/RnHjJ" target="_blank" style="border-bottom: 1px solid white">Map</a><br>
+                <a class="button-map" href="https://goo.gl/maps/RnHjJ" target="_blank">Map</a><br>
 
                 <a class="button-phone" href="tel://+15196623468"><b>t:</b> +1 (519) 662-3468</a><br>
 

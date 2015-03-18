@@ -161,7 +161,7 @@ select {
         }
     }
 
-    input[type="text"], input[type="number"] {
+    input[type="text"], input[type="number"], input[type="tel"], input[type="email"] {
         border: 1px solid #E0E0E0;
         color: $dark-gray;
         font-size: 0.9em;

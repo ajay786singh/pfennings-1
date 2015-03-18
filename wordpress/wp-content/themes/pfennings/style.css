@@ -436,7 +436,6 @@ h1, h2, h3, h4, h5, h6 {
   font-style: normal;
   letter-spacing: 0.5px;
   margin-bottom: 0.25em;
-  margin-top: 1.75em;
   text-rendering: optimizeLegibility; }
 
 h1 {
@@ -482,7 +481,7 @@ p, ul, ol {
   font-size: 1em;
   line-height: 1.6em;
   margin-top: 0;
-  margin-bottom: 1.5em;
+  margin-bottom: 1.75em;
   font-weight: 300; }
   @media screen and (min-width: 64em) {
     p, ul, ol {
@@ -988,7 +987,7 @@ section[role=main] {
         .order-form-container .content .step-box {
           width: 100%;
           float: left;
-          margin-bottom: 5em; }
+          margin-bottom: 3.5em; }
         .order-form-container .content .icon {
           float: left;
           padding-right: 3em;
@@ -1862,6 +1861,19 @@ select {
   #gform_wrapper_1 .gform_footer {
     margin-left: 0%; } }
 
+.moreInfo {
+  float: left;
+  display: inline-block;
+  clear: both;
+  margin-bottom: 47px; }
+  @media screen and (min-width: 64em) {
+    .moreInfo {
+      margin-left: 21.32451%; } }
+  .moreInfo ul {
+    padding-left: 0; }
+    .moreInfo ul li {
+      margin-left: 20px; }
+
 .store-search {
   position: relative;
   overflow: hidden; }
@@ -2081,6 +2093,9 @@ body.mm-menu-open {
     -ms-transform: translateX(440px);
     -o-transform: translateX(440px);
     transform: translateX(440px); } }
+@media all and (max-width: 440px) {
+  .mm-menu {
+    width: 100%; } }
 /* header */
 .mm-menu__header {
   position: relative;

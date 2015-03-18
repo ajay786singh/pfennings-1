@@ -278,6 +278,24 @@ select {
     }
 }
 
+.moreInfo {
+    float: left;
+    display: inline-block;
+    clear: both;
+    margin-bottom: 47px;
+    @include media($bp-mid) {
+        @include shift(2.5);
+    }
+
+    ul {
+        padding-left: 0;
+
+        li {
+            margin-left: 20px;
+        }
+    }
+}
+
 .store-search {
     position: relative;
     overflow: hidden;

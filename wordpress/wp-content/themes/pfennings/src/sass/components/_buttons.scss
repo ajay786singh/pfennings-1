@@ -43,3 +43,21 @@ button {
 	   background-color: $button-green;
     }
 }
+
+.orderGrain {
+    display: inline-block;
+    margin: 1em 0;
+
+
+    a {
+        color: $white;
+        background-color: $button-green;
+        padding: 0.75em;
+
+        &:hover {
+            background-color: darken($button-green, 10);
+        }
+    }
+
+}
+

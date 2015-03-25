@@ -277,7 +277,11 @@ small {
         text-align: right;
 }
 .results_wrapper {
+	.tagtext {
+		display:none;
+	}
     .results_entry {
+		cursor:default;
         span {
             &.location_name {
                 text-transform:uppercase;
@@ -296,16 +300,27 @@ small {
             background:none;
         }
         a {
-
             font-size: 0.688em;
-
             div#map_sidebar & {
                 color: $green;
-
             }
             &:hover {
                 background: none;
             }
+            &:after {
+				background:url(dist/images/off-site-link-icon.jpg) no-repeat;
+                content:"";
+				height:10px;
+				margin-left: 10px;
+				margin-top: 3px;
+				position: absolute;
+				width:10px;
+            }
+			&#slp_marker_email {
+				&:after {
+					background:none;
+				}	
+			}
         }
     }   
 }

@@ -1056,6 +1056,13 @@ section[role=main] {
 #map_sidebar {
   margin-top: 2em; }
 
+.store-map #map {
+  width: 100%;
+  height: 250px; }
+  @media screen and (min-width: 50em) {
+    .store-map #map {
+      height: 600px; } }
+
 .results_wrapper {
   display: block;
   margin-right: 0;
@@ -1096,12 +1103,6 @@ section[role=main] {
     width: 100%;
     display: block;
     text-align: left; }
-
-#map {
-  height: 250px; }
-  @media screen and (min-width: 50em) {
-    #map {
-      height: 500px; } }
 
 #slp_tagline {
   display: none; }

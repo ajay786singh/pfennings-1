@@ -801,7 +801,7 @@ section[role=banner] {
     section[role=banner] {
       position: absolute;
       background-color: transparent;
-      z-index: 1; } }
+      z-index: 2; } }
   section[role=banner] header {
     -webkit-transition: all 2s ease;
     -moz-transition: all 2s ease;
@@ -1056,12 +1056,17 @@ section[role=main] {
 #map_sidebar {
   margin-top: 2em; }
 
-.store-map #map {
+.store-map:before {
+  content: "";
+  position: absolute;
+  left: 0;
   width: 100%;
-  height: 250px; }
-  @media screen and (min-width: 50em) {
-    .store-map #map {
-      height: 600px; } }
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1; }
+.store-map #map {
+  height: 100%;
+  width: 100%; }
 
 .results_wrapper {
   display: block;

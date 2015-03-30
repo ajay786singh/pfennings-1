@@ -880,9 +880,7 @@ section[role=main] {
       float: left;
       display: block;
       margin-right: 2.35765%;
-      width: 57.35098%;
-      padding-right: 30px;
-      border-right: 1px solid #cbcbcb;
+      width: 82.94039%;
       margin-left: 8.5298%; }
       .post-container:last-child {
         margin-right: 0; } }
@@ -890,17 +888,19 @@ section[role=main] {
 .post {
   border: 1px solid #cbcbcb;
   margin-bottom: 50px;
-  padding: 20px; }
+  padding: 20px;
+  position: relative; }
   @media screen and (min-width: 50em) {
     .post {
-      width: 45%;
-      margin-left: 2%;
-      margin-right: 3%;
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 31.76157%;
       float: left; }
-      .post:nth-child(2n) {
+      .post:last-child {
         margin-right: 0; }
-      .post:nth-child(2n+1) {
-        margin-left: 0; }
+      .post:nth-child(3n) {
+        margin-right: 0; }
       .post small {
         color: black; }
       .post .post-title {
@@ -925,6 +925,32 @@ section[role=main] {
         .post .post-content a {
           color: black;
           text-decoration: none; } }
+  .post.twitter:before {
+    background: url(dist/images/feed-ribbons.png) no-repeat;
+    content: "";
+    height: 91px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 80px; }
+  .post.instagram:before {
+    background: url(dist/images/feed-ribbons.png) no-repeat;
+    content: "";
+    height: 91px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 80px;
+    background-position: -162px 0px; }
+  .post.facebook:before {
+    background: url(dist/images/feed-ribbons.png) no-repeat;
+    content: "";
+    height: 91px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 80px;
+    background-position: -243px 0px; }
 
 .block-grid-2 {
   display: block;

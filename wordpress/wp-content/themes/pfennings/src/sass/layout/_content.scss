@@ -224,6 +224,15 @@ section[role="main"] article.orderProduce {
 	margin-top:2em;
 }
 
+.store-map {
+	#map {
+		width:100%;
+		height:250px;
+		@include media($bp-large) {
+			height: 600px;
+		}	
+	}
+}
 .results_wrapper {
 	@include row;
 	@include omega;
@@ -256,12 +265,7 @@ section[role="main"] article.orderProduce {
 		text-align:left;
 	}
 }
-#map {
-	height:250px;
-	@include media($bp-large) {
-		height: 500px;
-	}	
-}
+
 #slp_tagline {
 	display:none;
 }

@@ -46,8 +46,9 @@ get_header(); ?>
 		
 	<!-- loop ends -->
     </div>
-	<aside>
-		<?php get_sidebar();?>
+	<?php /*<aside>
+		<?php get_sidebar()
 	</aside>
+	*/?>
 </section>
 <?php get_footer(); ?>

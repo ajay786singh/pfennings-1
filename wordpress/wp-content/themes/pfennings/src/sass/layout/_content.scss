@@ -1,3 +1,12 @@
+@mixin feed-ribbon() {
+	background:url(dist/images/feed-ribbons.png) no-repeat;
+	content:"";
+	height:91px;
+	position:absolute;
+	right:0;
+	top:0;
+	width:80px;
+}
 section[role=main] {
     @include outer-container;
     @include pad(0 2em 0 2em);
@@ -20,10 +29,10 @@ section[role=main] {
 .post-container {
 	@include span-columns(5);
 	@include media($bp-large) {
-		@include span-columns(7);
-		padding-right: 30px;	
-		border-right:1px solid #cbcbcb;
+		@include span-columns(10);
 		@include shift(1);
+		//margin-left:auto;
+		//margin-right:auto;
     }
 }
 
@@ -31,17 +40,13 @@ section[role=main] {
 	border:1px solid #cbcbcb;
 	margin-bottom:50px;
 	padding: 20px;
+	position:relative;
 	@include media($bp-large) {
-		width:45%;
-		margin-left:2%;
-		margin-right:3%;
+		@include span-columns(4);
 		float:left;
-		&:nth-child(2n) {
+		&:nth-child(3n) {
 			margin-right:0;
 		}
-		&:nth-child(2n+1) {
-			margin-left:0;
-		}		
 		small {
 			color:$black;
 		}
@@ -73,6 +78,17 @@ section[role=main] {
 				text-decoration:none;
 			}
 		}
+	}
+	&.twitter:before {
+		@include feed-ribbon();
+	}
+	&.instagram:before {
+		@include feed-ribbon();
+		background-position:-162px 0px;
+	}
+	&.facebook:before {
+		@include feed-ribbon();
+		background-position:-243px 0px;
 	}
 }
 

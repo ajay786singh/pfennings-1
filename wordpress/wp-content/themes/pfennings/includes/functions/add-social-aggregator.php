@@ -25,7 +25,7 @@ function fetch_facebook_feed() {
 			$date = date("d-m-Y H:i:s", strtotime($post['created_time']));
 			$title = $post['message'];
 			$link = $post['link'];
-			$author=$post[$i]['from']['name'];
+			$author='';//$post[$i]['from']['name'];
 			$results[]=array('title'=>$title,'author'=>$author,'link'=>$link,'img'=>$img,'date'=>$date,'label'=>'facebook','filter'=>'social');
 			$i++; // add 1 to the counter
 		}

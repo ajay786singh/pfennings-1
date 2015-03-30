@@ -1245,6 +1245,8 @@ footer {
     margin: 0.5em 0 0 0; }
   footer .fLogo_area {
     text-align: center; }
+  footer .latest-news ul li {
+    margin-left: 0; }
 
 section[role=slider] {
   display: -webkit-box;

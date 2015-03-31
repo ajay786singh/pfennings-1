@@ -885,72 +885,91 @@ section[role=main] {
       .post-container:last-child {
         margin-right: 0; } }
 
-.post {
+.post-item:hover .facebook {
+  background: #DFE5F3; }
+.post-item:hover .blog {
+  background: #FBEBE0; }
+.post-item:hover .instagram {
+  background: #EBF3F8; }
+@media screen and (min-width: 50em) {
+  .post-item {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 31.76157%;
+    float: left;
+    margin-bottom: 50px; }
+    .post-item:last-child {
+      margin-right: 0; }
+    .post-item:nth-child(3n) {
+      margin-right: 0; } }
+.post-item small {
+  color: black; }
+.post-item .post {
   border: 1px solid #cbcbcb;
-  margin-bottom: 50px;
-  padding: 20px;
   position: relative; }
   @media screen and (min-width: 50em) {
-    .post {
+    .post-item .post .post-title {
+      padding: 20px 20px 0; }
+    .post-item .post .post-image {
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
       float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 31.76157%;
-      float: left; }
-      .post:last-child {
-        margin-right: 0; }
-      .post:nth-child(3n) {
-        margin-right: 0; }
-      .post small {
-        color: black; }
-      .post .post-title {
-        margin-bottom: 0; }
-      .post .post-image {
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        float: left;
-        height: 250px;
-        overflow: hidden;
-        margin-bottom: 10px;
-        width: 100%; }
-        .post .post-image img {
-          border-radius: 10%; }
-      .post .post-content {
-        flaot: left;
-        margin-left: 170px;
-        margin-bottom: 55px; }
-        .post .post-content h4 {
-          margin-bottom: 0.5em; }
-        .post .post-content a {
-          color: black;
-          text-decoration: none; } }
-  .post.twitter:before {
-    background: url(dist/images/feed-ribbons.png) no-repeat;
-    content: "";
-    height: 91px;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 80px; }
-  .post.instagram:before {
-    background: url(dist/images/feed-ribbons.png) no-repeat;
-    content: "";
-    height: 91px;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 80px;
-    background-position: -162px 0px; }
-  .post.facebook:before {
-    background: url(dist/images/feed-ribbons.png) no-repeat;
-    content: "";
-    height: 91px;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 80px;
-    background-position: -243px 0px; }
+      height: 250px;
+      overflow: hidden;
+      margin-bottom: 10px;
+      width: 100%; }
+      .post-item .post .post-image img {
+        border-radius: 10%; }
+    .post-item .post .post-content {
+      flaot: left;
+      margin-left: 170px;
+      margin-bottom: 55px; }
+      .post-item .post .post-content h4 {
+        margin-bottom: 0.5em; }
+      .post-item .post .post-content a {
+        color: black;
+        text-decoration: none; } }
+.post-item .post-footer {
+  padding: 20px 20px 23px 70px;
+  border: 1px solid #cbcbcb;
+  border-top: none;
+  position: relative; }
+  .post-item .post-footer small {
+    color: #97989a; }
+  .post-item .post-footer.facebook {
+    background: #DFE5F3; }
+    .post-item .post-footer.facebook:before {
+      background: url(dist/images/feed-ribbons.png) no-repeat;
+      content: "";
+      height: 36px;
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      width: 36px; }
+  .post-item .post-footer.instagram {
+    background: #EBF3F8; }
+    .post-item .post-footer.instagram:before {
+      background: url(dist/images/feed-ribbons.png) no-repeat;
+      content: "";
+      height: 36px;
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      width: 36px;
+      background-position: -37px 0; }
+  .post-item .post-footer.blog {
+    background: #FBEBE0; }
+    .post-item .post-footer.blog:before {
+      background: url(dist/images/feed-ribbons.png) no-repeat;
+      content: "";
+      height: 36px;
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      width: 36px;
+      background-position: -73px 0; }
 
 .block-grid-2 {
   display: block;

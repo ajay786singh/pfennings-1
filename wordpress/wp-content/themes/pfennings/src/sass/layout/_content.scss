@@ -1,11 +1,14 @@
+$facebook-post-bg:#DFE5F3;
+$blog-post-bg:#FBEBE0;
+$instagram-post-bg:#EBF3F8;
 @mixin feed-ribbon() {
 	background:url(dist/images/feed-ribbons.png) no-repeat;
 	content:"";
-	height:91px;
+	height:36px;
 	position:absolute;
-	right:0;
-	top:0;
-	width:80px;
+	left: 20px;
+	top: 20px;
+	width: 36px;
 }
 section[role=main] {
     @include outer-container;
@@ -35,61 +38,92 @@ section[role=main] {
 		//margin-right:auto;
     }
 }
-
-.post {
-	border:1px solid #cbcbcb;
-	margin-bottom:50px;
-	padding: 20px;
-	position:relative;
+.post-item {
+	&:hover {
+		.facebook {
+			background:$facebook-post-bg;
+		}
+		.blog {
+			background:$blog-post-bg;
+		}
+		.instagram {
+			background:$instagram-post-bg;
+		}
+	}
 	@include media($bp-large) {
 		@include span-columns(4);
 		float:left;
+		margin-bottom:50px;
 		&:nth-child(3n) {
 			margin-right:0;
 		}
+	}	
+	small {
+		color:$black;
+	}	
+	.post {
+		border:1px solid #cbcbcb;
+		position:relative;
+		@include media($bp-large) {
+			.post-title {
+				padding: 20px 20px 0;
+			}
+			.post-image {
+				background-position: center center;
+				background-repeat:no-repeat; 
+				background-size: cover; 
+				float:left;	
+				height: 250px; 
+				overflow: hidden;
+				margin-bottom:10px;
+				width: 100%;
+				img {
+					border-radius: 10%;
+				}
+			}
+			.post-content {
+				flaot:left;
+				margin-left:170px;
+				margin-bottom: 55px;
+				h4 {
+					margin-bottom:0.5em;	
+				}
+				a {
+					color:$black;
+					text-decoration:none;
+				}
+			}
+		}
+	}
+	.post-footer {
+		padding: 20px 20px 23px 70px;
+		border:1px solid #cbcbcb;
+		border-top:none;
+		position:relative;
 		small {
-			color:$black;
+			color:#97989a;
 		}
-		.post-title {
-			margin-bottom: 0;
-		}
-		.post-image {
-			background-position: center center;
-            background-repeat:no-repeat; 
-			background-size: cover; 
-			float:left;	
-			height: 250px; 
-			overflow: hidden;
-			margin-bottom:10px;
-			width: 100%;
-			img {
-                border-radius: 10%;
-            }
-		}
-		.post-content {
-			flaot:left;
-			margin-left:170px;
-			margin-bottom: 55px;
-			h4 {
-				margin-bottom:0.5em;	
-			}
-			a {
-				color:$black;
-				text-decoration:none;
+		&.facebook {
+			background:$facebook-post-bg;
+			&:before {
+				@include feed-ribbon();
 			}
 		}
-	}
-	&.twitter:before {
-		@include feed-ribbon();
-	}
-	&.instagram:before {
-		@include feed-ribbon();
-		background-position:-162px 0px;
-	}
-	&.facebook:before {
-		@include feed-ribbon();
-		background-position:-243px 0px;
-	}
+		&.instagram {
+			background:$instagram-post-bg;
+			&:before {
+				@include feed-ribbon();
+				background-position:-37px 0;
+			}
+		}
+		&.blog {
+			background:$blog-post-bg;
+			&:before {
+				@include feed-ribbon();
+				background-position:-73px 0;
+			}
+		}
+	}	
 }
 
 .block-grid-2 {

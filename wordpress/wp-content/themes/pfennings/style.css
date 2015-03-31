@@ -730,6 +730,9 @@ article ol {
 section[role="main"] h3 {
   text-transform: uppercase; }
 
+section[role=main] article.pricelist h2 {
+  font-size: 1.95313em; }
+
 img {
   max-width: 100%; }
 
@@ -1163,6 +1166,23 @@ section[role="main"] article.readyToOrder {
   @media screen and (min-width: 64em) {
     .step-box .submitOptions {
       padding-left: 160px; } }
+
+section[role=main] article.pricelist {
+  border-left: none;
+  width: 100%; }
+  section[role=main] article.pricelist table, section[role=main] article.pricelist th, section[role=main] article.pricelist td {
+    border: 1px solid #f2f2f2; }
+  section[role=main] article.pricelist table, section[role=main] article.pricelist tbody {
+    width: 100%; }
+    section[role=main] article.pricelist table th, section[role=main] article.pricelist table td, section[role=main] article.pricelist tbody th, section[role=main] article.pricelist tbody td {
+      padding: 20px; }
+  section[role=main] article.pricelist ul {
+    padding-left: 0; }
+    section[role=main] article.pricelist ul li {
+      margin-left: 18px; }
+  section[role=main] article.pricelist p {
+    padding-top: 20px;
+    margin-bottom: 10px; }
 
 aside {
   padding: 0 0 2em 0; }

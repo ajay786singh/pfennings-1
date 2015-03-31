@@ -413,3 +413,31 @@ section[role=main] article.pricelist {
 		margin-bottom: 10px;
 	}
 }
+
+section[role=main] article.qanda {
+	border-left: none;
+	width: 100%;
+	padding: 0 2em;
+
+	@include media($bp-large) {
+		@include span-columns(8);
+		@include shift(2);
+	}
+
+	h4 {
+		margin-top: 2em;
+		margin-bottom: 0.75em;
+	}
+
+	h3 {
+		margin-top: 2em;
+	}
+
+	ul {
+		padding-left: 0;
+
+		li {
+			margin-left: 18px;
+		}
+	}
+}

@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Order
+Template Name: pricelist
 */
 get_header(); ?>
 

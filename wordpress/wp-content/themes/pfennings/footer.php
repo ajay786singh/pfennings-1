@@ -32,7 +32,7 @@
         </div>  
 
         <!-- Column 2 -->
-        <div class="content"> 
+        <div class="content latest-news"> 
             <h5>Latest News</h5>
             <?php recentposts(); ?>
         </div>

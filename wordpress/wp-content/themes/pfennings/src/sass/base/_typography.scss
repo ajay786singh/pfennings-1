@@ -427,8 +427,17 @@ section[role=main] article.pricelist {
     }
 }
 
-section[role=main] article.qanda {
+.page-id-179 section[role="main"] article {
     p {
         font-size: 1em;
+    }
+
+    h4 {
+        margin-top: 2em;
+        margin-bottom: 0.75em;
+    }
+
+    h3 {
+        margin-top: 2em;
     }
 }

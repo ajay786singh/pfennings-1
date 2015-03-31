@@ -414,23 +414,11 @@ section[role=main] article.pricelist {
 	}
 }
 
-section[role=main] article.qanda {
-	border-left: none;
-	width: 100%;
-	padding: 0 2em;
+.page-id-179 section[role="main"] article {
 
 	@include media($bp-large) {
 		@include span-columns(8);
 		@include shift(2);
-	}
-
-	h4 {
-		margin-top: 2em;
-		margin-bottom: 0.75em;
-	}
-
-	h3 {
-		margin-top: 2em;
 	}
 
 	ul {

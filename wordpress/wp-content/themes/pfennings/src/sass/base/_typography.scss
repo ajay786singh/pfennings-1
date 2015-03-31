@@ -420,3 +420,9 @@ article {
 section[role="main"] h3 {
     text-transform: uppercase;
 }
+
+section[role=main] article.pricelist {
+    h2 {
+        font-size: 1.95313em;
+    }
+}

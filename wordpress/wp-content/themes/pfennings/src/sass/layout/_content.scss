@@ -341,3 +341,33 @@ section[role="main"] article.readyToOrder {
 	}
 }
 
+
+section[role=main] article.pricelist {
+	border-left: none;
+	width: 100%;
+
+	table, th, td {
+		border: 1px solid $light-gray;
+	}
+
+	table, tbody {
+		width: 100%;
+
+		th, td {
+			padding: 20px;
+		}
+	}
+
+	ul {
+		padding-left: 0;
+
+		li {
+			margin-left: 18px;
+		}
+	}
+
+	p {
+		padding-top: 20px;
+		margin-bottom: 10px;
+	}
+}

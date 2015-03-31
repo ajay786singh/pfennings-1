@@ -1,24 +1,25 @@
 .down-arrow {
-    position: absolute;
-    border: 2px solid #ffffff;
+	background: $white;
+    border: 2px solid $white;
+    border-radius:50%;
     bottom: 75px;
-    width: 50px;
-    height: 50px;
-    text-align: center;
-    margin: 0 auto;
+	color:$base-font-color;
     left: 0;
+    height: 50px;
+    margin: 0 auto;
+    position: absolute;
+    width: 50px;
+    text-align: center;
     right: 0;
-    border-radius: 50%;
     @include transition-duration(0.3s);
-    color: #222;
-    background: #ffffff;
+	z-index: 1;
 }
 
 .down-arrow a {
-    color: #222;
+	color:$base-font-color;
+	left: 0;
 	height: 100%;
 	position: absolute;
-	left: 0;
 	top: 0;
 	width: 100%;
 	.fa-chevron-down {
@@ -28,10 +29,10 @@
 
 .down-arrow:hover {
     background: none;
-    border: 2px solid #ffffff;
+    border: 2px solid $white;
     @include transition-duration(0.3s);
 }
 
 .down-arrow:hover a {
-    color: #ffffff;
+    color: $white;
 }

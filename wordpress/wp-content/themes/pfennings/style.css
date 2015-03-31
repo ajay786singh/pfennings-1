@@ -733,6 +733,14 @@ section[role="main"] h3 {
 section[role=main] article.pricelist h2 {
   font-size: 1.95313em; }
 
+.page-id-179 section[role="main"] article p {
+  font-size: 1em; }
+.page-id-179 section[role="main"] article h4 {
+  margin-top: 2em;
+  margin-bottom: 0.75em; }
+.page-id-179 section[role="main"] article h3 {
+  margin-top: 2em; }
+
 img {
   max-width: 100%; }
 
@@ -1209,6 +1217,20 @@ section[role=main] article.pricelist {
   section[role=main] article.pricelist p {
     padding-top: 20px;
     margin-bottom: 10px; }
+
+@media screen and (min-width: 50em) {
+  .page-id-179 section[role="main"] article {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 65.88078%;
+    margin-left: 17.05961%; }
+    .page-id-179 section[role="main"] article:last-child {
+      margin-right: 0; } }
+.page-id-179 section[role="main"] article ul {
+  padding-left: 0; }
+  .page-id-179 section[role="main"] article ul li {
+    margin-left: 18px; }
 
 aside {
   padding: 0 0 2em 0; }

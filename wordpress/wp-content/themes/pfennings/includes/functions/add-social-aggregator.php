@@ -9,7 +9,7 @@ function array_multi_unique($multiArray){
   }
   return $uniqueArray;
 }
-
+fetch_facebook_feed();
 function fetch_facebook_feed() {
 	// Create our Application instance (replace this with your appId and secret).
 	$facebook = new Facebook(array(
@@ -20,12 +20,15 @@ function fetch_facebook_feed() {
 	$i = 0;
 	foreach($feeds['data'] as $post) {
 		if($post['type']=='photo') {
+			// echo "<pre>";
+			// print_r($post);
+			// echo "</pre>";
 			$object_id = $post['object_id'];
 			$img ='https://graph.facebook.com/'.$object_id.'/picture?width=9999&height=9999';
 			$date = date("d-m-Y H:i:s", strtotime($post['created_time']));
 			$title = $post['message'];
 			$link = $post['link'];
-			$author='';//$post[$i]['from']['name'];
+			$author=$post['from']['name'];
 			$results[]=array('title'=>$title,'author'=>$author,'link'=>$link,'img'=>$img,'date'=>$date,'label'=>'facebook','filter'=>'social');
 			$i++; // add 1 to the counter
 		}
@@ -36,6 +39,8 @@ function fetch_facebook_feed() {
 	}
 	return array_multi_unique($results);
 }
+	$instagram_url='https://api.instagram.com/v1/tags/pfenningsfarm/media/recent?client_id=84e0a91bb0ca49bc91b0b5d88eb1289c';
+	fetch_instagram_feed($instagram_url);			
 
 function fetch_instagram_feed($url) {
 	$ch = curl_init($url); 
@@ -55,7 +60,7 @@ function fetch_instagram_feed($url) {
 				$date = date("d-m-Y H:i:s", $result[$i]['created_time']);
 				$title = $result[$i]['caption']['text'];
 				$link = $result[$i]['link'];
-				$author=$result[$i]['caption']['from']['full_name'];
+				$author=$result[$i]['user']['username'];
 				$results[]=array('title'=>$title,'author'=>$author,'link'=>$link,'img'=>$img,'date'=>$date,'label'=>'instagram','filter'=>'social');
 			}
 		}
@@ -77,56 +82,10 @@ function is_url_exist($url){
 	return $status;
 }
 
-function get_google_plus_feed(){
-	$id = '103003693720550915919';
-	$key = 'AIzaSyCVwzWMT9LbcUx0kJP3ZIXHM9vZovgGCZE';
-	$feed = json_decode(file_get_contents('https://www.googleapis.com/plus/v1/people/'.$id.'/activities/public?key='.$key));
-	$results='';
-	$img='';
-	foreach ($feed->items as $item) {
-		if($item->object->attachments[0]->objectType=='album') {			
-			$img=$item->object->attachments[0]->thumbnails[0]->image->url;
-		} else if($item->object->attachments[0]->objectType=='photo') {
-			$img=$item->object->attachments[0]->image->url;
-		} else if($item->object->attachments[0]->objectType=='article') {
-			$img=$item->object->attachments[0]->fullImage->url;
-		} else if($item->object->attachments[0]->objectType=='video') {
-			$img=$item->object->attachments[0]->image->url;
-		}
-		$date=date("d-m-Y H:i:s", strtotime($item->published));
-		$results[]=array('title'=>$item->title, 'author'=>$item->author, 'link'=>$item->url,'img'=>$img,'date'=>$date,'label'=>'google plus','filter'=>'social');
-	}
-	return $results;
-}
 
 function sort_by_date($a, $b) {
     if ($a['date'] == $b['date']) return 0;
     return (strtotime($a['date']) < strtotime($b['date'])) ? 1 : -1;
-}
-
-function youtube_thumbnail_url($url) {
-	if(!filter_var($url, FILTER_VALIDATE_URL)) {
-		// URL is Not valid
-		return false;
-	}
-	$domain=parse_url($url,PHP_URL_HOST);
-	if($domain=='www.youtube.com' OR $domain=='youtube.com') // http://www.youtube.com/watch?v=t7rtVX0bcj8&feature=topvideos_film
-	{
-		if($querystring=parse_url($url,PHP_URL_QUERY))
-		{   
-			parse_str($querystring);
-			if(!empty($v)) return "http://img.youtube.com/vi/$v/0.jpg";
-			else return false;
-		}
-		else return false;
-	}
-	elseif($domain == 'youtu.be') // something like http://youtu.be/t7rtVX0bcj8
-	{
-		$v= str_replace('/','', parse_url($url, PHP_URL_PATH));
-		return (empty($v)) ? false : "http://img.youtube.com/vi/$v/0.jpg" ;
-	}
-	else
-	return false;
 }
 
 function getFeed($feed_url) {
@@ -273,6 +232,7 @@ function show_feed_results( $results = NULL ) {
 				$newDate=$result->date;			
 				$default_image=get_bloginfo('template_url')."/dist/images/bg-hero.png";
 				?>
+				<div class="post-item">	
 				<div class="post item <?php echo $label;?> <?php echo $filter;?>" data-category="transition" id="<?php echo "item_".$id;?>">
 						<?php 
 								
@@ -300,6 +260,18 @@ function show_feed_results( $results = NULL ) {
                     </p>
 					</div>
 				</div>
+					<div class="post-footer <?php echo $label;?>">
+						<small>
+							<?php 
+								if($label=='blog') {
+									echo $author."<br> Blog Post";
+								} else {
+									echo $author." <br>".ucfirst($label);
+								}
+							?>
+						</small>
+					</div>
+				</div>	
 				<?php
 			}
 }

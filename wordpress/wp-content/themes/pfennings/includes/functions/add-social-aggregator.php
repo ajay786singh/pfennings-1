@@ -9,7 +9,6 @@ function array_multi_unique($multiArray){
   }
   return $uniqueArray;
 }
-fetch_facebook_feed();
 function fetch_facebook_feed() {
 	// Create our Application instance (replace this with your appId and secret).
 	$facebook = new Facebook(array(
@@ -196,7 +195,7 @@ function get_feed_results($feeds) {
 		$posts="";	
 		query_posts("post_type=post&showposts=-1");
 		if(have_posts()):while(have_posts()):the_post();
-			$posts[] = array('title'=>get_the_title(),'author'=>get_the_author(),'link'=>get_permalink(),'img'=>"",'date'=>get_the_date(), 'label'=>'blog','filter'=>'blog');
+			$posts[] = array('title'=>get_the_title(),'author'=>get_the_author(),'link'=>get_permalink(),'img'=>"",'date'=>get_the_date(), 'label'=>'blog','filter'=>'blog','post_id'=>get_the_ID());
 		endwhile;endif;
 		if($posts !='') {
 			if($results !='') {
@@ -230,10 +229,26 @@ function show_feed_results( $results = NULL ) {
 				$label=$result->label;
 				$filter=$result->filter;
 				$newDate=$result->date;			
-				$default_image=get_bloginfo('template_url')."/dist/images/bg-hero.png";
+				$default_image=get_bloginfo('template_url')."/dist/images/bg-hero.png";				
+				$output = '';
+				$classes = '';
+				if($label=='blog') {
+					$post_id=$result->post_id;
+					if($post_id) {
+						$categories = get_the_category($post_id);
+						$separator = ', ';
+						if($categories){
+							foreach($categories as $category) {
+								$classes .= $category->category_nicename.' ';
+								$output .= '<small>'.$category->cat_name.'</small>'.$separator;
+							}
+							$output="<div class='categories'>".trim($output, $separator).'</div>';
+						}
+					}								
+				}
 				?>
-				<div class="post-item">	
-				<div class="post item <?php echo $label;?> <?php echo $filter;?>" data-category="transition" id="<?php echo "item_".$id;?>">
+				<div class="post-item item transition <?php echo $label;?> <?php echo $filter;?> <?php echo $classes;?>" data-category="transition" id="<?php echo "item_".$id;?>">	
+				<div class="post">
 						<?php 
 								
 								if($feed_img==''){
@@ -258,6 +273,7 @@ function show_feed_results( $results = NULL ) {
 						?>
                         </a>
                     </p>
+					<?php echo $output;?>
 					</div>
 				</div>
 					<div class="post-footer <?php echo $label;?>">

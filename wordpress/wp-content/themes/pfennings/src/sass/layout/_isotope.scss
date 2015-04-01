@@ -1,0 +1,31 @@
+#isotope-container {
+    .filters {
+		border-bottom: 1px solid #cbcbcb;
+		margin-top: 50px;
+		overflow: hidden;
+		label {
+			color: #ae7d54;
+			display: inline-block;
+            font-size:em(14px);
+			font-weight:normal;
+			padding-right: 15px;
+		}
+        a {
+            font-size:em(14px);
+			margin-top: 20px;
+            outline: none;
+			padding-right: 10px;
+			margin-bottom: 10px;
+			display: inline-block;
+            &:hover {
+                font-weight:600;
+            }
+            &.is-checked {
+                font-weight:600;
+            }
+        }
+    }
+    .isotope {
+        padding-top: 30px;
+    }
+}

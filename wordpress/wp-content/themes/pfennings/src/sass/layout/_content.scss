@@ -53,9 +53,17 @@ section[role=main] {
 	@include media($bp-large) {
 		@include span-columns(4);
 		float:left;
-		margin-bottom:50px;
+		margin-bottom:30px;
 		&:nth-child(3n) {
 			margin-right:0;
+		}
+	}
+	.categories {
+		position: absolute;
+		bottom: 10px;
+		small {
+			color: $green;
+			font-weight:bold;
 		}
 	}	
 	small {
@@ -125,6 +133,15 @@ section[role=main] {
 		}
 	}	
 }
+.secondary {
+    @include span-columns(5);
+    @include media($bp-large) {
+        @include span-columns(6 of 12);
+    }
+    &:nth-child(2n) {
+        margin-right: 0;
+    }
+}
 
 .block-grid-2 {
     @include row;
@@ -187,40 +204,12 @@ section[role=main] {
 }
 
 
-// .order-form-container {
-// 	overflow:hidden;
-// 	background: lightblue;
-
-// 	.content {
-// 		@include row;
-// 		@include omega;
-// 		@include span-columns(5);
-// 		@include media($bp-large) {
-// 			@include span-columns(8);
-// 		}
-// 		&:nth-child(3n) {
-// 			margin-right: 0;
-// 		}
-// 		.step-box {
-// 			width:100%;
-// 			float:left;
-// 			background: lightyellow;
-// 		}
-// 		.icon {
-// 			float:left;
-// 			padding-right:1em;
-// 		}
-// 	}
-// }
-
 .order-form-container {
-	// overflow:hidden;
 	margin-top: 1.5em;
 	@include media($bp-large) {
 		@include span-columns(8);
 		.content {
 			width: 100%;
-
 			&:nth-child(3n) {
 				margin-right: 0;
 			}
@@ -228,8 +217,6 @@ section[role=main] {
 				width:100%;
 				float:left;
 				margin-bottom: 3.5em;
-				// background: lightyellow;
-
 			}
 			.icon {
 				float:left;

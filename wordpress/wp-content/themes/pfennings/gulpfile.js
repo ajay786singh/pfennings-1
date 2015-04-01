@@ -25,7 +25,9 @@ var scriptList = [
 	'src/js/custom/sticky-header.js',
 	'src/js/custom/store.js',
 	'src/js/custom/social_aggregator.js',
-	'src/js/custom/equal-height.js'
+	'src/js/custom/equal-height.js',
+	'src/js/custom/isotope.pkgd.min.js',
+	'src/js/custom/isotope_feeds.js'
 ];
 
 var fontIcons = [

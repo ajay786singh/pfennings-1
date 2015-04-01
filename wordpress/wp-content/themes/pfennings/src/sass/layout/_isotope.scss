@@ -12,7 +12,9 @@
 		}
         a {
             font-size:em(14px);
-			margin-top: 20px;
+			@include media($bp-large) {
+				margin-top: 20px;
+			}
             outline: none;
 			padding-right: 10px;
 			margin-bottom: 10px;

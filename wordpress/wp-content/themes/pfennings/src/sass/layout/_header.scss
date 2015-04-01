@@ -2,10 +2,10 @@ section[role=banner] {
     position: fixed;
     width: 100%;
     background-color: $green;
+	z-index:2;
     @include media($bp-mid) {
         position: absolute;
         background-color: transparent;
-		z-index:2;
     }
     header {
         .mobile_sticky h1 {

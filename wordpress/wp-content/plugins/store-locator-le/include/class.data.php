@@ -4,10 +4,17 @@
  *
  * @package StoreLocatorPlus\Data
  * @author Lance Cleveland <lance@charlestonsw.com>
- * @copyright 2013 - 2014 Charleston Software Associates, LLC
+ * @copyright 2013 - 2015 Charleston Software Associates, LLC
  *
  */
 class SLPlus_Data {
+
+    /**
+     * The collate modifier for create table commands.
+     *
+     * @var string $collate
+     */
+    public $collate;
 
     /**
      * The global WordPress DB
@@ -22,6 +29,11 @@ class SLPlus_Data {
      * @var \SLPlus_Data_Extended $extension
      */
     public $extension;
+
+    /**
+     * @var string the SQL group by clause
+     */
+    public $group_by_clause = '';
 
     /**
      * Info strings for the database interface.
@@ -47,38 +59,138 @@ class SLPlus_Data {
      */
     public $order_by_array = array();
 
+    /**
+     * @var string the SQL order by clause
+     */
+    public $order_by_clause = '';
+
+    /**
+     * @var string the SQL where clause
+     */
+    public $where_clause = '';
+
     //-------------------------------------------------
     // Methods
     //-------------------------------------------------
 
     /**
      * Initialize a new data object.
-     *
      */
-    public function SLPlus_Data($params=null) {
+    public function __construct( $params = null )
+    {
         global $wpdb;
         $this->db = $wpdb;
+
+        // Set parameters.
+        //
+        if (($params != null) && is_array($params)) {
+            foreach ($params as $key => $value) {
+                $this->$key = $value;
+            }
+        }
 
         // Collation
         //
         $collate = '';
-        if( $this->db->has_cap( 'collation' ) ) {
-            if( ! empty($this->db->charset ) ) { $collate .= "DEFAULT CHARACTER SET {$this->db->charset}"; }
-            if( ! empty($this->db->collate ) ) { $collate .= " COLLATE {$this->db->collate}"; }
+        if ($this->db->has_cap('collation')) {
+            if (!empty($this->db->charset)) {
+                $collate .= "DEFAULT CHARACTER SET {$this->db->charset}";
+            }
+            if (!empty($this->db->collate)) {
+                $collate .= " COLLATE {$this->db->collate}";
+            }
         }
-        $this->collate   = $collate;
+        $this->collate = $collate;
 
         // Legacy stuff - replace with data property below.
         //
         $this->info = array(
-            'table'     => $this->db->prefix.'store_locator'   ,
-            'query'     =>
+            'table' => $this->db->prefix . 'store_locator',
+            'query' =>
                 array(
-                    'selectthis'            => 'SELECT %s FROM '.$this->db->prefix.'store_locator ' ,
+                    'selectthis' => 'SELECT %s FROM ' . $this->db->prefix . 'store_locator ',
                 ),
         );
 
+        $this->add_filters();
+        $this->set_properties();
     }
+
+    /**
+     * Override to add custom data filters.
+     */
+    protected function add_filters() {
+
+    }
+
+    /**
+     * Override to set custom properties.
+     */
+    protected function set_properties() {
+
+    }
+
+    /**
+     * Create a proper group by clause, adding the starting GROUP BY when necessary.
+     *
+     * @param $new_clause
+     * @return string
+     */
+    public function add_group_by_clause( $new_clause ) {
+        if ( ! empty( $new_clause ) ) {
+            if (empty($this->group_by_clause)) {
+                $this->group_by_clause = ' GROUP BY ';
+            }
+            $this->group_by_clause .= ' ' . $new_clause . ' ';
+        }
+        return $this->group_by_clause;
+    }
+
+    /**
+     * Create a proper order by clause, adding the starting ORDER BY when necessary.
+     *
+     * @param $new_clause
+     * @return string
+     */
+    public function add_order_by_clause( $new_clause = null ) {
+
+        // Build new clause from the order by array
+        // if not passed in
+        //
+        if ( $new_clause === null) {
+            $this->order_by_clause = '';
+            $new_clause = empty( $this->order_by_array ) ? '' : join( ',' , $this->order_by_array );
+        }
+
+        // New clause has a order string, build the order by SQL
+        //
+        if ( ! empty( $new_clause ) ) {
+            if ( empty( $this->order_by_clause ) ) {
+                $this->order_by_clause = ' ORDER BY ';
+            }
+            $this->order_by_clause .= ' ' . $new_clause . ' ';
+        }
+        return $this->order_by_clause;
+    }
+
+    /**
+     * Create a proper where clause, adding the starting WHERE when necessary.
+     *
+     * @param $new_clause
+     * @return string
+     */
+    public function add_where_clause( $new_clause , $joiner = 'AND' ) {
+        if ( ! empty( $new_clause ) ) {
+            if ( empty( $this->where_clause ) ) {
+                $this->where_clause = ' WHERE ';
+            } else {
+                $this->where_clause = ' '. $joiner . ' ';
+            }
+            $this->where_clause .= ' ' . $new_clause . ' ';
+        }
+        return $this->where_clause;
+    }
+
 
     /**
      * Extend the database by adding the meta and extended data table helper object.
@@ -214,13 +326,13 @@ class SLPlus_Data {
         foreach ($commandList as $command) {
             switch ($command) {
 
-                // DELETE
+                //------------------- DELETE
                 //
                 case 'delete':
                     $sqlStatement .= 'DELETE FROM '         .$this->info['table'].' ';
                     break;
 
-                // SELECT
+                //------------------- SELECT
                 //
                 case 'selectall':
                     // FILTER: slp_extend_get_SQL_selectall
@@ -257,47 +369,71 @@ class SLPlus_Data {
                         ;
                     break;
 
-                // select_state_list
-                // Fetch a list of all states in the location table where state is not empty.
+                // select_states
                 //
-                case 'select_state_list':
+                case 'select_states':
                     $sqlStatement .=
                         'SELECT trim(sl_state) as state ' .
-                        ' FROM ' . $this->info['table'] . ' ' .
-                        "WHERE sl_state<>'' " .
-                        'GROUP BY sl_state ' .
-                        'ORDER BY sl_state ASC '
-                        ;
+                        'FROM ' . $this->info['table'] . ' '
+                    ;
                     break;
 
-                // WHERE
+
+                // select_state_list
+                // Fetch a list of all states in the location table where state is not empty.
+                // DEPRECATED use array( 'select_states' , 'where_valid_state' , 'group_by_state' , 'order_by_state') instead.
+                //
+                // TODO: remove this when Pro Pack is updated.    use
+                //
+                case 'select_state_list':
+                    $sqlStatement .= 'SELECT trim(sl_state) as state ' .
+                    ' FROM ' . $this->info['table'] . ' ' .
+                    "WHERE (sl_state<>'') and (sl_state IS NOT NULL) " .
+                    'GROUP BY sl_state ' .
+                    'ORDER BY sl_state ASC '
+                    ;
+                    break;
+
+                //------------------- WHERE
                 //
                 case 'where_default':
                 case 'where_default_validlatlong':
                     if ($command === 'where_default_validlatlong') {
-                        add_filter('slp_ajaxsql_where',array($this,'filter_SetWhereValidLatLong'));
+                        $where = $this->filter_SetWhereValidLatLong( '' );
+                    } else {
+                        $where = '';
                     }
 
                     // FILTER: slp_location_where
                     // FILTER: slp_ajaxsql_where
                     //
-                    $where = apply_filters('slp_ajaxsql_where','');
+                    $where = apply_filters('slp_ajaxsql_where', $where);
                     $where = apply_filters('slp_location_where', $where );
-                    if (!empty($where)) {
-                        $sqlStatement .= ' WHERE ' . $where . ' ';
-                    }
+                    $sqlStatement .= $this->add_where_clause( $where );
                     break;
+
+                case 'where_not_private':
+                    $sqlStatement .= $this->add_where_clause( "( NOT sl_private OR sl_private IS NULL)" );
+                    break;
+
+                case 'where_valid_state':
+                    $sqlStatement .= $this->add_where_clause( "(sl_state<>'') AND (sl_state IS NOT NULL)" );
+                    break;
+
 
                 case 'whereslid':
-                    $sqlStatement .= 'WHERE sl_id=%d ';
+                    $sqlStatement .=  $this->add_where_clause('sl_id=%d');
                     break;
 
-                // ORDER BY
+                //------------------- ORDER
                 //
                 case 'orderby_default':
 
                     // HOOK: slp_orderby_default
                     // Allows processes to extend the oder by string array
+                    //
+                    // Default AJAX order by distance is priority 100
+                    // Tagalong order by category count is priority 5 (if enabled)
                     //
                     do_action( 'slp_orderby_default' , $this->order_by_array );
                     $order_by_string = empty( $this->order_by_array ) ? '' : join( ',' , $this->order_by_array );
@@ -307,6 +443,19 @@ class SLPlus_Data {
                     if ( ! empty( $order ) ) {
                         $sqlStatement .= ' ORDER BY ' . $order . ' ';
                     }
+                    break;
+
+                case 'order_by_state':
+                    $this->extend_order_array( 'sl_state ASC' );
+                    $sqlStatement .=
+                        $this->add_order_by_clause();
+                    break;
+
+                //------------------- GROUP
+                //
+                case 'group_by_state':
+                    $sqlStatement .=
+                        $this->add_group_by_clause( 'sl_state' );
                     break;
 
                 // FILTER: slp_extend_get_SQL
@@ -319,6 +468,9 @@ class SLPlus_Data {
                     break;
             }
         }
+
+        $this->reset_clauses();
+
         return $sqlStatement;
     }
 
@@ -336,9 +488,10 @@ class SLPlus_Data {
      * @param mixed[] $params
      * @param int $offset
      * @param mixed $type the type of object/array/etc. to return see wpdb get_row.
+     * @param string $mode = get_row or get_col to fetch a single row or multiple rows of a single column
      * @return mixed the database array_a or object.
      */
-    function get_Record($commandList,$params=array(),$offset=0, $type = ARRAY_A ) {
+    function get_Record($commandList,$params=array(),$offset=0, $type = ARRAY_A , $mode = 'get_row' ) {
         $this->is_Extended();
         $query = $this->get_SQL($commandList);
 
@@ -348,7 +501,14 @@ class SLPlus_Data {
             $query = $this->db->prepare( $query , $params );
         }
 
-        return $this->db->get_row( $query , $type ,$offset );
+        // get_row (default) or get_col based on the mode
+        if ( $mode === 'get_col' ) {
+            $results = $this->db->get_col( $query, $offset );
+        } else {
+            $results = $this->db->get_row($query, $type, $offset);
+        }
+
+        return $results;
     }
 
     /**
@@ -380,5 +540,11 @@ class SLPlus_Data {
             }
         }
         return $this->is_extended;
+    }
+
+    private function reset_clauses() {
+        $this->order_by_clause = '';
+        $this->group_by_clause = '';
+        $this->where_clause = '';
     }
 }

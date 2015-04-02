@@ -1,11 +1,11 @@
-=== Store Locator Plus ===
+=== Store Locator Plus - Google Maps===
 Plugin Name:  Store Locator Plus
 Contributors: charlestonsw, DeBAAT
 Donate link: http://www.charlestonsw.com/product/store-locator-plus-4/
-Tags: store locator, business locator,location management,location map,responsive,mapping,map,maps,marker,locations,place,store,dealer,shop,business,retail,brick,mortar,directory,google,bing,coordinates,latitude,longitude,geo,geocoding,miles,kilometers,locator,finder,search,mapper,zipcode,name,radius
+Tags: locator,map,store locator, business locator,location management,location map,responsive,mapping,map,maps,marker,locations,place,store,dealer,shop,business,retail,brick,mortar,directory,google,bing,coordinates,latitude,longitude,geo,geocoding,miles,kilometers,locator,finder,search,mapper,zipcode,name,radius
 Requires at least: 3.4
 Tested up to: 4.1
-Stable tag: 4.2.31
+Stable tag: 4.2.42
 License: GLPv2 or later
 
 Add a location finder or directory to your site in minutes. A Google Business Maps API licensed product. Extensive premium add-on library available!
@@ -234,7 +234,7 @@ Copy an existing CSS file, change the file name and update the CSS header, uploa
 * Chinese (zh_CN) by iSurge
 * Chinese (zh_TW) by iSurge
 * Dutch (nl_NL) by [Jan de Baat](http://www.de-baat.nl/)
-* French (fr_FR) by François Serrault
+* French (fr_FR) by [Dimitri Lekien](http://www.visitonweb.com/)
 * German (de_DE)
 * Italian (it_IT) by Matteo Colangeli
 * Japanese (ja) by [Karen Ellrick](http://l4jp.com)
@@ -338,11 +338,57 @@ If you are using the Janitor or Pro Pack add-on pack:
 
 == Changelog ==
 
-Please read the *description page* for this plugin for an important note about premium add-on packs if you are upgrading from version 3.x or earlier.
-
-*Version 4.x is a major upgrade that is not compatible with the version 3.x or earlier add-on packs.*
-
 Visit the [Store Locator Plus Release Notes page](http://www.storelocatorplus.com/support/documentation/store-locator-plus/release-notes/) for the full change log.
+
+= 4.2.42 (2015-Mar-26) =
+
+* Enhancement: Update French translation.
+
+= 4.2.41 (2015-Mar-20) =
+
+* Enhancement: Speed up location imports when duplicates handling is set to 'add' mode.
+* Enhancement: Extend data class to allow add-on packs to simplify custom data methods.
+* Enhancement: Report CSV file uploads that exceed the PHP post_max_size setting.
+* Enhancement: Reduce memory consumption when DebugMP is not active when processing high volume location I/O requests.
+
+= 4.2.40 (2015-Mar-05) =
+
+* Change: Add a global "not private" filter for SQL to provide consistency with add-on pack selections.
+
+= 4.2.39 (2015-Mar-02) =
+
+* Fix: HAVING clause processing, resolves conflict between Enhanced Results and Enhanced Search when featured locations are always shown and radius is set to "ignore unless address entered".
+* Change: Add featured listing highlighting to Simple White 4 Col plugin theme.
+
+= 4.2.38 (2015-Mar) =
+
+* Change: Standardize map_center to use options property of SLPlus class, a step toward code simplification and overhead reduction.
+* Change: Standardize zoom_level to use options property of SLPlus class, a step toward code simplification and overhead reduction.
+* Change: Set a minimum bubble width for all SCSS based plugin themes.
+* Change: Convert Simple White 4 Col to a SCSS based theme.
+* Enhancement: New iThemes Herschel plugin theme styled to look its best with the latest iThemes WordPress theme.
+* Enhancement: New general layout option for Pro Pack users [slp_option nojs="<option_name>"] and [slp_option js="<option_name>"] provides greater plugin theme flexibility.
+* Example: This can be put in the Pro Pack view:  "Showing locations within [slp_option js="initial_radius"] [slp_option js="distance_unit"] of the map center.
+* Enhancement: Improve options processor for add-on packs allowing for better default string translations (i10n/l18n support).
+* Enhancement: Improve the state filter processor to eliminate redundant code in Enhanced Search and Widget Pack updates.
+* Enhancement: Smarter state and country SQL processing.
+* Fix: Update sl_private test to also pick up NULL entries which improves return results on some MySQL versions.
+* Change: x.x.38 make where data clause extender a little smarter
+
+= 4.2.36 (2015-Feb-18) =
+
+* Enhancement: Add private locations.  Private locations do NOT appear in the search results while marked private.
+* Enhancement: Update the add/edit locations form to allow locations to be marked as private.  Utilizes the built-in sl_private field.
+* Enhancement: Update the manage locations interface to list private locations in gray text and place text "private" under the lat/long.
+* Enhancement: Added new iThemes Herschel NyloBoard plugin theme.
+* Enhancement: Make the theme selector case insensitive so iThemes comes between "H" and "J".
+
+= 4.2.35 (2015-Feb-16) =
+
+* Enhancement: Update the default theme manager.   New installs now get a specific default theme that IS NOT named "default", pre-existing installs will no longer change as the default theme is improved.
+* Enhancement: A new SLP theme, Twenty Fifteen Rev 02, has been created for better responsive layouts on the WordPress TwentyFifteen theme.   This is the new default for fresh installs.
+* Enhancement: Performance improvement when Enhanced Search employs "ignore radius" options.
+* Enhancement: Improve the handling of invalid database search queries on the back-end AJAX handler.
 
 = 4.2.30 (2015-Jan-29) =
 
@@ -457,7 +503,6 @@ Visit the [Store Locator Plus Release Notes page](http://www.storelocatorplus.co
 * Enhancement: Further refinements to the Results Layout processor.
 * Enhancement: Added Results string format="decimal2" attribute for results layout settings.
 * Enhancement: Check that google is defined in JavaScript before trying to talk to them about map stuff.  Warn user if it is off but needs to be on.
-* Enhancement: Add filter 'slp_change_ui_radius_selector' to control the radius selector on the UI.
 * Enhancement: Extend the AJAX add-on framework.
 * Change: do not show home marker if user does not enter an address during a search
 * Fix: Fix the HTML output on location search results (Tagalong and SME icons among others).

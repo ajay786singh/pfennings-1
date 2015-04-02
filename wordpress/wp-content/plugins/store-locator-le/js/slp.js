@@ -390,7 +390,7 @@ var slp = {
                 //
                 var addressInput = this.getSearchAddress();
                 if (typeof addressInput === 'undefined') {
-                    this.address = slplus.map_country;
+                    this.address = slplus.options.map_center;
                 } else {
                     this.address = addressInput;
                 }
@@ -424,7 +424,7 @@ var slp = {
                     scrollwheel: !this.disableScroll,
 
                     minZoom: 1,
-                    zoom: parseInt(slplus.zoom_level),
+                    zoom: parseInt(slplus.options.zoom_level),
                 };
 
                 slpMapDiv = document.getElementById('map');
@@ -654,7 +654,7 @@ var slp = {
                                 (this.loadedOnce || (markerList.length > 1))
                                 ) ?
                                 this.gmap.getZoom() - parseInt(slplus.zoom_tweak) :
-                                    parseInt(slplus.zoom_level)
+                                    parseInt(slplus.options.zoom_level)
                             ), 20), 1)
                     ;
                 this.gmap.setZoom(newZoom);
@@ -920,12 +920,23 @@ var slp = {
             // Send AJAX call
             //
             ajax.send(action, function (response) {
-                if (typeof response.response !== 'undefined') {
+                valid_response = (typeof response.response !== 'undefined');
+                if ( valid_response ) { valid_response = response.success; }
+
+                if ( valid_response ) {
                     _this.clearMarkers();
                     _this.putMarkers(response.response);
+
                 } else {
                     if (window.console) {
                         console.log('SLP server did not send back a valid JSONP response for ' + action.action + '.');
+                        if ( typeof response.response !== 'undefined' ) {
+                            console.log( 'Response: ' + response.response );
+                        }
+                        if ( typeof response.message !== 'undefined' ) {
+                            var sidebar = document.getElementById('map_sidebar');
+                            sidebar.innerHTML = response.message;
+                        }
                     }
                 }
             });

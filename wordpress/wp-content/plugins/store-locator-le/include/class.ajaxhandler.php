@@ -82,6 +82,12 @@ class SLPlus_AjaxHandler {
      */
     private $dbQuery;
 
+    /**
+     * The basic query string before the prepare.
+     * @var string
+     */
+    private $basic_query;
+
     //----------------------------------
     // Methods
     //----------------------------------
@@ -101,6 +107,7 @@ class SLPlus_AjaxHandler {
             $this->slplus->register_module($this->name,$this);
             $this->plugin = $this->slplus;
         }
+        $this->slplus->notifications->enabled = false;
 
         // Set incoming params
         //
@@ -285,7 +292,6 @@ class SLPlus_AjaxHandler {
         // append new having clause logic to the array and return the new array
         // to extend/modify the having clause.
         //
-        $havingClause = 'HAVING ';
         $havingClauseElements =
             apply_filters(
                 'slp_location_having_filters_for_AJAX',
@@ -294,13 +300,31 @@ class SLPlus_AjaxHandler {
                     'OR (sl_distance IS NULL) '
                 )
              );
-        foreach ($havingClauseElements as $filter) {
-            $havingClause .= $filter;
+
+        // If there are element for the having clause set it
+        // otherwise leave it as a blank string
+        //
+        $having_clause = '';
+        if ( count($havingClauseElements) > 0 ) {
+            foreach ($havingClauseElements as $filter) {
+                $having_clause .= $filter;
+            }
+            $having_clause = trim( $having_clause );
+            $having_clause = preg_replace( '/^OR /', '' , $having_clause );
+
+            if ( ! empty( $having_clause ) ) {
+                $having_clause = 'HAVING ' . $having_clause;
+            }
+
         }
+
+        // WHERE clauses
+        //
+        add_filter( 'slp_ajaxsql_where' , array( $this , 'filter_out_private_locations' ) );
 
         // FILTER: slp_ajaxsql_fullquery
         //
-        $this->dbQuery =  
+        $this->basic_query =
             apply_filters(
                 'slp_ajaxsql_fullquery',
                 $this->slplus->database->get_SQL(
@@ -310,35 +334,35 @@ class SLPlus_AjaxHandler {
                     )
                  )                                                      .
                 "{$filterClause} "                                      .
-                "{$havingClause} "                                      .
+                "{$having_clause} "                                      .
                 $this->slplus->database->get_SQL('orderby_default')     .
                 'LIMIT %d'
             );
 
         // Set the query parameters
+        //
+        $default_query_parameters = array();
+        $default_query_parameters[] = $multiplier;
+        $default_query_parameters[] = $this->query_params['lat'];
+        $default_query_parameters[] = $this->query_params['lng'];
+        $default_query_parameters[] = $this->query_params['lat'];
+        if ( ! empty( $having_clause ) ) {
+            $default_query_parameters[] = $this->query_params['radius'];
+        }
+        $default_query_parameters[] = $maxReturned;
+
         // FILTER: slp_ajaxsql_queryparams
-        $queryParams =
-            apply_filters(
-                'slp_ajaxsql_queryparams',
-                array(
-                    $multiplier,
-                    $this->query_params['lat'],
-                    $this->query_params['lng'],
-                    $this->query_params['lat'],
-                    $this->query_params['radius'],
-                    $maxReturned
-                )
-            );
+        $queryParams = apply_filters( 'slp_ajaxsql_queryparams' , $default_query_parameters );
 
         // Run the query
         //
-        // First convert our placeholder dbQuery into a string with the vars inserted.
+        // First convert our placeholder basic_query into a string with the vars inserted.
         // Then turn off errors so they don't munge our JSONP.
         //
         global $wpdb;
         $this->dbQuery =
             $wpdb->prepare(
-                $this->dbQuery,
+                $this->basic_query,
                 $queryParams
                 );
         $wpdb->hide_errors();
@@ -350,6 +374,10 @@ class SLPlus_AjaxHandler {
             die(json_encode(array(
                 'success'       => false, 
                 'response'      => 'Invalid query: ' . $wpdb->last_error,
+                'message'       => $this->slplus->options_nojs['invalid_query_message'],
+                'basic_query'   => $this->basic_query ,
+                'default_params'=> $default_query_parameters,
+                'query_params'  => $queryParams,
                 'dbQuery'       => $this->dbQuery
             )));
         }
@@ -365,6 +393,16 @@ class SLPlus_AjaxHandler {
      */
     function add_distance_sort_to_orderby() {
         $this->slplus->database->extend_order_array( 'sl_distance ASC' );
+    }
+
+    /**
+     * Do not return private locations by default.
+     *
+     * @param string the current where clause
+     * @return string the extended where clause
+     */
+    function filter_out_private_locations( $where ) {
+        return $this->slplus->database->extend_Where( $where , ' ( NOT sl_private OR sl_private IS NULL) ' );
     }
 
     /**

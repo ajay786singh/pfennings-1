@@ -33,6 +33,11 @@ class wpCSL_settings__slplus {
      * @var string
      */
     private $form_name = '';
+
+    /**
+     * @var wpCSL_helper__slplus
+     */
+    public $helper;
     
     /**
      * Skip the save button.
@@ -226,14 +231,33 @@ class wpCSL_settings__slplus {
                     $this->create_EnvDiv('Site URL'                                 ,get_option('siteurl')              ).
                     '<br/>' .
                     $this->create_EnvDiv('MySQL Version'                            ,$wpdb->db_version()                ).
-                    '<br/>' .
                     $this->create_EnvDiv('PHP Version'                              ,phpversion()                       ).
-                    $this->create_EnvDiv('PHP Limit'                                ,
-                       ini_get('memory_limit')                                                                          ).
-                    $this->create_EnvDiv('Wordpress Limit'                              ,
-                        WP_MEMORY_LIMIT                                                                                 ).
+                    '<br/>' .
+
+                    $this->create_EnvDiv(
+                        __( 'PHP Limit' , 'csa-slplus' )                                ,
+                       ini_get('memory_limit')
+                    ) .
+
+                    $this->create_EnvDiv(
+                        __( 'WordPress General Limit' , 'csa-slplus' )                           ,
+                        WP_MEMORY_LIMIT
+                    ).
+
+                    $this->create_EnvDiv(
+                        __( 'WordPress Admin Limit' , 'csa-slplus' )                           ,
+                        WP_MAX_MEMORY_LIMIT
+                    ).
+
+
                     $this->create_EnvDiv('PHP Peak RAM'                             ,
                             sprintf('%0.2d MB',memory_get_peak_usage(true)/1024/1024)                                   ).
+
+                    $this->create_EnvDiv(
+                        'PHP Post Max Size' ,
+                        ini_get( 'post_max_size' )
+                    ) .
+
                     $this->create_EnvDiv('PHP Modules'                              ,
                             '<pre>'.print_r($this->csl_php_modules,true).'</pre>'                                       )
                     ,
@@ -902,10 +926,22 @@ class wpCSL_settings_section__slplus {
     public $first = false;
 
     /**
+     * The collection of section items that are in this section.
+     *
+     * @var \wpCSL_settings_group $groups
+     */
+    private $groups;
+
+    /**
      *
      * @var boolean $headerbar
      */
     private $headerbar = true;
+
+    /**
+     * @var \wpCSL_helper__slplus
+     */
+    public $helper;
 
     /**
      *
@@ -915,17 +951,10 @@ class wpCSL_settings_section__slplus {
 
     /**
      * True if this is a top-of-page menu.
-     * 
+     *
      * @var boolean $is_topmenu
      */
     public $is_topmenu = false;
-
-    /**
-     * The collection of section items that are in this section.
-     * 
-     * @var \wpCSL_settings_group $groups
-     */
-    private $groups;
 
     /**
      * The title of the section.
@@ -944,7 +973,7 @@ class wpCSL_settings_section__slplus {
     /**
      * The main settings parent.
      *
-     * @var \wpCSL_settings__slplus $parent
+     * @var \wpCSL_settings__slplus
      */
     public $parent;
 
@@ -1109,7 +1138,7 @@ class wpCSL_settings_item__slplus {
 
     /**
      *
-     * @var \wpCSL_settings_section_
+     * @var \wpCSL_settings_section_slplus
      */
     private $parent;
 
@@ -1157,6 +1186,14 @@ class wpCSL_settings_item__slplus {
      */
     private $type = 'custom';
 
+
+    /**
+     * Default value for the setting.
+     *
+     * @var string
+     */
+    private $value;
+
     //-------------------------
     // Methods
     //-------------------------
@@ -1185,8 +1222,15 @@ class wpCSL_settings_item__slplus {
      *
      */
     function display() {
+
+        // Fetch the option from the database
+        //
         $optVal = get_option($this->name);
         $optVal = is_array($optVal)?print_r($optVal,true):$optVal;
+
+        // If the .value property is set, use that as "Show This"
+        // otherwise use the value of the option from the database
+        //
         $showThis = htmlspecialchars((isset($this->value)?$this->value:$optVal));
 
         echo '<div class="form_entry">';

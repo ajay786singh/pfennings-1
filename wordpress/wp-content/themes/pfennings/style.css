@@ -672,22 +672,30 @@ small {
   margin-top: 0;
   margin-bottom: 0.5em; }
 
-.logo_sticky h1 {
+.logo h1 {
   font-size: 1em;
   margin: 1.7em 0 1.5em 2em;
   color: white;
   display: inline-block; }
-  @media screen and (min-width: 50em) {
-    .logo_sticky h1 {
+  @media screen and (min-width: 64em) {
+    .logo h1 {
       margin-top: 0.6em;
       font-size: 1.5em;
       color: white;
       padding: 0.5em 2em 0;
       float: left; } }
-.logo_sticky .tagline {
+  @media screen and (min-width: 50em) {
+    .logo h1 {
+      display: none; } }
+.logo .tagline {
   font-family: "grafolita-script", sans-serif;
   font-size: 0.7em;
   margin-left: 0.8em; }
+
+.sticky .logo h1 {
+  display: inline-block; }
+.sticky img {
+  display: none; }
 
 article h3 {
   font-size: 1.563em;
@@ -857,11 +865,12 @@ section[role=banner] {
         position: fixed;
         width: 100%;
         background: #008348;
-        z-index: 9999; }
-        section[role=banner] header.sticky .logo_sticky {
-          display: block; }
+        z-index: 9999;
+        top: 0;
+        left: 0; }
         section[role=banner] header.sticky .logo {
-          display: none; } }
+          max-width: 100%;
+          padding: 0em 0 0 1.5em; } }
 
 section[role=main] {
   max-width: 80em;

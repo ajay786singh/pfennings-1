@@ -1,6 +1,3 @@
-function getCurrentScroll() {
-	return window.pageYOffset || document.documentElement.scrollTop;
-}
 var isMobile = {
     Android: function() {
         return navigator.userAgent.match(/Android/i);
@@ -25,8 +22,8 @@ jQuery(function(){
  var stickHeader = 70;
 	if( !isMobile.any()) { 		
 		jQuery(window).scroll(function() {
-			var scroll = getCurrentScroll();
-			if ( scroll >= stickHeader ) {
+			var scroll = jQuery(this).scrollTop();
+			if ( scroll > stickHeader ) {
 			   jQuery('section[role="banner"] header').addClass('sticky');
 			}
 			else {

@@ -332,18 +332,21 @@ small {
        margin-bottom: 0.5em;
 }
 
-.logo_sticky{
+.logo {
     h1 {
 		font-size: 1em;
 		margin: 1.7em 0 1.5em 2em;
-		color: white;
+		color: $white;
 		display: inline-block;
-        @include media($bp-large) {    
+		@include media($bp-mid) {
 			margin-top: 0.6em;
 			font-size: 1.5em;
-			color: white;
+			color: $white;
 			padding: 0.5em 2em 0;
 			float: left;
+		}
+        @include media($bp-large) {    
+			display:none;
 		}
     }
 
@@ -354,6 +357,16 @@ small {
     }
 }
 
+.sticky {
+	.logo { 
+		h1 {
+			display:inline-block;
+		}
+	}
+	img {
+		display:none;
+	}
+}
 article { 
     h3 {
         font-size: 1.563em;

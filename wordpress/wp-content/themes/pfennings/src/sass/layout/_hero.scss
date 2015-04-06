@@ -11,10 +11,13 @@ section[role=slider] {
         @include outer-container;
     }
     hgroup {
-        @include pad(null 2em null 2em);
-        @include media($bp-mid) {
-            @include pad(null 11em null 11em);
-        }
+		@include span-columns(5);
+		padding:2em 2em;
+		@include media($bp-large) {
+			@include span-columns(10);
+			@include shift(1);
+			padding:3.5em 2em;
+		}
     }
 }
 

@@ -1424,14 +1424,7 @@ section[role=slider] {
       margin-right: 0; }
     @media screen and (min-width: 50em) {
       section[role=slider] hgroup {
-        float: left;
-        display: block;
-        margin-right: 2.35765%;
-        width: 82.94039%;
-        margin-left: 8.5298%;
-        padding: 3.5em 2em; }
-        section[role=slider] hgroup:last-child {
-          margin-right: 0; } }
+        padding: 11em 9em; } }
 
 #isotope-container .filters {
   border-bottom: 1px solid #cbcbcb;
@@ -2079,7 +2072,7 @@ select {
 
 @media screen and (min-width: 64em) {
   #gform_wrapper_2 .gform_body .gform_fields .gfield {
-    margin-left: 21.32451%;
+    margin-left: 52.92575%;
     width: 50%;
     margin-right: 1.5em; } }
 

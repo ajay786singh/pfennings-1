@@ -28,6 +28,10 @@ section[role=banner] {
             display: block;
 			left:0;
 			top:0;
+			position:fixed;
+			width:100%;
+			background: $green;
+			z-index: 9999;			
 			@include media($bp-mid) {
 				display: none;
 			}

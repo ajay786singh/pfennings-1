@@ -672,25 +672,26 @@ small {
   margin-top: 0;
   margin-bottom: 0.5em; }
 
-.logo h1 {
-  font-size: 1em;
-  margin: 1.7em 0 1.5em 2em;
-  color: white;
-  display: inline-block; }
-  @media screen and (min-width: 64em) {
-    .logo h1 {
-      margin-top: 0.6em;
-      font-size: 1.5em;
-      color: white;
-      padding: 0.5em 2em 0;
-      float: left; } }
-  @media screen and (min-width: 50em) {
-    .logo h1 {
-      display: none; } }
+@media screen and (min-width: 64em) {
+  .logo h1 {
+    margin-top: 0.6em;
+    font-size: 1.5em;
+    color: white;
+    padding: 0.5em 2em 1em;
+    float: left; } }
+@media screen and (min-width: 50em) {
+  .logo h1 {
+    display: none; } }
 .logo .tagline {
   font-family: "grafolita-script", sans-serif;
   font-size: 0.7em;
   margin-left: 0.8em; }
+
+.logo_sticky h1 {
+  font-size: 1em;
+  margin: 1.7em 0 1.5em 2em;
+  color: white;
+  display: inline-block; }
 
 .sticky .logo h1 {
   display: inline-block; }
@@ -848,7 +849,11 @@ section[role=banner] {
     section[role=banner] header .logo_sticky {
       display: block;
       left: 0;
-      top: 0; }
+      top: 0;
+      position: fixed;
+      width: 100%;
+      background: #008348;
+      z-index: 9999; }
       @media screen and (min-width: 64em) {
         section[role=banner] header .logo_sticky {
           display: none; } }

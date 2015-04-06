@@ -34,7 +34,7 @@ section[role=banner] {
 			.tagline {
 				display: none;
 				@include media($bp-mid) {
-					display: block;
+					display: inline-block;
 				}
 			}
         }

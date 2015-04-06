@@ -819,12 +819,15 @@ section[role=banner] {
     transition: all 2s ease; }
     section[role=banner] header .mobile_sticky h1 {
       font-size: 1em;
-      margin: 1.7em 0 1.5em 2.6em;
+      margin: 1.7em 0 1.5em 2em;
       color: white;
       display: inline-block; }
       @media screen and (min-width: 64em) {
         section[role=banner] header .mobile_sticky h1 {
           display: none; } }
+      @media screen and (min-width: 50em) {
+        section[role=banner] header .mobile_sticky h1 {
+          margin: 1.7em 0 1.5em 2.6em; } }
     section[role=banner] header .logo {
       float: left;
       height: auto;
@@ -1387,10 +1390,23 @@ section[role=slider] {
       content: "";
       display: table; }
   section[role=slider] hgroup {
+    float: left;
+    display: block;
+    margin-right: 5.85151%;
+    width: 100%;
     padding: 2em 2em; }
-    @media screen and (min-width: 64em) {
+    section[role=slider] hgroup:last-child {
+      margin-right: 0; }
+    @media screen and (min-width: 50em) {
       section[role=slider] hgroup {
-        padding: 11em 11em; } }
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 82.94039%;
+        margin-left: 8.5298%;
+        padding: 3.5em 2em; }
+        section[role=slider] hgroup:last-child {
+          margin-right: 0; } }
 
 #isotope-container .filters {
   border-bottom: 1px solid #cbcbcb;
@@ -2234,7 +2250,7 @@ body.mm-menu-open {
 .mm-menu-toggle {
   position: fixed;
   top: 20px;
-  right: 47px;
+  right: 2em;
   padding-right: 35px;
   padding-top: 4px;
   z-index: 21001;

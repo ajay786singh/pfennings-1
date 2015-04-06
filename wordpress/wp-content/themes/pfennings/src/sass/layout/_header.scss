@@ -10,12 +10,15 @@ section[role=banner] {
     header {
         .mobile_sticky h1 {
             font-size: 1em;
-            margin: 1.7em 0 1.5em 2.6em;
+            margin: 1.7em 0 1.5em 2em;
             color: white;
             display: inline-block;
 
             @include media ($bp-mid) {
                 display: none;
+            }
+			@include media ($bp-large) {
+				margin: 1.7em 0 1.5em 2.6em;
             }
         }
     	@include transition(all 2s ease);

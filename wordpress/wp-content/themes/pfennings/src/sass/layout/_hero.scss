@@ -14,9 +14,7 @@ section[role=slider] {
 		@include span-columns(5);
 		padding:2em 2em;
 		@include media($bp-large) {
-			@include span-columns(10);
-			@include shift(1);
-			padding:3.5em 2em;
+			  padding: 11em 9em;
 		}
     }
 }

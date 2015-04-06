@@ -1332,7 +1332,7 @@ footer {
       footer .footer-inner .content p {
         margin-bottom: 0; } }
     @media screen and (max-width: 64em) {
-      footer .footer-inner .footer_logo, footer .footer-inner .copyright {
+      footer .footer-inner .footer_logo {
         display: none; } }
     footer .footer-inner .button-map {
       border-bottom: 1px solid white; }

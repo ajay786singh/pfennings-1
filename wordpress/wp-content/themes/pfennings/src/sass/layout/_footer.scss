@@ -51,7 +51,7 @@ footer {
         }
 
         @include media ($bp-small){
-            .footer_logo, .copyright {
+            .footer_logo {
                 display: none;
             }
         }

@@ -8,34 +8,16 @@ section[role=banner] {
         background-color: transparent;
     }
     header {
-		.mobile_sticky {
-			display:block;
-			@include media ($bp-large) {
-				display:none;
-			}
-		}
-        .mobile_sticky h1 {
-            font-size: 1em;
-            margin: 1.7em 0 1.5em 2em;
-            color: white;
-            display: inline-block;
-            @include media ($bp-mid) {
-                display: none;
-            }
-			@include media ($bp-large) {
-				margin: 1.7em 0 1.5em 2.6em;
-            }
-        }
     	@include transition(all 2s ease);
         .logo {
             float: left;
             height: auto;
             max-width: 130px;
             padding: .5em 0 .5em .5em;
+            display: none;
             &:hover {
                 opacity: 0.8;
             }
-            display: none;
             @include media($bp-mid) {
                 max-width: 400px;
                 padding: 1em 0 0 3em;
@@ -43,9 +25,17 @@ section[role=banner] {
             }
         }
         .logo_sticky {
-            display: none;
+            display: block;
+			@include media($bp-mid) {
+				display: none;
+			}
+			.tagline {
+				display: none;
+				@include media($bp-mid) {
+					display: block;
+				}
+			}
         }
-
 		@include media($bp-mid) {
 			&.sticky {
 				@include transition(all 2s ease);

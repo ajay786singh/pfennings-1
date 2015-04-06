@@ -51,17 +51,14 @@
         </div>
         <div class="logo_sticky">
             <a href="<?php bloginfo('url');?>">
-                <h1>Pfenning's Organic Farms<span class="tagline">Community Flavoured Agriculture</span>
-</h1>
+                <h1>Pfenning's Organic Farms <span class="tagline">Community Flavoured Agriculture</span></h1>
             </a>
         </div>
-
-        <div class="mobile_sticky">
+        <?php /*<div class="mobile_sticky">
             <a href="<?php bloginfo('url');?>">
                 <h1>Pfenning's Organic Farms</h1>
             </a>
-        </div>
-        <!--<div id="mm-menu-toggle" class="mm-menu-toggle"><span></span>Menu</div> -->
+        </div> */?>
     </header>
 </section>
 <div id="wrapper" class="wrapper">

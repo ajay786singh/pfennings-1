@@ -682,7 +682,7 @@ small {
       margin-top: 0.6em;
       font-size: 1.5em;
       color: white;
-      padding: 0.5em 2em;
+      padding: 0.5em 2em 0;
       float: left; } }
 .logo_sticky .tagline {
   font-family: "grafolita-script", sans-serif;
@@ -848,7 +848,7 @@ section[role=banner] {
         display: none; }
         @media screen and (min-width: 64em) {
           section[role=banner] header .logo_sticky .tagline {
-            display: block; } }
+            display: inline-block; } }
     @media screen and (min-width: 64em) {
       section[role=banner] header.sticky {
         -webkit-transition: all 2s ease;
@@ -4584,4 +4584,3 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 .rollOut {
   -webkit-animation-name: rollOut;
   animation-name: rollOut; }
-    

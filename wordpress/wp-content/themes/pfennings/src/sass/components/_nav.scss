@@ -39,8 +39,11 @@ body.mm-menu-open {
 .mm-menu-toggle {
 	position: fixed;
 	top: 20px; 
+	padding-right: 27px;
 	@include media($bp-large) {
 		top: 27px; 
+		padding-right: 35px;
+		width: $menu-toggle-width;
 	}
 	.admin-bar & {
 		top: 65px; 		 
@@ -49,17 +52,14 @@ body.mm-menu-open {
 		}
 	}
 	right: 2em;
-	padding-right: 35px;
 	padding-top: 4px;
 	z-index: 21001;
 	cursor:pointer;
-	width: $menu-toggle-width;
 	height: $menu-toggle-height;
 	color:$white;
 	font-size: 1em;
 	line-height: 1.5em;
 	font-weight: 600;
-
 	&:after {
 		background: url(dist/images/menu-buttons.png) 0 0 no-repeat;
 		content:"";

@@ -43,18 +43,19 @@
 </nav>
 
 <section role="banner">
-    <header class="original">
+    <header>
         <div class="logo">
             <a href="<?php bloginfo('url');?>">
 				<img src="<?php bloginfo('template_url' ); ?>/dist/images/pfenningslogo.png">
+				<h1>Pfenning's Organic Farms <span class="tagline">Community Flavoured Agriculture</span></h1>
 			</a>
         </div>
-        <div class="logo_sticky">
+        <?php /*<div class="logo_sticky">
             <a href="<?php bloginfo('url');?>">
                 <h1>Pfenning's Organic Farms <span class="tagline">Community Flavoured Agriculture</span></h1>
             </a>
         </div>
-        <?php /*<div class="mobile_sticky">
+        <div class="mobile_sticky">
             <a href="<?php bloginfo('url');?>">
                 <h1>Pfenning's Organic Farms</h1>
             </a>

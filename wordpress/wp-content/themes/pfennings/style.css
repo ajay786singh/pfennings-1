@@ -821,9 +821,14 @@ a img.aligncenter {
   width: auto; }
 
 section[role=banner] {
+  position: fixed;
   width: 100%;
-  position: absolute;
-  top: 0; }
+  background-color: #008348;
+  z-index: 2; }
+  @media screen and (min-width: 64em) {
+    section[role=banner] {
+      position: absolute;
+      background-color: transparent; } }
   section[role=banner] header {
     -webkit-transition: all 2s ease;
     -moz-transition: all 2s ease;

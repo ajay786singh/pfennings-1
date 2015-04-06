@@ -2275,12 +2275,11 @@ body.mm-menu-open {
 .mm-menu-toggle {
   position: fixed;
   top: 20px;
+  padding-right: 27px;
   right: 2em;
-  padding-right: 35px;
   padding-top: 4px;
   z-index: 21001;
   cursor: pointer;
-  width: 90px;
   height: 26px;
   color: white;
   font-size: 1em;
@@ -2289,7 +2288,9 @@ body.mm-menu-open {
   /* active states */ }
   @media screen and (min-width: 50em) {
     .mm-menu-toggle {
-      top: 27px; } }
+      top: 27px;
+      padding-right: 35px;
+      width: 90px; } }
   .admin-bar .mm-menu-toggle {
     top: 65px; }
     @media screen and (min-width: 50em) {

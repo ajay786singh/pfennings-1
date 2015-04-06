@@ -838,7 +838,9 @@ section[role=banner] {
           padding: 1em 0 0 3em;
           display: block; } }
     section[role=banner] header .logo_sticky {
-      display: block; }
+      display: block;
+      left: 0;
+      top: 0; }
       @media screen and (min-width: 64em) {
         section[role=banner] header .logo_sticky {
           display: none; } }
@@ -4582,3 +4584,4 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 .rollOut {
   -webkit-animation-name: rollOut;
   animation-name: rollOut; }
+    

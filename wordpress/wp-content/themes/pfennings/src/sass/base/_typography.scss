@@ -228,11 +228,12 @@ small {
 
 
 .headline {
-    font-size: .9em;
+    font-size: 1.2em;
     font-family: $sans-serif;
     font-weight: 100;
-    color: $white;
-    @include media($bp-mid) {
+	color: $white;
+    word-wrap: break-word;
+	@include media($bp-mid) {
         font-size: modular-scale(4);
     }
 

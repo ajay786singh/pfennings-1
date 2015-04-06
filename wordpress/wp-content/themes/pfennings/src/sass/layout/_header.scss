@@ -8,6 +8,12 @@ section[role=banner] {
         background-color: transparent;
     }
     header {
+		.mobile_sticky {
+			display:block;
+			@include media ($bp-large) {
+				display:none;
+			}
+		}
         .mobile_sticky h1 {
             font-size: 1em;
             margin: 1.7em 0 1.5em 2em;

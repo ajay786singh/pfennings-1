@@ -19,7 +19,6 @@ section[role=banner] {
             margin: 1.7em 0 1.5em 2em;
             color: white;
             display: inline-block;
-
             @include media ($bp-mid) {
                 display: none;
             }
@@ -45,15 +44,6 @@ section[role=banner] {
         }
         .logo_sticky {
             display: none;
-
-            h1 {
-                // font-size: 0.79em;
-                // margin: 1.75em 0;
-
-                .tagline {
-                    // display: none;
-                }
-            }
         }
 
 		@include media($bp-mid) {

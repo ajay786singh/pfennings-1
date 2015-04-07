@@ -644,7 +644,7 @@ small {
   .stores .location_name {
     color: #333333;
     display: block;
-    font-size: 0.813em;
+    font-size: 0.825em;
     font-weight: bold;
     text-transform: uppercase;
     padding-bottom: 0.625em; }
@@ -2353,13 +2353,13 @@ body.mm-menu-open {
         color: white;
         font-size: 1.3em;
         font-weight: 100;
-        line-height: 1.875em;
+        line-height: 30px;
         text-decoration: none;
         transition: background 0.5s, color 0.5s; }
         @media screen and (min-width: 50em) {
           .mm-menu ul li a {
             font-size: 1.7em;
-            line-height: 3.4375em; } }
+            line-height: 55px; } }
   .mm-menu.active {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     -webkit-transform: translateX(0);

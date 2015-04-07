@@ -20,6 +20,7 @@ get_header(); ?>
             </h6>
         </hgroup>
     </header>
+	<div id="map"></div>
 </section>
 <div class="down-arrow">
     <a id="down-link" href="#content" class="target"><i class="fa fa-chevron-down"></i></a>
@@ -28,6 +29,8 @@ get_header(); ?>
     <div class="team" id="store-results">
         <h4>HOME DELIVERY</h4>
 		<?php the_content();?>
+		<div class="stores">
+		</div>
    </div>
    <?php get_template_part( 'template', 'request-us' ); ?>
 </section>

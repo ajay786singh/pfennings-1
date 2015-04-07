@@ -164,8 +164,8 @@ select {
     input[type="text"], input[type="number"], input[type="tel"], input[type="email"] {
         border: 1px solid #E0E0E0;
         color: $dark-gray;
-        font-size: 0.9em;
-        padding: 8px 8px;
+        font-size: 1em;
+        padding: 18px 8px;
         
         @include placeholder {
             font-size: 0.9em;
@@ -192,7 +192,7 @@ select {
 
 #gform_wrapper_2 .gform_body .gform_fields .gfield {
     @include media($bp-mid) {
-        @include shift(2.5);
+        @include shift(1);
         width: 50%;
         margin-right: 1.5em;
     }
@@ -206,6 +206,11 @@ select {
 
         #input_2_15 {
             width: 100%;
+            height: 60px;
+            border: none;
+            font-size: 1em;
+            border: 1px solid #E0E0E0;
+            background-color: #fff;
         } 
     }
 }
@@ -238,7 +243,12 @@ select {
 
         #input_2_5 {
             width: 100%;
-        } 
+            height: 60px;
+            border: none;
+            font-size: 1em;
+            border: 1px solid #E0E0E0;
+            background-color: #fff;
+        }
     }
 }
 
@@ -251,13 +261,13 @@ select {
     }
 
     #input_2_6 {
-        height: 34px;
+        height: 60px;
     }
 }
 
 #field_2_7 {
     @include media($bp-mid) {
-        margin-top: -9px!important;
+        margin-top: 0px!important;
     }
 }
 
@@ -296,6 +306,20 @@ select {
     }
 }
 
+.store-search {
+    position: relative;
+    overflow: hidden;
+    input[type="text"] {
+        width:65%;
+        float:left;
+    }
+    input[type="submit"] {
+        width:20%;
+        float:left;
+        margin-left:5%;
+    }
+}
+
 .green-box {
     background-color: #06AD60;
     padding:50px 20px;
@@ -319,23 +343,18 @@ aside {
             font-size: 1.5em;
             padding: 8px 5px;
             width:100%;
-            margin-bottom:1.5em;              
+            margin-bottom:1em;              
             @include box-sizing(border-box);
             @include transition(border-color);
             background-color: white;
             border-radius: $form-border-radius;
-            border: 1px solid $form-border-color;
-            box-shadow: none;
-			&:focus {
-				box-shadow: none;
-				outline:none;
-			}
+            //border: 1px solid $form-border-color;
+            box-shadow: $form-box-shadow;
         }
         input[type="text"], #addressInput {
-			width:100%;
-			font-size: 1em;
-			padding: 0.4em 0.5em;
-			border: 1px solid $form-border-color;
+            width:100%;
+            font-size: 1em;
+            padding: 0.188em 0.5em;
         }
     }
     #address_search {
@@ -356,6 +375,7 @@ aside {
             }
         }
     }
+
     #searchForm #radius_in_submit {
         float: left;
     }

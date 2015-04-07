@@ -2051,8 +2051,8 @@ select {
 #gform_wrapper_2 input[type="text"], #gform_wrapper_2 input[type="number"], #gform_wrapper_2 input[type="tel"], #gform_wrapper_2 input[type="email"] {
   border: 1px solid #E0E0E0;
   color: #333333;
-  font-size: 0.9em;
-  padding: 8px 8px; }
+  font-size: 1em;
+  padding: 18px 8px; }
   #gform_wrapper_2 input[type="text"]::-webkit-input-placeholder, #gform_wrapper_2 input[type="number"]::-webkit-input-placeholder, #gform_wrapper_2 input[type="tel"]::-webkit-input-placeholder, #gform_wrapper_2 input[type="email"]::-webkit-input-placeholder {
     font-size: 0.9em; }
   #gform_wrapper_2 input[type="text"]::-moz-placeholder, #gform_wrapper_2 input[type="number"]::-moz-placeholder, #gform_wrapper_2 input[type="tel"]::-moz-placeholder, #gform_wrapper_2 input[type="email"]::-moz-placeholder {
@@ -2076,7 +2076,7 @@ select {
 
 @media screen and (min-width: 64em) {
   #gform_wrapper_2 .gform_body .gform_fields .gfield {
-    margin-left: 52.92575%;
+    margin-left: 21.1703%;
     width: 50%;
     margin-right: 1.5em; } }
 
@@ -2086,7 +2086,12 @@ select {
     float: left;
     clear: both; }
     #field_2_15 #input_2_15 {
-      width: 100%; } }
+      width: 100%;
+      height: 60px;
+      border: none;
+      font-size: 1em;
+      border: 1px solid #E0E0E0;
+      background-color: #fff; } }
 
 @media screen and (min-width: 64em) {
   #field_2_13 {
@@ -2109,7 +2114,12 @@ select {
     float: left;
     clear: both; }
     #field_2_5 #input_2_5 {
-      width: 100%; } }
+      width: 100%;
+      height: 60px;
+      border: none;
+      font-size: 1em;
+      border: 1px solid #E0E0E0;
+      background-color: #fff; } }
 
 @media screen and (min-width: 64em) {
   #field_2_6 {
@@ -2118,11 +2128,11 @@ select {
     margin-left: 0 !important;
     float: left; } }
 #field_2_6 #input_2_6 {
-  height: 34px; }
+  height: 60px; }
 
 @media screen and (min-width: 64em) {
   #field_2_7 {
-    margin-top: -9px !important; } }
+    margin-top: 0px !important; } }
 
 .gform_footer {
   display: block;
@@ -2151,6 +2161,17 @@ select {
     .moreInfo ul li {
       margin-left: 20px; }
 
+.store-search {
+  position: relative;
+  overflow: hidden; }
+  .store-search input[type="text"] {
+    width: 65%;
+    float: left; }
+  .store-search input[type="submit"] {
+    width: 20%;
+    float: left;
+    margin-left: 5%; }
+
 .green-box {
   background-color: #06AD60;
   padding: 50px 20px;
@@ -2169,7 +2190,7 @@ aside #searchForm select {
   font-size: 1.5em;
   padding: 8px 5px;
   width: 100%;
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -2178,16 +2199,11 @@ aside #searchForm select {
   transition: border-color;
   background-color: white;
   border-radius: 0.1875em;
-  border: 1px solid #f2f2f2;
-  box-shadow: none; }
-  aside #searchForm select:focus {
-    box-shadow: none;
-    outline: none; }
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06); }
 aside #searchForm input[type="text"], aside #searchForm #addressInput {
   width: 100%;
   font-size: 1em;
-  padding: 0.4em 0.5em;
-  border: 1px solid #f2f2f2; }
+  padding: 0.188em 0.5em; }
 aside #address_search {
   overflow: hidden;
   margin-bottom: 2em; }

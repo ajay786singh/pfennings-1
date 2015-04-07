@@ -296,20 +296,6 @@ select {
     }
 }
 
-.store-search {
-    position: relative;
-    overflow: hidden;
-    input[type="text"] {
-        width:65%;
-        float:left;
-    }
-    input[type="submit"] {
-        width:20%;
-        float:left;
-        margin-left:5%;
-    }
-}
-
 .green-box {
     background-color: #06AD60;
     padding:50px 20px;
@@ -333,18 +319,23 @@ aside {
             font-size: 1.5em;
             padding: 8px 5px;
             width:100%;
-            margin-bottom:1em;              
+            margin-bottom:1.5em;              
             @include box-sizing(border-box);
             @include transition(border-color);
             background-color: white;
             border-radius: $form-border-radius;
-            //border: 1px solid $form-border-color;
-            box-shadow: $form-box-shadow;
+            border: 1px solid $form-border-color;
+            box-shadow: none;
+			&:focus {
+				box-shadow: none;
+				outline:none;
+			}
         }
         input[type="text"], #addressInput {
-            width:100%;
-            font-size: 1em;
-            padding: 0.188em 0.5em;
+			width:100%;
+			font-size: 1em;
+			padding: 0.4em 0.5em;
+			border: 1px solid $form-border-color;
         }
     }
     #address_search {
@@ -365,7 +356,6 @@ aside {
             }
         }
     }
-
     #searchForm #radius_in_submit {
         float: left;
     }
@@ -416,6 +406,3 @@ footer {
     }
 
 }
-
-
-

@@ -4,25 +4,71 @@
         var settings = $.extend({
             container    : $(this),
 			page         : 1,
-			loader    	 : $(this)
+			loader    	 : $(this),
+			location     : '',
+			filter     : '',
         }, options);
-		settings.loader.empty().loaderShow();
+		settings.container.empty().loaderShow();
+		if(settings.filter=='yes') {
+			$('#map').gmap('clear','markers');
+		}	
+		$('#map').loaderShow();
 		$.ajax({
 			type: 'POST',
 			dataType : "json",
 			url: ajaxurl,
 			data:{
-				action: 'load_stores' 
-			},
-			beforeSend: function() {
-				settings.loader.loaderShow();
+				action: 'load_stores',
+				location: settings.location,
 			},
 			success: function(response) {
-				settings.loader.loaderHide();
-				//settings.container.append(response);
+				settings.loader.loaderHide();								
+				var marker_icon=response.end_icon;
+				var home_icon=response.home_icon;
+				var zoom_level=response.zoom_level; 
+				if(settings.filter=='yes') {
+					var geocoder =  new google.maps.Geocoder();
+					geocoder.geocode( { 'address': settings.location}, function(results, status) {
+						if (status == google.maps.GeocoderStatus.OK) {
+							var center=new google.maps.LatLng(results[0].geometry.location.lat(),results[0].geometry.location.lng());
+							$('#map').gmap('option', 'center', center);
+							$('#map').gmap('option', 'zoom', Number(zoom_level));
+						}
+					});
+				}
 				 if(response.type=='success') {
-					//settings.container.append(response.result);
+					$('#map').loaderHide();
+					$('#map').gmap().bind('init', function() { 						
+						var geocoder =  new google.maps.Geocoder();
+						geocoder.geocode( { 'address': response.map_center}, function(results, status) {
+							if (status == google.maps.GeocoderStatus.OK) {
+								var center=new google.maps.LatLng(results[0].geometry.location.lat(),results[0].geometry.location.lng());
+								$('#map').gmap('option', 'center', center);
+								$('#map').gmap('option', 'zoom', Number(zoom_level));
+								$('#map').gmap('addMarker', { 
+									'position': center,
+									'bounds': false,
+									'icon':home_icon
+								})
+							}
+						});
+						$.each( response.result, function(i, marker) {
+							$('#map').gmap('addMarker', { 
+								'position': new google.maps.LatLng(marker.latitude, marker.longitude), 
+								'bounds': false,
+								'icon':marker_icon
+							})
+						});
+					});
 					$.each( response.result, function( i, item ) {
+						if(settings.filter=='yes') {
+							$('#map').gmap('option', 'zoom', zoom_level);
+							$('#map').gmap('addMarker', { 
+								'position': new google.maps.LatLng(item.latitude, item.longitude), 
+								'bounds': false,
+								'icon':marker_icon
+							})
+						}
 						var html="<div class='results_wrapper'>";
 							html+="<div class='location_name''>"+item.title+"</div>";
 							if(item.address) {
@@ -52,14 +98,16 @@
 							html+="</div>";
 						settings.container.append(html);
 					});
-				} else if(response=='empty') {
-					// settings.loader.html("<h6>No records found.</h6>");
+				} else {
+					$('#map').loaderShow();
+					$('#map').gmap('clear','markers');
+					settings.container.append("<h6>No store found.</h6>");
 				}
 			}
 		});	
     },
 	$.fn.loaderShow = function() {
-		$(this).addClass('loader');
+		$(this).addClass('loader'); 
 	},
 	$.fn.loaderHide = function() {
 		$(this).removeClass('loader');
@@ -68,55 +116,10 @@
 jQuery(document).ready(function($) {
 	var window_height=$(window).height();
 	$(".store-map").height(window_height);
-	$("#searchForm").appendTo('.search-form');
-	$('.stores').showStores();	
-	var map, zoom_level=8;
-	function initialize() {
-		$('#map').addClass('loader');
-		$.ajax({
-			type: 'POST',
-			url: ajaxurl,
-			dataType:'json',
-			data:{
-				action: 'get_map_settings' 
-			},
-			success: function(response) {
-				zoom_level=response.zoom_level;
-				var country=response.google_map_country;
-				var home_icon=response.icon;
-				var marker_icon=response.icon2;
-				var map_type=response.map_type;
-				var mapOptions = {};
-				map = new google.maps.Map(document.getElementById('map'), mapOptions);
-				var geocoder = new google.maps.Geocoder(); 
-				geocoder.geocode({
-						address : country, 
-						region: 'no' 
-					},
-					function(results, status) {
-						if (status.toLowerCase() == 'ok') {
-							// Get center
-							$('#map').removeClass('loader');
-							var coords = new google.maps.LatLng(
-								results[0]['geometry']['location'].lat(),
-								results[0]['geometry']['location'].lng()
-							);
-							
-							map.setCenter(coords);
-							map.setZoom(Number(zoom_level));
-							// Set marker also
-							marker = new google.maps.Marker({
-								position: coords, 
-								map: map, 
-								title: country,
-								icon: home_icon,
-							});
-		 
-						}
-					}
-				);
-			}
-		});
-	}
-	google.maps.event.addDomListener(window, 'load', initialize);
+	$( "#searchForm" ).submit(function( event ) {
+		var address=$('#address').val();
+		$('.stores').showStores({'location':address,'filter':'yes'});
+		event.preventDefault();
+	});
+	$('.stores').showStores();
 });

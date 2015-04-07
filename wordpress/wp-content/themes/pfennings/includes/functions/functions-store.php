@@ -1,12 +1,27 @@
 <?php
 function load_stores() {
 	global $wpdb;
-	$query="SELECT * FROM  `wp_store_locator`";
-	$results=$wpdb->get_results($query,ARRAY_A);
 	$data='';
 	$output='';
+	$location=$_POST['location'];
+	$query="SELECT * FROM  `wp_store_locator`";
+	$data['filter']='no';
+	$map_center=get_option('csl-slplus_map_center');
+	$zoom_level=get_option('sl_zoom_level');
+	$home_icon=get_option('sl_map_home_icon');
+	$end_icon=get_option('sl_map_end_icon');
+	$data['map_center']=$map_center;
+	$data['zoom_level']=$zoom_level;
+	$data['home_icon']=$home_icon;
+	$data['end_icon']=$end_icon;
+	
+	if($location) {
+		$query.=" where `sl_city` LIKE  '".$location."' OR `sl_zip` like '".$location."' LIMIT 10";
+		$data['filter']='yes';
+	}
+	$results=$wpdb->get_results($query,ARRAY_A);
 	if($results) {
-		$data['type']='success';
+		$data['type']='success';		
 		$count= count($results);
 		for($i=0;$i<$count;$i++) {
 			$title=$results[$i]['sl_store'];
@@ -36,7 +51,9 @@ function load_stores() {
 						'fax'=>$fax,
 						'website'=>$website,
 						'email'=>$email,
-						'directions'=>''
+						'directions'=>'',
+						'latitude'=>$latitude,
+						'longitude'=>$longitude,
 					);
 			$data['result']=$output;
 		}
@@ -50,10 +67,16 @@ add_action( 'wp_ajax_load_stores', 'load_stores' );
 add_action( 'wp_ajax_nopriv_load_stores', 'load_stores' );
 function get_map_settings() {
 	global $wpdb;
-	$query="SELECT * FROM  `wp_sl_setting` WHERE `sl_setting_name` LIKE  'sl_vars'";
-	$results = $wpdb->get_row($query,ARRAY_A);
-	$results = unserialize($results['sl_setting_value']);
-	echo json_encode($results);
+	$data='';
+	$map_center=get_option('csl-slplus_map_center');
+	$zoom_level=get_option('sl_zoom_level');
+	$home_icon=get_option('sl_map_home_icon');
+	$end_icon=get_option('sl_map_end_icon');
+	$data['map_center']=$map_center;
+	$data['zoom_level']=$zoom_level;
+	$data['home_icon']=$home_icon;
+	$data['end_icon']=$end_icon;
+	echo json_encode($data);
 	die(0);
 }
 add_action( 'wp_ajax_get_map_settings', 'get_map_settings');

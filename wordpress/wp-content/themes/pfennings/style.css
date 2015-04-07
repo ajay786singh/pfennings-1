@@ -636,35 +636,32 @@ small {
 .copyright {
   text-align: right; }
 
-.results_wrapper .tagtext {
-  display: none; }
-.results_wrapper .results_entry {
-  cursor: default; }
-  .results_wrapper .results_entry span.location_name {
-    text-transform: uppercase;
+.stores {
+  margin-top: 50px;
+  min-height: 200px; }
+  .stores .results_wrapper {
+    padding-bottom: 20px; }
+  .stores .location_name {
     color: #333333;
-    font-size: 0.813em; }
-  .results_wrapper .results_entry span.location_distance {
-    display: none; }
-  .results_wrapper .results_entry span.slp_result_address {
-    font-size: 0.813em; }
-  .results_wrapper .results_entry:hover {
-    background: none; }
-  .results_wrapper .results_entry a {
-    font-size: 0.688em; }
-    div#map_sidebar .results_wrapper .results_entry a {
-      color: #008348; }
-    .results_wrapper .results_entry a:hover {
-      background: none; }
-    .results_wrapper .results_entry a:after {
+    display: block;
+    font-size: 0.813em;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-bottom: 0.625em; }
+  .stores .slp_result_address {
+    font-size: 0.825em; }
+  .stores a {
+    font-size: 0.725em;
+    color: #008348; }
+    .stores a:after {
       background: url(dist/images/off-site-link-icon.jpg) no-repeat;
       content: "";
       height: 10px;
       margin-left: 10px;
-      margin-top: 3px;
+      margin-top: 7px;
       position: absolute;
       width: 10px; }
-    .results_wrapper .results_entry a#slp_marker_email:after {
+    .stores a#slp_marker_email:after {
       background: none; }
 
 .footer-inner h5 {
@@ -876,6 +873,11 @@ section[role=banner] {
         section[role=banner] header.sticky .logo {
           max-width: 100%;
           padding: 0em 0 0 1.5em; } }
+
+.loader {
+  background: url(dist/images/loader.gif) center center no-repeat;
+  width: 100%;
+  height: 200px; }
 
 section[role=main] {
   max-width: 80em;

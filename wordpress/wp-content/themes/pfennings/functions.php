@@ -33,4 +33,5 @@ require_once('includes/functions/remove-image-dimensions.php');
 require_once('includes/functions/first-image.php');
 require_once('includes/functions/page-excerpts.php');
 require_once('includes/functions/recent-post.php');
+require_once('includes/functions/functions-store.php');
 ?>

@@ -6,6 +6,7 @@
 
 function my_scripts() {
 	wp_enqueue_script('jquery');
+	wp_enqueue_script( 'map', 'http://maps.google.com/maps/api/js?sensor=true', array(), '1.0.0', true);
 	wp_enqueue_script( 'app', get_template_directory_uri() . '/dist/js/app.min.js', array(), '1.0.0', true);
 }
 

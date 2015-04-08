@@ -5,10 +5,11 @@ add this line:- if(social_share()) { social_share();}
 */
 
 function social_share() {
+	$id=get_the_ID();
 	$title = get_the_title();
 	$link = get_the_permalink();
     $content= get_the_excerpt();
-	$img = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+	$img = wp_get_attachment_url( get_post_thumbnail_id($id) );
 	if($img==''){
 		$img=get_bloginfo('template_url').'/images/logo.png';	
 	}

@@ -4,7 +4,7 @@
         <div class="content fLogo_area">
             <div class="footer_logo">
                 <a href="<?php bloginfo('url');?>">
-                    <?php /*<img src="<?php bloginfo('template_url' ); ?>/dist/images/logo-white.png"> */?>
+                    <img src="<?php bloginfo('template_url' ); ?>/dist/images/logo-white.png">
                 </a>
             </div>
         </div>

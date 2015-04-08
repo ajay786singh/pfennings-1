@@ -195,7 +195,8 @@ function get_feed_results($feeds) {
 		$posts="";	
 		query_posts("post_type=post&showposts=-1");
 		if(have_posts()):while(have_posts()):the_post();
-			$posts[] = array('title'=>get_the_title(),'author'=>get_the_author(),'link'=>get_permalink(),'img'=>"",'date'=>get_the_date(), 'label'=>'blog','filter'=>'blog','post_id'=>get_the_ID());
+			$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); 
+			$posts[] = array('title'=>get_the_title(),'author'=>get_the_author(),'link'=>get_permalink(),'img'=>$image[0],'date'=>get_the_date(), 'label'=>'blog','filter'=>'blog','post_id'=>get_the_ID());
 		endwhile;endif;
 		if($posts !='') {
 			if($results !='') {

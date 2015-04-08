@@ -50,13 +50,15 @@ section[role=main] {
 			background:$instagram-post-bg;
 		}
 	}
+    @include row;
+    @include omega;
 	@include span-columns(5);
 	margin-bottom:30px;
 	@include media($bp-large) {
-		@include span-columns(4);
+		@include span-columns(3.90);
 		float:left;
 		&:nth-child(3n) {
-			margin-right:0;
+			//margin-right:0;
 		}
 	}
 	.categories {

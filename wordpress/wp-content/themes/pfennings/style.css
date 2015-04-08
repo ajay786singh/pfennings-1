@@ -922,6 +922,8 @@ section[role=main] {
         margin-right: 0; } }
 
 .post-item {
+  display: block;
+  margin-right: 0;
   float: left;
   display: block;
   margin-right: 5.85151%;
@@ -933,6 +935,10 @@ section[role=main] {
     background: #FBEBE0; }
   .post-item:hover .instagram {
     background: #EBF3F8; }
+  .post-item::after {
+    clear: both;
+    content: "";
+    display: table; }
   .post-item:last-child {
     margin-right: 0; }
   @media screen and (min-width: 50em) {
@@ -940,11 +946,9 @@ section[role=main] {
       float: left;
       display: block;
       margin-right: 2.35765%;
-      width: 31.76157%;
+      width: 30.90859%;
       float: left; }
       .post-item:last-child {
-        margin-right: 0; }
-      .post-item:nth-child(3n) {
         margin-right: 0; } }
   .post-item .categories {
     position: absolute;

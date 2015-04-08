@@ -8,7 +8,7 @@
     $postThumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'banner' );
 ?>
 <script>
-	var share_image ='<?php echo $postThumb;?>';
+	var share_image ='<?php echo $postThumb[0];?>';
 </script>
 <section role="slider" style="background-image: url(<?php echo $postThumb['0']; ?>);">
     <header>

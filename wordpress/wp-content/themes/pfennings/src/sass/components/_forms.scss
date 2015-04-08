@@ -306,20 +306,6 @@ select {
     }
 }
 
-.store-search {
-    position: relative;
-    overflow: hidden;
-    input[type="text"] {
-        width:65%;
-        float:left;
-    }
-    input[type="submit"] {
-        width:20%;
-        float:left;
-        margin-left:5%;
-    }
-}
-
 .green-box {
     background-color: #06AD60;
     padding:50px 20px;
@@ -348,13 +334,13 @@ aside {
             @include transition(border-color);
             background-color: white;
             border-radius: $form-border-radius;
-            //border: 1px solid $form-border-color;
-            box-shadow: $form-box-shadow;
+            border: 1px solid $form-border-color;
+            box-shadow: none;
         }
         input[type="text"], #addressInput {
             width:100%;
             font-size: 1em;
-            padding: 0.188em 0.5em;
+            padding: 0.5em;
         }
     }
     #address_search {
@@ -369,7 +355,7 @@ aside {
             background-color: $button-green;
             padding: 12px;
             font-size: 14px;
-            
+            width:auto;
             &:hover {
                 background-color: darken($button-green, 10);
             }

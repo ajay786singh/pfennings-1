@@ -1417,19 +1417,14 @@ section[role=slider] {
   section[role=slider] header {
     max-width: 80em;
     margin-left: auto;
-    margin-right: auto; }
+    margin-right: auto;
+    max-width: 100%; }
     section[role=slider] header::after {
       clear: both;
       content: "";
       display: table; }
   section[role=slider] hgroup {
-    float: left;
-    display: block;
-    margin-right: 5.85151%;
-    width: 100%;
     padding: 2em 2em; }
-    section[role=slider] hgroup:last-child {
-      margin-right: 0; }
     @media screen and (min-width: 50em) {
       section[role=slider] hgroup {
         padding: 11em 9em; } }
@@ -2080,7 +2075,7 @@ select {
 
 @media screen and (min-width: 64em) {
   #gform_wrapper_2 .gform_body .gform_fields .gfield {
-    margin-left: 21.1703%;
+    margin-left: 8.5298%;
     width: 50%;
     margin-right: 1.5em; } }
 

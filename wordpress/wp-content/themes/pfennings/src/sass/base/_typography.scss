@@ -228,7 +228,6 @@ small {
 
 
 .headline {
-    font-size: 1.2em;
     font-family: $sans-serif;
     font-weight: 100;
 	color: $white;
@@ -238,7 +237,10 @@ small {
     }
 
     p {
-        font-size: $base-font-size * 1.25;
+        font-size: modular-scale(1); 
+        @include media($bp-large) {
+            font-size: modular-scale(4); 
+        }
     }
 
     a {

@@ -34,7 +34,6 @@ jQuery(document).ready(function($) {
 			urlCurl: share_function_url,
 			enableHover: false,
 			enableTracking: true,
-			buttons: {  },
 			click: function(api, options){
 				api.simulateClick();
 				api.openPopup('facebook');

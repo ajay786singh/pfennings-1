@@ -11,6 +11,7 @@
 	var share_image ='<?php echo $postThumb[0];?>';
 </script>
 <section role="slider" style="background-image: url(<?php echo $postThumb['0']; ?>);">
+	<img src="<?php echo $postThumb['0']; ?>" style="display:none;">
     <header>
         <hgroup>
             <h6 class="headline">              

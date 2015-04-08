@@ -13,6 +13,7 @@
 		<meta property="og:title" content="<?php the_title();?>" />
 		<meta property="og:description" content="<?php echo get_the_excerpt();?>" />
 		<meta property="og:image" content="<?php echo $img[0];?>" />
+		<link rel="image_src" href="<?php echo $img[0]; ?>" />
 	<?php 
 			endwhile;endif;
 		} 

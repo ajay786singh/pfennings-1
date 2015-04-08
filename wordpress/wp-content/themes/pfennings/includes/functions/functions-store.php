@@ -16,7 +16,7 @@ function load_stores() {
 	$data['end_icon']=$end_icon;
 	
 	if($location) {
-		$query.=" where `sl_city` LIKE  '".$location."' OR `sl_zip` like '".$location."' LIMIT 10";
+		$query.=" where `sl_city` LIKE  '".$location."' OR `sl_zip` like '".$location."'";
 		$data['filter']='yes';
 	}
 	$results=$wpdb->get_results($query,ARRAY_A);

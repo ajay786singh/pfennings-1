@@ -87,13 +87,13 @@
 								html+="<div class='slp_result_contact''>"+item.fax+"</div>";
 							}
 							if(item.website) {
-								html+="<div id='slp_result_contact''><a class='' href='"+item.website+"'>Website</a></div>";
+								html+="<div id='slp_result_contact''><a target='_blank' href='"+item.website+"'>Website</a></div>";
 							}
 							if(item.email) {
 								html+="<div id='slp_result_contact''><a id='slp_marker_email' href='mailto:"+item.email+"'>Email</a></div>";
 							}
 							if(item.directions) {
-								html+="<div id='slp_result_contact''><a class='' href='"+item.directions+"'>Directions</a></div>";
+								html+="<div id='slp_result_contact''><a target='_blank' href='"+item.directions+"'>Directions</a></div>";
 							}
 							html+="</div>";
 						settings.container.append(html);

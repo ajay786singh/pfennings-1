@@ -42,6 +42,7 @@ get_header(); ?>
 				<a href="?show=all"     id="show-all"     class="button is-checked" data-filter="*">All</a>
 				<a href="?show=facebook"  id="show-facebook"  class="button" data-filter=".facebook">Facebook</a>			
 				<a href="?show=instagram"  id="show-instagram"  class="button" data-filter=".instagram">Instagram</a>			
+				<a href="?show=twitter"  id="show-twitter"  class="button" data-filter=".twitter">Twitter</a>			
 				<a href="?show=blog"    id="show-blog"    class="button" data-filter=".blog">Blog</a>
 			</div>
 			<?php 				

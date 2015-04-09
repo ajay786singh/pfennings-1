@@ -16,7 +16,7 @@ jQuery(document).ready(function($) {
 		});
 		$('#googleplus').sharrre({
 			share: {
-				googlePlus: true
+				googlePlus: false
 			},
 			urlCurl: share_function_url,
 			enableHover: false,

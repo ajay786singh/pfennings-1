@@ -28,6 +28,7 @@ get_header(); ?>
 <section role="main">
     <div class="team" id="store-results">
         <h4>HOME DELIVERY</h4>
+		<?php the_content();?>
 		<div class="stores">
 		</div>
    </div>

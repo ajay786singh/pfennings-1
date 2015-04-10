@@ -1,9 +1,25 @@
 <?php
+function get_latlong($location) {
+	$address = urlencode($location);
+	$request_url = "http://maps.googleapis.com/maps/api/geocode/xml?address=".$address."&sensor=true";
+	$xml = simplexml_load_file($request_url) or die("url not loading");
+	$status = $xml->status;
+	if ($status=="OK") {
+		$Lat = $xml->result->geometry->location->lat;
+		$Lon = $xml->result->geometry->location->lng;
+		$LatLng = "$Lat,$Lon";
+	} else {
+		$LatLng = "error";
+	}
+	return $LatLng;
+}
+
 function load_stores() {
 	global $wpdb;
 	$data='';
 	$output='';
 	$location=$_POST['location'];
+	$distance=$_POST['distance'];
 	$query="SELECT * FROM  `wp_store_locator`";
 	$data['filter']='no';
 	$map_center=get_option('csl-slplus_map_center');
@@ -15,8 +31,16 @@ function load_stores() {
 	$data['home_icon']=$home_icon;
 	$data['end_icon']=$end_icon;
 	
-	if($location) {
-		$query.=" where `sl_city` LIKE  '".$location."' OR `sl_zip` like '".$location."'";
+	if($location!='') {
+		$latlng=get_latlong($location);
+		if($latlng!='error') {
+			$latlng=explode(",",$latlng);
+			$lat=$latlng[0];
+			$lng=$latlng[1];
+			$query="SELECT *, ( 3959 * acos( cos( radians($lat) ) * cos( radians( sl_latitude ) ) * cos( radians( sl_longitude ) - radians($lng) ) + sin( radians($lat) ) * sin( radians( sl_latitude ) ) ) ) AS distance FROM `wp_store_locator` HAVING distance < $distance OR `sl_city` LIKE  '".$location."' OR `sl_zip` like '".$location."' ORDER BY distance";
+		} else {
+			$query="SELECT * FROM `wp_store_locator` where `sl_city` LIKE  '".$location."' OR `sl_zip` like '".$location."'";
+		}
 		$data['filter']='yes';
 	}
 	$results=$wpdb->get_results($query,ARRAY_A);

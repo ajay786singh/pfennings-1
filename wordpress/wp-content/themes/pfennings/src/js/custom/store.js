@@ -6,6 +6,7 @@
 			page         : 1,
 			loader    	 : $(this),
 			location     : '',
+			distance     : '',
 			filter     : '',
         }, options);
 		settings.container.empty().loaderShow();
@@ -20,9 +21,11 @@
 			data:{
 				action: 'load_stores',
 				location: settings.location,
+				distance: settings.distance,
 			},
 			success: function(response) {
-				settings.loader.loaderHide();								
+				settings.loader.loaderHide();		
+				//settings.container.append(response);
 				var marker_icon=response.end_icon;
 				var home_icon=response.home_icon;
 				var zoom_level=response.zoom_level; 
@@ -118,7 +121,8 @@ jQuery(document).ready(function($) {
 	$(".store-map").height(window_height);
 	$( "#searchForm" ).submit(function( event ) {
 		var address=$('#address').val();
-		$('.stores').showStores({'location':address,'filter':'yes'});
+		var distance=$('#radiusSelect').val();
+		$('.stores').showStores({'location':address,'distance':distance,'filter':'yes'});
 		event.preventDefault();
 	});
 	$('.stores').showStores();

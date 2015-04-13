@@ -37,7 +37,7 @@ function load_stores() {
 			$latlng=explode(",",$latlng);
 			$lat=$latlng[0];
 			$lng=$latlng[1];
-			$query="SELECT *, ( 3959 * acos( cos( radians($lat) ) * cos( radians( sl_latitude ) ) * cos( radians( sl_longitude ) - radians($lng) ) + sin( radians($lat) ) * sin( radians( sl_latitude ) ) ) ) AS distance FROM `wp_store_locator` HAVING distance < $distance OR `sl_city` LIKE  '".$location."' OR `sl_zip` like '".$location."' ORDER BY distance";
+			$query="SELECT *, ( 6371 * acos( cos( radians($lat) ) * cos( radians( sl_latitude ) ) * cos( radians( sl_longitude ) - radians($lng) ) + sin( radians($lat) ) * sin( radians( sl_latitude ) ) ) ) AS distance FROM `wp_store_locator` HAVING distance < $distance OR `sl_city` LIKE  '".$location."' OR `sl_zip` like '".$location."' ORDER BY distance";
 		} else {
 			$query="SELECT * FROM `wp_store_locator` where `sl_city` LIKE  '".$location."' OR `sl_zip` like '".$location."'";
 		}

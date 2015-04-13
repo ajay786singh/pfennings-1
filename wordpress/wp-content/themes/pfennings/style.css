@@ -1152,7 +1152,7 @@ section[role=main] {
   position: absolute;
   left: 0;
   z-index: 1;
-  height: 200px;
+  height: 100%;
   text-align: center;
   width: 100%;
   top: 0; }
@@ -1196,19 +1196,6 @@ section[role=main] {
         clear: none; }
       .results_wrapper:nth-child(3n+1) {
         clear: both; } }
-  .results_wrapper .results_row_left_column {
-    display: block;
-    width: 100%;
-    margin-bottom: 0.313em;
-    overflow: hidden; }
-  .results_wrapper .results_row_center_column {
-    margin-bottom: 0.5em;
-    width: 100%;
-    display: block; }
-  .results_wrapper .results_row_right_column {
-    width: 100%;
-    display: block;
-    text-align: left; }
 
 #slp_tagline {
   display: none; }

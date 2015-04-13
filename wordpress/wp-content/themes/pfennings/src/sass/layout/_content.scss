@@ -16,11 +16,8 @@ section[role=main] {
     @include media($bp-large) {
         @include pad(2em 5em);
     }
-
     article {
-    	// background: lightblue;
     	margin-top: 1.5em;
-
         @include media($bp-large) {
            @include span-columns(4);
            padding-left: 3em;
@@ -34,10 +31,9 @@ section[role=main] {
 	@include media($bp-large) {
 		@include span-columns(10);
 		@include shift(1);
-		//margin-left:auto;
-		//margin-right:auto;
     }
 }
+
 .post-item {
 	&:hover {
 		.facebook {
@@ -57,9 +53,6 @@ section[role=main] {
 	@include media($bp-large) {
 		@include span-columns(3.90);
 		float:left;
-		&:nth-child(3n) {
-			//margin-right:0;
-		}
 	}
 	.categories {
 		position: absolute;
@@ -253,7 +246,7 @@ section[role="main"] article.orderProduce {
 		position: absolute;
 		left: 0;
 		z-index: 1;
-		height: 200px;
+		height: 100%;
 		text-align: center;
 		width: 100%;
 		top:0;
@@ -288,22 +281,6 @@ section[role="main"] article.orderProduce {
 		}
 	}
 	margin-bottom:1em;
-	.results_row_left_column {
-		display:block;
-		width:100%;
-		margin-bottom: 0.313em;
-		overflow: hidden;
-	}
-	.results_row_center_column {
-		margin-bottom: 0.5em;
-		width:100%;
-		display:block;
-	}
-	.results_row_right_column {
-		width:100%;
-		display:block;
-		text-align:left;
-	}
 }
 
 #slp_tagline {
@@ -326,25 +303,18 @@ section[role="main"] article.orderProduce {
 
 section[role="main"] article.readyToOrder {
 	padding-left: 0;
-
 	ul {
 		padding-left: 0;
-
 		li {
 			margin-left: 22px;
 		}
 	}
-
-
 	@include media($bp-mid) {
 		@include span-columns(3);
 		float: left;
-		// background: lightblue;
 		margin-right: 0;
 		margin-left: 2em;
-
 		padding-left: 1.5em;
-
 	}
 }
 
@@ -360,7 +330,6 @@ section[role="main"] article.readyToOrder {
 .content {
 	ul {
 		padding-left: 0;
-
 		li {
 			margin-left: 22px;
 		}
@@ -369,37 +338,29 @@ section[role="main"] article.readyToOrder {
 
 .step-box .submitOptions {
 	padding-left: 0;
-
 	@include media($bp-mid) {
 		padding-left: 160px;
 	}
 }
 
-
 section[role=main] article.pricelist {
 	border-left: none;
 	width: 100%;
-
 	table, th, td {
 		border: 1px solid $light-gray;
 	}
-
 	table, tbody {
 		width: 100%;
-
 		th, td {
 			padding: 20px;
 		}
 	}
-
 	ul {
 		padding-left: 0;
-
 		li {
 			margin-left: 18px;
 		}
 	}
-
 	p {
 		padding-top: 20px;
 		margin-bottom: 10px;
@@ -407,15 +368,12 @@ section[role=main] article.pricelist {
 }
 
 .page-id-179 section[role="main"] article {
-
 	@include media($bp-large) {
 		@include span-columns(8);
 		@include shift(2);
 	}
-
 	ul {
 		padding-left: 0;
-
 		li {
 			margin-left: 18px;
 		}

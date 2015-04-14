@@ -51,6 +51,9 @@
 </head>
 
 <body <?php body_class();?>>
+
+<?php include_once("analyticstracking.php") ?>
+
 <div id="mm-menu-toggle" class="mm-menu-toggle"><span class="hide">Menu</span></div>
   
 <nav id="mm-menu" class="mm-menu">

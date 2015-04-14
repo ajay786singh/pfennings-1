@@ -242,14 +242,17 @@ section[role="main"] article.orderProduce {
 }
 
 .store-map {
-	header {
+	header {		
+		@include display(flex);
+		@include align-items(center);
+		@include justify-content(center);
 		position: absolute;
 		left: 0;
 		z-index: 1;
 		height: 100%;
 		text-align: center;
 		width: 100%;
-		top:0;
+		top: 0;
 	}
 	&:before {
 		content:"";

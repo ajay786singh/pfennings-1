@@ -1,5 +1,17 @@
 <?php
 require get_template_directory().'/includes/library/facebook/facebook.php';
+
+function featuredtoRSS($content) {
+	global $post;
+	if ( has_post_thumbnail( $post->ID ) ){
+	$content = '' . get_the_post_thumbnail( $post->ID, 'full', array( 'style' => 'float:left; margin:10px 15px px 0;' ) ) . '' . $content;
+	}
+	return $content;
+}
+
+add_filter('the_excerpt_rss', 'featuredtoRSS');
+add_filter('the_content_feed', 'featuredtoRSS');
+
 function array_multi_unique($multiArray){
   $uniqueArray = array();
   foreach($multiArray as $subArray){

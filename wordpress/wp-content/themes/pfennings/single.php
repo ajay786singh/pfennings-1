@@ -25,7 +25,7 @@
 </div>
 
 <section role="main">
-    <div class="post-container">
+    <div class="post-container center-content">
 		<p>
 		<?php echo get_the_date('F d, Y'); ?><br>
         <i>By: <?php echo get_the_author(); ?></i></p>

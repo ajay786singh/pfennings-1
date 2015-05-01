@@ -48,8 +48,6 @@ function fetch_facebook_feed() {
 	}
 	return array_multi_unique($results);
 }
-	$instagram_url='https://api.instagram.com/v1/tags/pfenningsfarm/media/recent?client_id=84e0a91bb0ca49bc91b0b5d88eb1289c';
-	fetch_instagram_feed($instagram_url);			
 
 function fetch_instagram_feed($url) {
 	$ch = curl_init($url); 
@@ -101,8 +99,8 @@ function getFeed($feed_url) {
 	$content = file_get_contents($feed_url);
 	$x = new SimpleXmlElement($content);
 	$results="";
-	$i=1;
-    foreach($x->channel->item as $entry) {
+	$i=1;    
+	foreach($x->channel->item as $entry) {
 		if($i<=20) {
 			$newDate = date("d-m-Y H:i:s", strtotime($entry->pubDate));
 			$results[] = array('title'=> (string) $entry->title, 'author'=> (string) $entry->author, 'link'=> (string) $entry->link,'img'=> (string) $entry->feedimg,'date'=>$newDate,'label'=>'virtual farm tour','filter'=>'virtual_farm_tour','city'=> (string) $entry->feedcity,'state'=> (string) $entry->feedstate);

@@ -6,9 +6,16 @@ footer {
                 text-decoration: underline;
             }
         }
+		.social-share {
+			& a:hover {
+				text-decoration: none;
+			}
+		}
         @include outer-container;
         padding: 2em;
-
+		& .footer_logo a{
+			border-bottom:none;
+		}
         .content {
 
             p, h5 {
@@ -58,6 +65,10 @@ footer {
 
         .button-map {
             border-bottom: 1px solid white;
+			&:hover {
+				text-decoration:none;
+                border-bottom: none;
+			}
             @include media($bp-small) {
                 border-bottom: none;
             }
@@ -70,6 +81,9 @@ footer {
         display: inline-block;
         clear: both;
         margin: 0.5em 0 0 0;
+		& a:hover {
+			text-decoration:none;
+		}
     }
 
     .fLogo_area {

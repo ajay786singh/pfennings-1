@@ -18,9 +18,12 @@
     margin-bottom: 0.5em;
     a {
         color: $white;
-        margin-right: .1em;
         border: none;
         text-decoration: none;
+		&:hover {
+			text-decoration:none;
+			opacity:0.8;
+		}
     }
 }
 

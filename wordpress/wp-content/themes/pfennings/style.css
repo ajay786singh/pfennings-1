@@ -530,10 +530,12 @@ a {
   transition: opacity 0.1s linear;
   color: #008348;
   opacity: 1;
-  text-decoration: none; }
+  text-decoration: none;
+  border-bottom: 1px solid; }
   a:hover {
     opacity: 0.9;
-    text-decoration: none; }
+    text-decoration: none;
+    border-bottom: none; }
   a:active, a:focus {
     opacity: 0.9;
     outline: none; }
@@ -838,6 +840,8 @@ section[role=banner] {
       max-width: 130px;
       padding: .5em 0 .5em .5em;
       display: none; }
+      section[role=banner] header .logo a {
+        border: none; }
       section[role=banner] header .logo:hover {
         opacity: 0.8; }
       @media screen and (min-width: 64em) {
@@ -1328,10 +1332,14 @@ footer {
     padding: 2em; }
     footer .footer-inner a:hover {
       text-decoration: underline; }
+    footer .footer-inner .social-share a:hover {
+      text-decoration: none; }
     footer .footer-inner::after {
       clear: both;
       content: "";
       display: table; }
+    footer .footer-inner .footer_logo a {
+      border-bottom: none; }
     footer .footer-inner .content p, footer .footer-inner .content h5 {
       margin-bottom: 0; }
     footer .footer-inner .content ul li:last-child {
@@ -1378,6 +1386,9 @@ footer {
         display: none; } }
     footer .footer-inner .button-map {
       border-bottom: 1px solid white; }
+      footer .footer-inner .button-map:hover {
+        text-decoration: none;
+        border-bottom: none; }
       @media screen and (max-width: 64em) {
         footer .footer-inner .button-map {
           border-bottom: none; } }
@@ -1387,6 +1398,8 @@ footer {
     display: inline-block;
     clear: both;
     margin: 0.5em 0 0 0; }
+    footer .copyright a:hover {
+      text-decoration: none; }
   footer .fLogo_area {
     text-align: center; }
   footer .latest-news ul li {
@@ -1454,6 +1467,7 @@ section[role=slider] {
     font-weight: normal;
     padding-right: 15px; }
   #isotope-container .filters a {
+    border-bottom: none;
     font-size: 0.875em;
     outline: none;
     padding-right: 10px;
@@ -1493,7 +1507,8 @@ section[role=slider] {
   height: 100%;
   position: absolute;
   top: 0;
-  width: 100%; }
+  width: 100%;
+  border-bottom: none; }
   .down-arrow a .fa-chevron-down {
     margin-top: 33%; }
 
@@ -1592,9 +1607,11 @@ button, .gform_wrapper input[type="submit"], aside #address_search input[type="s
   margin-bottom: 0.5em; }
   .social-share a {
     color: white;
-    margin-right: .1em;
     border: none;
     text-decoration: none; }
+    .social-share a:hover {
+      text-decoration: none;
+      opacity: 0.8; }
 
 #share {
   margin-top: 25px;
@@ -2370,6 +2387,7 @@ body.mm-menu-open {
         font-size: 1.3em;
         font-weight: 100;
         line-height: 30px;
+        border-bottom: none;
         text-decoration: none;
         transition: background 0.5s, color 0.5s; }
         @media screen and (min-width: 50em) {

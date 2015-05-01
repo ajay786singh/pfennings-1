@@ -154,10 +154,11 @@ a {
     color: $green;
     opacity: 1;
     text-decoration: none;
-    //border-bottom: 1px solid $blue;
+    border-bottom: 1px solid;
     &:hover {
         opacity: 0.9;
         text-decoration: none;
+		border-bottom:none;
     }
     &:active, &:focus {
         opacity: 0.9;

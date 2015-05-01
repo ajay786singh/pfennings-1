@@ -15,6 +15,9 @@ section[role=banner] {
             max-width: 130px;
             padding: .5em 0 .5em .5em;
             display: none;
+			a {
+				border:none;
+			}
             &:hover {
                 opacity: 0.8;
             }

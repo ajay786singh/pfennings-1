@@ -11,6 +11,7 @@
 			padding-right: 15px;
 		}
         a {
+			border-bottom:none;
             font-size:em(14px);
 			@include media($bp-large) {
 				margin-top: 20px;

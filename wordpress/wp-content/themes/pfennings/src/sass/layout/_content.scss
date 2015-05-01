@@ -382,3 +382,11 @@ section[role=main] article.pricelist {
 		}
 	}
 }
+
+.center-content {
+	@include span-columns(5);
+	@include media($bp-large) {
+		@include span-columns(7);
+		@include shift(2.5);
+	}
+}

@@ -1312,6 +1312,23 @@ section[role=main] article.pricelist {
   .page-id-179 section[role="main"] article ul li {
     margin-left: 18px; }
 
+.center-content {
+  float: left;
+  display: block;
+  margin-right: 5.85151%;
+  width: 100%; }
+  .center-content:last-child {
+    margin-right: 0; }
+  @media screen and (min-width: 50em) {
+    .center-content {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 57.35098%;
+      margin-left: 21.32451%; }
+      .center-content:last-child {
+        margin-right: 0; } }
+
 aside {
   padding: 0 0 2em 0; }
   @media screen and (min-width: 50em) {

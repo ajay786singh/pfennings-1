@@ -64,7 +64,7 @@ function load_stores() {
 			$citystatezip=array_filter(array($city,$state,$zip));
 			$citystatezip=implode(',', $citystatezip);
 			$daddr=$address.", ".$city.", ".$state.", ".$zip;
-			$directions="https://www.google.ca/maps?saddr=Toronto,Ontario,+Canada&daddr=".urlencode($daddr);
+			$directions="https://www.google.ca/maps?saddr=".$location ."&daddr=".urlencode($daddr);
 			$output[]=array(	
 						'title'=>$title,
 						'address'=>$address,

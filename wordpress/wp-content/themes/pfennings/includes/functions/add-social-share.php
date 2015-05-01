@@ -26,12 +26,9 @@ function social_share() {
 	}
 ?>
 	<div class="share-before share-filled share-small" id="share">
-		<div class="twitter sharrre" id="twitter" data-url="<?php echo $twitter_link;?>" data-urlalt="<?php echo $twitter_link;?>" data-text="<?php echo $title;?>" data-title="Tweet">
+		<div class="twitter sharrre" id="twitter" data-url="<?php echo $twitter_link;?>" data-urlalt="<?php echo $link;?>" data-text="<?php echo $title;?>" data-title="Tweet">
 			<div class="box"><a class="count" href="#">0</a><a class="share" href="#">Tweet</a></div>
 		</div>
-		<?php /*<div class="googlePlus sharrre" id="googleplus" data-url="<?php echo $link;?>" data-urlalt="<?php echo $link;?>" data-text="<?php echo $content;?>" data-title="Share">
-			<div class="box"><a class="count" href="#">0</a><a class="share" href="#">Share</a></div>
-		</div>*/?>
 		<div class="facebook sharrre" id="facebook" data-url="<?php echo $link;?>" data-urlalt="<?php echo $link;?>" data-text="<?php echo $content;?>" data-title="Share">
 			<div class="box"><a class="count" href="#">0</a><a class="share" href="#">Share</a></div>
 		</div>

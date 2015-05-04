@@ -5,19 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title><?php wp_title( '|', true, 'right' ); ?><?php bloginfo('name') ?></title>
 	<link rel="icon" type="image/x-icon" href="<?php bloginfo('template_url');?>/favicon.ico">
-	<?php 
-		if(is_single()) { 
-			if(have_posts()):while(have_posts()):the_post();
-			$img = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'thumbnail' );
-	?>
-		<meta property="og:title" content="<?php the_title();?>" />
-		<meta property="og:description" content="<?php echo get_the_excerpt();?>" />
-		<meta property="og:image" content="<?php echo $img[0];?>" />
-		<link rel="image_src" href="<?php echo $img[0]; ?>" />
-	<?php 
-			endwhile;endif;
-		} 
-	?>
 <script>
   (function(d) {
     var config = {

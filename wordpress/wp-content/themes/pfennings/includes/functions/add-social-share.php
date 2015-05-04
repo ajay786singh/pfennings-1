@@ -40,9 +40,10 @@ function social_share_FB_header() {
 	$post_featured_image = social_share_get_FB_image($post->ID);
     if ( (is_single()) AND ($post_featured_image) AND ($post_description) ) {
 ?>
-  <meta name="title" content="<?php echo $post->post_title; ?>" />
-  <meta name="description" content="<?php echo $post_description; ?>" />
-  <link rel="image_src" href="<?php echo $post_featured_image; ?>" />
+  <meta property="og:title" content="<?php echo $post->post_title; ?>" />
+  <meta property="description" content="<?php echo $post_description; ?>" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="<?php echo $post_featured_image; ?>" />
 <?php
     }
 }

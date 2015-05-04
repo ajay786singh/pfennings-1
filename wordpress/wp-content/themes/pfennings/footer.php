@@ -56,7 +56,17 @@
              <small>Made with Purpose by B Corp Certified <a href="http://hypenotic.com">Hypenotic</a></small>
          </div> 
     </div>
-	<img src="http://hypelabs.ca/pfennings/wordpress/wp-content/uploads/2015/05/fijian_frangipani_wallpaper_flowers_nature_wallpaper_1600_1200_1649.jpg">
+	<?php 
+		if(is_single()) {
+			$post_thumbnail_img = wp_get_attachment_image_src( $post_thumbnail_id, 'fb-preview');
+			if($post_thumbnail_img) {
+				$img=$post_thumbnail_img[0];
+			}else {
+				$img=get_bloginfo('template_url')."/dist/images/pfenningslogo.png";
+			}
+	?>
+	<img style="display:none;" src="<?php echo $img;?>">
+	<?php } ?>
 </footer>
 
 </div><!--/wrapper-->

@@ -44,7 +44,7 @@ function social_share_FB_header() {
   <meta property="og:title" content="<?php echo $post->post_title; ?>" />
   <meta property="og:site_name" content="<?php bloginfo('name');?>"/>
   <meta property="og:url" content="<?php echo $post_link; ?>" />
-  <meta property="description" content="<?php echo $post_description; ?>" />
+  <meta property="og:description" content="<?php echo $post_description; ?>" />
   <meta property="og:type" content="article" />
   <meta property="og:image" content="<?php echo $post_featured_image; ?>" />
 <?php

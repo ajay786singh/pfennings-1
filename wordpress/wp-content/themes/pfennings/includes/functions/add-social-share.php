@@ -46,7 +46,7 @@ function social_share_FB_header() {
 <?php
     }
 }
-add_action('wp_footer', 'social_share_FB_header');
+add_action('wp_head', 'social_share_FB_header');
 
 function get_tiny_url($url)  {  
 	$ch = curl_init();  

@@ -38,7 +38,7 @@ function social_share_FB_header() {
     global $post;
 	$post_description=htmlspecialchars(social_share_get_FB_description($post));
 	$post_featured_image = social_share_get_FB_image($post->ID);
-    if ( (is_single())) {
+    if((is_single())) {
 ?>
   <meta property="og:title" content="<?php echo $post->post_title; ?>" />
   <meta property="description" content="<?php echo $post_description; ?>" />

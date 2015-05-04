@@ -1,12 +1,17 @@
 <footer>
     <div class="footer-inner">
-
         <div class="footer-content fLogo_area">
             <div class="footer_logo">
 				<a href="<?php bloginfo('url');?>">
                     <img src="<?php bloginfo('template_url' ); ?>/dist/images/logo-white.png">
                 </a>
             </div>
+			<a href="<?php bloginfo('url');?>">
+                    <img src="http://hypelabs.ca/pfennings/wordpress/wp-content/uploads/2015/05/fijian_frangipani_wallpaper_flowers_nature_wallpaper_1600_1200_1649-1200x800.jpg">
+            </a>
+			<a href="<?php bloginfo('url');?>">
+				<img src="http://hypelabs.ca/pfennings/wordpress/wp-content/uploads/2015/05/fijian_frangipani_wallpaper_flowers_nature_wallpaper_1600_1200_1649.jpg">
+			</a>
         </div>
         <!-- Column 1 -->
         <div class="footer-content">

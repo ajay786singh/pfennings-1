@@ -2,9 +2,9 @@
     <div class="footer-inner">
         <div class="footer-content fLogo_area">
             <div class="footer_logo">
-				<?php/* <a href="<?php bloginfo('url');?>">
+				<a href="<?php bloginfo('url');?>">
                     <img src="<?php bloginfo('template_url' ); ?>/dist/images/logo-white.png">
-                </a>	*/?>			
+                </a>				
 				<?php 
 					if(is_single()) {
 						global $post;

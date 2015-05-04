@@ -5,19 +5,6 @@
 				<a href="<?php bloginfo('url');?>">
                     <img src="<?php bloginfo('template_url' ); ?>/dist/images/logo-white.png">
                 </a>				
-				<?php 
-					if(is_single()) {
-						global $post;
-						$post_thumbnail_id = get_post_thumbnail_id( $post->ID );
-						$post_thumbnail_img = wp_get_attachment_image_src( $post_thumbnail_id, 'fb-preview');
-						if($post_thumbnail_img) {
-							$img=$post_thumbnail_img[0];
-						}else {
-							$img=get_bloginfo('template_url')."/dist/images/pfenningslogo.png";
-						}
-				?>
-				<img style="display:none;" src="<?php echo $img;?>">
-				<?php } ?>
             </div>
         </div>
         <!-- Column 1 -->

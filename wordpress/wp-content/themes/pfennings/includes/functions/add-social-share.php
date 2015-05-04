@@ -38,12 +38,15 @@ function social_share_FB_header() {
     global $post;
 	$post_description=htmlspecialchars(social_share_get_FB_description($post));
 	$post_featured_image = social_share_get_FB_image($post->ID);
+	$post_link=get_permalink($post->ID);
     if((is_single())) {
 ?>
   <meta property="og:title" content="<?php echo $post->post_title; ?>" />
+  <meta property="og:site_name" content="<?php bloginfo('name');?>"/>
+  <meta property="og:url" content="<?php echo $post_link; ?>" />
   <meta property="description" content="<?php echo $post_description; ?>" />
   <meta property="og:type" content="article" />
-  <meta property="og:image" content="<?php echo $post_featured_image; ?>" />
+  <meta property="og:image" content="http://hypelabs.ca/pfennings/wordpress/wp-content/uploads/2015/01/marga.jpg<?php //echo $post_featured_image; ?>" />
 <?php
     }
 }

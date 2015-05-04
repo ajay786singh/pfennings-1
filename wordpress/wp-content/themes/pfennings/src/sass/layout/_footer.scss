@@ -16,17 +16,19 @@ footer {
 		& .footer_logo a{
 			border-bottom:none;
 		}
-        .content {
+        .footer-content {
 
             p, h5 {
                 margin-bottom: 0;
             }
-
-            ul li {
-                &:last-child {
-                    margin-bottom: 2em;
-                }
-            }
+			ul {
+				padding-left: 0;
+				li {
+					&:last-child {
+						margin-bottom: 2em;
+					}
+				}
+			}
             @include media($bp-mid) { 
                 &:nth-of-type(1) {
                     @include span-columns(2);

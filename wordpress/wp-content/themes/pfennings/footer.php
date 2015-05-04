@@ -1,15 +1,15 @@
 <footer>
     <div class="footer-inner">
 
-        <div class="content fLogo_area">
+        <div class="footer-content fLogo_area">
             <div class="footer_logo">
-				<?php /*<a href="<?php bloginfo('url');?>">
+				<a href="<?php bloginfo('url');?>">
                     <img src="<?php bloginfo('template_url' ); ?>/dist/images/logo-white.png">
-                </a> */?>
+                </a>
             </div>
         </div>
         <!-- Column 1 -->
-        <div class="content">
+        <div class="footer-content">
             <h5>Get in Touch</h5>
             <p>
                 1209 Waterloo Street<br>
@@ -32,13 +32,13 @@
         </div>  
 
         <!-- Column 2 -->
-        <div class="content latest-news"> 
+        <div class="footer-content latest-news"> 
             <h5>Latest News</h5>
             <?php recentposts(); ?>
         </div>
 
         <!-- Column 3 -->
-         <div class="content">
+         <div class="footer-content">
             <h5>Get community flavoured news in your inbox</h5>
 
             <form action="//pfenningsfarms.us10.list-manage.com/subscribe/post?u=eb15a6953cd072b51e5330b15&amp;id=2cc6b23376" method="post">

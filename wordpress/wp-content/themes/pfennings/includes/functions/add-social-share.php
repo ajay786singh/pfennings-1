@@ -36,9 +36,7 @@ function social_share_get_FB_description($post) {
 
 function social_share_FB_header() {
     global $post;
-	$unwanted=array("'",'"'); 
-	$description=social_share_get_FB_description($post);
-    $post_description = str_ireplace($unwanted, '', $description);
+	$post_description=htmlspecialchars(social_share_get_FB_description($post));
 	$post_featured_image = social_share_get_FB_image($post->ID);
     if ( (is_single()) AND ($post_featured_image) AND ($post_description) ) {
 ?>
@@ -67,7 +65,7 @@ function social_share() {
 	$title = get_the_title();
 	$link = get_the_permalink();
     $content= get_the_excerpt();
-	$fb_content=social_share_get_FB_description($post);
+	$fb_content=htmlspecialchars(social_share_get_FB_description($post));
 	$img = wp_get_attachment_url( get_post_thumbnail_id($id) );
 	$twitter_link = get_tiny_url($link);
 	if($img==''){

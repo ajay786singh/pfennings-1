@@ -10,6 +10,10 @@
 <script>
 	var share_image ='<?php echo $postThumb[0];?>';
 </script>
+<div class="entry-content">
+<?php the_content(); ?>
+<p><a href="https://www.facebook.com/sharer.php?u=<?php echo urlencode(get_permalink($post->ID)); ?>&t=<?php echo urlencode($post->post_title); ?>">Share on Facebook</a></p>
+</div><!-- .entry-content -->
 <section role="slider" style="background-image: url(<?php echo $postThumb['0']; ?>);">
     <header>
         <hgroup>

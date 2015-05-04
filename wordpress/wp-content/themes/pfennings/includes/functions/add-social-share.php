@@ -36,8 +36,10 @@ function social_share_get_FB_description($post) {
 
 function social_share_FB_header() {
     global $post;
-    $post_description = social_share_get_FB_description($post);
-    $post_featured_image = social_share_get_FB_image($post->ID);
+	$unwanted=array("'",'"'); 
+	$description=social_share_get_FB_description($post);
+    $post_description = str_ireplace($unwanted, '', $description);
+	$post_featured_image = social_share_get_FB_image($post->ID);
     if ( (is_single()) AND ($post_featured_image) AND ($post_description) ) {
 ?>
   <meta name="title" content="<?php echo $post->post_title; ?>" />
@@ -46,7 +48,7 @@ function social_share_FB_header() {
 <?php
     }
 }
-add_action('wp_head', 'social_share_FB_header');
+add_action('wp_footer', 'social_share_FB_header');
 
 function get_tiny_url($url)  {  
 	$ch = curl_init();  

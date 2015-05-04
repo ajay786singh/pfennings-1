@@ -58,6 +58,8 @@
     </div>
 	<?php 
 		if(is_single()) {
+			global $post;
+			$post_thumbnail_id = get_post_thumbnail_id( $post->ID );
 			$post_thumbnail_img = wp_get_attachment_image_src( $post_thumbnail_id, 'fb-preview');
 			if($post_thumbnail_img) {
 				$img=$post_thumbnail_img[0];

@@ -3,6 +3,51 @@
 
 add this line:- if(social_share()) { social_share();}
 */
+
+add_image_size('fb-preview', 90, 90, true);
+
+// Get featured image
+function social_share_get_FB_image($post_ID) {
+    $post_thumbnail_id = get_post_thumbnail_id( $post_ID );
+    if ($post_thumbnail_id) {
+        $post_thumbnail_img = wp_get_attachment_image_src( $post_thumbnail_id, 'fb-preview');
+        return $post_thumbnail_img[0];
+    }
+}
+ 
+// Get post excerpt
+function social_share_get_FB_description($post) {
+    if ($post->post_excerpt) {
+        return $post->post_excerpt;
+    }
+    else {
+        // Post excerpt is not set, so we take first 55 words from post content
+        $excerpt_length = 55;
+        // Clean post content
+        $text = str_replace("\r\n"," ", strip_tags(strip_shortcodes($post->post_content)));
+        $words = explode(' ', $text, $excerpt_length + 1);
+        if (count($words) > $excerpt_length) {
+            array_pop($words);
+            $excerpt = implode(' ', $words);
+            return $excerpt;
+        }
+    }
+}
+
+function social_share_FB_header() {
+    global $post;
+    $post_description = social_share_get_FB_description($post);
+    $post_featured_image = social_share_get_FB_image($post->ID);
+    if ( (is_single()) AND ($post_featured_image) AND ($post_description) ) {
+?>
+  <meta name="title" content="<?php echo $post->post_title; ?>" />
+  <meta name="description" content="<?php echo $post_description; ?>" />
+  <link rel="image_src" href="<?php echo $post_featured_image; ?>" />
+<?php
+    }
+}
+add_action('wp_head', 'social_share_FB_header');
+
 function get_tiny_url($url)  {  
 	$ch = curl_init();  
 	$timeout = 5;  

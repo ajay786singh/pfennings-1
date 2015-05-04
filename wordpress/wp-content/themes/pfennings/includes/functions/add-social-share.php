@@ -46,7 +46,7 @@ function social_share_FB_header() {
   <meta property="og:url" content="<?php echo $post_link; ?>" />
   <meta property="description" content="<?php echo $post_description; ?>" />
   <meta property="og:type" content="article" />
-  <meta property="og:image" content="http://hypelabs.ca/pfennings/wordpress/wp-content/uploads/2015/01/marga.jpg<?php //echo $post_featured_image; ?>" />
+  <meta property="og:image" content="<?php echo $post_featured_image; ?>" />
 <?php
     }
 }

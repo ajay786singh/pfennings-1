@@ -4,7 +4,7 @@
 add this line:- if(social_share()) { social_share();}
 */
 
-add_image_size('fb-preview', 90, 90, true);
+add_image_size('fb-preview', 200, 200, true);
 
 // Get featured image
 function social_share_get_FB_image($post_ID) {

@@ -4,7 +4,7 @@ require get_template_directory().'/includes/library/facebook/facebook.php';
 function featuredtoRSS($content) {
 	global $post;
 	if ( has_post_thumbnail( $post->ID ) ){
-	$content = '' . get_the_post_thumbnail( $post->ID, 'thumbnail', array( 'style' => 'float:left; margin:10px 15px px 0;' ) ) . '' . $content;
+	$content = '' . get_the_post_thumbnail( $post->ID, 'thumbnail', array( 'style' => 'float:left; margin:5px 15px 20px 0px;' ) ) . '' . $content;
 	}
 	return $content;
 }
